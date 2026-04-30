@@ -1,6 +1,12 @@
 {
-  "name": "vite-html-env",
+  "name": "html-vite-settings",
   "version": "1.0.0",
+  "description": "SCSS-based static HTML project",
+  "author": "Hong-jun Jang <kbhj0729@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janghong-jun/HTML_Vite_Settings.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
