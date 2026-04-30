@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HER-02-007"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HER-02-007"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HER-02-007"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HER-02-007" class="modal-title">
+            전문가 매칭/코칭 개선요청 수정
+          </h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="krds-table-wrap row mob-col mob-scroll">
+              <table class="tbl">
+                <caption>
+                  전문가 매칭/코칭 개선요청 수정에 대한 표로 제목, 개선요청
+                  내용으로 구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 13.5rem" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="V-HER-02-007_01" class="krds-label">
+                        제목
+                        <i class="required" aria-hidden="true"></i>
+                        <span class="sr-only">필수 항목</span>
+                      </label>
+                    </th>
+                    <td>
+                      <input
+                        type="text"
+                        class="krds-input small"
+                        id="V-HER-02-007_01"
+                        placeholder="최소 10자 이상 입력해주세요."
+                        value="콘텐츠 개선요청 드립니다."
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <label for="V-HER-02-007_02" class="krds-label">
+                        개선요청 내용
+                        <i class="required" aria-hidden="true"></i>
+                        <span class="sr-only">필수 항목</span>
+                      </label>
+                    </th>
+                    <td>
+                      <textarea
+                        class="krds-input medium"
+                        id="V-HER-02-007_02"
+                        placeholder="최소 10자 이상 입력해주세요."
+                        style="height: 13.6rem"
+                      >
+콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을 자세하고 정확하게 작성, 안내 부탁드립니다~ 
+</textarea
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary">
+            개선요청 수정 하기
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HER-02-007");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

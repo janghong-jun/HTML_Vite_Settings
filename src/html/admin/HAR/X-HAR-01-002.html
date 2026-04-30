@@ -1,0 +1,1267 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "5", sid: "1" };
+      document.addEventListener("DOMContentLoaded", function () {
+        const list = document.querySelector(".improvement-list");
+
+        list.addEventListener("click", (e) => {
+          const button = e.target.closest("button");
+          if (!button) return;
+
+          const li = button.closest("li");
+          const cont = li.querySelector(".cont");
+
+          const currentActive = list.querySelector(".cont.active");
+
+          if (cont.classList.contains("active")) {
+            cont.classList.remove("active");
+            return;
+          }
+
+          if (currentActive) {
+            currentActive.classList.remove("active");
+          }
+
+          cont.classList.add("active");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>콘텐츠 관리</h2>
+          <div class="ui-tab left mgt24" data-id="tab01">
+            <div class="ui-tab-btns">
+              <button type="button" class="ui-tab-btn" data-tab="0">
+                콘텐츠 정보
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="1">
+                평가내역
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="2">
+                개선요청내역
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="3">
+                학습 현황
+              </button>
+            </div>
+            <div class="ui-tab-pnls">
+              <div class="ui-tab-pnl" data-tab="0">
+                <div class="sub-title">
+                  <h3>콘텐츠 기본정보</h3>
+                  <p class="msg">*표시는 필수 입력 항목입니다</p>
+                </div>
+
+                <div class="tbl-base mgt10 align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <label for="inp01">제목</label>
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              id="inp01"
+                              class="inp-text"
+                              placeholder="제목을 입력하세요"
+                              value="깊이있는 수업 on 보평초등학교"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="category">유형</label>
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <select id="category">
+                              <option>선택</option>
+                              <option>동영상</option>
+                              <option>문서</option>
+                              <option>이미지</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="inp02">키워드</label>
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              id="inp02"
+                              class="inp-text"
+                              placeholder="키워드를 입력하세요(키워드, 키워드, 키워드), 최대 NN개까지 입력 가능합니다."
+                              value="내일돋움시리즈, 역량성장챌린지, 전자책"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          콘텐츠 소스
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-wrap">
+                            <div class="frm-area">
+                              <span class="lb-item">
+                                <input
+                                  type="radio"
+                                  id="rdoBtn01_01"
+                                  name="rdoBtn01"
+                                />
+                                <label for="rdoBtn01_01" class="lb-radio"
+                                  >링크 등록</label
+                                >
+                              </span>
+                              <span class="lb-item">
+                                <input
+                                  type="radio"
+                                  id="rdoBtn01_02"
+                                  name="rdoBtn01"
+                                />
+                                <label for="rdoBtn01_02" class="lb-radio"
+                                  >파일등록</label
+                                >
+                              </span>
+                            </div>
+                            <div class="frm-area">
+                              <input
+                                type="text"
+                                class="inp-text"
+                                placeholder="URL을 입력하세요"
+                                aria-label="URL 입력"
+                                value="https://www.youtube.com/watch?v=bjSuxEM-lAE&t=49s"
+                              />
+                            </div>
+                            <div class="file-wrap">
+                              <div class="input-item">
+                                <input
+                                  type="text"
+                                  class="inp-text"
+                                  readonly
+                                  aria-label="첨부 파일"
+                                  value="파일명.mp4"
+                                />
+                                <span class="btn base square">
+                                  <input
+                                    type="file"
+                                    aria-label="첨부파일 선택"
+                                  />
+                                  <span>찾아보기</span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="tbl-btns">
+                              <button
+                                type="button"
+                                class="btn base square apply-btn"
+                                style="width: auto"
+                              >
+                                <span>다운로드</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square apply-btn"
+                                style="width: auto"
+                              >
+                                <span>미리보기</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="textarea01">콘텐츠 설명</label>
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <textarea
+                              id="textarea01"
+                              class="inp-text"
+                              placeholder="주제를 입력하세요(최대 100자)"
+                              style="height: 10rem"
+                            >
+주제: 질문과 예측, 읽기 과정 점검 
+단원명: 이야기 탐험가, 나만의 보물을 찾아서!(5/12차시) 
+수업목표: 글의 중심 낱말의 의미를 이해하고, 이를 활용하여 중심 내용에 관한 질문을 만들 수 있다.
+</textarea
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          썸네일
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-wrap">
+                            <div class="frm-area">
+                              <span class="lb-item">
+                                <input
+                                  type="radio"
+                                  id="rdoBtn02_01"
+                                  name="rdoBtn02"
+                                  checked
+                                />
+                                <label for="rdoBtn02_01" class="lb-radio"
+                                  >직접등록</label
+                                >
+                              </span>
+                              <span class="lb-item">
+                                <input
+                                  type="radio"
+                                  id="rdoBtn02_02"
+                                  name="rdoBtn02"
+                                />
+                                <label for="rdoBtn02_02" class="lb-radio"
+                                  >자동생성</label
+                                >
+                              </span>
+                            </div>
+                            <div class="file-wrap">
+                              <div class="input-item">
+                                <input
+                                  type="text"
+                                  class="inp-text"
+                                  readonly
+                                  aria-label="첨부 파일"
+                                />
+                                <span class="btn base square">
+                                  <input
+                                    type="file"
+                                    aria-label="첨부파일 선택"
+                                  />
+                                  <span>찾아보기</span>
+                                </span>
+                              </div>
+                              <div class="file-list mgt8">
+                                <div class="file">
+                                  <p class="file-name">
+                                    popup_system_check_0108_mo.png
+                                  </p>
+                                  <button type="button" class="btn-del">
+                                    <span>삭제</span>
+                                  </button>
+                                </div>
+                                <div class="file">
+                                  <p class="file-name">
+                                    popup_system_check_0108_mo.png
+                                  </p>
+                                  <button type="button" class="btn-del">
+                                    <span>삭제</span>
+                                  </button>
+                                </div>
+                                <span class="file-info"
+                                  >이미지 파일만 등록가능 합니다.(권장 :
+                                  000*000)</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="inp03">출처</label>
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              id="inp03"
+                              class="inp-text"
+                              placeholder="출처를 입력하세요"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          첨부파일
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-wrap">
+                            <div class="file-wrap">
+                              <div class="input-item">
+                                <input
+                                  type="text"
+                                  class="inp-text"
+                                  readonly
+                                  aria-label="첨부 파일"
+                                />
+                                <span class="btn base square">
+                                  <input
+                                    type="file"
+                                    aria-label="첨부파일 선택"
+                                  />
+                                  <span>찾아보기</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">상태</th>
+                        <td>
+                          <div class="frm-area flex type2 left">
+                            <span class="name">직접등록</span>
+                            <span class="name">승인대기</span>
+                            <div class="tbl-btns type-small">
+                              <button
+                                type="button"
+                                class="btn base square apply-btn"
+                              >
+                                <span>승인</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          공유링크 적용
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div
+                            class="frm-area flex-box mgt0"
+                            style="align-items: center"
+                          >
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdoBtn03_01"
+                                name="rdoBtn03"
+                                checked
+                              />
+                              <label for="rdoBtn03_01" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdoBtn03_02"
+                                name="rdoBtn03"
+                              />
+                              <label for="rdoBtn03_02" class="lb-radio"
+                                >적용제외</label
+                              >
+                            </span>
+                            <span class="lb-item url">
+                              URL :
+                              <a href="#" class="link"
+                                >https://www.hicoching.go.kr/kjsssss1234</a
+                              >
+                            </span>
+                            <span class="lb-item" style="flex: 1">
+                              <span class="tbl-btns type-small right">
+                                <button
+                                  type="button"
+                                  class="btn base square apply-btn"
+                                >
+                                  <span>재생성</span>
+                                </button>
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          게시여부
+                          <span class="ico-req"
+                            ><span class="hide">필수</span></span
+                          >
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdoBtn04_01"
+                                name="rdoBtn04"
+                                checked
+                              />
+                              <label for="rdoBtn04_01" class="lb-radio"
+                                >게시</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdoBtn04_02"
+                                name="rdoBtn04"
+                              />
+                              <label for="rdoBtn04_02" class="lb-radio"
+                                >미게시</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="sub-title"><h3>콘텐츠 부가정보</h3></div>
+                <div class="tbl-base mgt10 align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">
+                          <label for="select01_00">교원구분(1)</label>
+                        </th>
+                        <td>
+                          <div class="frm-area flex-box mgt0">
+                            <select id="select01_00">
+                              <option>교원구분 선택</option>
+                            </select>
+                            <div class="tbl-btns type-small">
+                              <button
+                                type="button"
+                                class="btn base square apply-btn"
+                              >
+                                <span>추가</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="select01_01">역량군(1)</label>
+                        </th>
+                        <td>
+                          <div class="frm-area flex-box mgt0">
+                            <select id="select01_01">
+                              <option>역량군 선택</option>
+                              <option selected>역량군1</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="select01_02">대분류(1)</label>
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <select id="select01_02">
+                              <option>대분류 선택</option>
+                              <option selected>대분류 명칭</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="select02_00">교원구분(2)</label>
+                        </th>
+                        <td>
+                          <div class="frm-area flex-box mgt0">
+                            <select id="select02_00">
+                              <option>교원구분 선택</option>
+                            </select>
+                            <div class="tbl-btns type-small">
+                              <button
+                                type="button"
+                                class="btn base square apply-btn"
+                              >
+                                <span>삭제</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square apply-btn"
+                              >
+                                <span>추가</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="select02_01">역량군(2)</label>
+                        </th>
+                        <td>
+                          <div class="frm-area flex-box mgt0">
+                            <select id="select02_01">
+                              <option>역량군 선택</option>
+                              <option selected>역량군1</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="select02_02">대분류(2)</label>
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <select id="select02_02">
+                              <option>대분류 선택</option>
+                              <option selected>대분류 명칭</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">가중치 설정</th>
+                        <td>
+                          <div class="frm-area flex left small">
+                            <label for="heaviness01">역량군(1)</label>
+                            <input
+                              type="text"
+                              class="inp-text right"
+                              id="heaviness01"
+                            />
+                            <span class="unit">%</span>
+                            <label for="heaviness02">역량군(2)</label>
+                            <input
+                              type="text"
+                              class="inp-text right"
+                              id="heaviness02"
+                            />
+                            <span class="unit">%</span>
+                            <label for="heaviness03">역량군(3)</label>
+                            <input
+                              type="text"
+                              class="inp-text right"
+                              id="heaviness03"
+                            />
+                            <span class="unit">%</span>
+                            <p class="info">
+                              (가중치의 합계가 100%가 되도록 입력해 주세요)
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">저작권 정보</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdoBtn05_01"
+                                name="rdoBtn05"
+                                checked
+                              />
+                              <label for="rdoBtn05_01" class="lb-radio"
+                                >등록</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdoBtn05_02"
+                                name="rdoBtn05"
+                              />
+                              <label for="rdoBtn05_02" class="lb-radio"
+                                >미등록</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="inp04">저작권 소유자</label>
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              id="inp04"
+                              class="inp-text"
+                              placeholder="저작권 소유자 정보를 입력하세요(Ex, 채널명 또는 채널소유자 정보)"
+                              value="경기미래교육"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">저작권 유지기간</th>
+                        <td>
+                          <div class="frm-area mail-area flex">
+                            <select>
+                              <option>년도</option>
+                              <option selected>2030</option>
+                            </select>
+                            <span>년</span>
+                            <select>
+                              <option>월</option>
+                              <option selected>12</option>
+                            </select>
+                            <span>월</span>
+                            <select>
+                              <option>일</option>
+                              <option selected>30</option>
+                            </select>
+                            <span>일 까지</span>
+                            <div class="lb-item" style="text-align: right">
+                              <input type="checkbox" id="check01" />
+                              <label for="check01" class="lb-checkbox"
+                                >해당없음</label
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          <label for="inp05">추가 부가정보</label>
+                        </th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              id="inp05"
+                              class="inp-text"
+                              placeholder="추가부가정보"
+                              value="추가부가정보 필요 여부 판단이 필요합니다."
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns">
+                  <button type="button" class="btn base tertiary">
+                    <span>삭제</span>
+                  </button>
+                  <div>
+                    <button type="button" class="btn base secondary">
+                      <span>취소</span>
+                    </button>
+                    <button type="button" class="btn base primary">
+                      <span>수정</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="1">
+                <div class="tbl-base mgt10 align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">제목</th>
+                        <td>깊이있는 수업 on 보평초등학교</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">유형</th>
+                        <td>동영상</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sub-title">
+                  <h3 class="flex-box">
+                    평가 내역
+                    <p class="msg" style="margin-left: 0.8rem">(평점 : 4.8)</p>
+                  </h3>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8.8rem" />
+                      <col />
+                      <col style="width: 6rem" />
+                      <col style="width: 6rem" />
+                      <col style="width: 8rem" />
+                      <col style="width: 12rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">평가 내용</th>
+                        <th scope="col">평점</th>
+                        <th scope="col">난이도</th>
+                        <th scope="col">작성자</th>
+                        <th scope="col">작성일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>10</td>
+                        <td class="txt-l">
+                          신규 교사에게 추천합니다. 기본부터 차근차근 배울 수
+                          있어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>김*동</td>
+                        <td>2025-12-28</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td class="txt-l">
+                          교육과정 설계에 대한 이해도가 높아졌습니다. 실습
+                          콘텐츠가 특히 유용했어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>박*진</td>
+                        <td>2025-12-30</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td class="txt-l">
+                          콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                          좋겠습니다.
+                        </td>
+                        <td>4.0</td>
+                        <td>상</td>
+                        <td>이*수</td>
+                        <td>2025-12-29</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td class="txt-l">
+                          신규 교사에게 추천합니다. 기본부터 차근차근 배울 수
+                          있어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>김*동</td>
+                        <td>2025-12-28</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td class="txt-l">
+                          교육과정 설계에 대한 이해도가 높아졌습니다. 실습
+                          콘텐츠가 특히 유용했어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>박*진</td>
+                        <td>2025-12-30</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td class="txt-l">
+                          콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                          좋겠습니다.
+                        </td>
+                        <td>4.0</td>
+                        <td>상</td>
+                        <td>이*수</td>
+                        <td>2025-12-29</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td class="txt-l">
+                          신규 교사에게 추천합니다. 기본부터 차근차근 배울 수
+                          있어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>김*동</td>
+                        <td>2025-12-28</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td class="txt-l">
+                          교육과정 설계에 대한 이해도가 높아졌습니다. 실습
+                          콘텐츠가 특히 유용했어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>박*진</td>
+                        <td>2025-12-30</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td class="txt-l">
+                          콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                          좋겠습니다.
+                        </td>
+                        <td>4.0</td>
+                        <td>상</td>
+                        <td>이*수</td>
+                        <td>2025-12-29</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td class="txt-l">
+                          신규 교사에게 추천합니다. 기본부터 차근차근 배울 수
+                          있어요.
+                        </td>
+                        <td>5.0</td>
+                        <td>상</td>
+                        <td>김*동</td>
+                        <td>2025-12-28</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="2">
+                <div class="tbl-base mgt10 align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">제목</th>
+                        <td>깊이있는 수업 on 보평초등학교</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">유형</th>
+                        <td>동영상</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sub-title"><h3>개선요청 목록</h3></div>
+                <ul class="improvement-list">
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                  <li>
+                    <button type="button">
+                      <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                      <span class="info">
+                        <span>김*동(kim7*****)</span>
+                        <span>2025-12-15</span>
+                      </span>
+                    </button>
+                    <p class="cont">
+                      콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                      <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록
+                      설명을 자세하고 정확하게 작성, 안내 부탁드립니다~
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="ui-tab-pnl" data-tab="3">
+                <div class="tbl-base mgt10 align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">제목</th>
+                        <td>깊이있는 수업 on 보평초등학교</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">유형</th>
+                        <td>동영상</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16 align-right">
+                  <div>
+                    <button
+                      type="button"
+                      class="btn base square apply-btn"
+                      style="width: auto"
+                    >
+                      <span>버튼명</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt40">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8.8rem" />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">사용자</th>
+                        <th scope="col">학습시간</th>
+                        <th scope="col">진도율</th>
+                        <th scope="col">완료여부</th>
+                        <th scope="col">최종학습시간</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>100</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>99</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>미완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>98</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>97</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>96</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>95</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>94</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>93</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>92</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                      <tr
+                        class="cursor"
+                        onClick="UI.modal.show({id: 'X-HAR-01-005',src: 'X-HAR-01-005.html'})"
+                      >
+                        <td>91</td>
+                        <td>홍*동</td>
+                        <td>HH:MM:SS</td>
+                        <td>NN%</td>
+                        <td>완료</td>
+                        <td>YYYY-MM-DD HH:MM:SS</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "8" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>게시판 추가 요청 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly=""
+                            placeholder="YYYY-MM-DD"
+                          />
+
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                            aria-label="달력 보기"
+                            tabindex="-1"
+                          ></button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly=""
+                            placeholder="YYYY-MM-DD"
+                          />
+
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                            aria-label="달력 보기"
+                            tabindex="-1"
+                          ></button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1주일</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>2주일</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">승인여부</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_01" />
+                        <label for="checkbox_01_01" class="lb-checkbox"
+                          >전체</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_02" />
+                        <label for="checkbox_01_02" class="lb-checkbox"
+                          >대기중</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_03" />
+                        <label for="checkbox_01_03" class="lb-checkbox"
+                          >승인</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_04" />
+                        <label for="checkbox_01_04" class="lb-checkbox"
+                          >거절</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 7rem" />
+                <col style="width: 13rem" />
+                <col style="width: 17rem" />
+                <col style="width: 13rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">요청게시판 명칭</th>
+                  <th scope="col">요청자</th>
+                  <th scope="col">요청일시</th>
+                  <th scope="col">승인여부</th>
+                  <th scope="col">승인/거절일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>20</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      역량진단 도구 논의 게시판
+                    </button>
+                  </td>
+                  <td>김역량</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HSM-04-010"
+                        data-src="X-HSM-04-010.html"
+                      >
+                        <span>승인</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HSM-04-018"
+                        data-src="X-HSM-04-018.html"
+                      >
+                        <span>거절</span>
+                      </button>
+                    </div>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      학생지도 경험 공유 게시판
+                    </button>
+                  </td>
+                  <td>박스승</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HSM-04-010"
+                        data-src="X-HSM-04-010.html"
+                      >
+                        <span>승인</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HSM-04-018"
+                        data-src="X-HSM-04-018.html"
+                      >
+                        <span>거절</span>
+                      </button>
+                    </div>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      학습지도 가이드 논의 게시판
+                    </button>
+                  </td>
+                  <td>이경기</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HSM-04-010"
+                        data-src="X-HSM-04-010.html"
+                      >
+                        <span>승인</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HSM-04-018"
+                        data-src="X-HSM-04-018.html"
+                      >
+                        <span>거절</span>
+                      </button>
+                    </div>
+                  </td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      자유게시판 요청
+                    </button>
+                  </td>
+                  <td>장발전</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>승인</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      교원 역량 개발 경험 공유
+                    </button>
+                  </td>
+                  <td>최학습</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>승인</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      역량진단 도구 논의 게시판
+                    </button>
+                  </td>
+                  <td>김역량</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>승인</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      학생지도 경험 공유 게시판
+                    </button>
+                  </td>
+                  <td>박스승</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>승인</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      학습지도 가이드 논의 게시판
+                    </button>
+                  </td>
+                  <td>이경기</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>승인</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      자유게시판 요청
+                    </button>
+                  </td>
+                  <td>장발전</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>거절</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td class="txt-l">
+                    <button
+                      type="button"
+                      class="btn-modal"
+                      data-id="X-HSM-04-017"
+                      data-src="X-HSM-04-017.html"
+                    >
+                      교원 역량 개발 경험 공유
+                    </button>
+                  </td>
+                  <td>최학습</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>승인</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tbl-btns mgt16">
+            <button
+              type="button"
+              class="btn base secondary btn-modal"
+              data-id="X-HSM-04-010"
+              data-src="X-HSM-04-010.html"
+            >
+              <span>게시판 추가</span>
+            </button>
+            <div>
+              <button type="button" class="btn base primary">
+                <span>저장</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

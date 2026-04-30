@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "8", sid: "2" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>유튜브수집동영상 관리</h2>
+          <div class="tbl-base mgt40 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">동영상ID</th>
+                  <td>동영상 ID (VARCHAR50)</td>
+                </tr>
+                <tr>
+                  <th scope="row">동영상명</th>
+                  <td>
+                    2025 교육광장 겨울호 「학교 탐방」 학생의 선택이 만들어 가는
+                    교육과정(VARCHAR256)
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">채널명</th>
+                  <td>경기도교육청(VARCHAR256)</td>
+                </tr>
+                <tr>
+                  <th scope="row">동영상 시간</th>
+                  <td>HH:MM:SS</td>
+                </tr>
+                <tr>
+                  <th scope="row">태그명</th>
+                  <td>태그명1, 태그명2, 태그명3, 태그명4</td>
+                </tr>
+                <tr>
+                  <th scope="row">라이선스여부</th>
+                  <td>Yes or No</td>
+                </tr>
+                <tr>
+                  <th scope="row">동영상설명</th>
+                  <td>동영상에 대한 설명 글이 노출됩니다.(VARCHAR 4000)</td>
+                </tr>
+                <tr>
+                  <th scope="row">동영상 게시일자</th>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <th scope="row">하이코칭 등록일</th>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16 flex-box">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>button</span>
+              </button>
+              <button type="button" class="btn base tertiary">
+                <span>button</span>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="btn base primary">
+                <span>목록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

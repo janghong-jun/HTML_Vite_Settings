@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "6", sid: "7" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>사용자 로그 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pr0">
+                    <select>
+                      <option value="">전체</option>
+                    </select>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 10rem" />
+                <col style="width: 10rem" />
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 13rem" />
+                <col style="width: 20rem" />
+                <col style="width: 13rem" />
+                <col style="width: 15rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">메뉴 ID</th>
+                  <th scope="col">Action</th>
+                  <th scope="col">Detail</th>
+                  <th scope="col">계정</th>
+                  <th scope="col">발생일시</th>
+                  <th scope="col">IP</th>
+                  <th scope="col">브라우저</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>100</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>99</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>98</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>96</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>95</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>94</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>92</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td>91</td>
+                  <td>LOGIN</td>
+                  <td>로그인 시도</td>
+                  <td>-</td>
+                  <td>A00013021</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>192.168.0.1</td>
+                  <td>크롬</td>
+                </tr>
+                <tr>
+                  <td colspan="8" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

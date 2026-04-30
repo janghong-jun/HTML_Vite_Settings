@@ -1,0 +1,264 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 사이드 메뉴 */
+//사이즈 정의
+@mixin side-menu-size-variable() {
+  --side-navigation--padding: var(--padding-10);
+  --side-navigation--title-padding-x: var(--padding-3);
+  --side-navigation--title-padding-bottom: var(--padding-6);
+  --side-navigation--title-font-size: var(--pc-font-size-navigation-title-medium);
+  --side-navigation--btn-gap: var(--gap-3);
+  --side-navigation--btn-padding-x: var(--padding-3);
+  --side-navigation--btn-padding-y: var(--padding-6);
+  --side-navigation--btn-padding-y-selected: var(--padding-3);
+  --side-navigation--btn-font-size: var(--pc-font-size-navigation-depth-medium-bold);
+  --side-navigation--3depth-padding-y: var(--padding-3);
+  --side-navigation--3depth-btn-padding-x: var(--padding-6);
+  --side-navigation--3depth-btn-padding-y: var(--padding-3);
+  --side-navigation--3depth-btn-radius: var(--radius-medium2);
+  --side-navigation--4depth-padding: var(--padding-6);
+  --side-navigation--4depth-title-padding: var(--padding-3);
+  --side-navigation--4depth-title-radius: var(--radius-medium3);
+  --side-navigation--4depth-title-font-size: var(--pc-font-size-navigation-title-medium);
+}
+//컬러 정의
+@mixin side-menu-color-variable($mode: light) {
+  --side-navigation--title-color-border: var(--#{$mode}-color-divider-gray);
+  --side-navigation--title-border-width: var(--#{$mode}-border-width-static-regular);
+  --side-navigation--color-action: var(--#{$mode}-color-action-secondary);
+  --side-navigation--color-action-hover: var(--#{$mode}-color-action-secondary-hover);
+  --side-navigation--color-action-pressed: var(--#{$mode}-color-action-secondary-pressed);
+  --side-navigation--color-action-selected: var(--#{$mode}-color-action-secondary-selected);
+  --side-navigation--color-border: var(--#{$mode}-color-divider-gray-light);
+  --side-navigation--color-text-selected: var(--#{$mode}-color-text-secondary);
+  --side-navigation--color-border-selected: var(--#{$mode}-color-action-secondary-active);
+  --side-navigation--item-color-border: var(--#{$mode}-color-divider-gray-light);
+  --side-navigation--item-color-border-selected: var(--#{$mode}-color-border-gray);
+  --side-navigation--item-border-width: var(--#{$mode}-border-width-static-regular);
+  --side-navigation--2depth-btn-color-border: var(--#{$mode}-color-border-secondary);
+  --side-navigation--4depth-color-border: var(--#{$mode}-color-border-gray);
+  --side-navigation--4depth-background: var(--#{$mode}-color-background-white);
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-side-navigation {
+  @include side-menu-size-variable();
+  @include side-menu-color-variable(#{$mode-setting});
+  position: relative;
+  overflow: hidden;
+  height: fit-content;
+  border-radius: var(--number-9);
+  background: var(--light-color-background-white);
+  box-shadow: 0 var(--number-6) var(--number-12) 0 rgba(0, 0, 0, 0.04);
+
+  .lnb-tit {
+    min-height: calc(var(--side-navigation--title-font-size) * 1.5 + 3rem + var(--side-navigation--title-border-width));
+    padding: 1.5rem 0;
+    border-bottom: var(--side-navigation--title-border-width) solid var(--side-navigation--title-color-border);
+    border-radius: var(--number-7) var(--number-7) 0 0;
+    font-size: var(--side-navigation--title-font-size);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: var(--light-color-border-gray-darker);
+    background: linear-gradient(279deg, #e1e5fc 0%, #f5f6ff 97.55%);
+  }
+  .lnb-list {
+    padding: var(--number-6) var(--number-9) var(--number-12) var(--number-9);
+    .lnb-item {
+      border-bottom: var(--side-navigation--item-border-width) solid var(--side-navigation--item-color-border);
+      .lnb-btn {
+        @include flex-layout();
+        gap: var(--side-navigation--btn-gap);
+        position: relative;
+        width: 100%;
+        background-color: var(--side-navigation--color-action);
+        padding: var(--side-navigation--btn-padding-y) var(--side-navigation--btn-padding-x);
+        font-size: var(--side-navigation--btn-font-size);
+        font-weight: var(--font-weight-bold);
+        text-align: left;
+        &:hover {
+          // background-color: var(--side-navigation--color-action-hover);
+        }
+        &:active {
+          // background-color: var(--side-navigation--color-action-pressed);
+        }
+        &:focus {
+          @include focus();
+        }
+        &.selected {
+          // background-color: var(--side-navigation--color-action-selected);
+          // color: var(--side-navigation--color-text-selected);
+          color: var(--light-color-border-primary);
+          &::before {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+      [class*='lnb-toggle'] {
+        &::after {
+          @include pseudo();
+          flex-shrink: 0;
+          @include svg-icon($size: var(--icon--size-medium));
+          @include icon-set(ico_angle);
+          margin-top: var(--padding-1);
+          margin-left: auto;
+          transition: var(--transition-base);
+          transform: rotate(0deg);
+        }
+        &[aria-expanded='true'] {
+          padding-bottom: var(--side-navigation--btn-padding-y-selected);
+          color: var(--light-color-border-primary);
+          &::after {
+            background-color: var(--light-color-border-primary);
+            transform: rotate(180deg);
+          }
+          &::before {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+      .lnb-submenu {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition-base);
+        > ul {
+          padding: 0;
+          overflow: hidden;
+        }
+        .lnb-btn {
+          padding: var(--side-navigation--3depth-btn-padding-y) var(--side-navigation--3depth-btn-padding-x);
+          border-radius: var(--side-navigation--3depth-btn-radius);
+          font-weight: var(--font-weight-regular);
+          &::before {
+            @include pseudo('•');
+            width: auto;
+          }
+          &.selected {
+            color: var(--light-color-border-primary);
+            font-weight: var(--font-weight-bold);
+            background: var(--light-color-surface-primary-subtler);
+          }
+        }
+      }
+      .lnb-submenu-lv2 {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        top: 0;
+        left: -100%;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        background-color: var(--side-navigation--4depth-background);
+        transition: var(--transition-base);
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          left: 0;
+        }
+        > ul {
+          @include flex-layout($fd: column, $ai: normal);
+          padding: var(--side-navigation--4depth-padidng) 0;
+          border-top: 0.1rem solid var(--side-navigation--4depth-color-border);
+          border-bottom: 0.1rem solid var(--side-navigation--4depth-color-border);
+        }
+        .lnb-btn-tit {
+          @include flex-layout($fd: column, $jc: space-between, $ai: normal);
+          gap: var(--gap-2);
+          width: 100%;
+          padding: var(--side-navigation--4depth-title-padding) !important;
+          margin-bottom: var(--padding-3);
+          font-size: var(--side-navigation--4depth-title-font-size);
+          font-weight: var(--font-weight-bold);
+          text-align: left;
+          border-radius: var(--side-navigation--4depth-title-radius);
+          &::before {
+            @include pseudo();
+            @include svg-icon($mode: light);
+            @include icon-set(ico_angle);
+            transform: rotate(90deg);
+          }
+          &:focus {
+            @include focus();
+          }
+          &:hover {
+            background-color: var(--side-navigation--color-action-hover);
+          }
+          &:active {
+            background-color: var(--side-navigation--color-action-pressed);
+          }
+        }
+      }
+      &.active {
+        border-bottom-color: var(--side-navigation--item-color-border-selected);
+        .lnb-submenu {
+          grid-template-rows: 1fr;
+          opacity: 1;
+          visibility: visible;
+          padding: var(--side-navigation--3depth-padding-y) 0;
+        }
+      }
+    }
+    //하위뎁스
+    > li {
+      > .lnb-btn {
+        &::before {
+          display: inline-flex;
+          @include pseudo();
+          @include position($b: -0.1rem, $l: 0%);
+          @include square(0, 0.2rem);
+          background-color: var(--light-color-border-primary);
+          transition: var(--transition-base);
+        }
+        &:hover {
+          &::before {
+            left: 0;
+            width: 100%;
+          }
+        }
+        &.active {
+          &:not(.lnb-toggle) {
+            &::before {
+              left: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-side-navigation {
+    @include side-menu-color-variable(#{$mode-setting});
+
+    .lnb-list {
+      .lnb-item {
+        [class*='lnb-toggle'] {
+          &::after {
+            @include svg-icon($size: var(--icon--size-medium), $mode: #{$mode-setting});
+          }
+        }
+
+        .lnb-submenu-lv2 {
+          .lnb-btn-tit {
+            &::before {
+              @include svg-icon($mode: #{$mode-setting});
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<svg
+  width="81"
+  height="81"
+  viewBox="0 0 81 81"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  class="play-icon"
+>
+  <path
+    d="M35.526 33.0678C35.526 31.4971 37.254 30.5393 38.586 31.3716L51.615 39.5141C52.869 40.297 52.869 42.123 51.615 42.907L38.586 51.049C37.254 51.882 35.527 50.925 35.526 49.354V33.0678Z"
+    fill="white"
+    stroke="white"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

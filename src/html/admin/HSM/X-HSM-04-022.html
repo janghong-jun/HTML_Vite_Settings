@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "6", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>팝업관리</h2>
+          <div class="sub-title">
+            <p class="msg">*표시는 필수 입력 항목입니다.</p>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">제목</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp01"
+                        class="inp-text"
+                        placeholder="제목을 입력해주세요(최대 100자)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">이미지</th>
+                  <td>
+                    <div class="file-wrap">
+                      <div class="input-item">
+                        <input
+                          type="text"
+                          class="inp-text"
+                          readonly
+                          aria-label="첨부 파일"
+                        />
+                        <span class="btn base square">
+                          <input type="file" aria-label="첨부파일 선택" />
+                          <span>찾아보기</span>
+                        </span>
+                      </div>
+                      <div class="file-list mgt8">
+                        <span class="file-info"
+                          >권장 사이즈: jpg, png(최대 10MB)</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inpAlt">이미지 대체 텍스트</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="text" id="inpAlt" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp03">링크 설정</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp03"
+                        class="inp-text"
+                        placeholder="https://"
+                      />
+                    </div>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox01" />
+                        <label for="checkbox01" class="lb-checkbox"
+                          >새창으로 열기</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    게시기간
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    노출상태
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio">노출</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio">비노출</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">7일간 보이지 않기</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_02_01" name="rdoBtn02" />
+                        <label for="rdo_02_01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_02_02" name="rdoBtn02" />
+                        <label for="rdo_02_02" class="lb-radio">미사용</label>
+                      </span>
+                      <div class="note mgt8">
+                        사용 시 사용자에게 '7일간 보이지 않기' 체크박스 제공
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">하단 버튼</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_03_01" name="rdoBtn03" />
+                        <label for="rdo_03_01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_03_02" name="rdoBtn03" />
+                        <label for="rdo_03_02" class="lb-radio">미사용</label>
+                      </span>
+                    </div>
+                    <div class="mgt8">
+                      <div class="frm-area">
+                        <input
+                          type="text"
+                          class="inp-text"
+                          placeholder="버튼명 텍스트 입력"
+                          aria-label="버튼명 입력"
+                        />
+                      </div>
+                      <div class="frm-area mgt8">
+                        <input
+                          type="text"
+                          class="inp-text"
+                          placeholder="https://"
+                          aria-label="링크 입력"
+                        />
+                      </div>
+                      <div class="frm-area mgt8">
+                        <span class="lb-item">
+                          <input type="checkbox" id="checkbox02" />
+                          <label for="checkbox02" class="lb-checkbox"
+                            >새창으로 열기</label
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

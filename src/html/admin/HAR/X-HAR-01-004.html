@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "5", sid: "2" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>카테고리 관리</h2>
+
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row"><label for="select01">교원 구분</label></th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01">
+                        <option>선택</option>
+                        <option>교사</option>
+                        <option>수석교사</option>
+                        <option>교감</option>
+                        <option>교장</option>
+                        <option>교육전문 직원</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sub-title">
+            <h3>역량군</h3>
+          </div>
+          <div class="tbl-base type2">
+            <table>
+              <colgroup>
+                <col style="width: 10rem" />
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 20rem" />
+                <col style="width: 9rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">역량군</th>
+                  <th scope="col">하위 카테고리</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">수정</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>역량군 명칭 1</td>
+                  <td>대분류1, 대분류2, 대분류3, 대분류4</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_01_01"
+                          name="rdoBtn01_01"
+                        />
+                        <label for="rdoBtn01_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_01_02"
+                          name="rdoBtn01_01"
+                        />
+                        <label for="rdoBtn01_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>역량군 명칭 2</td>
+                  <td>대분류5, 대분류6, 대분류7, 대분류8</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_02_01"
+                          name="rdoBtn01_02"
+                        />
+                        <label for="rdoBtn01_02_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_02_02"
+                          name="rdoBtn01_02"
+                        />
+                        <label for="rdoBtn01_02_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>역량군 명칭 3</td>
+                  <td>대분류9, 대분류10, 대분류11, 대분류12</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_03_01"
+                          name="rdoBtn01_03"
+                        />
+                        <label for="rdoBtn01_03_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_03_02"
+                          name="rdoBtn01_03"
+                        />
+                        <label for="rdoBtn01_03_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>역량군 명칭 4</td>
+                  <td>대분류13, 대분류14, 대분류15, 대분류16</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_04_01"
+                          name="rdoBtn01_04"
+                        />
+                        <label for="rdoBtn01_04_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_04_02"
+                          name="rdoBtn01_04"
+                        />
+                        <label for="rdoBtn01_04_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>역량군 명칭 5</td>
+                  <td>대분류17, 대분류18, 대분류19, 대분류20</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_05_01"
+                          name="rdoBtn01_05"
+                        />
+                        <label for="rdoBtn01_05_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_05_02"
+                          name="rdoBtn01_05"
+                        />
+                        <label for="rdoBtn01_05_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button
+                type="button"
+                class="btn base primary btn-modal"
+                data-id="X-HAR-01-009"
+                data-src="X-HAR-01-009.html"
+              >
+                <span>역량군 추가</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="sub-title">
+            <h3>역량군 명칭 1</h3>
+          </div>
+          <div class="tbl-base type2">
+            <table>
+              <colgroup>
+                <col style="width: 10rem" />
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 20rem" />
+                <col style="width: 9rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">대분류 명칭</th>
+                  <th scope="col">하위 카테고리</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">수정</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>대분류 1</td>
+                  <td>중분류1, 중분류2, 중분류3, 중분류4</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_01_01"
+                          name="rdoBtn02_01"
+                        />
+                        <label for="rdoBtn02_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_01_02"
+                          name="rdoBtn02_01"
+                        />
+                        <label for="rdoBtn02_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>대분류 2</td>
+                  <td>중분류5, 중분류6, 중분류7, 중분류8</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_02_01"
+                          name="rdoBtn02_02"
+                        />
+                        <label for="rdoBtn02_02_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_02_02"
+                          name="rdoBtn02_02"
+                        />
+                        <label for="rdoBtn02_02_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>대분류 3</td>
+                  <td>중분류9, 중분류10, 중분류11, 중분류12</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_03_01"
+                          name="rdoBtn02_03"
+                        />
+                        <label for="rdoBtn02_03_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_03_02"
+                          name="rdoBtn02_03"
+                        />
+                        <label for="rdoBtn02_03_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>대분류 4</td>
+                  <td>중분류13, 중분류14, 중분류15, 중분류16</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_04_01"
+                          name="rdoBtn02_04"
+                        />
+                        <label for="rdoBtn02_04_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_04_02"
+                          name="rdoBtn02_04"
+                        />
+                        <label for="rdoBtn02_04_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>대분류 5</td>
+                  <td>중분류17, 중분류18, 중분류19, 중분류20</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_05_01"
+                          name="rdoBtn02_05"
+                        />
+                        <label for="rdoBtn02_05_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_05_02"
+                          name="rdoBtn02_05"
+                        />
+                        <label for="rdoBtn02_05_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square apply-btn btn-modal"
+                        data-id="X-HAR-01-009_01"
+                        data-src="X-HAR-01-009_01.html"
+                      >
+                        <span>수정</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button
+                type="button"
+                class="btn base primary btn-modal"
+                data-id="X-HAR-01-009"
+                data-src="X-HAR-01-009.html"
+              >
+                <span>대분류 추가</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

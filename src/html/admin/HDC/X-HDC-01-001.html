@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "8", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>유튜브채널 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: 26rem" />
+                <col style="width: 26rem" />
+                <col style="width: 26rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td colspan="4">
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">상태</th>
+                  <td class="pr0">
+                    <select>
+                      <option>전체</option>
+                    </select>
+                  </td>
+                  <td class="pr0">
+                    <select>
+                      <option>학교급</option>
+                    </select>
+                  </td>
+                  <td class="pr0">
+                    <select>
+                      <option>유형</option>
+                    </select>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="5">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="sub-title">
+            <div class="msg flex-box center">
+              <label for="select01">보기</label>
+              <select id="select01">
+                <option>전체</option>
+                <option>사용</option>
+                <option>미사용</option>
+              </select>
+            </div>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col style="width: 8rem" />
+                <col style="width: 8rem" />
+                <col />
+                <col />
+                <col style="width: 12rem" />
+                <col style="width: 10rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">학교급</th>
+                  <th scope="col">유형</th>
+                  <th scope="col">채녈명</th>
+                  <th scope="col">핵심검색어</th>
+                  <th scope="col">등록일</th>
+                  <th scope="col">사용여부</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>100</td>
+                  <td>초등</td>
+                  <td>개인</td>
+                  <td>공인젠탱글교사 해피탱글</td>
+                  <td>경기, 교사, 마이크로러닝</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>99</td>
+                  <td>중등</td>
+                  <td>공공기관</td>
+                  <td>혬쌤의 보건실 Hyemssam</td>
+                  <td>체육교사, 체육수업, 학교체육</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>미사용</td>
+                </tr>
+                <tr>
+                  <td>98</td>
+                  <td>고등</td>
+                  <td>사기업</td>
+                  <td>꿀잼교육연구소</td>
+                  <td>초등학교 아이들을 위한 영상</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td>통합</td>
+                  <td>기타</td>
+                  <td>세금내는아이들</td>
+                  <td>미래교육, 플립러닝, 디지털</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>96</td>
+                  <td>특수</td>
+                  <td>개인</td>
+                  <td>공인젠탱글교사 해피탱글</td>
+                  <td>에듀테크, 미래교육, 디지털</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>95</td>
+                  <td>초등</td>
+                  <td>공공기관</td>
+                  <td>혬쌤의 보건실 Hyemssam</td>
+                  <td>경기, 교사, 마이크로러닝</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>94</td>
+                  <td>중등</td>
+                  <td>사기업</td>
+                  <td>꿀잼교육연구소</td>
+                  <td>체육교사, 체육수업, 학교체육</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>미사용</td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td>고등</td>
+                  <td>기타</td>
+                  <td>세금내는아이들</td>
+                  <td>초등학교 아이들을 위한 영상</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>92</td>
+                  <td>통합</td>
+                  <td>개인</td>
+                  <td>공인젠탱글교사 해피탱글</td>
+                  <td>미래교육, 플립러닝, 디지털</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td>91</td>
+                  <td>특수</td>
+                  <td>공공기관</td>
+                  <td>혬쌤의 보건실 Hyemssam</td>
+                  <td>에듀테크, 미래교육, 디지털</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>사용</td>
+                </tr>
+                <tr>
+                  <td colspan="7" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

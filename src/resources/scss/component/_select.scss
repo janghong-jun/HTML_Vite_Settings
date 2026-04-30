@@ -1,0 +1,294 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 셀렉트 */
+//사이즈 정의
+@mixin form-select-size-variable() {
+  $form-select-size: (
+    small: (
+      size-height: var(--size-height-6),
+      icon-size: var(--icon--size-small),
+      radius: var(--radius-medium3),
+      padding-right: calc(
+          var(--form-select--padding-default) + var(--gap-3) +
+            var(--form-select--icon-size-small)
+        ),
+      pc-font-size: var(--pc-font-size-label-small),
+      mobile-font-size: var(--mobile-font-size-label-small),
+    ),
+    medium: (
+      size-height: var(--size-height-7),
+      icon-size: var(--icon--size-medium),
+      padding-right: calc(
+          var(--form-select--padding-default) + var(--gap-3) +
+            var(--form-select--icon-size-medium)
+        ),
+      radius: var(--radius-medium2),
+      pc-font-size: var(--pc-font-size-label-medium),
+      mobile-font-size: var(--mobile-font-size-label-medium),
+    ),
+    large: (
+      size-height: var(--size-height-8),
+      icon-size: var(--icon--size-large),
+      padding-right: calc(
+          var(--form-select--padding-default) + var(--gap-3) +
+            var(--form-select--icon-size-large)
+        ),
+      radius: var(--radius-medium1),
+      pc-font-size: var(--pc-font-size-label-large),
+      mobile-font-size: var(--mobile-font-size-label-large),
+    ),
+  ) !default;
+  --form-select--padding-default: var(--padding-6);
+
+  @each $size, $types in $form-select-size {
+    @each $type, $value in $types {
+      //css variable 생성
+      --form-select--#{$type}-#{$size}: #{$value};
+    }
+  }
+
+  & {
+    //default size large
+    @include form-select-size(large);
+
+    @each $size, $types in $form-select-size {
+      &.#{$size} {
+        @include form-select-size(#{$size});
+      }
+    }
+  }
+}
+
+//컬러 정의
+@mixin form-select-color-variable($mode: light) {
+  --form-select--color-background: var(--#{$mode}-color-input-surface);
+  --form-select--color-background-readonly: var(
+    --#{$mode}-color-input-surface-disabled
+  );
+  --form-select--color-background-disabled: var(
+    --#{$mode}-color-input-surface-disabled
+  );
+  --form-select--color-background-error: var(--#{$mode}-color-input-surface);
+  --form-select--icon-color-background: var(--#{$mode}-color-icon-gray);
+  --form-select--icon-color-background-readonly: var(
+    --#{$mode}-color-icon-disabled-on
+  );
+  --form-select--icon-color-background-disabled: var(
+    --#{$mode}-color-icon-disabled-on
+  );
+  --form-select--color-border: var(--#{$mode}-color-input-border);
+  --form-select--color-border-active: var(--#{$mode}-color-input-border-active);
+  --form-select--color-border-readonly: var(
+    --#{$mode}-color-input-border-disabled
+  );
+  --form-select--color-border-disabled: var(
+    --#{$mode}-color-input-border-disabled
+  );
+  --form-select--color-border-error: var(--#{$mode}-color-input-border-error);
+  --form-select--color-text: var(--#{$mode}-color-text-disabled);
+  --form-select--color-text-active: var(--#{$mode}-color-text-basic);
+  --form-select--color-text-completed: var(--#{$mode}-color-text-subtle);
+  --form-select--color-text-disabled: var(--#{$mode}-color-text-disabled-on);
+  --form-select--color-text-error: var(--#{$mode}-color-text-subtle);
+}
+
+@mixin form-select-size($unit) {
+  height: var(--form-select--size-height-#{$unit});
+  padding: 0 var(--form-select--padding-right-#{$unit}) 0
+    var(--form-select--padding-default);
+  background-position: center right var(--form-select--padding-default);
+  background-size: var(--form-select--icon-size-#{$unit}) !important;
+  border-radius: var(--form-select--radius-#{$unit});
+  font-size: var(--form-select--pc-font-size-#{$unit});
+  @include size-medium {
+    font-size: var(--form-select--mobile-font-size-#{$unit});
+  }
+}
+//모드 설정
+$mode-setting: light;
+
+.krds-form-select {
+  @include form-select-color-variable(#{$mode-setting});
+  @include form-select-size-variable();
+
+  & {
+    position: relative;
+    width: 100%;
+    @include icon-set(ico_angle, $effect: pure);
+    background-color: var(--form-select--color-background) !important;
+    @include border-size-mode(#{$mode-setting});
+    border-style: solid;
+    border-color: var(--form-select--color-border);
+    font-family: inherit;
+    color: var(--form-select--color-text);
+    transition: var(--transition-base);
+    @include ellipsis(1);
+  }
+  &:focus {
+    border-color: var(--form-select--color-border-active);
+    border-width: 0.2rem;
+    outline: none;
+    box-shadow: none;
+    color: var(--form-select--color-text-active);
+  }
+  &.completed {
+    color: var(--form-select--color-text-completed);
+  }
+  &.is-error {
+    border-color: var(--light-color-text-point);
+    border-width: 0.2rem;
+  }
+  &[disabled] {
+    @include icon-set(ico_angle_disabled, $effect: pure);
+    background-color: var(--form-select--color-background-disabled) !important;
+    border-color: var(--form-select--color-border-disabled);
+    color: var(--form-select--color-text-disabled);
+  }
+}
+
+.is-error {
+  .krds-form-select {
+    border-color: var(--light-color-text-point);
+    border-width: 0.2rem;
+  }
+}
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-form-select {
+    @include form-select-color-variable(#{$mode-setting});
+
+    @include border-size-mode(#{$mode-setting});
+    @include icon-set(ico_angle_inverse, $effect: pure);
+    background-color: var(--form-select--color-background) !important;
+    &[disabled] {
+      @include icon-set(ico_angle_disabled_inverse, $effect: pure);
+      background-color: var(
+        --form-select--color-background-disabled
+      ) !important;
+    }
+  }
+}
+
+/* sorting select */
+//size variable
+$form-select-sorting-size: (
+  small: (
+    icon-size: var(--icon--size-small),
+    padding-left: var(--padding-1),
+    padding-right: calc(
+        var(--form-select-sorting--padding-left) + var(--gap-1) +
+          var(--form-select-sorting--icon-size-small)
+      ),
+    pc-font-size: var(--pc-font-size-label-small),
+    mobile-font-size: var(--mobile-font-size-label-small),
+  ),
+  medium: (
+    icon-size: var(--icon--size-medium),
+    padding-left: var(--padding-2),
+    padding-right: calc(
+        var(--form-select-sorting--padding-left) + var(--gap-1) +
+          var(--form-select-sorting--icon-size-medium)
+      ),
+    pc-font-size: var(--pc-font-size-label-medium),
+    mobile-font-size: var(--mobile-font-size-label-medium),
+  ),
+  large: (
+    icon-size: var(--icon--size-large),
+    padding-left: var(--padding-2),
+    padding-right: calc(
+        var(--form-select-sorting--padding-left) + var(--gap-1) +
+          var(--form-select-sorting--icon-size-large)
+      ),
+    pc-font-size: var(--pc-font-size-heading-small),
+    mobile-font-size: var(--mobile-font-size-heading-small),
+  ),
+) !default;
+@mixin form-select-sorting-color-variable($mode: light) {
+  --form-select-sorting--color-background: var(
+    --#{$mode}-color-action-secondary
+  );
+  --form-select-sorting--color-background-hover: var(
+    --#{$mode}-color-action-secondary-hover
+  );
+  --form-select-sorting--color-background-pressed: var(
+    --#{$mode}-color-action-secondary-pressed
+  );
+  --form-select-sorting--color-text: var(--#{$mode}-color-text-basic);
+}
+@mixin form-select-sorting-size($unit) {
+  padding: 0 var(--form-select-sorting--padding-right-#{$unit}) 0
+    var(--form-select-sorting--padding-left);
+  background-position: center right var(--form-select-sorting--padding-left);
+  background-size: var(--form-select-sorting--icon-size-#{$unit}) !important;
+  font-size: var(--form-select-sorting--pc-font-size-#{$unit});
+  @if ($unit == 'large') {
+    font-weight: var(--font-weight-bold);
+  }
+  @include size-medium {
+    font-size: var(--form-select-sorting--mobile-font-size-#{$unit});
+  }
+}
+.krds-form-select-sort {
+  @include form-select-sorting-color-variable($mode: #{$mode-setting});
+
+  --form-select-sorting--padding-left: var(--padding-2);
+  --form-select-sorting--radius: var(--radius-small2);
+  @each $size, $types in $form-select-sorting-size {
+    @each $type, $value in $types {
+      //css variable 생성
+      --form-select-sorting--#{$type}-#{$size}: #{$value};
+    }
+  }
+
+  position: relative;
+  @include icon-set(ico_angle, $effect: pure);
+  background-color: var(--form-select-sorting--color-background) !important;
+  border: none;
+  border-radius: var(--form-select-sorting--radius);
+  font-family: inherit;
+  color: var(--form-select-sorting--color-text);
+  transition: var(--transition-base);
+  & {
+    @include form-select-sorting-size(medium);
+
+    @each $size, $types in $form-select-sorting-size {
+      &.#{$size} {
+        @include form-select-sorting-size(#{$size});
+      }
+    }
+  }
+  &:hover {
+    background-color: var(
+      --form-select-sorting--color-background-hover
+    ) !important;
+  }
+  &:focus {
+    background-color: var(
+      --form-select-sorting--color-background-pressed
+    ) !important;
+  }
+}
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-form-select-sort {
+    @include form-select-sorting-color-variable($mode: #{$mode-setting});
+    @include icon-set(ico_angle_inverse, $effect: pure);
+    background-color: var(--form-select-sorting--color-background) !important;
+    &:hover {
+      background-color: var(
+        --form-select-sorting--color-background-hover
+      ) !important;
+    }
+    &:focus {
+      background-color: var(
+        --form-select-sorting--color-background-pressed
+      ) !important;
+    }
+  }
+}

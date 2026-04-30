@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "10" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>금칙어 관리</h2>
+          <div class="sub-title">
+            <p class="msg">* 표시는 필수 입력 항목입니다.</p>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="select01">금칙어 유형</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01">
+                        <option>유형선택</option>
+                        <option>욕설</option>
+                        <option>비속어</option>
+                        <option>금지단어</option>
+                        <option>정치중립위반</option>
+                        <option>품위유지 위반</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    적용범위
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio"
+                          >전체 게시글(댓글 포함)</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio"
+                          >학습공동체 게시용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    금칙어 처리
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_02_01" name="rdoBtn02" />
+                        <label for="rdo_02_01" class="lb-radio"
+                          >등록 불가</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_02_02" name="rdoBtn02" />
+                        <label for="rdo_02_02" class="lb-radio"
+                          >삭제(표시 안함)</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_02_03" name="rdoBtn02" />
+                        <label for="rdo_02_03" class="lb-radio"
+                          >마스킹 표시(*******)</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">대표금칙어</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="text" id="inp01" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">관련금칙어</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <textarea
+                        type="text"
+                        id="inp02"
+                        class="inp-textrea"
+                        style="height: 10rem"
+                      ></textarea>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    적용여부
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_03_01" name="rdoBtn03" />
+                        <label for="rdo_03_01" class="lb-radio">적용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_03_02" name="rdoBtn03" />
+                        <label for="rdo_03_02" class="lb-radio">비적용</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

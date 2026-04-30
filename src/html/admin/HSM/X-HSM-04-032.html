@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "6", sid: "5" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>사용자 메뉴 관리</h2>
+          <div class="menu-wrap">
+            <div class="menu-tree">
+              <div class="sub-title">
+                <h3>전체 메뉴 목록</h3>
+              </div>
+              <ul>
+                <li>
+                  <button type="button" class="depth01 active">Main</button>
+                </li>
+                <li>
+                  <button type="button" class="depth01">Depth 1</button>
+                  <ul>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                    </li>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                      <ul>
+                        <li>
+                          <button type="button" class="depth03">Depth 3</button>
+                        </li>
+                        <li>
+                          <button type="button" class="depth03">Depth 3</button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div>
+                    <span>
+                      <button type="button" class="depth01">Depth 1</button>
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <button type="button" class="depth01">Depth 1</button>
+                  <ul>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                    </li>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <button type="button" class="depth01">Depth 1</button>
+                  <ul>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                    </li>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <button type="button" class="depth01">Depth 1</button>
+                  <ul>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                    </li>
+                    <li>
+                      <button type="button" class="depth02">Depth 2</button>
+                      <ul>
+                        <li>
+                          <button type="button" class="depth03">Depth 3</button>
+                        </li>
+                        <li>
+                          <button type="button" class="depth03">Depth 3</button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="menu-management">
+              <div class="sub-title">
+                <h3>메뉴 정보</h3>
+              </div>
+
+              <div class="tbl-base mgt10 align-left">
+                <table>
+                  <colgroup>
+                    <col style="width: 15rem" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td colspan="2">메뉴를 선택해주세요</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="inp01">메뉴명</label></th>
+                      <td>
+                        <div class="flex-wrap">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            id="inp01"
+                            style="flex: 1"
+                            placeholder="메뉴명을 입력해주세요"
+                          />
+                          <div class="tbl-btns type-small">
+                            <button
+                              type="button"
+                              class="btn base square apply-btn"
+                            >
+                              <span>중복확인</span>
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="inp02">메뉴경로</label></th>
+                      <td>
+                        <div class="flex-wrap">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            id="inp02"
+                            style="flex: 1"
+                            placeholder="메뉴 경로를 입력해주세요"
+                          />
+                          <div class="tbl-btns type-small">
+                            <button
+                              type="button"
+                              class="btn base square apply-btn"
+                            >
+                              <span>중복확인</span>
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="inp03">메뉴설명</label></th>
+                      <td>
+                        <div class="flex-wrap">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            id="inp03"
+                            style="flex: 1"
+                            placeholder="메뉴에 대한 설명을 입력해주세요"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><label for="inp04">우선순위</label></th>
+                      <td>
+                        <div class="frm-area left flex">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            id="inp04"
+                            style="flex: 1"
+                            placeholder="숫자로 입력"
+                          />
+                          <span class="unit">(1~99)</span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">적용여부</th>
+                      <td>
+                        <div class="frm-area">
+                          <span class="lb-item">
+                            <input
+                              type="radio"
+                              id="rdoBtn03_01"
+                              name="rdoBtn03"
+                            />
+                            <label for="rdoBtn03_01" class="lb-radio"
+                              >적용</label
+                            >
+                          </span>
+                          <span class="lb-item">
+                            <input
+                              type="radio"
+                              id="rdoBtn03_02"
+                              name="rdoBtn03"
+                            />
+                            <label for="rdoBtn03_02" class="lb-radio"
+                              >미적용</label
+                            >
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tbl-btns mgt16">
+                <div>
+                  <button type="button" class="btn base primary">
+                    <span>신규</span>
+                  </button>
+                  <button type="button" class="btn base secondary">
+                    <span>삭제</span>
+                  </button>
+                  <button type="button" class="btn base primary fill">
+                    <span>저장</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

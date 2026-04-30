@@ -1,0 +1,488 @@
+@use 'mixins/icons' as *;
+@use 'mixins/utils' as *;
+@use 'path' as *;
+
+.svg-icon {
+  &.ico-angle {
+    //꺽쇠모양
+    @include icon-set(ico_angle);
+    //disabled (for selectbox)
+    &.disabled {
+      @include icon-set(ico_angle_disabled, $effect: pure);
+    }
+    //default: down
+    &.up {
+      transform: rotate(180deg);
+    }
+    &.left {
+      transform: rotate(90deg);
+    }
+    &.right {
+      transform: rotate(-90deg);
+    }
+  }
+  &.ico-sch {
+    @include icon-set(ico_sch);
+  }
+
+  &.ico-upload {
+    @include icon-set(ico_upload);
+  }
+  &.ico-call {
+    @include icon-set(ico_call);
+  }
+  &.ico-call2 {
+    @include icon-set(ico_call2, pure);
+  }
+  &.ico-faq {
+    @include icon-set(ico_faq);
+  }
+  &.ico-like {
+    @include icon-set(ico_scrap);
+    &.active {
+      @include icon-set(ico_scrap_on, pure);
+    }
+  }
+  &.ico-share {
+    @include icon-set(ico_share);
+  }
+  &.ico-more {
+    @include icon-set(ico_more);
+  }
+  &.ico-sch-plus {
+    @include icon-set(ico_sch_plus);
+  }
+
+  &.ico-go {
+    @include icon-set(ico_go);
+  }
+  &.ico-down {
+    @include icon-set(ico_download);
+  }
+  &.ico-filter {
+    @include icon-set(ico_filter);
+  }
+  &.ico-school {
+    @include icon-set(ico_school, pure);
+  }
+  &.ico-subject {
+    @include icon-set(ico_subject, pure);
+  }
+
+  &.ico-reset {
+    @include icon-set(ico_reset);
+  }
+  &.ico-log {
+    @include icon-set(ico_login);
+  }
+  &.ico-func {
+    @include icon-set(ico_expand);
+    //default:right
+    &.up {
+      transform: rotate(-90deg);
+    }
+
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-logout {
+    @include icon-set(ico_logout);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-email {
+    @include icon-set(ico_email);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-email2 {
+    @include icon-set(ico_email2, pure);
+  }
+  &.ico-print {
+    @include icon-set(ico_print);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-scrap {
+    @include icon-set(ico_scrap);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-del {
+    @include icon-set(ico_delete);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-popup-close {
+    @include icon-set(ico_close);
+  }
+  &.ico-delete-fill {
+    @include icon-set(ico_delete_fill, pure);
+  }
+  &.ico-delete-fill2 {
+    @include icon-set(ico_delete_fill2, pure);
+  }
+  &.ico-plus {
+    @include icon-set(ico_plus);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-plus2 {
+    @include icon-set(ico_plus2, pure);
+  }
+  &.ico-minus {
+    @include icon-set(ico_minus, pure);
+  }
+  &.ico-setting {
+    @include icon-set(ico_setting);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+  &.ico-link {
+    @include icon-set(ico_go);
+    & {
+      gap: var(--gap-3);
+    }
+  }
+
+  &.ico-refresh {
+    @include icon-set(ico_reset);
+  }
+
+  &.ico-toggle {
+    @include icon-set(ico_angle);
+  }
+  &.ico-pw-visible {
+    @include icon-set(ico_pw_visible_off);
+  }
+  &.ico-pw-visible-on {
+    @include icon-set(ico_pw_visible_on);
+  }
+
+  &.ico-help {
+    @include icon-set(ico_help, pure);
+  }
+
+  &.ico-page-next {
+    @include icon-set(ico_angle);
+    transform: rotate(-90deg);
+  }
+
+  &.ico-bread-home {
+    @include icon-set(ico_bread_home);
+  }
+
+  &.ico-cal-move {
+    @include icon-set(ico_arrow_dropdown);
+  }
+
+  &.ico-calendar {
+    @include icon-set(ico_calendar);
+  }
+
+  &.ico-success-fill {
+    @include icon-set(ico_success_fill, pure);
+  }
+  &.ico-information-fill {
+    @include icon-set(ico_information_fill, pure);
+  }
+  &.ico-error-fill {
+    @include icon-set(ico_error_fill, pure);
+  }
+  &.ico-complete-fill {
+    @include icon-set(ico_complete_fill, pure);
+  }
+
+  &.ico-modal-close {
+    @include icon-set(ico_close);
+  }
+
+  &.ico-fold {
+    @include icon-set(ico_foldable);
+
+    &.right {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &.ico-ellipsis {
+    @include icon-set(ico_ellipsis);
+  }
+
+  &.ico-swiper-play {
+    @include icon-set(ico_swiper_play);
+  }
+
+  &.ico-swiper-stop {
+    @include icon-set(ico_swiper_stop);
+  }
+
+  &.ico-tooltip {
+    @include icon-set(ico_tooltip);
+  }
+
+  &.ico-urgent-danger {
+    @include icon-set(ico_urgent_badge_danger);
+  }
+
+  &.ico-blog {
+    @include icon-set(ico_blog);
+  }
+
+  &.ico-thread {
+    @include icon-set(ico_thread, pure);
+  }
+
+  &.ico-kakao {
+    @include icon-set(ico_kakao, pure);
+  }
+
+  &.ico-facebook {
+    @include icon-set(ico_facebook);
+  }
+  &.ico-facebook2 {
+    @include icon-set(ico_facebook2, pure);
+  }
+
+  &.ico-instagram {
+    @include icon-set(ico_instagram);
+  }
+  &.ico-instagram2 {
+    @include icon-set(ico_instagram2, pure);
+  }
+
+  &.ico-sns-x {
+    @include icon-set(ico_sns_x);
+  }
+  &.ico-sns-x2 {
+    @include icon-set(ico_sns_x2, pure);
+  }
+
+  &.ico-youtube {
+    @include icon-set(ico_youtube);
+  }
+
+  &.ico-all {
+    @include icon-set(ico_all);
+  }
+
+  &.ico-join {
+    @include icon-set(ico_join);
+  }
+  &.ico-my {
+    @include icon-set(ico_my);
+  }
+
+  &.ico-login-go {
+    @include icon-set(ico_login_certify_go);
+  }
+  &.ico-move {
+    @include icon-set(ico_move, pure);
+  }
+
+  &.ico-global {
+    @include icon-set(ico_global);
+  }
+
+  &.ico-view-mode {
+    @include icon-set(ico_view_mode);
+  }
+
+  &.ico-go-top {
+    @include icon-set(ico_go_top);
+  }
+
+  &.ico-login-type01 {
+    @include icon-set(ico_login_certify_type_01);
+  }
+
+  &.ico-login-type02 {
+    @include icon-set(ico_login_certify_type_02);
+  }
+
+  &.ico-login-type03 {
+    @include icon-set(ico_login_certify_type_03);
+  }
+
+  &.ico-login-type04 {
+    @include icon-set(ico_login_certify_type_04);
+  }
+
+  &.ico-login-type05 {
+    @include icon-set(ico_login_certify_type_05);
+  }
+
+  &.ico-login-type06 {
+    @include icon-set(ico_login_certify_type_06);
+  }
+
+  &.ico-flag {
+    @include icon-set(ico_flag, $effect: pure);
+  }
+
+  &.ico-file {
+    @include icon-set(ico_file);
+  }
+
+  &.ico-checkbox {
+    @include icon-set(ico_checkbox_checked);
+  }
+  &.ico-document {
+    @include icon-set(ico_document);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-edit {
+    @include icon-set(ico_edit);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-edit2 {
+    @include icon-set(ico_edit2);
+    background-color: var(--color-light-gray-50) !important;
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  &.ico-delete2 {
+    @include icon-set(ico_delete2);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-delete3 {
+    @include icon-set(ico_delete3, pure);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-positive {
+    @include icon-set(ico_positive);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-empathy {
+    @include icon-set(ico_empathy);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-pdf {
+    @include icon-set(ico_pdf, pure);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-img {
+    @include icon-set(ico_img);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-save {
+    @include icon-set(ico_save);
+    background-color: var(--color-light-gray-80);
+  }
+  &.ico-addlist {
+    @include icon-set(ico_addlist);
+  }
+  &.ico-expand-more {
+    @include icon-set(ico_expand_more, pure);
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  &.ico-play {
+    @include icon-set(ico_play, pure);
+    width: 8.1rem !important;
+    height: 8.1rem !important;
+  }
+  &.ico-star-on,
+  &.ico-start-on {
+    @include icon-set(ico_star_on, pure);
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+  &.ico-star-off,
+  &.ico-start-off {
+    @include icon-set(ico_star_off, pure);
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+  &.ico-emergency {
+    @include icon-set(ico_emergency);
+    background-color: var(--color-light-gray-50) !important;
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+  &.ico-system-warning {
+    @include icon-set(ico_system_warning);
+    background-color: var(--color-light-gray-50) !important;
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+  &.ico-level01 {
+    @include icon-set(ico_level01, pure);
+  }
+  &.ico-level02 {
+    @include icon-set(ico_level02, pure);
+  }
+  &.ico-level03 {
+    @include icon-set(ico_level03, pure);
+  }
+
+  &.ico-customizing {
+    @include icon-set(ico_customizing, pure);
+  }
+  &.ico-empty {
+    @include icon-set(ico_empty, pure);
+  }
+  &.ico-cart {
+    @include icon-set(ico_cart, pure);
+  }
+  &.ico-cart-disabled {
+    @include icon-set(ico_cart_disabled, pure);
+  }
+  &.ico-heart {
+    @include icon-set(ico_scrap, pure);
+  }
+  &.ico-heart-on {
+    @include icon-set(ico_scrap_on, pure);
+  }
+  &.ico-on-play {
+    @include icon-set(ico_on_play, pure);
+  }
+  &.ico-round-check {
+    @include icon-set(ico_round_check, pure);
+  }
+  &.ico-thumbsup {
+    @include icon-set(ico_thumbsup, pure);
+  }
+  &.ico-face-sad {
+    @include icon-set(ico_face_sad, pure);
+  }
+  &.ico-face-smile {
+    @include icon-set(ico_face_smile, pure);
+  }
+  &.ico-history {
+    @include icon-set(ico_history, pure);
+  }
+  &.ico-user {
+    @include icon-set(ico_user, pure);
+  }
+  &.ico-point {
+    @include icon-set(ico_point, pure);
+  }
+  &.ico-send {
+    @include icon-set(ico_send, pure);
+  }
+  &.ico-certified {
+    @include icon-set(ico_certified);
+  }
+}
+.icon-wrap {
+  display: flex;
+  gap: var(--gap-2);
+  justify-content: center;
+}
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  .svg-icon {
+    &.ico-help {
+      background-image: url(#{$url}/img/component/icon/ico_help_fill.svg);
+    }
+  }
+}

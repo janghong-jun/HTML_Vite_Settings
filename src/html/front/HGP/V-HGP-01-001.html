@@ -1,0 +1,1304 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>내 프로필 | 마이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 4 + 1, depth2: 0 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 마이코칭 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">마이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">내 프로필</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">기본정보</a>
+              </li>
+              <li class="lnb-item">
+                <button type="button" class="lnb-btn lnb-toggle">
+                  나의이력정보
+                </button>
+                <div class="lnb-submenu">
+                  <ul>
+                    <li class="lnb-subitem">
+                      <a href="#" class="lnb-btn lnb-link">나의학습이력</a>
+                    </li>
+                    <li class="lnb-subitem">
+                      <a href="#" class="lnb-btn lnb-link">나의활동이력</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">보관함</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //마이코칭 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">마이코칭</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div
+              class="page-title-wrap"
+              style="align-items: center; flex-direction: row"
+            >
+              <h3 class="h-tit">내 프로필</h3>
+              <div
+                class="krds-btns-wrap"
+                style="width: auto; margin-left: auto"
+              >
+                <button
+                  type="button"
+                  class="krds-btn small tertiary open-modal"
+                  data-target="V-HGP-01-001_02"
+                >
+                  업로드
+                </button>
+                <button type="button" class="krds-btn small primary">
+                  보고서
+                </button>
+              </div>
+            </div>
+            <!-- 전문가 등재 후 active 추가 -->
+            <div class="my-profile">
+              <div class="item">
+                <h4 class="title">내 프로필</h4>
+                <div class="profile-box-wrap">
+                  <div class="profile-box">
+                    <div class="img">
+                      <img
+                        src="../../../resources/img/noData/img_profile2.png"
+                        alt="윤학습 프로필 사진"
+                      />
+                    </div>
+                    <div class="profile-name">
+                      <p class="name"><strong>윤학습</strong>선생님</p>
+                      <span class="level">Level: 1(씨앗)</span>
+                    </div>
+                    <dl class="profile-list">
+                      <div>
+                        <dt>학교</dt>
+                        <dd>수원고등학교</dd>
+                      </div>
+                      <div>
+                        <dt>과목(담당)</dt>
+                        <dd>고등 수학</dd>
+                      </div>
+                      <div>
+                        <dt>SNS</dt>
+                        <dd>
+                          <span>
+                            <i
+                              class="svg-icon ico-instagram2"
+                              aria-hidden="true"
+                            ></i>
+                            <span>coaching_kim</span>
+                          </span>
+                          <span>
+                            <i
+                              class="svg-icon ico-sns-x2"
+                              aria-hidden="true"
+                            ></i>
+                            <span>@coaching_kim</span>
+                          </span>
+                          <span>
+                            <i
+                              class="svg-icon ico-thread"
+                              aria-hidden="true"
+                            ></i>
+                            <span>coaching_kim</span>
+                          </span>
+                          <span>
+                            <i
+                              class="svg-icon ico-facebook2"
+                              aria-hidden="true"
+                            ></i>
+                            <span>coaching_kim</span>
+                          </span>
+                          <span>
+                            <i
+                              class="svg-icon ico-kakao"
+                              aria-hidden="true"
+                            ></i>
+                            <span>coaching_kim</span>
+                          </span>
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+
+                  <div class="krds-btns-wrap">
+                    <button type="button" class="krds-btn small neutral">
+                      전문가 그룹 등제 신청
+                    </button>
+                  </div>
+                </div>
+                <a href="#" class="krds-btn small text">
+                  자세히보기
+                  <i class="svg-icon ico-angle right" aria-hidden="true"></i>
+                </a>
+              </div>
+              <div class="item">
+                <h4 class="title">진행중인 학습 모듈</h4>
+                <div
+                  class="module-swiper-ongoing swiper"
+                  role="region"
+                  aria-roledescription="carousel"
+                  aria-label="진행중인 학습 배너"
+                  tabindex="0"
+                >
+                  <div class="swiper-wrapper card-list type-video">
+                    <div class="swiper-slide">
+                      <div class="card-box">
+                        <a href="#" class="card-thumbnail">
+                          <span class="learning-count"
+                            >총 <strong>6개</strong> 학습</span
+                          >
+                          <img
+                            src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                            alt="학습콘텐츠 썸네일 이미지"
+                          />
+                        </a>
+                        <div class="card-conts">
+                          <h5 class="card-tit">
+                            AI 도구로 수업 영상 만들기,
+                            브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                          </h5>
+                          <p class="card-ability">교수역량</p>
+                          <div class="card-bottom-cont">
+                            <div class="learning-progress">
+                              <span class="learning-progress-state">
+                                <i
+                                  class="svg-icon ico-on-play"
+                                  aria-hidden="true"
+                                ></i>
+                                <strong>학습중</strong>
+                              </span>
+                              <span class="learning-progress-text">
+                                <strong>3/6</strong>
+                                (50%)
+                              </span>
+                              <div class="learning-progress-bar">
+                                <span style="width: 50%"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card-box">
+                        <a href="#" class="card-thumbnail">
+                          <span class="learning-count"
+                            >총 <strong>6개</strong> 학습</span
+                          >
+                          <img
+                            src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                            alt="학습콘텐츠 썸네일 이미지"
+                          />
+                        </a>
+                        <div class="card-conts">
+                          <h5 class="card-tit">
+                            AI 도구로 수업 영상 만들기,
+                            브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                          </h5>
+                          <p class="card-ability">교수역량</p>
+                          <div class="card-bottom-cont">
+                            <div class="learning-progress">
+                              <span class="learning-progress-state">
+                                <i
+                                  class="svg-icon ico-on-play"
+                                  aria-hidden="true"
+                                ></i>
+                                <strong>학습중</strong>
+                              </span>
+                              <span class="learning-progress-text">
+                                <strong>3/6</strong>
+                                (50%)
+                              </span>
+                              <div class="learning-progress-bar">
+                                <span style="width: 50%"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card-box">
+                        <a href="#" class="card-thumbnail">
+                          <span class="learning-count"
+                            >총 <strong>6개</strong> 학습</span
+                          >
+                          <img
+                            src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                            alt="학습콘텐츠 썸네일 이미지"
+                          />
+                        </a>
+                        <div class="card-conts">
+                          <h5 class="card-tit">
+                            AI 도구로 수업 영상 만들기,
+                            브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                          </h5>
+                          <p class="card-ability">교수역량</p>
+                          <div class="card-bottom-cont">
+                            <div class="learning-progress">
+                              <span class="learning-progress-state">
+                                <i
+                                  class="svg-icon ico-on-play"
+                                  aria-hidden="true"
+                                ></i>
+                                <strong>학습중</strong>
+                              </span>
+                              <span class="learning-progress-text">
+                                <strong>3/6</strong>
+                                (50%)
+                              </span>
+                              <div class="learning-progress-bar">
+                                <span style="width: 50%"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="card-box">
+                        <a href="#" class="card-thumbnail">
+                          <span class="learning-count"
+                            >총 <strong>6개</strong> 학습</span
+                          >
+                          <img
+                            src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                            alt="학습콘텐츠 썸네일 이미지"
+                          />
+                        </a>
+                        <div class="card-conts">
+                          <h5 class="card-tit">
+                            AI 도구로 수업 영상 만들기,
+                            브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                          </h5>
+                          <p class="card-ability">교수역량</p>
+                          <div class="card-bottom-cont">
+                            <div class="learning-progress">
+                              <span class="learning-progress-state">
+                                <i
+                                  class="svg-icon ico-on-play"
+                                  aria-hidden="true"
+                                ></i>
+                                <strong>학습중</strong>
+                              </span>
+                              <span class="learning-progress-text">
+                                <strong>3/6</strong>
+                                (50%)
+                              </span>
+                              <div class="learning-progress-bar">
+                                <span style="width: 50%"></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="swiper-button-prev"
+                    aria-label="이전 슬라이드"
+                  >
+                    <span class="sr-only">이전</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="swiper-button-next"
+                    aria-label="다음 슬라이드"
+                  >
+                    <span class="sr-only">다음</span>
+                  </button>
+                  <div class="swiper-indicator text-center">
+                    <div
+                      class="swiper-pagination"
+                      role="group"
+                      aria-label="슬라이드 페이지"
+                    ></div>
+                  </div>
+                </div>
+                <div class="expected-point">
+                  <span>획득 예정 포인트</span>
+                  <strong>
+                    650
+                    <i class="svg-icon ico-point" aria-hidden="true"></i>
+                    <span class="sr-only">포인트</span>
+                  </strong>
+                </div>
+                <a href="#" class="krds-btn small text">
+                  바로가기
+                  <i class="svg-icon ico-angle right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <div class="my-profile">
+              <div class="item">
+                <h4 class="title">나의 역량 평가 진단결과</h4>
+                <div class="krds-chart">
+                  <div
+                    class="chart type01"
+                    role="img"
+                    aria-label="나의 역량 평가 진단결과 차트 영역"
+                    id="test"
+                  ></div>
+                </div>
+                <div class="krds-btns-wrap">
+                  <button type="button" class="krds-btn small neutral">
+                    진단결과 자세히 보기
+                  </button>
+                </div>
+              </div>
+              <div class="item item-wrap">
+                <div class="inner-item">
+                  <h4 class="title">내 관심분야</h4>
+                  <div class="krds-tag-wrap medium">
+                    <span class="krds-btn-tag">디지털교육</span>
+                    <span class="krds-btn-tag">진로/직업교육</span>
+                    <span class="krds-btn-tag">교육정책</span>
+                    <span class="krds-btn-tag">STEM</span>
+                    <span class="krds-btn-tag">특정대상교육</span>
+                    <span class="krds-btn-tag">교수학습방법</span>
+                  </div>
+                  <a href="#" class="krds-btn small text">
+                    자세히보기
+                    <i class="svg-icon ico-angle right" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="inner-wrap row">
+                  <div>
+                    <h4 class="title">포인트 현황</h4>
+                    <div class="point-wrap">
+                      <dl class="point-list">
+                        <div>
+                          <dt>총 코칭</dt>
+                          <dd>
+                            4,320
+                            <i
+                              class="svg-icon ico-point"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">포인트</span>
+                          </dd>
+                        </div>
+                        <div>
+                          <dt>총 누적 포인트</dt>
+                          <dd>
+                            9,370
+                            <i
+                              class="svg-icon ico-point"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">포인트</span>
+                          </dd>
+                        </div>
+                      </dl>
+                      <div class="point-level" aria-labelledby="levelTitle">
+                        <strong id="levelTitle" class="level-title"
+                          >Level 1 <span>씨앗</span></strong
+                        >
+                        <p class="level-title level-next" aria-hidden="true">
+                          Level 2 <span>새싹</span>
+                        </p>
+                        <div class="progress-wrap">
+                          <!-- aria-valuenow, aria-valuetext에 달성률, 레벨 관련 대체텍스트 추가 필요 -->
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="60"
+                            aria-valuetext="현재 Level 1 씨앗 단계, 60% 달성"
+                            aria-label="레벨 달성 진행률"
+                          >
+                            <span
+                              class="progress-fill"
+                              style="width: 60%"
+                            ></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="#" class="krds-btn small text">
+                      적립 기록 보기
+                      <i
+                        class="svg-icon ico-angle right"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="inner-item">
+                  <h4 class="title">나의 학습공동체</h4>
+                  <ul class="link-list">
+                    <li>
+                      <a href="#"
+                        >[협업공간] 자율과 책임으로 함께 만들어가 자율과
+                        책임으로 함께 만들어가
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >[연구지원] 선택형 교육과정〮고교학점제 연계 선택형
+                        교육과정〮고교학점제 연계</a
+                      >
+                    </li>
+                    <!-- <li class="nodata">참여 중인 학습공동체가 없습니다</li> -->
+                  </ul>
+                  <a href="#" class="krds-btn small text">
+                    자세히보기
+                    <i class="svg-icon ico-angle right" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="inner-wrap col">
+                  <div>
+                    <div class="title-wrap">
+                      <h4 class="title">초대받은 학습공동체</h4>
+                      <a href="#" class="krds-btn small text">
+                        자세히보기
+                        <i
+                          class="svg-icon ico-angle right"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+                    </div>
+                    <dl>
+                      <div>
+                        <dt>협업공간 초대</dt>
+                        <dd>2건</dd>
+                      </div>
+                      <div>
+                        <dt>연구지원 초대</dt>
+                        <dd>1건</dd>
+                      </div>
+                    </dl>
+                  </div>
+                  <div>
+                    <div class="title-wrap">
+                      <h4 class="title">내 신고 처리 현황</h4>
+                      <a href="#" class="krds-btn small text">
+                        신고 이력 보기
+                        <i
+                          class="svg-icon ico-angle right"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+                    </div>
+                    <dl>
+                      <div>
+                        <dt>검토 중</dt>
+                        <dd>1건</dd>
+                      </div>
+                      <div>
+                        <dt>처리 완료</dt>
+                        <dd>2건</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="section-title-wrap">
+              <h4 class="s-tit">나의 코칭 전문가</h4>
+            </div>
+            <ul class="card-list type-expert">
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/noData/img_video.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/noData/img_video.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/noData/img_video.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/sample/img_card_expert.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/sample/img_card_expert.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/sample/img_card_expert.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/noData/img_video.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/sample/img_card_expert.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/sample/img_card_expert.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="card-box">
+                  <a href="#" class="card-thumbnail">
+                    <img
+                      src="../../../resources/img/sample/img_card_expert.png"
+                      alt="코칭 전문가 썸네일 이미지"
+                    />
+                  </a>
+                  <div class="card-conts">
+                    <h5 class="card-tit name">
+                      <strong>박전문</strong>
+                      <span>(남)</span>
+                    </h5>
+                    <ul class="card-meta-list">
+                      <li>
+                        <strong>분야</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>자기개발, 문제해결</span>
+                      </li>
+                      <li>
+                        <strong>위치</strong>
+                        <span class="bar" aria-hidden="true"></span>
+                        <span>경기 영통, 화성 동탄</span>
+                      </li>
+                    </ul>
+                    <div class="card-bottom-cont">
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nodata">
+                <p>
+                  <strong>매칭된 코칭 전문가가 없습니다.</strong>
+                  <span
+                    >전문가 추천 메뉴에서 나에게 맞는 <br />코칭 전문가를
+                    찾아보세요.</span
+                  >
+                </p>
+                <button type="button" class="krds-btn etc">
+                  전문가 찾아보기
+                  <i class="svg-icon ico-angle right" aria-hidden="true"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+    <section
+      id="V-HGP-01-001_02"
+      class="krds-modal fade"
+      role="dialog"
+      aria-labelledby="tit_V-HGP-01-001_02"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- modal title -->
+          <div class="modal-header">
+            <h2 id="tit_V-HGP-01-001_02" class="modal-title">일괄등록</h2>
+          </div>
+          <!-- //modal title -->
+          <!-- modal contents -->
+          <div class="modal-conts">
+            <div class="conts-area">
+              <div class="krds-btns-wrap right">
+                <button
+                  type="button"
+                  class="krds-btn small neutral"
+                  style="min-width: 0"
+                >
+                  sample
+                </button>
+              </div>
+
+              <div class="krds-table-wrap row mob-col mob-scroll">
+                <table class="tbl">
+                  <caption>
+                    업로드에 대한 표로 파일찾기로 구성되어 있다.
+                  </caption>
+                  <colgroup>
+                    <col style="width: 12.8rem" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <label for="file-upload" class="krds-label">
+                          파일찾기
+                          <i class="required" aria-hidden="true"></i>
+                          <span class="sr-only">필수 항목</span>
+                        </label>
+                      </th>
+                      <td>
+                        <div class="file-box">
+                          <ul class="file-list">
+                            <li>
+                              <span class="file-name">
+                                <i class="svg-icon ico-pdf"></i>
+                                <span>실행나눔 사례1.pdf</span>
+                              </span>
+                              <button type="button" class="krds-btn icon">
+                                <i class="svg-icon ico-delete-fill2"></i>
+                                <span class="sr-only">삭제</span>
+                              </button>
+                            </li>
+                          </ul>
+                          <div class="file-box-btn-wrap">
+                            <input type="file" id="file-upload" hidden="" />
+                            <label
+                              for="file-upload"
+                              class="krds-btn tertiary medium"
+                              >찾아보기</label
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="krds-text medium">
+                Sample 파일을 다운로드 후 작성하여 업로드 해주시기 바랍니다.
+                <br />등록완료 안내 이전에 팝업을 닫지 말고 기다려주십시오.
+              </p>
+            </div>
+          </div>
+          <!-- //modal contents -->
+          <!-- modal btn -->
+          <div class="modal-btn btn-wrap">
+            <button type="button" class="krds-btn medium tertiary close-modal">
+              취소
+            </button>
+            <button type="button" class="krds-btn medium primary">등록</button>
+          </div>
+          <!-- //modal btn -->
+          <!-- close button -->
+          <button
+            type="button"
+            class="krds-btn medium icon btn-close close-modal"
+          >
+            <span class="sr-only">닫기</span>
+            <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+          </button>
+          <!-- //close button -->
+        </div>
+      </div>
+      <div class="modal-back"></div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ✅ slidesPerView 수만큼 aria-hidden 처리
+        function updateAria(swiper) {
+          const perView = Math.floor(swiper.params.slidesPerView) || 1;
+          const activeIndex = swiper.activeIndex;
+
+          swiper.slides.forEach((slide, index) => {
+            const isVisible =
+              index >= activeIndex && index < activeIndex + perView;
+
+            if (isVisible) {
+              slide.setAttribute("aria-hidden", "false");
+              // ✅ 내부 포커스 가능 요소 tabindex 복원
+              slide
+                .querySelectorAll(
+                  "a, button, input, select, textarea, [tabindex]",
+                )
+                .forEach((el) => {
+                  const origin = el.getAttribute("data-origin-tabindex");
+                  if (origin !== null) {
+                    el.setAttribute("tabindex", origin);
+                    el.removeAttribute("data-origin-tabindex");
+                  } else {
+                    el.removeAttribute("tabindex");
+                  }
+                });
+            } else {
+              slide.setAttribute("aria-hidden", "true");
+              // ✅ 내부 포커스 가능 요소 tabindex 차단
+              slide
+                .querySelectorAll(
+                  "a, button, input, select, textarea, [tabindex]",
+                )
+                .forEach((el) => {
+                  if (el.getAttribute("tabindex") === "-1") return;
+                  const current = el.getAttribute("tabindex");
+                  if (current !== null)
+                    el.setAttribute("data-origin-tabindex", current);
+                  el.setAttribute("tabindex", "-1");
+                });
+            }
+          });
+        }
+
+        const swiperwrapper = document.querySelector(".module-swiper-ongoing");
+
+        // ✅ null 체크
+        if (!swiperwrapper) return;
+
+        const swiper = new Swiper(swiperwrapper, {
+          slidesPerView: 1,
+          spaceBetween: 40,
+          a11y: { enabled: true },
+          breakpoints: {
+            769: {
+              slidesPerView: 2,
+            },
+          },
+          navigation: {
+            nextEl: swiperwrapper.querySelector(".swiper-button-next"),
+            prevEl: swiperwrapper.querySelector(".swiper-button-prev"),
+          },
+          pagination: {
+            el: swiperwrapper.querySelector(".swiper-pagination"),
+          },
+          on: {
+            init(swiper) {
+              updateAria(swiper);
+            },
+            slideChange(swiper) {
+              updateAria(swiper);
+            },
+            // ✅ breakpoint 변경 시에도 aria 재계산
+            breakpoint(swiper) {
+              updateAria(swiper);
+            },
+          },
+          observer: true,
+          observeParents: true,
+          observeSlideChildren: true,
+          updateOnWindowResize: true, // ✅ resize는 이걸로 충분, 별도 리스너 불필요
+        });
+
+        // ✅ 키보드 제어
+        let vbFocus = false;
+        swiperwrapper.addEventListener("focusin", () => {
+          vbFocus = true;
+        });
+        swiperwrapper.addEventListener("focusout", (e) => {
+          if (!swiperwrapper.contains(e.relatedTarget)) vbFocus = false;
+        });
+        swiperwrapper.addEventListener("keydown", (e) => {
+          if (!vbFocus) return;
+          if (e.key === "ArrowLeft") swiper.slidePrev();
+          if (e.key === "ArrowRight") swiper.slideNext();
+        });
+      });
+    </script>
+    <script>
+      function remToPx(rem) {
+        return (
+          rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+        );
+      }
+
+      let chart;
+      function addLineBreak(data) {
+        return data.map((v) => v.trim().split(/\s+/).join("\n"));
+      }
+      const labels = [
+        "교수 역량",
+        "자기개발 역량",
+        "공동체 역량",
+        "생활교육 역량",
+      ];
+      const processed = addLineBreak(labels);
+      function getOptions() {
+        return {
+          chart: {
+            borderWidth: 0,
+            backgroundColor: "transparent",
+            marginTop: remToPx(3),
+            marginRight: remToPx(3),
+            marginBottom: remToPx(3),
+            marginLeft: remToPx(3),
+          },
+
+          legend: {
+            font: {
+              family: "inherit",
+              size: remToPx(1.5),
+              color: "#1E2124",
+              weight: "normal",
+            },
+            y: remToPx(4),
+          },
+
+          polarGrid: {
+            type: "radial",
+            labels: processed,
+            lineColor: "#2563eb",
+            lineWidth: 0.8,
+            sectorLineColor: "#2563eb",
+            sectorLineWidth: 0.8,
+            outlineColor: "#2563eb",
+            backgroundColor: "transparent",
+            font: {
+              family: "inherit",
+              size: remToPx(1.5),
+              color: "#1E2124",
+              weight: "normal",
+            },
+            altType: "none",
+            showTickLabel: false,
+            scale: "linear",
+            max: 100,
+            min: 0,
+            tickInterval: 100 / 3,
+            clockwise: false,
+            //radius: remToPx(9.4),
+          },
+
+          common: {
+            tooltip: {
+              overflow: { visible: true },
+              format: "{value}",
+              font: {
+                family: "inherit",
+                size: remToPx(1),
+                color: "#1E2124",
+                weight: "normal",
+              },
+            },
+          },
+        };
+      }
+
+      const series = [
+        {
+          name: "나의 진단 결과",
+          type: "polar",
+          polarType: "line",
+          color: "#2563eb",
+          lineWidth: 0.8,
+          area: true,
+          symbol: { size: 5, type: "circle", color: "#2563eb" },
+          data: [68.1, 71.9, 66.5, 73.8],
+        },
+        {
+          name: "연구평가 기준",
+          type: "polar",
+          polarType: "line",
+          color: "#ffb114",
+          lineWidth: 0.8,
+          area: true,
+          symbol: { size: 5, type: "circle", color: "#ffb114" },
+          data: [72.1, 40.8, 71.6, 70.4],
+        },
+      ];
+
+      function render() {
+        const container = document.getElementById("test");
+
+        container.innerHTML = "";
+
+        chart = new crownix.Chart("test");
+        chart.build(series, getOptions());
+      }
+
+      window.addEventListener("load", render);
+
+      const ro = new ResizeObserver(render);
+      ro.observe(document.getElementById("test"));
+
+      window.addEventListener("resize", render);
+    </script>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

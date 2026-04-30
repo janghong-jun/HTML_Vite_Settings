@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "4" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>코드 관리</h2>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">분류명</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="text" id="inp01" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">코드ID</label>
+                  </th>
+                  <td>
+                    <div class="frm-area flex-box mgt0">
+                      <input type="text" id="inp02" class="inp-text" />
+                      <button type="button" class="btn base square">
+                        <span>중복체크</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp03">코드명</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="password" id="inp03" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="vertical-top">
+                    <label for="inp04">코드설명</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <textarea
+                        id="inp04"
+                        class="inp-textarea"
+                        style="height: 20rem"
+                      ></textarea>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="vertical-top">하위코드</th>
+                  <td>
+                    <div class="tbl-base" style="min-height: 20rem">
+                      <table>
+                        <colgroup>
+                          <col style="width: 7rem" />
+                          <col />
+                          <col style="width: 7rem" />
+                          <col style="width: 10rem" />
+                          <col style="width: 17rem" />
+                          <col style="width: 9rem" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col" class="txt-c">순번</th>
+                            <th scope="col" class="txt-c">분류명</th>
+                            <th scope="col" class="txt-c">코드ID</th>
+                            <th scope="col" class="txt-c">코드명</th>
+                            <th scope="col" class="txt-c">사용여부</th>
+                            <th scope="col">
+                              <span class="sr-only">수정</span>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="txt-c">11</td>
+                            <td>하이코칭 역량 카테고리 관리</td>
+                            <td class="txt-c">B001</td>
+                            <td class="txt-c">교사구분</td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn active"
+                                >
+                                  <span>사용</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn"
+                                >
+                                  <span>미사용</span>
+                                </button>
+                              </div>
+                            </td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button type="button" class="btn apply-btn">
+                                  <span>수정</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="txt-c">11</td>
+                            <td>하이코칭 역량 카테고리 관리</td>
+                            <td class="txt-c">B001</td>
+                            <td class="txt-c">교사구분</td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn active"
+                                >
+                                  <span>사용</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn"
+                                >
+                                  <span>미사용</span>
+                                </button>
+                              </div>
+                            </td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button type="button" class="btn apply-btn">
+                                  <span>수정</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="txt-c">11</td>
+                            <td>하이코칭 역량 카테고리 관리</td>
+                            <td class="txt-c">B001</td>
+                            <td class="txt-c">교사구분</td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn active"
+                                >
+                                  <span>사용</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn"
+                                >
+                                  <span>미사용</span>
+                                </button>
+                              </div>
+                            </td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button type="button" class="btn apply-btn">
+                                  <span>수정</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="txt-c">11</td>
+                            <td>하이코칭 역량 카테고리 관리</td>
+                            <td class="txt-c">B001</td>
+                            <td class="txt-c">교사구분</td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn active"
+                                >
+                                  <span>사용</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn"
+                                >
+                                  <span>미사용</span>
+                                </button>
+                              </div>
+                            </td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button type="button" class="btn apply-btn">
+                                  <span>수정</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="txt-c">11</td>
+                            <td>하이코칭 역량 카테고리 관리</td>
+                            <td class="txt-c">B001</td>
+                            <td class="txt-c">교사구분</td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn active"
+                                >
+                                  <span>사용</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn base square radio-btn"
+                                >
+                                  <span>미사용</span>
+                                </button>
+                              </div>
+                            </td>
+                            <td class="txt-c">
+                              <div class="tbl-btns type-small">
+                                <button type="button" class="btn apply-btn">
+                                  <span>수정</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tbl-btns mgt10 type-small right">
+                      <button
+                        type="button"
+                        class="btn base square primary btn-modal"
+                        data-id="X-HSM-04-004"
+                        data-src="X-HSM-04-004.html"
+                      >
+                        <span>추가</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">사용여부</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rp01" name="rpBtn" checked />
+                        <label for="rp01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rp02" name="rpBtn" />
+                        <label for="rp02" class="lb-radio">미사용</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>수정</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

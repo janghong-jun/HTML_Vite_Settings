@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "11" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>금칙어 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr></tr>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 12rem" />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" rowspan="2">일자</th>
+                  <th scope="col" rowspan="2">신규회원가입</th>
+                  <th scope="col" rowspan="2">총 방문자</th>
+                  <th scope="col" colspan="5">교원구분</th>
+                  <th scope="col" colspan="3">이용서비스 순위</th>
+                </tr>
+                <tr>
+                  <th scope="col">교사</th>
+                  <th scope="col">수석교사</th>
+                  <th scope="col">교감</th>
+                  <th scope="col">교장</th>
+                  <th scope="col">교육전문직원</th>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>20</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>마이코칭</td>
+                  <td>프로필</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>10</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>마이코칭</td>
+                  <td>프로필</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>10</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>마이코칭</td>
+                  <td>학습</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>25</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>마이코칭</td>
+                  <td>학습</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>22</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>마이코칭</td>
+                  <td>모듈추천</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>21</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>역량진단</td>
+                  <td>전문가추천</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>21</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>마이코칭</td>
+                  <td>역량진단</td>
+                  <td>학습</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>21</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>콘텐츠 추천</td>
+                  <td>마이코칭</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>21</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>전문가추천</td>
+                  <td>마이코칭</td>
+                </tr>
+                <tr>
+                  <th>YYYY-MM-DD</th>
+                  <td>21</td>
+                  <td>100</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>20</td>
+                  <td>역량진단</td>
+                  <td>마이코칭</td>
+                  <td>Q&A</td>
+                </tr>
+
+                <tr>
+                  <td colspan="11" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>엑셀다운로드</span>
+              </button>
+            </div>
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

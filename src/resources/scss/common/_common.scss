@@ -1,0 +1,9 @@
+//공통
+
+@use '../token/krds_tokens';
+@forward 'include';
+@forward 'root' hide $mode-setting;
+@forward 'icon' hide $mode-setting;
+@forward 'dropdown' hide $mode-setting;
+@forward 'reset' hide $mode-setting;
+@forward 'fonts';

@@ -1,0 +1,925 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+@use '../common/path' as *;
+
+/* 버튼 / 링크 */
+//사이즈 정의
+@mixin button-size-variable() {
+  //변수 배열 설정
+  $button-size: (
+    xsmall: (
+      size-height: var(--size-height-5),
+      padding-x: var(--padding-4),
+      padding-y: 0,
+      gap: var(--gap-1),
+      radius: var(--radius-small3),
+      pc-font-size: var(--pc-font-size-label-small),
+      mobile-font-size: var(--mobile-font-size-label-small),
+      font-weight: var(--font-weight-regular),
+    ),
+    small: (
+      size-height: var(--size-height-6),
+      padding-x: var(--padding-6),
+      padding-y: 0,
+      gap: var(--gap-1),
+      radius: var(--radius-medium2),
+      pc-font-size: var(--pc-font-size-label-small),
+      mobile-font-size: var(--mobile-font-size-label-small),
+      font-weight: var(--font-weight-regular),
+    ),
+    medium: (
+      size-height: var(--size-height-7),
+      padding-x: var(--padding-6),
+      padding-y: 0,
+      gap: var(--gap-2),
+      radius: var(--radius-medium2),
+      pc-font-size: var(--pc-font-size-label-medium),
+      mobile-font-size: var(--mobile-font-size-label-medium),
+      font-weight: var(--font-weight-regular),
+    ),
+    large: (
+      size-height: var(--size-height-8),
+      padding-x: var(--padding-7),
+      padding-y: 0,
+      gap: var(--gap-2),
+      radius: var(--radius-medium3),
+      pc-font-size: var(--pc-font-size-label-large),
+      mobile-font-size: var(--mobile-font-size-label-large),
+      font-weight: var(--font-weight-regular),
+    ),
+    xlarge: (
+      size-height: var(--size-height-9),
+      padding-x: var(--padding-8),
+      padding-y: 0,
+      gap: var(--gap-2),
+      radius: var(--radius-medium4),
+      pc-font-size: var(--pc-font-size-label-large),
+      mobile-font-size: var(--mobile-font-size-label-large),
+      font-weight: var(--font-weight-regular),
+    ),
+  ) !default;
+
+  //css variable 생성
+  @each $size, $types in $button-size {
+    @each $type, $value in $types {
+      //css variable 생성
+      --button--#{$type}-#{$size}: #{$value};
+    }
+  }
+
+  //class 정의
+  & {
+    @include btn-size(large);
+    & {
+      @each $size, $types in $button-size {
+        &.#{$size} {
+          @include btn-size(#{$size});
+        }
+      }
+      &.secondary-line {
+        font-weight: var(--font-weight-bold);
+      }
+    }
+  }
+}
+
+//컬러 정의
+@mixin button-color-variable($mode) {
+  //변수 배열 정의
+  $button-color-variable: (
+    primary: (
+      fill: var(--#{$mode}-color-button-primary-fill),
+      fill-hover: var(--#{$mode}-color-button-primary-fill-hover),
+      fill-pressed: var(--#{$mode}-color-button-primary-fill-pressed),
+      fill-disabled: var(--#{$mode}-color-button-disabled-fill),
+      border: var(--#{$mode}-color-button-primary-fill),
+      border-disabled: var(--#{$mode}-color-button-disabled-border),
+      text: var(--#{$mode}-color-text-inverse-static),
+      text-disabled: var(--#{$mode}-color-text-disabled-on),
+    ),
+    secondary: (
+      fill: var(--#{$mode}-color-button-secondary-fill),
+      fill-hover: var(--#{$mode}-color-button-secondary-fill-hover),
+      fill-pressed: var(--#{$mode}-color-button-secondary-fill-pressed),
+      fill-disabled: var(--#{$mode}-color-button-disabled-fill),
+      border: var(--#{$mode}-color-button-secondary-border),
+      border-disabled: var(--#{$mode}-color-button-disabled-border),
+      text: var(--#{$mode}-color-text-primary),
+      text-disabled: var(--#{$mode}-color-text-disabled-on),
+    ),
+    secondary-line: (
+      fill: var(--#{$mode}-color-button-tertiary-fill),
+      fill-hover: var(--#{$mode}-color-button-secondary-fill-hover),
+      fill-pressed: var(--#{$mode}-color-button-secondary-fill-pressed),
+      fill-disabled: var(--#{$mode}-color-button-disabled-fill),
+      border: var(--#{$mode}-color-button-primary-fill),
+      border-disabled: var(--#{$mode}-color-button-disabled-border),
+      text: var(--#{$mode}-color-text-primary),
+      text-disabled: var(--#{$mode}-color-text-disabled-on),
+    ),
+    tertiary: (
+      fill: var(--#{$mode}-color-button-tertiary-fill),
+      fill-hover: var(--#{$mode}-color-button-tertiary-fill-hover),
+      fill-pressed: var(--#{$mode}-color-button-tertiary-fill-pressed),
+      fill-disabled: var(--#{$mode}-color-button-disabled-fill),
+      border: var(--#{$mode}-color-button-tertiary-border),
+      border-disabled: var(--#{$mode}-color-button-disabled-border),
+      text: var(--#{$mode}-color-text-basic),
+      text-disabled: var(--#{$mode}-color-text-disabled-on),
+    ),
+    neutral: (
+      fill: var(--light-color-button-neutral-fill),
+      fill-hover: var(--light-color-button-neutral-fill-hover),
+      fill-pressed: var(--light-color-button-neutral-fill-pressed),
+      fill-disabled: var(--light-color-button-disabled-fill),
+      border: var(--light-color-button-neutral-border),
+      border-disabled: var(--light-color-button-disabled-border),
+      text: var(--light-color-text-inverse-static),
+      text-disabled: var(--light-color-text-disabled-on),
+    ),
+    text: (
+      fill: var(--#{$mode}-color-button-text-fill),
+      fill-hover: var(--#{$mode}-color-button-text-fill-hover),
+      fill-pressed: var(--#{$mode}-color-button-text-fill-pressed),
+      fill-disabled: var(--#{$mode}-color-button-text-fill),
+      border: var(--#{$mode}-color-button-text-border),
+      border-disabled: var(--#{$mode}-color-border-transparency),
+      text: var(--#{$mode}-color-text-basic),
+      text-disabled: var(--#{$mode}-color-text-disabled),
+    ),
+    link: (
+      fill: var(--#{$mode}-color-button-text-fill),
+      fill-hover: var(--#{$mode}-color-button-text-fill),
+      fill-pressed: var(--#{$mode}-color-button-text-fill),
+      fill-disabled: var(--#{$mode}-color-button-text-fill),
+      border: var(--#{$mode}-color-button-text-border),
+      border-disabled: var(--#{$mode}-color-border-transparency),
+      text: var(--#{$mode}-color-link-default),
+      text-disabled: var(--#{$mode}-color-text-disabled),
+    ),
+  ) !default;
+
+  //css variable 생성
+  @each $color, $types in $button-color-variable {
+    @each $type, $value in $types {
+      --button--color-#{$color}-#{$type}: #{$value};
+    }
+  }
+
+  //class 생성
+  & {
+    @include btn-color(primary);
+
+    & {
+      //컬러 별 class
+      @each $color, $types in $button-color-variable {
+        &.#{$color} {
+          @include btn-color(#{$color});
+          &:not(.icon) {
+            .svg-icon {
+              @include btn-color-icon(#{$color});
+            }
+          }
+
+          &:hover {
+            @include btn-color-hover(#{$color});
+          }
+          &:active,
+          &:focus {
+            @include btn-color-pressed(#{$color});
+          }
+
+          &[disabled],
+          &.disabled {
+            @include btn-color-disabled(#{$color});
+            &:not(.icon) {
+              .svg-icon {
+                background-color: var(--button--color-#{$color}-text-disabled);
+              }
+            }
+            &:hover {
+              @include btn-color-disabled(#{$color});
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* icon 버튼 사이즈 */
+$button-icon-size: (
+  xsmall: var(--size-height-2),
+  small: var(--size-height-3),
+  medium: var(--size-height-4),
+  large: var(--size-height-5),
+  xlarge: var(--size-height-6),
+) !default;
+
+//text버튼은 높이와 좌우 padding값이 달라 재정의 함
+@mixin btn-text-variable() {
+  //text버튼은 높이와 좌우 padding값이 달라 재정의 함
+  --button--size-height-xsmall: var(--size-height-3);
+  --button--padding-x-xsmall: var(--padding-1);
+  --button--padding-y-xsmall: var(--number-0);
+  --button--size-height-small: var(--size-height-4);
+  --button--padding-x-small: var(--padding-1);
+  --button--padding-y-small: var(--number-0);
+  --button--size-height-medium: var(--size-height-5);
+  --button--padding-x-medium: var(--padding-1);
+  --button--padding-y-medium: var(--number-2);
+  --button--size-height-large: var(--size-height-6);
+  --button--padding-x-large: var(--padding-1);
+  --button--padding-y-large: 0.5rem;
+  --button--size-height-xlarge: var(--size-height-7);
+  --button--padding-x-xlarge: var(--padding-1);
+  --button--padding-y-xlarge: 0.9rem;
+}
+//link버튼은 font size와 좌우 padding값이 달라 재정의 함
+@mixin btn-link-variable() {
+  --button--pc-font-size-xsmall: var(--pc-font-size-label-small);
+  --button--mobile-font-size-xsmall: var(--mobile-font-size-label-small);
+  --button--padding-x-xsmall: var(--padding-1);
+  --button--pc-font-size-small: var(--pc-font-size-label-small);
+  --button--mobile-font-size-small: var(--mobile-font-size-label-small);
+  --button--padding-x-small: var(--padding-1);
+  --button--pc-font-size-medium: var(--pc-font-size-label-medium);
+  --button--mobile-font-size-medium: var(--mobile-font-size-label-medium);
+  --button--padding-x-medium: var(--padding-1);
+  --button--pc-font-size-large: var(--pc-font-size-label-large);
+  --button--mobile-font-size-large: var(--mobile-font-size-label-large);
+  --button--padding-x-large: var(--padding-1);
+  --button--pc-font-size-xlarge: var(--pc-font-size-label-large);
+  --button--mobile-font-size-xlarge: var(--mobile-font-size-label-large);
+  --button--padding-x-xlarge: var(--padding-1);
+}
+
+//컬러별 variable
+@mixin btn-color($color) {
+  background-color: var(--button--color-#{$color}-fill);
+  border-color: var(--button--color-#{$color}-border);
+  color: var(--button--color-#{$color}-text);
+}
+@mixin btn-color-hover($color) {
+  background-color: var(--button--color-#{$color}-fill-hover);
+}
+@mixin btn-color-pressed($color) {
+  background-color: var(--button--color-#{$color}-fill-pressed);
+}
+@mixin btn-color-disabled($color) {
+  background-color: var(--button--color-#{$color}-fill-disabled);
+  border-color: var(--button--color-#{$color}-border-disabled);
+  color: var(--button--color-#{$color}-text-disabled);
+}
+@mixin btn-color-icon($color) {
+  background-color: var(--button--color-#{$color}-text);
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-btn {
+  @include button-size-variable();
+}
+.krds-btn {
+  @include button-color-variable(#{$mode-setting});
+
+  & {
+    //기본버튼: primary large
+    @include flex-layout($d: inline-flex, $ai: center, $jc: center);
+    width: auto;
+    border-style: solid;
+    white-space: nowrap;
+    transition: var(--transition-base);
+    @include border-size-mode(#{$mode-setting});
+  }
+
+  .svg-icon {
+    @include btn-color-icon(primary);
+    transition: var(--transition-base);
+  }
+  &:hover {
+    @include btn-color-hover(primary);
+  }
+  &:active,
+  &:focus {
+    @include btn-color-pressed(primary);
+  }
+  &[disabled],
+  &.disabled {
+    @include btn-color-disabled(primary);
+    cursor: default;
+    &:hover {
+      @include btn-color-disabled(primary);
+    }
+  }
+
+  &.text {
+    //높이를 가짐
+    @include btn-text-variable();
+
+    //large 사이즈 기준 기본 세팅수정
+    display: inline-flex;
+    width: max-content;
+    height: max-content !important;
+    padding: var(--button--padding-y-large) var(--button--padding-x-large);
+    text-align: left;
+    white-space: normal;
+    &.xsmall {
+      min-height: var(--button--size-height-xsmall);
+      padding: var(--button--padding-y-xsmall) var(--button--padding-x-xsmall);
+      .svg-icon {
+        // margin-bottom: -0.3rem;
+        margin-bottom: calc(var(--button--padding-y-xsmall) / 2);
+      }
+    }
+    &.small {
+      padding: var(--button--padding-y-small) var(--button--padding-x-small);
+      .svg-icon {
+        // margin-bottom: -0.3rem;
+        margin-bottom: calc(var(--button--padding-y-small) / 2);
+      }
+    }
+    &.medium {
+      padding: var(--button--padding-y-medium) var(--button--padding-x-medium);
+      .svg-icon {
+        // margin-bottom: -0.4rem;
+        margin-bottom: calc(var(--button--padding-y-medium) / 2);
+      }
+    }
+    &.large {
+      padding: var(--button--padding-y-large) var(--button--padding-x-large);
+      .svg-icon {
+        // margin-bottom: -0.5rem;
+        margin-bottom: calc(var(--button--padding-y-large) / 2);
+      }
+    }
+    &.xlarge {
+      padding: var(--button--padding-y-xlarge) var(--button--padding-x-xlarge);
+      .svg-icon {
+        // margin-bottom: -0.6rem;
+        margin-bottom: calc(var(--button--padding-y-xlarge) / 2);
+      }
+    }
+    &.h-auto {
+      height: auto;
+      padding: var(--padding-1) !important;
+    }
+    .svg-icon {
+      display: inline-block;
+      margin-bottom: -0.5rem;
+    }
+    &.secondary {
+      color: var(--button--color-link-text);
+      .svg-icon {
+        background-color: var(--button--color-link-text);
+      }
+    }
+    &.download {
+      .svg-icon {
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+    }
+  }
+  &.link {
+    //링크인 경우 (텍스트 버튼과 비슷해보이지만 높이값 없음)
+    @include btn-link-variable();
+    //large 사이즈 기준 기본 세팅수정
+    display: inline-block;
+    height: max-content !important;
+    padding: 0 var(--button--padding-x-large);
+    font-size: var(--button--pc-font-size-large);
+    text-align: left;
+    white-space: normal;
+    @include size-medium {
+      font-size: var(--button--mobile-font-size-large);
+    }
+    &.xsmall {
+      padding: 0 var(--button--padding-x-xsmall);
+      font-size: var(--button--pc-font-size-xsmall);
+      @include size-medium {
+        font-size: var(--button--mobile-font-size-xsmall);
+      }
+      .svg-icon {
+        margin-bottom: -0.3rem;
+      }
+    }
+    &.small {
+      padding: 0 var(--button--padding-x-small);
+      font-size: var(--button--pc-font-size-small);
+      @include size-medium {
+        font-size: var(--button--mobile-font-size-small);
+      }
+      .svg-icon {
+        margin-bottom: -0.3rem;
+      }
+    }
+    &.medium {
+      padding: 0 var(--button--padding-x-medium);
+      font-size: var(--button--pc-font-size-medium);
+      @include size-medium {
+        font-size: var(--button--mobile-font-size-medium);
+      }
+      .svg-icon {
+        margin-bottom: -0.4rem;
+      }
+    }
+    &.large {
+      padding: 0 var(--button--padding-x-large);
+      font-size: var(--button--pc-font-size-large);
+      @include size-medium {
+        font-size: var(--button--mobile-font-size-large);
+      }
+      .svg-icon {
+        margin-bottom: -0.5rem;
+      }
+    }
+    &.xlarge {
+      padding: 0 var(--button--padding-x-xlarge);
+      font-size: var(--button--pc-font-size-xlarge);
+      @include size-medium {
+        font-size: var(--button--mobile-font-size-xlarge);
+      }
+      .svg-icon {
+        margin-bottom: -0.6rem;
+      }
+    }
+    &.basic {
+      $color: var(--#{$mode-setting}-color-text-basic);
+      color: $color;
+      .svg-icon {
+        background-color: $color;
+      }
+      &.pure {
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          color: $color;
+          .svg-icon {
+            background-color: $color;
+          }
+        }
+      }
+    }
+    &:hover {
+      $color: var(--#{$mode-setting}-color-link-hover);
+      color: $color;
+      .svg-icon {
+        background-color: $color;
+      }
+    }
+    &:active,
+    &:focus {
+      $color: var(--#{$mode-setting}-color-link-pressed);
+      color: $color;
+      .svg-icon {
+        background-color: $color;
+      }
+    }
+    &:visited {
+      $color: var(--#{$mode-setting}-color-link-visited);
+      color: $color;
+      text-decoration: none;
+      .svg-icon {
+        background-color: $color;
+      }
+    }
+    &.pure {
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        $color: var(--button--color-link-text);
+        color: $color;
+        .svg-icon {
+          background-color: $color;
+        }
+      }
+    }
+    .underline {
+      &.hidden-underline {
+        text-decoration-color: var(--#{$mode-setting}-color-border-transparency);
+        transition: var(--transition-base);
+      }
+    }
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      .underline {
+        &.hidden-underline {
+          text-decoration-color: inherit;
+        }
+      }
+    }
+    .svg-icon {
+      display: inline-block;
+      margin-bottom: -0.5rem;
+    }
+  }
+
+  /* icon 버튼 (텍스트 없음) */
+  &.icon {
+    @each $size, $value in $button-icon-size {
+      --button--icon-size-#{$size}: #{$value};
+    }
+
+    //기본 세팅
+    @include square(var(--button--icon-size-medium));
+    padding: 0 !important;
+    background-color: transparent;
+    border-color: var(--#{$mode-setting}-color-border-transparency);
+    color: inherit;
+    border: 0;
+    &:hover,
+    &:active {
+      background-color: inherit;
+    }
+
+    & {
+      @each $size, $value in $button-icon-size {
+        &.#{$size} {
+          @include square(var(--button--icon-size-#{$size}));
+          //icon size
+          .svg-icon {
+            @include square(100%);
+          }
+          @if $size == small {
+          }
+        }
+      }
+    }
+
+    .svg-icon {
+      background-color: var(--#{$mode-setting}-color-text-basic);
+    }
+    &.pure {
+      .svg-icon {
+        background-color: transparent;
+      }
+    }
+    //새로고침, 토글 등 보더 아이콘 버튼 형태
+    &.border {
+      background-color: var(--#{$mode-setting}-color-background-white);
+      border: 0.1rem solid var(--#{$mode-setting}-color-border-gray);
+      border-radius: var(--radius-max);
+
+      //icon size 1.6rem
+      &.large {
+        .svg-icon {
+          @include square(var(--icon--size-xsmall));
+        }
+      }
+      &.xlarge {
+        .svg-icon {
+          @include square(var(--icon--size-xlarge));
+        }
+      }
+      &[disabled],
+      &.disabled {
+        background-color: var(--#{$mode-setting}-color-button-disabled-fill);
+      }
+    }
+    &.btn-border {
+      width: var(--button--icon-size-xlarge);
+      height: var(--button--icon-size-xlarge);
+      background-color: var(--#{$mode-setting}-color-background-white);
+      border: 0.1rem solid var(--#{$mode-setting}-color-border-gray);
+      border-radius: var(--radius-medium1);
+      .svg-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+
+  &.etc {
+    display: flex;
+    height: 3.6rem;
+    min-width: 6.4rem !important;
+    padding: 0 var(--gap-5) 0 var(--gap-7);
+    font-size: var(--pc-font-size-body-small);
+    font-weight: var(--font-weight-bold);
+    line-height: 3.6rem;
+    color: var(--light-color-text-inverse-static);
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-2);
+    border: none;
+    border-radius: var(--radius-max);
+    background: linear-gradient(90deg, #5b7ff3 0%, #3f65e0 100%);
+
+    .svg-icon {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    &.icon-front {
+      padding: 0 var(--gap-7) 0 var(--gap-5);
+    }
+
+    &.none-icon {
+      padding: 0 var(--gap-5);
+    }
+  }
+
+  &.more {
+    width: 100%;
+  }
+}
+button.krds-btn,
+a.krds-btn,
+label.krds-btn {
+  cursor: pointer;
+}
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-btn {
+    @include border-size-mode(#{$mode-setting});
+    @include button-color-variable(#{$mode-setting});
+
+    &.text {
+      //class명 검토
+      &.ico-filter {
+        .num {
+          color: var(--#{$mode-setting}-color-text-basic-inverse);
+          background-color: var(--#{$mode-setting}-color-element-primary);
+        }
+      }
+    }
+    &.link {
+      &.basic {
+        $color: var(--#{$mode-setting}-color-text-basic);
+        color: $color;
+        &:not(.icon) {
+          .svg-icon {
+            background-color: $color;
+          }
+        }
+        &.pure {
+          &:hover,
+          &:active,
+          &:focus,
+          &:visited {
+            color: $color;
+            .svg-icon {
+              background-color: $color;
+            }
+          }
+        }
+      }
+      &:hover {
+        $color: var(--#{$mode-setting}-color-link-hover);
+        color: $color;
+        &:not(.icon) {
+          .svg-icon {
+            background-color: $color;
+          }
+        }
+      }
+      &:active,
+      &:focus {
+        $color: var(--#{$mode-setting}-color-link-pressed);
+        color: $color;
+        &:not(.icon) {
+          .svg-icon {
+            background-color: $color;
+          }
+        }
+      }
+      &:visited {
+        $color: var(--#{$mode-setting}-color-link-visited);
+        color: $color;
+        &:not(.icon) {
+          .svg-icon {
+            background-color: $color;
+          }
+        }
+      }
+      &.pure {
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          $color: var(--button--color-link-text);
+          color: $color;
+          .svg-icon {
+            background-color: $color;
+          }
+        }
+      }
+      .underline {
+        &.hidden-underline {
+          text-decoration-color: var(--#{$mode-setting}-color-border-transparency);
+        }
+      }
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        .underline {
+          &.hidden-underline {
+            text-decoration-color: inherit;
+          }
+        }
+      }
+    }
+    /* icon 버튼 (텍스트 없음) */
+    &.icon {
+      background-color: transparent;
+      border-color: var(--#{$mode-setting}-color-border-transparency);
+
+      .svg-icon {
+        background-color: var(--#{$mode-setting}-color-text-basic);
+      }
+      //새로고침, 토글 등 보더 아이콘 버튼 형태
+      &.border {
+        background-color: var(--#{$mode-setting}-color-background-white);
+        border-color: var(--#{$mode-setting}-color-border-gray);
+
+        &[disabled],
+        &.disabled {
+          background-color: var(--#{$mode-setting}-color-button-disabled-fill);
+        }
+      }
+    }
+  }
+}
+
+/* **** button area **** */
+.krds-btns-wrap {
+  display: flex;
+  width: 100%;
+  gap: var(--gap-3);
+
+  &.center {
+    justify-content: center;
+
+    .krds-btn {
+      min-width: 20rem;
+      @include size-medium {
+        width: 100% !important;
+        min-width: 0;
+      }
+    }
+  }
+
+  &.right {
+    justify-content: flex-end;
+
+    .krds-btn {
+      min-width: 20rem;
+      @include size-medium {
+        width: 100% !important;
+        min-width: 0;
+      }
+
+      &.etc {
+        @include size-medium {
+          width: auto !important;
+          min-width: 0;
+        }
+      }
+    }
+  }
+
+  &.between {
+    justify-content: space-between;
+    > div {
+      display: flex;
+      gap: var(--gap-3);
+      flex-wrap: wrap;
+
+      p {
+        width: 100%;
+        flex: none;
+        font-size: var(--pc-font-size-body-small);
+        color: var(--light-color-text-subtle);
+        @include size-medium {
+          font-size: var(--mobile-font-size-body-small);
+        }
+      }
+      &.right {
+        margin-left: auto;
+        justify-content: flex-end;
+        p {
+          text-align: right;
+          @include size-medium {
+            text-align: left;
+          }
+        }
+      }
+      &:first-child:last-child {
+        margin-left: auto;
+        @include size-medium {
+          margin: 0;
+        }
+      }
+    }
+
+    @include size-medium {
+      flex-direction: column;
+
+      .krds-btn {
+        width: 100% !important;
+        min-height: var(--button--size-height-xlarge);
+        flex: 1 !important;
+        min-width: 0 !important;
+      }
+      .right {
+        width: 100%;
+        flex: 1;
+      }
+    }
+    &02 {
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @include size-medium {
+        flex-direction: column;
+        div .krds-btn {
+          max-width: 100%;
+        }
+      }
+      > div {
+        display: flex;
+        gap: var(--gap-4);
+        flex: 1;
+        & + div {
+          justify-content: flex-end;
+        }
+      }
+      .krds-btn {
+        flex: 1;
+        max-width: 20rem;
+        @include size-medium {
+          flex-direction: column;
+          .krds-btn {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &.in-table {
+    gap: var(--gap-2);
+    .krds-btn {
+      &.xsmall {
+        min-width: 6rem;
+      }
+    }
+    & > span {
+      min-width: 9rem;
+      margin-right: 0.8rem;
+      text-align: right;
+      flex: none;
+    }
+  }
+}
+.krds-btn.radius {
+  padding: 0.8rem !important;
+  border-radius: var(--radius-max);
+  background-color: var(--light-color-surface-primary-subtler);
+  box-sizing: initial;
+
+  &:hover {
+    background-color: var(--light-color-surface-primary-subtler);
+  }
+
+  &:disabled {
+    background-color: var(--color-light-gray-10);
+    .ico-cart {
+      background-image: url(#{$url}/img/component/icon/ico_cart_disabled.svg);
+    }
+  }
+  &.disabled {
+    background-color: var(--color-light-gray-10);
+    cursor: pointer;
+    .ico-cart {
+      background-image: url(#{$url}/img/component/icon/ico_cart_disabled2.svg);
+    }
+  }
+}
+.krds-btn.radius02 {
+  padding: 0.8rem !important;
+  border-radius: var(--radius-max);
+  background-color: var(--color-light-gray-10);
+  box-sizing: initial;
+
+  &:hover {
+    background-color: var(--color-light-gray-10);
+  }
+
+  &.active {
+    background-color: var(--light-color-surface-primary-subtler);
+    cursor: pointer;
+    .ico-heart {
+      background-image: url(#{$url}/img/component/icon/ico_scrap_on.svg);
+    }
+  }
+}

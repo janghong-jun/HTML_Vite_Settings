@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>보관함 상세 | 보관함 | 학습 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 1, depth2: 2 });
+
+        const summary = document.querySelector(".video-summary");
+        const content = summary.querySelector(".cont");
+        const btn = summary.querySelector(".more");
+
+        function checkOverflow() {
+          if (content.scrollHeight <= content.clientHeight) {
+            btn.style.display = "none";
+          } else {
+            btn.style.display = "inline-flex";
+          }
+        }
+
+        btn.addEventListener("click", () => {
+          summary.classList.toggle("active");
+        });
+
+        checkOverflow();
+
+        window.addEventListener("resize", checkOverflow);
+
+        const ro = new ResizeObserver(checkOverflow);
+        ro.observe(content);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header_out.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 학습 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">학습</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">모듈학습</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">보관함</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //학습 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">학습</a></li>
+                <li><a href="#" class="txt">보관함</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">학습콘텐츠 상세</h3>
+            </div>
+
+            <div class="video-wrap" style="grid-template-columns: 1fr">
+              <section class="video-contents">
+                <div class="video-detail">
+                  <div
+                    class="player-area"
+                    style="margin: 0 auto; max-width: 75rem"
+                  >
+                    <img
+                      src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                      alt=""
+                    />
+                    <button type="button" class="krds-btn icon">
+                      <i class="svg-icon ico-play"></i>
+                      <span class="sr-only">재생</span>
+                    </button>
+                  </div>
+
+                  <div class="video-info">
+                    <div class="video-info-top">
+                      <h4 class="video-title">
+                        경기교육지원청, 교육 공동체 역량 강화 프로그램 운영 1편
+                      </h4>
+                    </div>
+                    <p class="video-keyword">#영통구 #공동체역량</p>
+                    <div class="video-meta-wrap">
+                      <ul class="video-meta">
+                        <li>경기도 교육청</li>
+                        <li>조회수 999회</li>
+                        <li>2개월 전</li>
+                      </ul>
+                      <div class="video-meta-level">
+                        <span class="video-difficulty">
+                          <strong>난이도</strong>
+                          <span>
+                            <i
+                              class="svg-icon ico-level02"
+                              aria-hidden="true"
+                            ></i>
+                            <span>중</span>
+                          </span>
+                        </span>
+                        <span class="video-rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            <span>4.8</span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video-summary">
+                    <dl>
+                      <div>
+                        <dt>콘텐츠 설명</dt>
+                        <dd>
+                          <div class="cont">
+                            <p>
+                              2025년 교육 현장에서는 학생, 학부모, 교사가 함께
+                              성장하는 '교육공동체 역량 강화'가 핵심 과제로
+                              추진되고 있습니다.2025년 교육 현장에서는 학생,
+                              학부모, 교사가 함께 성장하는 '교육공동체 역량
+                              강화'가 핵심 과제로 추진되고 있습니다.
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            class="krds-btn medium tertiary more"
+                          >
+                            더보기
+                            <i class="svg-icon ico-angle"></i>
+                          </button>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>역량 구분</dt>
+                        <dd>교수학습 &gt; 교과전문성 &gt; 교과과정 설계</dd>
+                      </div>
+                      <div>
+                        <dt>추가 부가정보</dt>
+                        <dd>
+                          교사 역량 강화를 위해 다음과 같은 추가 부가정보가
+                          있습니다.
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>저작권 소유자</dt>
+                        <dd>경기미래교육</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+                <div class="comment type02">
+                  <div class="comment-head">
+                    <h4 class="title">학습콘텐츠 평가</h4>
+                    <span class="count">(NN건)</span>
+                    <div class="krds-check-area">
+                      <div class="krds-form-check">
+                        <input type="radio" name="rdo_1" id="rdo_1" checked />
+                        <label for="rdo_1">평점 높은순</label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="rdo_1" id="rdo_2" />
+                        <label for="rdo_2">평점 낮은순</label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="rdo_1" id="rdo_3" />
+                        <label for="rdo_3">최신순</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-body">
+                    <ul class="comment-list">
+                      <!-- 댓글 기본형 -->
+                      <li>
+                        <div class="user-img">
+                          <img
+                            src="../../../resources/img/noData/img_profile.png"
+                            alt="윤예습 프로필 사진"
+                          />
+                        </div>
+                        <div class="comment-wrap">
+                          <div class="comment-top">
+                            <div>
+                              <div class="rating">
+                                <span class="rating-score">
+                                  <span class="sr-only">평점</span>
+                                  <span>5</span>
+                                </span>
+                                <!-- 평점에 따라 data-score 값 변경 -->
+                                <span
+                                  class="rating-stars"
+                                  aria-hidden="true"
+                                  data-score="5"
+                                >
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </span>
+                              </div>
+                              <div class="comment-info">
+                                <span>윤*습(amer*****)</span>
+                                <span class="date">2025-12-15</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="comment-cont">
+                            <div>
+                              올려주신 실행나눔 정보 잘 확인하였습니다. <br />
+                              도움이 많이 될 것 같습니다. <br />
+                              도움이 많이 될 것 같습니다. <br />
+                              즐거운 하루되세요
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //댓글 기본형 -->
+
+                      <!-- 내가 쓴 댓글 -->
+                      <li>
+                        <div class="user-img">
+                          <img
+                            src="../../../resources/img/sample/img_comment01.jpg"
+                            alt="김교사 프로필 사진"
+                          />
+                        </div>
+                        <div class="comment-wrap">
+                          <div class="comment-top">
+                            <div>
+                              <div class="rating">
+                                <span class="rating-score">
+                                  <span class="sr-only">평점</span>
+                                  <span>5</span>
+                                </span>
+                                <!-- 평점에 따라 data-score 값 변경 -->
+                                <span
+                                  class="rating-stars"
+                                  aria-hidden="true"
+                                  data-score="5"
+                                >
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </span>
+                              </div>
+                              <div class="comment-info">
+                                <span>윤*습(amer*****)</span>
+                                <span class="date">2025-12-15</span>
+                              </div>
+                            </div>
+                            <button class="krds-btn xsmall tertiary">
+                              수정
+                            </button>
+                          </div>
+
+                          <div class="comment-cont">
+                            <div>
+                              올려주신 실행나눔 정보 잘 확인하였습니다. <br />
+                              도움이 많이 될 것 같습니다. <br />
+                              도움이 많이 될 것 같습니다. <br />
+                              즐거운 하루되세요
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <!-- //내가 쓴 댓글 -->
+                    </ul>
+
+                    <div class="krds-pagination">
+                      <a
+                        class="page-navi prev disabled"
+                        aria-disabled="true"
+                        tabindex="-1"
+                        >이전</a
+                      >
+                      <div class="page-links">
+                        <a class="page-link active" href="#"
+                          ><span class="sr-only">현재페이지 </span>1</a
+                        >
+                        <a class="page-link" href="#">2</a>
+                        <a class="page-link" href="#">3</a>
+
+                        <a class="page-link" href="#">4</a>
+                        <a class="page-link" href="#">5</a>
+                        <a class="page-link" href="#">6</a>
+                        <a class="page-link" href="#">7</a>
+                        <a class="page-link" href="#">8</a>
+                        <span class="page-link link-dot"></span>
+                        <a class="page-link" href="#">99</a>
+                      </div>
+                      <a class="page-navi next" href="#">다음</a>
+                    </div>
+
+                    <div class="comment-write">
+                      <div class="textarea-wrap">
+                        <textarea
+                          class="krds-input"
+                          placeholder="최소 10자 이상 입력해주세요."
+                          aria-label="콘텐츠 평가 입력"
+                        ></textarea>
+                      </div>
+                      <div class="comment-utill">
+                        <ul class="level-list">
+                          <li>
+                            <strong class="comment-utill-title">난이도</strong>
+                            <div class="krds-check-area">
+                              <div class="krds-form-check small">
+                                <input type="radio" name="level" id="level1" />
+                                <label for="level1">
+                                  <span>
+                                    상
+                                    <i
+                                      class="svg-icon ico-level03"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                              <div class="krds-form-check small">
+                                <input type="radio" name="level" id="level2" />
+                                <label for="level2">
+                                  <span>
+                                    중
+                                    <i
+                                      class="svg-icon ico-level02"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                              <div class="krds-form-check small">
+                                <input type="radio" name="level" id="level3" />
+                                <label for="level3">
+                                  <span>
+                                    하
+                                    <i
+                                      class="svg-icon ico-level01"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <strong class="comment-utill-title"
+                              >평점주기</strong
+                            >
+                            <div class="krds-check-area">
+                              <div class="krds-form-check small">
+                                <input
+                                  type="radio"
+                                  name="rating"
+                                  id="rating1"
+                                />
+                                <label for="rating1">
+                                  <span>
+                                    1점
+                                    <i
+                                      class="svg-icon ico-star-off"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                              <div class="krds-form-check small">
+                                <input
+                                  type="radio"
+                                  name="rating"
+                                  id="rating2"
+                                />
+                                <label for="rating2">
+                                  <span>
+                                    2점
+                                    <i
+                                      class="svg-icon ico-star-off"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                              <div class="krds-form-check small">
+                                <input
+                                  type="radio"
+                                  name="rating"
+                                  id="rating3"
+                                />
+                                <label for="rating3">
+                                  <span>
+                                    3점
+                                    <i
+                                      class="svg-icon ico-star-off"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                              <div class="krds-form-check small">
+                                <input
+                                  type="radio"
+                                  name="rating"
+                                  id="rating4"
+                                />
+                                <label for="rating4">
+                                  <span>
+                                    4점
+                                    <i
+                                      class="svg-icon ico-star-off"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                              <div class="krds-form-check small">
+                                <input
+                                  type="radio"
+                                  name="rating"
+                                  id="rating5"
+                                />
+                                <label for="rating5">
+                                  <span>
+                                    5점
+                                    <i
+                                      class="svg-icon ico-star-off"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="krds-btns-wrap right">
+                          <button type="button" class="krds-btn small tertiary">
+                            <i class="svg-icon ico-document"></i>
+                            평가 등록
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="krds-btns-wrap right">
+                  <button type="button" class="krds-btn xlarge tertiary">
+                    개선요청
+                  </button>
+                  <!-- <button type="button" class="krds-btn xlarge tertiary">개선요청 수정</button> -->
+                  <button type="button" class="krds-btn xlarge tertiary">
+                    신고하기
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

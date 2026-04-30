@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>내 역량진단 | 역량진단 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 0 + 1, depth2: 0 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 역량진단 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">역량진단</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">내 역량진단</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">나의 진단결과</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //역량진단 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">역량진단</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">내 역량진단</h3>
+            </div>
+            <div class="page-contents-wrap">
+              <div class="form-group">
+                <div class="form-conts">
+                  <select
+                    id="select_name4"
+                    class="krds-form-select completed"
+                    aria-label="설문 선택"
+                  >
+                    <option value="">
+                      2026년도 경기교원(교사) 핵심역량진단 설문 2분기
+                    </option>
+                    <option value="">
+                      2026년도 경기교원(교사) 핵심역량진단 설문 2분기
+                    </option>
+                  </select>
+                </div>
+                <p class="form-info">
+                  본인의 상태에 대해 솔직하게 답해 주셔야 보다 정확하고 객관적인
+                  진단 결과를 얻으실 수 있습니다.
+                </p>
+              </div>
+
+              <ol class="question-list">
+                <li>
+                  <h4 class="question-title">1. 교육과정 설계</h4>
+                  <ul>
+                    <li>
+                      <p class="question-cont">
+                        [지식] 교육과정 기획, 재구성에 필요한 국가 교육과정의
+                        주요 내용을 설명할 수 있다.
+                      </p>
+                      <div class="question-select">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_01"
+                              id="question01_01_01"
+                            />
+                            <label for="question01_01_01">매우낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_01"
+                              id="question01_01_02"
+                            />
+                            <label for="question01_01_02">낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_01"
+                              id="question01_01_03"
+                            />
+                            <label for="question01_01_03">보통</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_01"
+                              id="question01_01_04"
+                            />
+                            <label for="question01_01_04">높음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_01"
+                              id="question01_01_05"
+                            />
+                            <label for="question01_01_05">매우 높음</label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <p class="question-cont">
+                        [기술] 학교의 교육방향과 학생의 특성을 반영하여
+                        교육과정을 기획하거나 재구성할 수 있다.
+                      </p>
+                      <div class="question-select">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_02"
+                              id="question01_02_01"
+                            />
+                            <label for="question01_02_01">매우낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_02"
+                              id="question01_02_02"
+                            />
+                            <label for="question01_02_02">낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_02"
+                              id="question01_02_03"
+                            />
+                            <label for="question01_02_03">보통</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_02"
+                              id="question01_02_04"
+                            />
+                            <label for="question01_02_04">높음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_02"
+                              id="question01_02_05"
+                            />
+                            <label for="question01_02_05">매우 높음</label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <p class="question-cont">
+                        [태도] 국가 교육과정의 주요 내용을 반영하여 교육과정을
+                        기획·재구성하기 위해 노력한다.
+                      </p>
+                      <div class="question-select">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_03"
+                              id="question01_03_01"
+                            />
+                            <label for="question01_03_01">매우낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_03"
+                              id="question01_03_02"
+                            />
+                            <label for="question01_03_02">낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_03"
+                              id="question01_03_03"
+                            />
+                            <label for="question01_03_03">보통</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_03"
+                              id="question01_03_04"
+                            />
+                            <label for="question01_03_04">높음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question01_03"
+                              id="question01_03_05"
+                            />
+                            <label for="question01_03_05">매우 높음</label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <h4 class="question-title">2. 수업 및 평가</h4>
+                  <ul>
+                    <li>
+                      <p class="question-cont">
+                        [지식] 학생의 수준과 성장의 신장에 필요한 교수전략,
+                        평가, 피드백 방법을 알고 있다.
+                      </p>
+                      <div class="question-select">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_01"
+                              id="question02_01_01"
+                            />
+                            <label for="question02_01_01">매우낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_01"
+                              id="question02_01_02"
+                            />
+                            <label for="question02_01_02">낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_01"
+                              id="question02_01_03"
+                            />
+                            <label for="question02_01_03">보통</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_01"
+                              id="question02_01_04"
+                            />
+                            <label for="question02_01_04">높음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_01"
+                              id="question02_01_05"
+                            />
+                            <label for="question02_01_05">매우 높음</label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <p class="question-cont">
+                        [기술] 학생의 수준과 성장을 지원하기 위한 교수·학습과
+                        평가를 위해 노력한다.
+                      </p>
+                      <div class="question-select">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_02"
+                              id="question02_02_01"
+                            />
+                            <label for="question02_02_01">매우낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_02"
+                              id="question02_02_02"
+                            />
+                            <label for="question02_02_02">낮음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_02"
+                              id="question02_02_03"
+                            />
+                            <label for="question02_02_03">보통</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_02"
+                              id="question02_02_04"
+                            />
+                            <label for="question02_02_04">높음</label>
+                          </div>
+                          <div class="krds-form-check large">
+                            <input
+                              type="radio"
+                              name="question02_02"
+                              id="question02_02_05"
+                            />
+                            <label for="question02_02_05">매우 높음</label>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+
+              <div class="krds-btns-wrap between">
+                <div class="right">
+                  <button type="button" class="krds-btn xlarge primary">
+                    임시 저장
+                  </button>
+                  <p>
+                    ‘임시 저장’버튼 클릭 시 결과 제출 전 진단결과 정보를 확인
+                    하실 수 있습니다. <br />※’임시 저장’ 버튼을 누르지 않고
+                    이전으로 이동 하거나 창을 닫을 경우 입력하신 내용은 저장되지
+                    않습니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="krds-btns-wrap between">
+                <button type="button" class="krds-btn xlarge secondary">
+                  진단결과 보기
+                </button>
+                <div class="right">
+                  <button type="button" class="krds-btn xlarge tertiary">
+                    진단 결과 미리보기
+                  </button>
+                  <button type="button" class="krds-btn xlarge primary">
+                    제출 하기
+                  </button>
+                  <p>
+                    ‘제출 하기’버튼 을 통해 역량진단 결과를 제출하실 수
+                    있습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

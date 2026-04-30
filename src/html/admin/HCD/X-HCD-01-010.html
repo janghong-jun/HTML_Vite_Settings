@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "10" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>대시보드</h2>
+          <div class="dashboard">
+            <div class="dashboard-item full">
+              <div class="sub-title">
+                <h3>5) 월별 역량진단 제출 현황</h3>
+                <div class="frm-area flex">
+                  <select aria-label="년도 선택">
+                    <option>2026</option>
+                  </select>
+                  <select aria-label="월 선택">
+                    <option>전체</option>
+                    <option>1월</option>
+                    <option>2월</option>
+                    <option>3월</option>
+                    <option>4월</option>
+                    <option>5월</option>
+                    <option>6월</option>
+                    <option>7월</option>
+                    <option>8월</option>
+                    <option>9월</option>
+                    <option>10월</option>
+                    <option>11월</option>
+                    <option>12월</option>
+                  </select>
+                </div>
+              </div>
+              <!-- 개발시 style 제거 -->
+              <div
+                class="chart"
+                style="background-color: rgba(0, 0, 0, 0.3)"
+              ></div>
+            </div>
+          </div>
+          <!-- table -->
+          <div class="tbl-base mgt16 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">작성 기준일</th>
+                  <td>Today-1</td>
+                </tr>
+                <tr>
+                  <th scope="row">대상 기간</th>
+                  <td>
+                    기준기간 Today - 16 ~ Today -9 <br />비교기간 Today - 8 ~
+                    Today -1
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- //table -->
+          <div class="tbl-btns">
+            <a href="#" class="btn base secondary">
+              <span>목록</span>
+            </a>
+            <div>
+              <button type="button" class="btn base primary">
+                <span>보고서</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

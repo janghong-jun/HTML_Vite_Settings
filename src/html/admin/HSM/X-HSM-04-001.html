@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "4" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <button type="button" type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>코드 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 18.9rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="frm-area">
+                      <select>
+                        <option>검색조건선택</option>
+                        <option>분류명</option>
+                        <option>코드ID</option>
+                      </select>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        placeholder="최소 2글자 이상 입력해주세요"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="sub-title">
+            <div>
+              <p class="count">총 <span>100</span>건</p>
+              <p class="count">페이지 <span>2</span>/50</p>
+            </div>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 10rem" />
+                <col style="width: 15rem" />
+                <col style="width: 17rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">순번</th>
+                  <th scope="col">분류명</th>
+                  <th scope="col">코드ID</th>
+                  <th scope="col">코드명</th>
+                  <th scope="col">사용여부</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>100</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>교사구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>99</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>카테고리 구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>98</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>카테고리 구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>카테고리 구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>96</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>카테고리 구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>95</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>카테고리 구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>94</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>교사구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>교사구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>92</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>교사구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>91</td>
+                  <td class="txt-l">
+                    <a href="#">하이코칭 역량 카테고리 관련</a>
+                  </td>
+                  <td><a href="#">B001</a></td>
+                  <td>교사구분</td>
+                  <td>
+                    <div class="tbl-btns type-small">
+                      <button
+                        type="button"
+                        class="btn base square radio-btn active"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>사용</span>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn base square radio-btn"
+                        onclick="
+                          UI.modal.show({
+                            type: 'confirm',
+                            sMessage:
+                              '<p class=' +
+                              'alert-msg' +
+                              '><strong class=' +
+                              'txts' +
+                              '>$코드명$ 코드를 미사용 하시겠습니까?</strong></p>',
+                            sBtnConfirmTxt: '확인',
+                            sBtnCancelTxt: '취소',
+                            sClass: 'type-confirm',
+                            sConfirmCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                            sCancelCallback: function () {
+                              UI.modal.hideSystem();
+                            },
+                          })
+                        "
+                      >
+                        <span>미사용</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

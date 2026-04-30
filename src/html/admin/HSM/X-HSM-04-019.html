@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "7" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>커뮤니티 게시판 관리</h2>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 20rem" />
+                <col style="width: 7rem" />
+                <col style="width: 13rem" />
+                <col style="width: 8rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">게시판명</th>
+                  <th scope="col">상태</th>
+                  <th scope="col">요청자</th>
+                  <th scope="col">등록일</th>
+                  <th scope="col">노출순서</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>주제별 게시판 2</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" name="board02" id="board02_01" />
+                        <label for="board01_01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" name="board02" id="board02_02" />
+                        <label for="board01_02" class="lb-radio">숨김</label>
+                      </span>
+                    </div>
+                  </td>
+                  <td>홍길동</td>
+                  <td>YYYY-MM-DD</td>
+                  <td><input type="text" class="inp-text txt-c" disabled /></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>주제별 게시판 1</td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" name="board01" id="board01_01" />
+                        <label for="board01_01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" name="board01" id="board01_02" />
+                        <label for="board01_02" class="lb-radio">숨김</label>
+                      </span>
+                    </div>
+                  </td>
+                  <td>홍길동</td>
+                  <td>YYYY-MM-DD</td>
+                  <td><input type="text" class="inp-text txt-c" /></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tbl-btns mgt16">
+            <button
+              type="button"
+              class="btn base secondary btn-modal"
+              data-id="X-HSM-04-010"
+              data-src="X-HSM-04-010.html"
+            >
+              <span>게시판 추가</span>
+            </button>
+            <div>
+              <button type="button" class="btn base primary">
+                <span>저장</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

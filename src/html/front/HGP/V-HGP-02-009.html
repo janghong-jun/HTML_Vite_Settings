@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>보관함 등록 | 마이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 4 + 1, depth2: 3 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 마이코칭 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">마이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">내 프로필</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">기본정보</a>
+              </li>
+              <li class="lnb-item">
+                <button type="button" class="lnb-btn lnb-toggle">
+                  나의이력정보
+                </button>
+                <div class="lnb-submenu">
+                  <ul>
+                    <li class="lnb-subitem">
+                      <a href="#" class="lnb-btn lnb-link">나의학습이력</a>
+                    </li>
+                    <li class="lnb-subitem">
+                      <a href="#" class="lnb-btn lnb-link">나의활동이력</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">보관함</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //마이코칭 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">마이코칭</a></li>
+                <li><a href="#" class="txt">보관함</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">보관함</h3>
+            </div>
+            <div class="board-wrap">
+              <div class="board-write">
+                <div class="krds-table-wrap write">
+                  <h4 class="krds-table-title">학습콘텐츠 등록</h4>
+                  <table class="tbl">
+                    <caption>
+                      학습콘텐츠 등록에 대한 표로 필수 입력 안내, 제목, 키워드,
+                      콘텐츠 소스, 콘텐츠 소스, 콘텐츠 설명, 분야, 관심사,
+                      썸네일, 출처, 첨부파일로 구성되어있다.
+                    </caption>
+                    <colgroup>
+                      <col style="width: 13.6rem" />
+                      <col />
+                      <col style="width: 8.6rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td class="al" colspan="3">
+                          <span class="krds-font-red">*</span> 표시는 필수 입력
+                          항목입니다.
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="contents-title" class="krds-label">
+                            제목
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al" colspan="3">
+                          <input
+                            type="text"
+                            class="krds-input"
+                            id="contents-title"
+                            placeholder="제목을 입력하세요"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="contents-keyword" class="krds-label"
+                            >키워드</label
+                          >
+                        </th>
+                        <td class="al" colspan="3">
+                          <input
+                            type="text"
+                            class="krds-input"
+                            id="contents-keyword"
+                            placeholder="키워드를 입력하세요(키워드, 키워드, 키워드), 최대 NN개까지 입력 가능합니다."
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="contents-source" class="krds-label">
+                            콘텐츠 소스
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al" colspan="3">
+                          <div class="krds-form-wrap">
+                            <input
+                              type="text"
+                              class="krds-input"
+                              id="contents-source"
+                              placeholder="영상 링크 url을 입력하세요"
+                            />
+                            <button type="button" class="krds-btn neutral">
+                              미리보기
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="contents-desc" class="krds-label">
+                            콘텐츠 설명
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al" colspan="3">
+                          <textarea
+                            class="krds-input"
+                            id="contents-desc"
+                            placeholder="주제를 입력하세요(최대 100자)"
+                          ></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="contents-field" class="krds-label">
+                            분야
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <select class="krds-form-select" id="contents-field">
+                            <option>분야 선택</option>
+                          </select>
+                        </td>
+                        <th class="al" scope="row">
+                          <label for="contents-interest" class="krds-label">
+                            관심사
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <select
+                            class="krds-form-select"
+                            id="contents-interest"
+                          >
+                            <option>관심사 선택</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="file-upload" class="krds-label">
+                            썸네일
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al" colspan="3">
+                          <div class="file-box-wrap">
+                            <div class="krds-check-area">
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_1" id="rdo_1" />
+                                <label for="rdo_1">직접등록</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="radio" name="rdo_1" id="rdo_2" />
+                                <label for="rdo_2">자동생성</label>
+                              </div>
+                            </div>
+                            <div class="file-box">
+                              <div class="file-info">
+                                <strong
+                                  >이미지 파일만 등록가능 합니다.(권장 :
+                                  000*000)</strong
+                                >
+                              </div>
+                              <div class="file-box-btn-wrap">
+                                <input type="file" id="file-upload" hidden />
+                                <label
+                                  for="file-upload"
+                                  class="krds-btn tertiary medium"
+                                  >찾아보기</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label class="krds-label" for="contents-origin">
+                            출처
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al" colspan="3">
+                          <textarea
+                            class="krds-input"
+                            id="contents-origin"
+                            placeholder="출처를 입력하세요"
+                          ></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="al" scope="row">
+                          <label for="file-upload02" class="krds-label"
+                            >첨부파일</label
+                          >
+                        </th>
+                        <td class="al" colspan="3">
+                          <div class="file-box">
+                            <div class="file-box-btn-wrap">
+                              <input type="file" id="file-upload02" hidden />
+                              <label
+                                for="file-upload02"
+                                class="krds-btn tertiary medium"
+                                >찾아보기</label
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="krds-btns-wrap right">
+                <a href="#" class="krds-btn xlarge tertiary">목록</a>
+                <button type="button" class="krds-btn xlarge primary">
+                  등록
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

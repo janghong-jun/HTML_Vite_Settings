@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "3" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>설문지 관리</h2>
+          <div class="sub-title">
+            <p class="msg">* 표시는 필수 입력 항목입니다.</p>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 12rem" />
+                <col style="width: 7rem" />
+                <col />
+                <col style="width: 7rem" />
+                <col />
+                <col style="width: 7rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="userCategory">사용자 분류</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td colspan="6">
+                    <div class="frm-area type2">
+                      <select id="userCategory">
+                        <option>교사</option>
+                        <option>수석교사</option>
+                        <option>교감</option>
+                        <option>교장</option>
+                        <option>교육전문직원</option>
+                      </select>
+                      <span class="note left"
+                        >사용자 분류(회원 구분)를 선택해주세요.</span
+                      >
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="searchKeyword">설문 제목</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td colspan="6">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="searchKeyword"
+                        class="inp-text"
+                        placeholder="설문 제목을 작성해 주세요"
+                      />
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 설문 1 -->
+                <tr>
+                  <th scope="row" rowspan="2" class="vertical-top">
+                    <div class="questionnaire-num">
+                      <div class="questionnaire">
+                        설문1
+                        <div class="btns-controll">
+                          <button type="button" class="up" disabled>
+                            <span>▲</span>
+                          </button>
+                          <button type="button" class="down">
+                            <span>▼</span>
+                          </button>
+                        </div>
+                      </div>
+                      <button type="button" class="apply-btn">삭제</button>
+                    </div>
+                  </th>
+                  <th scope="row">
+                    <label for="select01_01">역량군</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01_01">
+                        <option>교육과정 역량</option>
+                      </select>
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="select01_02">역량</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01_02">
+                        <option>교육과정 설계</option>
+                      </select>
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_01">가중치</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text right"
+                        id="inp_01"
+                        placeholder="가중치 값을 입력하세요"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="6">
+                    <div class="questionnaire-conts">
+                      <div class="questionnaire-item">
+                        <div class="questionnaire-category">
+                          <select>
+                            <option>지식</option>
+                            <option>기술</option>
+                            <option>태도</option>
+                          </select>
+                        </div>
+                        <div class="questionnaire-question">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            aria-label="설문 내용"
+                            placeholder="100글자 내외로 질문을 작성해 주세요"
+                          />
+                          <input
+                            type="text"
+                            class="inp-text right"
+                            aria-label="연구평가 점수"
+                            placeholder="연구평가 점수를 입력하세요"
+                          />
+                        </div>
+                      </div>
+                      <div class="questionnaire-item">
+                        <div class="questionnaire-category">
+                          <select>
+                            <option>지식</option>
+                            <option>기술</option>
+                            <option>태도</option>
+                          </select>
+                        </div>
+                        <div class="questionnaire-question">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            aria-label="설문 내용"
+                            placeholder="100글자 내외로 질문을 작성해 주세요"
+                          />
+                          <input
+                            type="text"
+                            class="inp-text right"
+                            aria-label="연구평가 점수"
+                            placeholder="연구평가 점수를 입력하세요"
+                          />
+                        </div>
+                      </div>
+                      <div class="questionnaire-item">
+                        <div class="questionnaire-category">
+                          <select>
+                            <option>지식</option>
+                            <option>기술</option>
+                            <option>태도</option>
+                          </select>
+                        </div>
+                        <div class="questionnaire-question">
+                          <input
+                            type="text"
+                            class="inp-text"
+                            aria-label="설문 내용"
+                            placeholder="100글자 내외로 질문을 작성해 주세요"
+                          />
+                          <input
+                            type="text"
+                            class="inp-text right"
+                            aria-label="연구평가 점수"
+                            placeholder="연구평가 점수를 입력하세요"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="tbl-btns mgt10 type-small right">
+              <button type="button" class="btn base square primary">
+                <span>추가</span>
+              </button>
+            </div>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary fill">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

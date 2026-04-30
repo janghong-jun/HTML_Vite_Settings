@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "8", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>유튜브채널 관리</h2>
+          <div class="sub-title">
+            <p class="msg">*표시는 필수 입력 항목입니다.</p>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">채널명</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp01"
+                        class="inp-text"
+                        placeholder="채널명을 입력해주세요"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select01">학교급</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01">
+                        <option>선택</option>
+                        <option>초등</option>
+                        <option>중등</option>
+                        <option>고등</option>
+                        <option>통합</option>
+                        <option>특수</option>
+                        <option>기타</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select02">유형</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select02">
+                        <option>개인</option>
+                        <option>공공기관</option>
+                        <option>중등</option>
+                        <option>사기업</option>
+                        <option>기업</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">핵심검색어</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp02"
+                        class="inp-text"
+                        placeholder="검색어, 검색어, 검색어"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    역량군
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="check01" />
+                        <label for="check01" class="lb-checkbox">역량군1</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="check02" />
+                        <label for="check02" class="lb-checkbox">역량군2</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="check03" />
+                        <label for="check03" class="lb-checkbox">역량군3</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="check04" />
+                        <label for="check04" class="lb-checkbox">역량군4</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="check05" />
+                        <label for="check05" class="lb-checkbox">역량군5</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp03">URL</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="flex-wrap">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        id="inp03"
+                        style="width: 100%; flex: 1"
+                      />
+                      <div class="tbl-btns type-small">
+                        <button type="button" class="btn base square apply-btn">
+                          <span>중복확인</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="textarea01">채널설명</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <textarea
+                      id="textarea01"
+                      class="inp-textarea"
+                      placeholder="채널 설명을 입력해주세요"
+                      style="height: 10rem"
+                    ></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    사용여부
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio">미사용</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

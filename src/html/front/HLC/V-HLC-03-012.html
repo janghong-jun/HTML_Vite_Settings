@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HLC-03-012"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HLC-03-012"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HLC-03-012"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HLC-03-012" class="modal-title">투표 등록</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="krds-table-wrap row mob-scroll mob-col">
+              <table class="tbl">
+                <caption>
+                  투표에 대한 표로 투표 제목, 투표 항목으로 구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 12.8rem" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">투표 제목</th>
+                    <td>투표 제목이 출력됩니다.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">투표 항목</th>
+                    <td>
+                      <div class="vote-list">
+                        <ul>
+                          <li>
+                            <span class="num">1.</span>
+                            <label for="vote01">
+                              투표 항목 1의 내용이 출력됩니다.
+                            </label>
+                            <div class="krds-form-chip small">
+                              <input
+                                type="radio"
+                                class="radio"
+                                name="rdo_chip"
+                                id="vote01"
+                              />
+                              <label
+                                class="krds-form-chip-outline"
+                                for="vote01"
+                              >
+                                선택
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="num">2.</span>
+                            <label for="vote02"
+                              >투표 항목 2의 내용이 출력됩니다.투표 항목 2의 내
+                              용이 출력됩니다.
+                            </label>
+                            <div class="krds-form-chip small">
+                              <input
+                                type="radio"
+                                class="radio"
+                                name="rdo_chip"
+                                id="vote02"
+                              />
+                              <label
+                                class="krds-form-chip-outline"
+                                for="vote02"
+                              >
+                                선택
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="num">3.</span>
+                            <label for="vote03">
+                              투표 항목 3의 내용이 출력됩니다.
+                            </label>
+                            <div class="krds-form-chip small">
+                              <input
+                                type="radio"
+                                class="radio"
+                                name="rdo_chip"
+                                id="vote03"
+                              />
+                              <label
+                                class="krds-form-chip-outline"
+                                for="vote03"
+                              >
+                                선택
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="num">4.</span>
+                            <label for="vote04">
+                              투표 항목 4의 내용이 출력됩니다.
+                            </label>
+                            <div class="krds-form-chip small">
+                              <input
+                                type="radio"
+                                class="radio"
+                                name="rdo_chip"
+                                id="vote04"
+                              />
+                              <label
+                                class="krds-form-chip-outline"
+                                for="vote04"
+                              >
+                                선택
+                              </label>
+                            </div>
+                          </li>
+                          <li>
+                            <span class="num">5.</span>
+                            <label for="vote05">
+                              투표 항목 5의 내용이 출력됩니다.
+                            </label>
+                            <div class="krds-form-chip small">
+                              <input
+                                type="radio"
+                                class="radio"
+                                name="rdo_chip"
+                                id="vote05"
+                              />
+                              <label
+                                class="krds-form-chip-outline"
+                                for="vote05"
+                              >
+                                선택
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            취소
+          </button>
+          <button type="button" class="krds-btn medium primary">등록</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HLC-03-012");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

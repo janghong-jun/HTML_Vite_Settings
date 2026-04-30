@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HGP-01-003"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HGP-01-003"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HGP-01-003"
+  >
+    <div class="modal-dialog modal-xlg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HGP-01-003" class="modal-title">초대받은 학습공동체</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="krds-table-wrap center">
+              <table class="tbl">
+                <caption>
+                  초대받은 학습공동체에 대한 표로 글번호, 공동체유형, 공동체명,
+                  초대한 사람, 초대권한으로 구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 6rem" />
+                  <col style="width: 14rem" />
+                  <col />
+                  <col style="width: 14rem" />
+                  <col style="width: 24rem" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">공동체유형</th>
+                    <th scope="col">공동체명</th>
+                    <th scope="col">초대한 사람</th>
+                    <th scope="col">초대권한</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>협업공간</td>
+                    <td class="al">AI 교과서 활용 방안 협업</td>
+                    <td>홍길동 선생님</td>
+                    <td>
+                      <div class="krds-btns-wrap in-table">
+                        <span>협업참여자</span>
+                        <button type="button" class="krds-btn secondary xsmall">
+                          수락
+                        </button>
+                        <button type="button" class="krds-btn tertiary xsmall">
+                          거절
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>연구지원</td>
+                    <td class="al">디지털 교육 혁신 연구지원</td>
+                    <td>김철수 선생님</td>
+                    <td>
+                      <div class="krds-btns-wrap in-table">
+                        <span>일반참여자</span>
+                        <button type="button" class="krds-btn secondary xsmall">
+                          수락
+                        </button>
+                        <button type="button" class="krds-btn tertiary xsmall">
+                          거절
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>협업공간</td>
+                    <td class="al">진로교육 수업사례 공유</td>
+                    <td>이영희 선생님</td>
+                    <td>
+                      <div class="krds-btns-wrap in-table">
+                        <span>관리자</span>
+                        <button type="button" class="krds-btn secondary xsmall">
+                          수락
+                        </button>
+                        <button type="button" class="krds-btn tertiary xsmall">
+                          거절
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary close-modal">
+            닫기
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HGP-01-003");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>수업공동체 | 학습공동체 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 3 + 1, depth2: 5 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 학습공동체 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">학습공동체</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">협업공간</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">실행나눔</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">연구지원</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">학습공동체채널정보</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">수업공동체</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">경기도교육연구회</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수석교사</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">교사연구년제</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //학습공동체 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">학습공동체</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">수업공동체</h3>
+            </div>
+
+            <div class="krds-tab-area layer">
+              <!-- tab list -->
+              <div class="tab line full">
+                <ul role="tablist">
+                  <li
+                    id="tab_01"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="panel_01"
+                    class="active"
+                  >
+                    <button type="button" class="btn-tab">
+                      수업달력 <i class="sr-only created"> 선택됨</i>
+                    </button>
+                  </li>
+                  <li
+                    id="tab_02"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel_02"
+                  >
+                    <button type="button" class="btn-tab">공지사항</button>
+                  </li>
+                  <li
+                    id="tab_03"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel_03"
+                  >
+                    <button type="button" class="btn-tab">추가게시판</button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <section
+                  id="panel_01"
+                  aria-labelledby="tab_01"
+                  class="tab-conts active"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">수업달력</h3>
+                  <div class="calendar">
+                    <div class="calendar-controller">
+                      <div class="calendar-header" aria-live="polite">
+                        <button type="button" class="prev">
+                          <span class="sr-only">이전 달</span>
+                          <i
+                            class="svg-icon ico-angle small left"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+                        <h4 id="calendar-title">2026.02</h4>
+                        <button type="button" class="next">
+                          <span class="sr-only">다음 달</span>
+                          <i
+                            class="svg-icon ico-angle small right"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+                        <button type="button" class="krds-btn primary xsmall">
+                          오늘
+                        </button>
+                      </div>
+                      <div class="calendar-fillter">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check medium">
+                            <input type="radio" name="rdo_2-1" id="rdo_2-2" />
+                            <label for="rdo_2-2">나의 학교</label>
+                          </div>
+                          <div class="krds-form-check medium">
+                            <input type="radio" name="rdo_2-1" id="rdo_2-3" />
+                            <label for="rdo_2-3">지역별</label>
+                          </div>
+                        </div>
+                        <select
+                          class="krds-form-select small"
+                          aria-label="교육지청 선택"
+                        >
+                          <option>경기도 전체</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div
+                      class="calendar-table"
+                      aria-describedby="calendar-caption"
+                    >
+                      <table>
+                        <caption id="calendar-caption">
+                          달력
+                        </caption>
+                        <thead>
+                          <tr>
+                            <th scope="col">일</th>
+                            <th scope="col">월</th>
+                            <th scope="col">화</th>
+                            <th scope="col">수</th>
+                            <th scope="col">목</th>
+                            <th scope="col">금</th>
+                            <th scope="col">토</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><span>1</span></td>
+                            <td><span>2</span></td>
+                            <td><span>3</span></td>
+                            <td><span>4</span></td>
+                            <td><span>5</span></td>
+                            <td><span>6</span></td>
+                            <td><span>7</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>8</span></td>
+                            <td><span>9</span></td>
+                            <td><span>10</span></td>
+                            <td><span>11</span></td>
+                            <td><span>12</span></td>
+                            <td><span>13</span></td>
+                            <td><span>14</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>15</span></td>
+                            <td>
+                              <span>16</span>
+                              <button
+                                type="button"
+                                class="krds-btn xsmall secondary"
+                              >
+                                +2
+                              </button>
+                            </td>
+                            <td><span>17</span></td>
+                            <td><span>18</span></td>
+                            <td><span>19</span></td>
+                            <td><span>20</span></td>
+                            <td><span>21</span></td>
+                          </tr>
+                          <tr>
+                            <td><span>22</span></td>
+                            <td class="today">
+                              <span class="sr-only">오늘</span>
+                              <span>23</span>
+                              <button
+                                type="button"
+                                class="krds-btn xsmall secondary"
+                              >
+                                +2
+                              </button>
+                            </td>
+                            <td><span>24</span></td>
+                            <td><span>25</span></td>
+                            <td><span>26</span></td>
+                            <td><span>27</span></td>
+                            <td><span>28</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </section>
+                <section
+                  id="panel_02"
+                  aria-labelledby="tab_02"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">공지사항</h3>
+
+                  <div class="g-search-area colum">
+                    <div class="search-top-box">
+                      <div class="form-group">
+                        <div class="sch-form-wrap">
+                          <div class="col date">
+                            <div class="col-title">기간</div>
+                            <div
+                              class="form-date calendar-conts"
+                              data-calendar-type="range"
+                            >
+                              <div class="calendar-input">
+                                <ul class="input-group range small">
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="시작일"
+                                      readonly
+                                      aria-label="시작일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                  <li class="mark small">~</li>
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="종료일"
+                                      readonly
+                                      aria-label="종료일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div
+                                class="krds-calendar-area"
+                                data-keyboard-bound="false"
+                              ></div>
+                            </div>
+                            <div class="krds-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                3개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                6개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1년
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <label
+                              class="col-title align-center"
+                              for="inp-search"
+                              >검색어</label
+                            >
+                            <div class="sch-input">
+                              <input
+                                type="text"
+                                class="krds-input small"
+                                id="inp-search"
+                              />
+                              <span
+                                class="krds-btn xsmall icon ico-search btn-exec"
+                                aria-hidden="true"
+                              >
+                                <i class="svg-icon ico-sch"></i>
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              class="krds-btn small neutral"
+                            >
+                              검색
+                            </button>
+                            <button type="button" class="krds-btn medium text">
+                              초기화
+                              <i
+                                class="svg-icon ico-reset"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="krds-table-wrap center">
+                    <table class="tbl">
+                      <caption>
+                        수업공동체 공지사항 게시판에 대한 표로 글번호, 제목,
+                        등록자, 등록일 항목으로 구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 12rem" />
+                        <col />
+                        <col style="width: 15rem" />
+                        <col style="width: 18rem" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No.</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">등록자</th>
+                          <th scope="col">등록일</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>100</td>
+                          <td class="al">
+                            <a href="#">AI 교과서 신규 기능에 대한 분석 의견</a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>99</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>98</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>97</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>96</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>95</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>94</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>93</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>92</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>91</td>
+                          <td class="al">
+                            <a href="#"
+                              >AI 교과서 신규 기능에 대한 분석 의견
+                            </a>
+                          </td>
+                          <td>관리자</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="krds-pagination">
+                    <a
+                      class="page-navi prev disabled"
+                      aria-disabled="true"
+                      tabindex="-1"
+                      >이전</a
+                    >
+                    <div class="page-links">
+                      <a class="page-link active" href="#"
+                        ><span class="sr-only">현재페이지 </span>1</a
+                      >
+                      <a class="page-link" href="#">2</a>
+                      <a class="page-link" href="#">3</a>
+                      <a class="page-link" href="#">4</a>
+                      <a class="page-link" href="#">5</a>
+                      <a class="page-link" href="#">6</a>
+                      <a class="page-link" href="#">7</a>
+                      <a class="page-link" href="#">8</a>
+                      <span class="page-link link-dot"></span>
+                      <a class="page-link" href="#">99</a>
+                    </div>
+                    <a class="page-navi next" href="#">다음</a>
+                  </div>
+                </section>
+                <section
+                  id="panel_03"
+                  aria-labelledby="tab_03"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">추가게시판</h3>
+
+                  <div class="g-search-area colum">
+                    <div class="search-top-box">
+                      <div class="form-group">
+                        <div class="sch-form-wrap">
+                          <div class="col date">
+                            <div class="col-title">기간</div>
+                            <div
+                              class="form-date calendar-conts"
+                              data-calendar-type="range"
+                            >
+                              <div class="calendar-input">
+                                <ul class="input-group range small">
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="시작일"
+                                      readonly
+                                      aria-label="시작일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                  <li class="mark small">~</li>
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="종료일"
+                                      readonly
+                                      aria-label="종료일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div
+                                class="krds-calendar-area"
+                                data-keyboard-bound="false"
+                              ></div>
+                            </div>
+                            <div class="krds-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                3개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                6개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1년
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <label
+                              class="col-title align-center"
+                              for="inp-search2"
+                              >검색어</label
+                            >
+                            <div class="sch-input">
+                              <input
+                                type="text"
+                                class="krds-input small"
+                                id="inp-search2"
+                              />
+                              <span
+                                class="krds-btn xsmall icon ico-search btn-exec"
+                                aria-hidden="true"
+                              >
+                                <i class="svg-icon ico-sch"></i>
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              class="krds-btn small neutral"
+                            >
+                              검색
+                            </button>
+                            <button type="button" class="krds-btn medium text">
+                              초기화
+                              <i
+                                class="svg-icon ico-reset"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="krds-table-wrap center">
+                    <table class="tbl">
+                      <caption>
+                        수업공동체 수업 나눔 게시판에 대한 표로 글번호, 제목,
+                        구분, 등록자, 대상, 등록일, 공개수업일로 구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 8rem" />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col style="width: 14.1rem" />
+                        <col style="width: 14.1rem" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No.</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">구분</th>
+                          <th scope="col">등록자</th>
+                          <th scope="col">대상</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">공개수업일</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>100</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교 사용자가 등록한 일반(수업지도안) 게시물이
+                              출력됩니다.</a
+                            >
+                          </td>
+                          <td>일반</td>
+                          <td>홍길동</td>
+                          <td></td>
+                          <td>YYYY-MM-DD</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>99</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교사용자가 등록한 나의학교 공개수업 게시물이
+                              출력됩니다.</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>나의학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>98</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교 사용자가 등록한 경기도 전체 게시글 제목이
+                              출력됩니다.</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>경기도전체</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>97</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교 사용자가 등록한 일반(수업지도안) 게시물이
+                              출력됩니다.
+                            </a>
+                          </td>
+                          <td>일반</td>
+                          <td>홍길동</td>
+                          <td></td>
+                          <td>YYYY-MM-DD</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>96</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교사용자가 등록한 나의학교 공개수업 게시물이
+                              출력됩니다</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>나의학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>95</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교사용자가 등록한 지역교육지원청 게시물이
+                              출력됩니다.</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>이천교육지원청</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>94</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교사용자가 등록한 나의학교 공개수업 게시물이
+                              출력됩니다</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>나의학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>93</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교사용자가 등록한 나의학교 공개수업 게시물이
+                              출력됩니다</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>나의학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>92</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교사용자가 등록한 지역교육지원청 게시물이
+                              출력됩니다.</a
+                            >
+                          </td>
+                          <td>공개수업</td>
+                          <td>홍길동</td>
+                          <td>파주교육지원청</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>YYYY-MM-DD</td>
+                        </tr>
+                        <tr>
+                          <td>91</td>
+                          <td class="al">
+                            <a href="#"
+                              >학교 사용자가 등록한 일반(수업지도안) 게시물이
+                              출력됩니다.
+                            </a>
+                          </td>
+                          <td>일반</td>
+                          <td>홍길동</td>
+                          <td></td>
+                          <td>YYYY-MM-DD</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="krds-pagination">
+                    <a
+                      class="page-navi prev disabled"
+                      aria-disabled="true"
+                      tabindex="-1"
+                      >이전</a
+                    >
+                    <div class="page-links">
+                      <a class="page-link active" href="#"
+                        ><span class="sr-only">현재페이지 </span>1</a
+                      >
+                      <a class="page-link" href="#">2</a>
+                      <a class="page-link" href="#">3</a>
+                      <a class="page-link" href="#">4</a>
+                      <a class="page-link" href="#">5</a>
+                      <a class="page-link" href="#">6</a>
+                      <a class="page-link" href="#">7</a>
+                      <a class="page-link" href="#">8</a>
+                      <span class="page-link link-dot"></span>
+                      <a class="page-link" href="#">99</a>
+                    </div>
+                    <a class="page-navi next" href="#">다음</a>
+                  </div>
+
+                  <div class="krds-btns-wrap center">
+                    <a href="#" class="krds-btn xlarge primary">등록</a>
+                  </div>
+                </section>
+              </div>
+              <!-- //tab contents -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

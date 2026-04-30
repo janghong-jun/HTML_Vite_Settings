@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HLC-01-014"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HLC-01-014"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HLC-01-014"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HLC-01-014" class="modal-title">일정 등록</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="krds-table-wrap row mob-scroll mob-col">
+              <table class="tbl">
+                <caption>
+                  일정에 대한 표로 일정 제목, 일정 내용, 시간설정으로
+                  구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 11.2rem" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">일정 제목</th>
+                    <td>[미팅] 신규 기능 확인</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">일정 내용</th>
+                    <td>
+                      신규 기능 확인을 위하여 미팅을 진행합니다. <br />
+                      장소 : 경기도남부교육청 <br />
+                      대표강연자 : 홍길동 선생님
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">시간설정</th>
+                    <td>12월 24일 오후 02시 00분 ~ 12월 25일 오전 10시 00분</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary close-modal">
+            확인
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HLC-01-014");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

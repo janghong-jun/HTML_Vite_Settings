@@ -1,0 +1,107 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 스피너 */
+//사이즈 정의
+@mixin spinner-size-variable() {
+  --spinner--layout-gap: var(--number-5);
+  --spinner--pc-font-size: var(--pc-font-size-body-small);
+  --spinner--mobile-font-size: var(--mobile-font-size-body-small);
+  --spinner--size: var(--size-height-3);
+  --spinner--animation-duration: 0.8s;
+}
+
+//컬러 정의
+@mixin spinner-color-variable($mode: light) {
+  --spinner--color-text: var(--#{$mode}-color-text-subtle);
+  --spinner--border-width: var(--#{$mode}-border-width-variable-medium);
+  --spinner--color-border: var(--#{$mode}-color-element-disabled-light);
+  --spinner--color-border-active: var(--#{$mode}-color-element-primary);
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-spinner {
+  @include spinner-size-variable();
+  @include spinner-color-variable(#{$mode-setting});
+
+  @include flex-layout($jc: center, $ai: center);
+  gap: var(--spinner--layout-gap);
+  @include position($p: relative, $t: 0, $l: 0);
+  z-index: 10;
+  color: var(--spinner--color-text);
+  font-size: var(--spinner--pc-font-size);
+  width: 100%;
+  height: 100%;
+  text-align: right;
+
+  @include size-medium {
+    font-size: var(--spinner--mobile-font-size);
+  }
+  &::before {
+    display: inline-flex;
+    content: '';
+    height: var(--spinner--size);
+    width: var(--spinner--size);
+    border: var(--spinner--border-width) solid var(--spinner--color-border);
+    border: {
+      top-color: var(--spinner--color-border-active);
+      radius: 100%;
+    }
+    animation: spin var(--spinner--animation-duration) infinite linear;
+  }
+}
+
+.form-spinner {
+  //spinner - form-spinner - padding
+  position: relative;
+  width: 100%;
+  --spinner-form-spinner-padding-x: var(--number-8);
+
+  .krds-spinner {
+    position: absolute;
+    justify-content: flex-end;
+    padding: 0 var(--spinner-form-spinner-padding-x);
+  }
+}
+
+#wrap > .krds-spinner {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  color: var(--color-light-alpha-white100);
+  background-color: var(--light-color-background-dim);
+  flex-direction: column;
+  &::before {
+    width: 5rem;
+    height: 5rem;
+    border-width: 0.5rem;
+    border-color: #fff;
+    border-top-color: var(--spinner--color-border-active);
+  }
+  &.is-active {
+    display: flex;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  .krds-spinner {
+    @include spinner-color-variable(#{$mode-setting});
+  }
+}

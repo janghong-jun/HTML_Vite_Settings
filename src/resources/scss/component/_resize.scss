@@ -1,0 +1,117 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+@use '../common/path' as *;
+
+/* 화면 크기 조정 */
+//사이즈 정의
+@mixin resize-size-variable() {
+  --resize--list-icon-radius: var(--radius-small2);
+}
+
+//컬러 정의
+@mixin resize-color-variable($mode: light) {
+  --resize--list-icon-color-border: var(--#{$mode}-color-border-gray);
+  --resize--list-icon-color-border-selected: var(--#{$mode}-color-element-secondary);
+  --resize--list-icon-color-background: var(--#{$mode}-color-action-secondary);
+  --resize--list-icon-color-background-selected: var(--#{$mode}-color-element-secondary);
+}
+
+//모드 설정
+$mode-setting: light;
+/* krds-drop-wrap */
+.krds-drop-wrap {
+  @include resize-size-variable();
+  @include resize-color-variable(#{$mode-setting});
+
+  &.krds-resize {
+    .drop-menu {
+      min-width: 15rem;
+    }
+    .drop-list {
+      .item-link {
+        white-space: nowrap;
+        &::before {
+          @include pseudo();
+          @include square(var(--icon--size-large));
+          background: url(#{$url}/img/component/icon/head_ico_font_sample.svg) no-repeat center / contain;
+          flex-shrink: 0;
+          border-radius: var(--resize--list-icon-radius);
+          border: 0.1rem solid var(--resize--list-icon-color-border);
+          background-color: var(--resize--list-icon-color-background);
+        }
+        &.active {
+          &::before {
+            background-image: url(#{$url}/img/component/icon/head_ico_font_sample_white.svg);
+            border-color: var(--resize--list-icon-color-border-selected);
+            background-color: var(--resize--list-icon-color-background-selected);
+          }
+        }
+        $sizes: (
+          sm: 2.2,
+          md: 2.4,
+          lg: 2.6,
+          xlg: 2.8,
+          xxlg: 3,
+        );
+        @each $name, $size in $sizes {
+          $icon-size: #{$size}rem;
+          &.#{$name} {
+            &::before {
+              width: $icon-size;
+              height: $icon-size;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// krds-scaled-layout
+.krds-scaled-layout {
+  .krds-in-page-navigation-type {
+    & > .inner:not(.in-between) {
+      padding-right: 0;
+    }
+    .in-between {
+      .contents {
+        padding-right: 0;
+      }
+    }
+    .krds-in-page-navigation-area {
+      position: static;
+      margin-bottom: var(--gap-9);
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  /* krds-drop-wrap */
+  .krds-drop-wrap {
+    @include resize-color-variable(#{$mode-setting});
+    &.krds-resize {
+      .item-link {
+        &::before {
+          background: url(#{$url}/img/component/icon/head_ico_font_sample_white.svg) no-repeat center / contain;
+        }
+      }
+    }
+  }
+}
+
+@include size-small {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 7px;
+  }
+}

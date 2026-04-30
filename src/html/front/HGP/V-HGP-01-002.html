@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HGP-01-002"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HGP-01-002"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HGP-01-002"
+  >
+    <div class="modal-dialog modal-xlg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header flex">
+          <h2 id="tit_V-HGP-01-002" class="modal-title">포인트 현황</h2>
+          <button type="button" class="krds-btn etc none-icon">
+            포인트사용
+          </button>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div>
+              <div class="point-status">
+                <div class="item">
+                  <h3 class="title">내 포인트</h3>
+                  <span class="point">
+                    <strong>4,320</strong>
+                    <i class="svg-icon ico-point" aria-hidden="true"></i>
+                    <span class="sr-only">포인트</span>
+                  </span>
+                </div>
+                <div class="item">
+                  <h3 class="title">총 누적 포인트</h3>
+                  <span class="point">
+                    <strong>4,320</strong>
+                    <i class="svg-icon ico-point" aria-hidden="true"></i>
+                    <span class="sr-only">포인트</span>
+                  </span>
+                </div>
+                <div class="g-search-area colum">
+                  <div class="search-top-box">
+                    <div class="form-group">
+                      <div class="sch-form-wrap">
+                        <div class="col date">
+                          <div class="col-title">기간</div>
+                          <div
+                            class="form-date calendar-conts"
+                            data-calendar-type="range"
+                          >
+                            <div class="calendar-input">
+                              <ul class="input-group range small">
+                                <li>
+                                  <input
+                                    class="krds-input datepicker small"
+                                    placeholder="시작일"
+                                    readonly
+                                    aria-label="시작일"
+                                  />
+                                  <button
+                                    type="button"
+                                    class="krds-btn icon form-btn-datepicker small"
+                                  >
+                                    <span class="sr-only">달력 열기</span
+                                    ><i
+                                      class="svg-icon ico-calendar"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </button>
+                                </li>
+                                <li class="mark small">~</li>
+                                <li>
+                                  <input
+                                    class="krds-input datepicker small"
+                                    placeholder="종료일"
+                                    readonly
+                                    aria-label="종료일"
+                                  />
+                                  <button
+                                    type="button"
+                                    class="krds-btn icon form-btn-datepicker small"
+                                  >
+                                    <span class="sr-only">달력 열기</span
+                                    ><i
+                                      class="svg-icon ico-calendar"
+                                      aria-hidden="true"
+                                    ></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </div>
+                            <div
+                              class="krds-calendar-area"
+                              data-keyboard-bound="false"
+                            ></div>
+                          </div>
+                          <div class="krds-btns-wrap">
+                            <button
+                              type="button"
+                              class="krds-btn small secondary"
+                            >
+                              1개월
+                            </button>
+                            <button
+                              type="button"
+                              class="krds-btn small secondary"
+                            >
+                              3개월
+                            </button>
+                            <button
+                              type="button"
+                              class="krds-btn small secondary"
+                            >
+                              6개월
+                            </button>
+                            <button
+                              type="button"
+                              class="krds-btn small secondary"
+                            >
+                              1년
+                            </button>
+                          </div>
+                          <button
+                            type="button"
+                            class="krds-btn small neutral center"
+                          >
+                            조회
+                          </button>
+                          <button type="button" class="krds-btn medium text">
+                            초기화
+                            <i
+                              class="svg-icon ico-reset"
+                              aria-hidden="true"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="modal-sub-title">포인트 적립 기록</h3>
+
+              <div class="krds-tab-area">
+                <!-- tab list -->
+                <div class="tab fill full scroll">
+                  <ul>
+                    <li class="active">
+                      <button type="button" class="btn-tab">전체</button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn-tab">콘텐츠 학습</button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn-tab">모듈 학습</button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn-tab">
+                        학습공동체 활동
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn-tab">전문가 코칭</button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn-tab">역량진단</button>
+                    </li>
+                    <li>
+                      <button type="button" class="btn-tab">사용 포인트</button>
+                    </li>
+                  </ul>
+                </div>
+                <!-- //tab list -->
+
+                <!-- tab contents -->
+                <div class="tab-conts-wrap">
+                  <section class="tab-conts active">
+                    <div class="krds-table-wrap center">
+                      <table class="tbl">
+                        <caption>
+                          포인트 적립 기록에 대한 표로 적립일, 적립 활동 구분,
+                          학습 또는 활동 제목, 적립/차감 포인트로 구성되어있다.
+                        </caption>
+                        <colgroup>
+                          <col style="width: 12.6rem" />
+                          <col style="width: 13.2rem" />
+                          <col />
+                          <col style="width: 15.2rem" />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td>2026-01-01</td>
+                            <td>
+                              <span class="krds-badge outline-primary long"
+                                >콘텐츠학습</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#"
+                                >경기교육지원청, 교육 공동체 역량 강화 프로그램
+                                운영 학습</a
+                              >
+                            </td>
+                            <td>
+                              <span class="point">
+                                +100,780
+                                <i
+                                  class="svg-icon ico-point"
+                                  aria-hidden="true"
+                                ></i>
+                                <span class="sr-only">포인트</span>
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2026-01-01</td>
+                            <td>
+                              <span class="krds-badge outline-success long"
+                                >모듈 학습</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#"
+                                >경기교육지원청, 교육 공동체 역량 강화 프로그램
+                                운영 학습</a
+                              >
+                            </td>
+                            <td>
+                              <span class="point">
+                                +100,780
+                                <i
+                                  class="svg-icon ico-point"
+                                  aria-hidden="true"
+                                ></i>
+                                <span class="sr-only">포인트</span>
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2026-01-01</td>
+                            <td>
+                              <span class="krds-badge outline-point long"
+                                >학습공동체 활동</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#"
+                                >경기교육지원청, 교육 공동체 역량 강화 프로그램
+                                운영 학습</a
+                              >
+                            </td>
+                            <td>
+                              <span class="point">
+                                +100,780
+                                <i
+                                  class="svg-icon ico-point"
+                                  aria-hidden="true"
+                                ></i>
+                                <span class="sr-only">포인트</span>
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2026-01-01</td>
+                            <td>
+                              <span class="krds-badge outline-visited long"
+                                >전문가 코칭</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#"
+                                >경기교육지원청, 교육 공동체 역량 강화 프로그램
+                                운영 학습</a
+                              >
+                            </td>
+                            <td>
+                              <span class="point">
+                                +100,780
+                                <i
+                                  class="svg-icon ico-point"
+                                  aria-hidden="true"
+                                ></i>
+                                <span class="sr-only">포인트</span>
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2026-01-01</td>
+                            <td>
+                              <span class="krds-badge outline-information long"
+                                >역량진단</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#"
+                                >경기교육지원청, 교육 공동체 역량 강화 프로그램
+                                운영 학습</a
+                              >
+                            </td>
+                            <td>
+                              <span class="point">
+                                +100,780
+                                <i
+                                  class="svg-icon ico-point"
+                                  aria-hidden="true"
+                                ></i>
+                                <span class="sr-only">포인트</span>
+                              </span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2026-01-01</td>
+                            <td>
+                              <span class="krds-badge outline-disabled long"
+                                >사용 포인트</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#"
+                                >경기교육지원청, 교육 공동체 역량 강화 프로그램
+                                운영 학습</a
+                              >
+                            </td>
+                            <td>
+                              <span class="point">
+                                +100,780
+                                <i
+                                  class="svg-icon ico-point"
+                                  aria-hidden="true"
+                                ></i>
+                                <span class="sr-only">포인트</span>
+                              </span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                </div>
+                <!-- //tab contents -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary close-modal">
+            닫기
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HGP-01-002");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

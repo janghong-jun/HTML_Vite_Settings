@@ -1,0 +1,1965 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>나의학습이력 | 나의이력정보 | 마이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 4 + 1, depth2: 2 + 1, depth3: 0 + 1 });
+
+        document.querySelectorAll(".circle-chart").forEach((chart) => {
+          let percent = Number(chart.dataset.percent);
+
+          percent = Math.max(0, Math.min(100, percent));
+
+          const bar = chart.querySelector(".bar");
+          const number = chart.querySelector(".number");
+
+          const radius = 50;
+          const circumference = 2 * Math.PI * radius;
+
+          bar.style.strokeDasharray = circumference;
+          bar.style.strokeDashoffset = circumference * (1 - percent / 100);
+
+          if (number) number.textContent = percent;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 마이코칭 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">마이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">내 프로필</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">기본정보</a>
+              </li>
+              <li class="lnb-item">
+                <button type="button" class="lnb-btn lnb-toggle">
+                  나의이력정보
+                </button>
+                <div class="lnb-submenu">
+                  <ul>
+                    <li class="lnb-subitem">
+                      <a href="#" class="lnb-btn lnb-link">나의학습이력</a>
+                    </li>
+                    <li class="lnb-subitem">
+                      <a href="#" class="lnb-btn lnb-link">나의활동이력</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">보관함</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //마이코칭 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">마이코칭</a></li>
+                <li><a href="#" class="txt">나의이력정보</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">나의 학습이력</h3>
+            </div>
+
+            <div class="krds-tab-area layer" data-default-tab="0">
+              <!-- tab list -->
+              <div class="tab line full" data-col>
+                <ul role="tablist">
+                  <li
+                    id="tab_01"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="tab-panel_01"
+                    class="active"
+                  >
+                    <button type="button" class="btn-tab">
+                      역량진단 <i class="sr-only created"> 선택됨</i>
+                    </button>
+                  </li>
+                  <li
+                    id="tab_02"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tab-panel_02"
+                  >
+                    <button type="button" class="btn-tab">학습콘텐츠</button>
+                  </li>
+                  <li
+                    id="tab_03"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tab-panel_03"
+                  >
+                    <button type="button" class="btn-tab">학습모듈</button>
+                  </li>
+                  <li
+                    id="tab_04"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tab-panel_04"
+                  >
+                    <button type="button" class="btn-tab">학습공동체</button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <section
+                  id="tab-panel_01"
+                  aria-labelledby="tab_01"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">역량진단</h3>
+                  <div class="content-section">
+                    <div class="section-title-wrap">
+                      <h4 class="s-tit">역량별 상세</h4>
+                    </div>
+                    <div class="circle-chart-wrap">
+                      <div class="circle-chart-item">
+                        <div class="circle-chart-title">교육역량</div>
+                        <!-- data-percent에 점수 값만 -->
+                        <div class="circle-chart type01" data-percent="82">
+                          <svg viewBox="0 0 120 120">
+                            <circle class="track" cx="60" cy="60" r="50" />
+                            <circle class="bar" cx="60" cy="60" r="50" />
+                          </svg>
+                          <div class="label">
+                            <span class="number"></span>
+                            <span class="unit">점</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="circle-chart-item">
+                        <div class="circle-chart-title">생활교육 역량</div>
+                        <!-- data-percent에 점수 값만 -->
+                        <div class="circle-chart type02" data-percent="80">
+                          <svg viewBox="0 0 120 120">
+                            <circle class="track" cx="60" cy="60" r="50" />
+                            <circle class="bar" cx="60" cy="60" r="50" />
+                          </svg>
+                          <div class="label">
+                            <span class="number"></span>
+                            <span class="unit">점</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="circle-chart-item">
+                        <div class="circle-chart-title">공동체 역량</div>
+                        <!-- data-percent에 점수 값만 -->
+                        <div class="circle-chart type03" data-percent="75">
+                          <svg viewBox="0 0 120 120">
+                            <circle class="track" cx="60" cy="60" r="50" />
+                            <circle class="bar" cx="60" cy="60" r="50" />
+                          </svg>
+                          <div class="label">
+                            <span class="number"></span>
+                            <span class="unit">점</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="circle-chart-item">
+                        <div class="circle-chart-title">자기개발 역량</div>
+                        <!-- data-percent에 점수 값만 -->
+                        <div class="circle-chart type04" data-percent="78">
+                          <svg viewBox="0 0 120 120">
+                            <circle class="track" cx="60" cy="60" r="50" />
+                            <circle class="bar" cx="60" cy="60" r="50" />
+                          </svg>
+                          <div class="label">
+                            <span class="number"></span>
+                            <span class="unit">점</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content-section">
+                    <div class="section-title-wrap">
+                      <h4 class="s-tit">역량진단 이력</h4>
+                    </div>
+                    <div class="krds-table-wrap center">
+                      <table class="tbl">
+                        <caption>
+                          역량진단 이력에 대한 표로 글 번호, 진단일자, 진단명,
+                          진단상태, 진단결과로 구성되어있다.
+                        </caption>
+                        <colgroup>
+                          <col style="width: 6rem" />
+                          <col style="width: 16rem" />
+                          <col />
+                          <col style="width: 11rem" />
+                          <col style="width: 10rem" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">진단일자</th>
+                            <th scope="col">진단명</th>
+                            <th scope="col">진단상태</th>
+                            <th scope="col">진단결과</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td class="al">
+                              2026년도 경기교원(교사) 핵심역량 진단 설문 3분기
+                            </td>
+                            <td>
+                              <span class="krds-badge bg-light-success"
+                                >미진행</span
+                              >
+                            </td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>2026-04-02</td>
+                            <td class="al">
+                              2026년도 경기교원(교사) 핵심역량 진단 설문 2분기
+                            </td>
+                            <td>
+                              <span class="krds-badge bg-light-gray"
+                                >처리완료</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#" class="krds-btn basic link medium"
+                                ><span class="underline">결과보기</span></a
+                              >
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>2026-01-12</td>
+                            <td class="al">
+                              2026년도 경기교원(교사) 핵심역량 진단 설문 1분기
+                            </td>
+                            <td>
+                              <span class="krds-badge bg-light-gray"
+                                >처리완료</span
+                              >
+                            </td>
+                            <td>
+                              <a href="#" class="krds-btn basic link medium"
+                                ><span class="underline">결과보기</span></a
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="krds-pagination">
+                      <span class="page-navi prev disabled" href="#">이전</span>
+                      <div class="page-links">
+                        <a class="page-link active" href="#"
+                          ><span class="sr-only">현재페이지 </span>1</a
+                        >
+                        <a class="page-link" href="#">2</a>
+                        <a class="page-link" href="#">3</a>
+                        <a class="page-link" href="#">4</a>
+                        <a class="page-link" href="#">5</a>
+                        <a class="page-link" href="#">6</a>
+                        <a class="page-link" href="#">7</a>
+                        <a class="page-link" href="#">8</a>
+                        <span class="page-link link-dot"></span>
+                        <a class="page-link" href="#">99</a>
+                      </div>
+                      <a class="page-navi next" href="#">다음</a>
+                    </div>
+                  </div>
+                </section>
+                <section
+                  id="tab-panel_02"
+                  aria-labelledby="tab_02"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">학습콘턴체</h3>
+
+                  <div class="g-search-area colum">
+                    <div class="search-top-box">
+                      <div class="form-group">
+                        <div class="sch-form-wrap">
+                          <div class="col date">
+                            <div class="col-title">기간</div>
+                            <div
+                              class="form-date calendar-conts"
+                              data-calendar-type="range"
+                            >
+                              <div class="calendar-input">
+                                <ul class="input-group range small">
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="시작일"
+                                      readonly
+                                      aria-label="시작일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                  <li class="mark small">~</li>
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="종료일"
+                                      readonly
+                                      aria-label="종료일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div
+                                class="krds-calendar-area"
+                                data-keyboard-bound="false"
+                              ></div>
+                            </div>
+                            <div class="krds-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                3개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                6개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1년
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="col-title">분야</div>
+                            <div class="krds-check-area">
+                              <div class="krds-form-check large">
+                                <input
+                                  type="checkbox"
+                                  id="search_chk01_01"
+                                  checked
+                                />
+                                <label for="search_chk01_01">전체</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk01_02" />
+                                <label for="search_chk01_02">교수 역량</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk01_03" />
+                                <label for="search_chk01_03"
+                                  >생활교육 역량</label
+                                >
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk01_04" />
+                                <label for="search_chk01_04">공동체 역량</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk01_05" />
+                                <label for="search_chk01_05"
+                                  >자기개발 역량</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="col-title">유형</div>
+                            <div class="krds-check-area">
+                              <div class="krds-form-check large">
+                                <input
+                                  type="checkbox"
+                                  id="search_chk02_01"
+                                  checked
+                                />
+                                <label for="search_chk02_01">전체</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk02_02" />
+                                <label for="search_chk02_02">동영상</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk02_03" />
+                                <label for="search_chk02_03">문서</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input type="checkbox" id="search_chk02_04" />
+                                <label for="search_chk02_04">이미지</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col input">
+                            <div class="sch-input">
+                              <input
+                                type="text"
+                                class="krds-input small"
+                                aria-label="검색어 입력"
+                              />
+                              <span
+                                class="krds-btn xsmall icon ico-search btn-exec"
+                                aria-hidden="true"
+                              >
+                                <i class="svg-icon ico-sch"></i>
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              class="krds-btn small neutral"
+                            >
+                              검색
+                            </button>
+                            <button type="button" class="krds-btn medium text">
+                              초기화
+                              <i
+                                class="svg-icon ico-reset"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="content-section">
+                    <div class="section-title-wrap right">
+                      <div class="krds-check-area">
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_1" id="rdo_1" checked />
+                          <label for="rdo_1">맞춤</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_1" id="rdo_2" />
+                          <label for="rdo_2">관심사</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_1" id="rdo_3" />
+                          <label for="rdo_3">트렌드</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <ul class="card-list type-video">
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/noData/img_video.png"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level01"
+                                    aria-hidden="true"
+                                  ></i>
+                                  하
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level03"
+                                    aria-hidden="true"
+                                  ></i>
+                                  상
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/noData/img_video.png"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level01"
+                                    aria-hidden="true"
+                                  ></i>
+                                  하
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level03"
+                                    aria-hidden="true"
+                                  ></i>
+                                  상
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/noData/img_video.png"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level01"
+                                    aria-hidden="true"
+                                  ></i>
+                                  하
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level03"
+                                    aria-hidden="true"
+                                  ></i>
+                                  상
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="timer">
+                              <span class="sr-only">남은시간</span>
+                              <span>26:47</span>
+                            </span>
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="학습콘텐츠 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              경기교육지원청, 교육 공동체 역량 강화 프로그램
+                              운영
+                            </h5>
+                            <p class="card-ability">
+                              교수역량&gt;교과전문성&gt;교화과정 설계
+                            </p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <p class="card-keyword">#영통구 #공동체역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span class="card-org">경기도 교육청</span>
+                                <div>
+                                  <span class="card-views">조회수 999회</span>
+                                  <span class="bar" aria-hidden="true"></span>
+                                  <span class="time">2개월 전</span>
+                                  <span class="full">2025-12-18 완료</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="krds-pagination">
+                      <span class="page-navi prev disabled" href="#">이전</span>
+                      <div class="page-links">
+                        <a class="page-link active" href="#"
+                          ><span class="sr-only">현재페이지 </span>1</a
+                        >
+                        <a class="page-link" href="#">2</a>
+                        <a class="page-link" href="#">3</a>
+                        <a class="page-link" href="#">4</a>
+                        <a class="page-link" href="#">5</a>
+                        <a class="page-link" href="#">6</a>
+                        <a class="page-link" href="#">7</a>
+                        <a class="page-link" href="#">8</a>
+                        <span class="page-link link-dot"></span>
+                        <a class="page-link" href="#">99</a>
+                      </div>
+                      <a class="page-navi next" href="#">다음</a>
+                    </div>
+                  </div>
+                </section>
+                <section
+                  id="tab-panel_03"
+                  aria-labelledby="tab_03"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">학습모듈</h3>
+
+                  <div class="content-section">
+                    <div class="section-title-wrap">
+                      <div>
+                        <h4 class="s-tit">진행중인 학습모듈</h4>
+                      </div>
+                    </div>
+
+                    <ul class="card-list type-video">
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/noData/img_video.png"
+                              alt="진행중인 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="learning-progress">
+                                <span class="learning-progress-state">
+                                  <i
+                                    class="svg-icon ico-on-play"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <strong>학습중</strong>
+                                </span>
+                                <span class="learning-progress-text">
+                                  <strong>3/6</strong>
+                                  (50%)
+                                </span>
+                                <div class="learning-progress-bar">
+                                  <span style="width: 50%"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="진행중인 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="learning-progress">
+                                <span class="learning-progress-state">
+                                  <i
+                                    class="svg-icon ico-on-play"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <strong>학습중</strong>
+                                </span>
+                                <span class="learning-progress-text">
+                                  <strong>3/6</strong>
+                                  (50%)
+                                </span>
+                                <div class="learning-progress-bar">
+                                  <span style="width: 50%"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="진행중인 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="learning-progress">
+                                <span class="learning-progress-state">
+                                  <i
+                                    class="svg-icon ico-on-play"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <strong>학습중</strong>
+                                </span>
+                                <span class="learning-progress-text">
+                                  <strong>3/6</strong>
+                                  (50%)
+                                </span>
+                                <div class="learning-progress-bar">
+                                  <span style="width: 50%"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="진행중인 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-bottom-cont">
+                              <div class="learning-progress">
+                                <span class="learning-progress-state">
+                                  <i
+                                    class="svg-icon ico-on-play"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <strong>학습중</strong>
+                                </span>
+                                <span class="learning-progress-text">
+                                  <strong>3/6</strong>
+                                  (50%)
+                                </span>
+                                <div class="learning-progress-bar">
+                                  <span style="width: 50%"></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <div class="krds-btns-wrap">
+                      <button class="krds-btn medium tertiary more">
+                        더보기
+                        <i class="svg-icon ico-angle" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="content-section">
+                    <div class="section-title-wrap">
+                      <h4 class="s-tit">완료한 학습모듈</h4>
+                    </div>
+
+                    <ul class="card-list type-video">
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/noData/img_video.png"
+                              alt="완료한 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span>2025.12.18 완료</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="완료한 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level01"
+                                    aria-hidden="true"
+                                  ></i>
+                                  하
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span>2025.12.18 완료</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="완료한 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level03"
+                                    aria-hidden="true"
+                                  ></i>
+                                  상
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span>2025.12.18 완료</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="card-box">
+                          <a href="#" class="card-thumbnail">
+                            <span class="learning-count"
+                              >총 <strong>6개</strong> 학습</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                              alt="완료한 학습모듈 썸네일 이미지"
+                            />
+                          </a>
+                          <div class="card-conts">
+                            <h5 class="card-tit">
+                              AI 도구로 수업 영상 만들기,
+                              브루&middot;캡컷&middot;캔바 활용 콘텐츠 제작
+                            </h5>
+                            <p class="card-ability">교수역량</p>
+                            <div class="card-level">
+                              <span class="difficulty">
+                                <strong>난이도</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon ico-level02"
+                                    aria-hidden="true"
+                                  ></i>
+                                  중
+                                </span>
+                              </span>
+                              <span class="bar" aria-hidden="true"></span>
+                              <span class="rating">
+                                <strong>평점</strong>
+                                <span>
+                                  <i
+                                    class="svg-icon small ico-star-on"
+                                    aria-hidden="true"
+                                  ></i>
+                                  4.7
+                                </span>
+                              </span>
+                            </div>
+                            <div class="card-bottom-cont">
+                              <div class="card-meta">
+                                <span>2025.12.18 완료</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <div class="krds-btns-wrap">
+                      <button class="krds-btn medium tertiary more">
+                        더보기
+                        <i class="svg-icon ico-angle" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </section>
+                <section
+                  id="tab-panel_04"
+                  aria-labelledby="tab_04"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">학습공동체</h3>
+                  <div class="content-section">
+                    <div class="section-title-wrap">
+                      <h4 class="s-tit">참여중인 학습공동체</h4>
+                    </div>
+
+                    <ul class="card-list">
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-success etc"
+                              >연구지원</span
+                            >
+                            <img
+                              src="../../../resources/img/noData/img_default.png"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge">MY</span>
+                            <span class="krds-badge large bg-success etc"
+                              >연구지원</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-success etc"
+                              >연구지원</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-success etc"
+                              >연구지원</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#" class="card-box">
+                          <span class="card-thumbnail">
+                            <span class="krds-badge large bg-primary etc"
+                              >협업공간</span
+                            >
+                            <img
+                              src="../../../resources/img/sample/img_card_thumbnail01.jpg"
+                              alt="참여중인 학습공동체 썸네일 이미지"
+                            />
+                          </span>
+                        </a>
+                        <div class="card-conts">
+                          <h4 class="card-tit">
+                            AI 교과서의 수업에서의 활용에 대한 협업
+                          </h4>
+                          <div class="card-info">
+                            <span class="card-owner">
+                              <strong>운영자</strong>
+                              <span>김미래</span>
+                            </span>
+                            <span class="card-date">2025-11-15</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <div class="krds-pagination">
+                      <a
+                        class="page-navi prev disabled"
+                        aria-disabled="true"
+                        tabindex="-1"
+                        >이전</a
+                      >
+                      <div class="page-links">
+                        <a class="page-link active" href="#"
+                          ><span class="sr-only">현재페이지 </span>1</a
+                        >
+                        <a class="page-link" href="#">2</a>
+                        <a class="page-link" href="#">3</a>
+                        <a class="page-link" href="#">4</a>
+                        <a class="page-link" href="#">5</a>
+                        <a class="page-link" href="#">6</a>
+                        <a class="page-link" href="#">7</a>
+                        <a class="page-link" href="#">8</a>
+                        <span class="page-link link-dot"></span>
+                        <a class="page-link" href="#">99</a>
+                      </div>
+                      <a class="page-navi next" href="#">다음</a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //tab contents -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

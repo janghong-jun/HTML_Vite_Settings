@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>커뮤니티게시판 추가 요청 | 학습공동체 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 3 + 1, depth2: 4 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 학습공동체 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">학습공동체</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">협업공간</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">실행나눔</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">연구지원</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">학습공동체채널정보</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">커뮤니티게시판</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수업공동체</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">경기도교육연구회</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수석교사</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">교사연구년제</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //학습공동체 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">학습공동체</a></li>
+                <li><a href="#" class="txt">커뮤니티게시판</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">게시판 추가 요청</h3>
+            </div>
+
+            <div class="board-wrap">
+              <div class="board-write">
+                <div class="krds-table-wrap write">
+                  <table class="tbl">
+                    <caption>
+                      커뮤니티 게시판 등록에 대한 표로 참고사항, 제목, 내용으로
+                      구성되어있다.
+                    </caption>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td colspan="2">
+                          <div class="info-wrap">
+                            <strong class="info-title">작성시 참고사항</strong>
+                            <p class="info-text">
+                              게시판 추가 요청의 정보를 입력해 주세요.
+                            </p>
+                            <p class="info-text">
+                              부적절한 주제이거나 적합하지 않은 요청사항인
+                              경우에 게시판 추가 요청이 거절될 수 있습니다.
+                            </p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">요청자</th>
+                        <td>김역량</td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_title" class="krds-label"
+                            >요청 게시판 명칭</label
+                          >
+                        </th>
+                        <td class="al">
+                          <input
+                            type="text"
+                            class="krds-input"
+                            id="input_title"
+                            placeholder="요청하시는 게시판의 명칭을 입력하여 주세요.(최대 30자)"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_cont" class="krds-label"
+                            >요청 내용</label
+                          >
+                        </th>
+                        <td class="al">
+                          <textarea
+                            class="krds-input"
+                            id="input_cont"
+                            placeholder="내용을 입력해주세요(최대 0000자)"
+                          ></textarea>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="krds-btns-wrap right">
+                <a href="#" class="krds-btn xlarge primary">요청</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

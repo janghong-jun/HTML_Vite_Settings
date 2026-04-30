@@ -1,0 +1,79 @@
+@use 'group_variables' as *;
+@use 'mixins/utils' as *;
+@use 'mixins/breakpoints' as *;
+@use 'mixins/icons' as *;
+
+//모드 설정
+$mode-setting: light;
+:root {
+  //* PRIMITIVE *
+  --font-family-base: var(--typo-font-type);
+  --font-size-base: #{$font-size-base};
+
+  //line heights
+  @each $type, $value in $font-line-heights {
+    --line-height-#{$type}: #{$value};
+  }
+
+  //letter spacings
+  @each $type, $value in $font-letter-spacings {
+    --letter-spacing-#{$type}: #{$value};
+  }
+
+  //font weight
+  @each $type, $value in $font-weights {
+    --font-weight-#{$type}: #{$value};
+  }
+
+  //transition
+  --transition-base: #{$transition-base};
+  --transition-fade: #{$transition-fade};
+  --transition-collapse: #{$transition-collapse};
+  --transition-collapse-width: #{$transition-collapse-width};
+
+  //contents size
+  --contents-size: #{$contents-size};
+  --contents-padding-x: #{$contents-padding-x-pc};
+  --contents-wrap-size: #{$contents-wrap-size};
+
+  //box shadow (only for focus outline)
+  --box-shadow-outline: 0 0 0 0.4rem
+    var(--#{$mode-setting}-color-border-primary);
+  --box-shadow-outline-inset: inset 0 0 0 0.2rem
+    var(--#{$mode-setting}-color-border-primary);
+
+  //screen zoom sizes
+  @each $type, $value in $screen-zoom-sizes {
+    --zoom-#{$type}: #{$value};
+  }
+
+  //text underline offset
+  --font-underline-offset: #{$font-underline-offset-default};
+
+  //svg icon size
+  @each $size, $value in $icon-sizes {
+    --icon--size-#{$size}: #{$value};
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  :root {
+    //box shadow (only for focus outline)
+    --box-shadow-outline: 0 0 0 0.4rem
+      var(--#{$mode-setting}-color-border-primary);
+    --box-shadow-outline-inset: inset 0 0 0 0.2rem
+      var(--#{$mode-setting}-color-border-primary);
+  }
+}
+
+//responsive mobile
+@include size-large-less {
+  :root {
+    //contents size
+    --contents-padding-x: #{$contents-padding-x-mobile};
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+dist/
+
+# SCSS 컴파일 output (자동 생성되므로 git 제외 권장)
+src/assets/css/

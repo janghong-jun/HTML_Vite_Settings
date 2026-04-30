@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>협업공간 등록 | 협업공간 | 학습공동체 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 3 + 1, depth2: 0 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 학습공동체 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">학습공동체</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">협업공간</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">실행나눔</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">연구지원</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">학습공동체채널정보</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">커뮤니티게시판</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수업공동체</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">경기도교육연구회</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수석교사</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">교사연구년제</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //학습공동체 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">학습공동체</a></li>
+                <li><a href="#" class="txt">협업공간</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">협업공간</h3>
+            </div>
+            <div class="board-wrap">
+              <div class="board-write">
+                <div class="krds-table-wrap write">
+                  <h4 class="krds-table-title">협업공간 등록 요청</h4>
+                  <table class="tbl">
+                    <caption>
+                      협업공간 등록에 대한 표로 요청자, 협업명, 협업소개,
+                      썸네일, 협업 주제, 협업 키워드로 구성되어있다.
+                    </caption>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class="ac" scope="row">요청자</th>
+                        <td class="al">홍길동</td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_name" class="krds-label">
+                            협업명
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <div class="flex-wrap">
+                            <input
+                              type="text"
+                              class="krds-input"
+                              id="input_name"
+                              placeholder="협업명을 입력해주세요(최대 20자)"
+                            />
+                            <button
+                              type="button"
+                              class="krds-btn tertiary large"
+                            >
+                              중복체크
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="category_select">
+                            교원/역량 구분
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td>
+                          <div class="krds-form-wrap">
+                            <select
+                              class="krds-form-select"
+                              id="category_select"
+                            >
+                              <option value="">교원 구분 선택</option>
+                              <option value="">교사</option>
+                              <option value="">수석교사</option>
+                              <option value="">교감</option>
+                              <option value="">교장</option>
+                              <option value="">교육전문직원</option>
+                            </select>
+                            <select
+                              class="krds-form-select"
+                              aria-label="역량군 선택"
+                            >
+                              <option value="">역량군 선택</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_cont" class="krds-label">
+                            협업소개
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <textarea
+                            class="krds-input"
+                            id="input_cont"
+                            placeholder="협업 소개 내용을 입력해주세요 (최대 50자)"
+                          ></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="file-upload" class="krds-label"
+                            >썸네일</label
+                          >
+                        </th>
+                        <td>
+                          <div class="file-box">
+                            <div class="file-info">
+                              <strong
+                                >이미지 파일만 등록가능 합니다.(권장 :
+                                000*000)</strong
+                              >
+                            </div>
+                            <div class="file-box-btn-wrap">
+                              <input type="file" id="file-upload" hidden />
+                              <label
+                                for="file-upload"
+                                class="krds-btn tertiary medium"
+                                >찾아보기</label
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="file-upload" class="krds-label"
+                            >썸네일</label
+                          >
+                        </th>
+                        <td>
+                          <div class="file-box">
+                            <ul class="file-list">
+                              <li>
+                                <span class="file-name">
+                                  <i
+                                    class="svg-icon ico-pdf"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span>실행나눔 사례1.pdf</span>
+                                </span>
+                                <button type="button" class="krds-btn icon">
+                                  <i
+                                    class="svg-icon ico-delete-fill2"
+                                    aria-hidden="true"
+                                  ></i>
+                                  <span class="sr-only">삭제</span>
+                                </button>
+                              </li>
+                            </ul>
+                            <div class="file-box-btn-wrap">
+                              <input type="file" id="file-upload" hidden />
+                              <label
+                                for="file-upload"
+                                class="krds-btn tertiary medium"
+                                >찾아보기</label
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_topic" class="krds-label">
+                            협업 주제
+                          </label>
+                        </th>
+                        <td class="al">
+                          <input
+                            type="text"
+                            class="krds-input"
+                            id="input_topic"
+                            placeholder="협업주제를 입력해주세요(최대 30자)"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_keyword" class="krds-label">
+                            협업 키워드
+                          </label>
+                        </th>
+                        <td class="al">
+                          <input
+                            type="text"
+                            class="krds-input"
+                            id="input_keyword"
+                            placeholder="협업과 관련된 키워드를 입력해주세요(최대 10개 키워드1, 키워드2, 키워드3 형식으로 입력해주세요)"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="krds-btns-wrap right">
+                <a href="#" class="krds-btn xlarge primary">협업등록요청</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HGP-01-006"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HGP-01-006"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HGP-01-006"
+  >
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HGP-01-006" class="modal-title">상품선택</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="krds-check-area chk-column chip">
+              <div>
+                <label for="prd-rdo01">스타벅스 커피 쿠폰(5,000점)</label>
+                <div class="krds-form-chip small">
+                  <input type="radio" name="prd-select" id="prd-rdo01" />
+                  <label for="prd-rdo01">선택</label>
+                </div>
+              </div>
+              <div>
+                <label for="prd-rdo02">신세계 상품권 (1만원권)(10,000점)</label>
+                <div class="krds-form-chip small">
+                  <input type="radio" name="prd-select" id="prd-rdo02" />
+                  <label for="prd-rdo02">선택</label>
+                </div>
+              </div>
+              <div>
+                <label for="prd-rdo03">이마트 상품권 (5천원권)(5,000점)</label>
+                <div class="krds-form-chip small">
+                  <input type="radio" name="prd-select" id="prd-rdo03" />
+                  <label for="prd-rdo03">선택</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary">확인</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HGP-01-006");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

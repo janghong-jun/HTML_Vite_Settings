@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "9" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>커뮤니티 게시글 관리</h2>
+          <div class="ui-tab grid mgt10">
+            <div class="ui-tab-btns">
+              <button type="button" class="ui-tab-btn selected">자유</button>
+              <button type="button" class="ui-tab-btn">주제1</button>
+              <button type="button" class="ui-tab-btn">주제2</button>
+              <button type="button" class="ui-tab-btn">주제3</button>
+              <button type="button" class="ui-tab-btn">주제4</button>
+              <button type="button" class="ui-tab-btn">주제5</button>
+              <button type="button" class="ui-tab-btn">주제6</button>
+            </div>
+          </div>
+          <div class="tbl-base mgt24">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">개시상태</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_01" />
+                        <label for="checkbox_01_01" class="lb-checkbox"
+                          >전체</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_02" />
+                        <label for="checkbox_01_02" class="lb-checkbox"
+                          >게시</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_03" />
+                        <label for="checkbox_01_03" class="lb-checkbox"
+                          >숨김</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="sub-title">
+            <select style="margin-left: auto">
+              <option>최신순</option>
+              <option>추천순</option>
+              <option>조회순</option>
+            </select>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8rem" />
+                <col />
+                <col style="width: 7rem" />
+                <col style="width: 7rem" />
+                <col style="width: 10rem" />
+                <col style="width: 7rem" />
+                <col style="width: 7rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">제목</th>
+                  <th scope="col">상태</th>
+                  <th scope="col">글쓴이</th>
+                  <th scope="col">등록일</th>
+                  <th scope="col">추천</th>
+                  <th scope="col">조회</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="notice">공지</span></td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td><span class="featured">추천</span></td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td><span class="featured">추천</span></td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>96</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>95</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>94</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>92</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td>91</td>
+                  <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                  <td>게시</td>
+                  <td>홍길동</td>
+                  <td>2025-03-20</td>
+                  <td>8888</td>
+                  <td>8888</td>
+                </tr>
+                <tr>
+                  <td colspan="7" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div>
+              <button
+                type="button"
+                class="btn base primary btn-modal"
+                data-id="X-HSM-04-015"
+                data-src="X-HSM-04-015.html"
+              >
+                <span>게시판 공지글 작성</span>
+              </button>
+            </div>
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

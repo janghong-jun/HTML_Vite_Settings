@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "5", sid: "7" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>콘텐츠설정</h2>
+          <div class="sub-title">
+            <h4 class="fc-black">추천기준 설정</h4>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">매핑 역량</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_01" />
+                        <label for="checkbox_01_01" class="lb-checkbox"
+                          >역량군</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_02" />
+                        <label for="checkbox_01_02" class="lb-checkbox"
+                          >대분류</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_03" />
+                        <label for="checkbox_01_03" class="lb-checkbox"
+                          >중분류</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <th scope="row"><label for="inp01">학습 건수</label></th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text right" id="inp01" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="inp02">공유 건수</label></th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text right" id="inp02" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                  <th scope="row"><label for="inp03">찜 건수</label></th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text right" id="inp03" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="inp04">평점</label></th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text right" id="inp04" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                  <th scope="row">태그</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio">적용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio">미적용</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sub-title">
+            <h4 class="fc-black">기본정보</h4>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row"><label for="inp05">신고이력 건수</label></th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text right" id="inp05" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                  <th scope="row"><label for="inp06">평점</label></th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text right" id="inp06" />
+                      <span class="unit">이하</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tbl-btns mgt16">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>저장</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

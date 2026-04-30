@@ -1,0 +1,54 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+@use '../common/path' as *;
+
+/* 운영기관 식별자 */
+//모드 설정
+$mode-setting: light;
+.krds-identifier {
+  @include flex-layout($ai: center);
+  gap: var(--gap-3);
+  width: 100%;
+  min-height: var(--size-height-6);
+  padding: var(--padding-3) var(--padding-6);
+  border-radius: var(--radius-medium1);
+  background-color: var(--#{$mode-setting}-color-surface-white);
+  //모바일 전용
+  @include size-medium {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-2);
+  }
+  .logo {
+    @include square(6.8rem, var(--size-height-4));
+    background-image: url(#{$url}/img/component/icon/ico_logo_krds.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    //모바일 전용
+    @include size-medium {
+      @include square(5.8rem, var(--size-height-3));
+    }
+  }
+  .ban-txt {
+    font-size: var(--pc-font-size-body-small);
+    @include size-medium {
+      font-size: var(--mobile-font-size-body-xsmall);
+      word-break: break-all;
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  .krds-identifier {
+    background-color: var(--#{$mode-setting}-color-surface-white);
+    .logo {
+      background-image: url(#{$url}/img/component/icon/ico_logo_krds_high_contrast.svg);
+    }
+  }
+}

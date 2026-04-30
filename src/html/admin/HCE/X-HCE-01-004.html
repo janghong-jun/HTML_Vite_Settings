@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "9", sid: "2" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>발급분석</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">유형</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="radio_01_01"
+                          name="radio_01"
+                          checked
+                        />
+                        <label for="radio_01_01" class="lb-radio">전체</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="radio_01_02" name="radio_01" />
+                        <label for="radio_01_02" class="lb-radio"
+                          >콘텐츠 학습</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="radio_01_03" name="radio_01" />
+                        <label for="radio_01_03" class="lb-radio"
+                          >모듈 학습</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="radio_01_04" name="radio_01" />
+                        <label for="radio_01_04" class="lb-radio"
+                          >학습공동체 활동</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="radio_01_05" name="radio_01" />
+                        <label for="radio_01_05" class="lb-radio"
+                          >전문가 코칭</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="radio_01_06" name="radio_01" />
+                        <label for="radio_01_06" class="lb-radio"
+                          >역량진단</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="radio_01_07" name="radio_01" />
+                        <label for="radio_01_07" class="lb-radio">기타</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">검색</th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="sub-title">
+            <div>
+              <p class="count">총 <span>100</span>건</p>
+              <p class="count">페이지 <span>2</span>/50</p>
+            </div>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col style="width: 13rem" />
+                <col />
+                <col style="width: 10rem" />
+                <col style="width: 12rem" />
+                <col style="width: 13rem" />
+                <col style="width: 12rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">유형</th>
+                  <th scope="col">항목명</th>
+                  <th scope="col">회원명</th>
+                  <th scope="col">소속</th>
+                  <th scope="col">포인트</th>
+                  <th scope="col">발급일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>9999</td>
+                  <td class="txt-l">콘텐츠 학습</td>
+                  <td class="txt-l">콘텐츠 학습 포인트 설정</td>
+                  <td>김교사</td>
+                  <td>용인중학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9998</td>
+                  <td class="txt-l">모듈 학습</td>
+                  <td class="txt-l">모듈 학습 포인트 설정</td>
+                  <td>이교사</td>
+                  <td>수원고등학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9997</td>
+                  <td class="txt-l">학습공동체 활동</td>
+                  <td class="txt-l">학습공동체 활동 포인트 설정</td>
+                  <td>박교사</td>
+                  <td>성남초등학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9996</td>
+                  <td class="txt-l">역량진단</td>
+                  <td class="txt-l">역량진단 포인트 설정</td>
+                  <td>최교사</td>
+                  <td>안양중학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9995</td>
+                  <td class="txt-l">전문가 코칭</td>
+                  <td class="txt-l">전문가 코칭 포인트 설정</td>
+                  <td>정교사</td>
+                  <td>화성고등학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9994</td>
+                  <td class="txt-l">콘텐츠 학습</td>
+                  <td class="txt-l">콘텐츠 학습 포인트 설정</td>
+                  <td>강교사</td>
+                  <td>평택초등학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9993</td>
+                  <td class="txt-l">모듈 학습</td>
+                  <td class="txt-l">모듈 학습 포인트 설정</td>
+                  <td>조교사</td>
+                  <td>광명중학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9992</td>
+                  <td class="txt-l">콘텐츠 학습</td>
+                  <td class="txt-l">콘텐츠 학습 포인트 설정</td>
+                  <td>윤교사</td>
+                  <td>시흥고등학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9991</td>
+                  <td class="txt-l">학습공동체 활동</td>
+                  <td class="txt-l">학습공동체 활동 포인트 설정</td>
+                  <td>장교사</td>
+                  <td>부천초등학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>9990</td>
+                  <td class="txt-l">역량진단</td>
+                  <td class="txt-l">역량진단 포인트 설정</td>
+                  <td>임교사</td>
+                  <td>고양중학교</td>
+                  <td>+200 P</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td colspan="7" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns flex-box mgt16">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>엑셀 다운로드</span>
+              </button>
+            </div>
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+            <div>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

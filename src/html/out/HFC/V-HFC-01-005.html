@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Q&amp;A 목록 | 하이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 2, depth2: 3 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header_out.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 하이코칭 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">하이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">하이코칭안내</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">공지사항</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">FAQ</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">Q&amp;A</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //하이코칭 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">하이코칭</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">Q&amp;A</h3>
+            </div>
+            <div class="g-search-area colum">
+              <div class="search-top-box">
+                <div class="form-group">
+                  <div class="sch-form-wrap">
+                    <div class="col date">
+                      <div class="col-title">기간</div>
+                      <div
+                        class="form-date calendar-conts"
+                        data-calendar-type="range"
+                      >
+                        <div class="calendar-input">
+                          <ul class="input-group range small">
+                            <li>
+                              <input
+                                class="krds-input datepicker small"
+                                placeholder="시작일"
+                                readonly
+                                aria-label="시작일"
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn icon form-btn-datepicker small"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </li>
+                            <li class="mark small">~</li>
+                            <li>
+                              <input
+                                class="krds-input datepicker small"
+                                placeholder="종료일"
+                                readonly
+                                aria-label="종료일"
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn icon form-btn-datepicker small"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div
+                          class="krds-calendar-area"
+                          data-keyboard-bound="false"
+                        ></div>
+                      </div>
+                      <div class="krds-btns-wrap">
+                        <button type="button" class="krds-btn small secondary">
+                          1개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          3개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          6개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          1년
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="col-title">구분</div>
+                      <div class="krds-check-area">
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_01" checked />
+                          <label for="search_chk01_01">전체</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_02" />
+                          <label for="search_chk01_02">역량진단</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_03" />
+                          <label for="search_chk01_03">학습모듈</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_04" />
+                          <label for="search_chk01_04">콘텐츠</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_05" />
+                          <label for="search_chk01_05">시스템</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_06" />
+                          <label for="search_chk01_06">전문가</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_07" />
+                          <label for="search_chk01_07">기타</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col input">
+                      <div class="sch-input">
+                        <input
+                          type="text"
+                          class="krds-input small"
+                          aria-label="검색어 입력"
+                        />
+                        <span
+                          class="krds-btn xsmall icon ico-search btn-exec"
+                          aria-hidden="true"
+                        >
+                          <i class="svg-icon ico-sch"></i>
+                        </span>
+                      </div>
+                      <button type="button" class="krds-btn small neutral">
+                        검색
+                      </button>
+                      <button type="button" class="krds-btn medium text">
+                        초기화
+                        <i class="svg-icon ico-reset" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="krds-table-wrap center">
+              <div class="krds-table-info">
+                <p class="count">총<span>183</span>건</p>
+                <p class="count">페이지<span>1/19</span></p>
+              </div>
+              <table class="tbl">
+                <caption>
+                  Q&amp;A에 대한 표로 글번호, 구분, 제목, 작성자, 작성일,
+                  답변상태로 구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 8rem" />
+                  <col style="width: 10rem" />
+                  <col />
+                  <col style="width: 13rem" />
+                  <col style="width: 13rem" />
+                  <col style="width: 11rem" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">구분</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">작성일</th>
+                    <th scope="col">답변상태</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>183</td>
+                    <td>역량진단</td>
+                    <td class="al">
+                      <a href="#">역량 진단 재응답 관련 문의</a>
+                    </td>
+                    <td>홍길동</td>
+                    <td>2025-12-08</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>182</td>
+                    <td>학습모듈</td>
+                    <td class="al">
+                      <a href="#">추천 모듈이 표시되지 않아요</a>
+                    </td>
+                    <td>김철수</td>
+                    <td>2025-12-07</td>
+                    <td>
+                      <span class="krds-badge bg-light-gray">답변대기</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>181</td>
+                    <td>콘텐츠</td>
+                    <td class="al"><a href="#">콘텐츠 업로드 오류</a></td>
+                    <td>이영희</td>
+                    <td>2025-12-06</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>180</td>
+                    <td>시스템</td>
+                    <td class="al"><a href="#">로그인이 안 됩니다</a></td>
+                    <td>박민수</td>
+                    <td>2025-12-05</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>179</td>
+                    <td>전문가</td>
+                    <td class="al"><a href="#">전문가 매칭 취소 방법</a></td>
+                    <td>최지은</td>
+                    <td>2025-12-04</td>
+                    <td><span krds-badge bg-light-gray>답변대기</span></td>
+                  </tr>
+                  <tr>
+                    <td>178</td>
+                    <td>학습모듈</td>
+                    <td class="al">
+                      <a href="#">학습모듈 이수 확인서 발급</a>
+                    </td>
+                    <td>정수민</td>
+                    <td>2025-12-03</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>177</td>
+                    <td>역량진단</td>
+                    <td class="al"><a href="#">진단 결과 해석 문의</a></td>
+                    <td>강동훈</td>
+                    <td>2025-12-02</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>176</td>
+                    <td>콘텐츠</td>
+                    <td class="al"><a href="#">콘텐츠 승인 소요 기간 </a></td>
+                    <td>윤서연</td>
+                    <td>2025-12-01</td>
+                    <td><span krds-badge bg-light-gray>답변대기</span></td>
+                  </tr>
+                  <tr>
+                    <td>175</td>
+                    <td>시스템</td>
+                    <td class="al"><a href="#">비밀번호 변경 방법 </a></td>
+                    <td>조현우</td>
+                    <td>2025-12-29</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>174</td>
+                    <td>기타</td>
+                    <td class="al">
+                      <a href="#">사용 매뉴얼 다운로드 문의</a>
+                    </td>
+                    <td>신예린</td>
+                    <td>2025-11-28</td>
+                    <td>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="krds-pagination">
+              <a
+                class="page-navi prev disabled"
+                aria-disabled="true"
+                tabindex="-1"
+                >이전</a
+              >
+              <div class="page-links">
+                <a class="page-link active" href="#"
+                  ><span class="sr-only">현재페이지 </span>1</a
+                >
+                <a class="page-link" href="#">2</a>
+                <a class="page-link" href="#">3</a>
+                <a class="page-link" href="#">4</a>
+                <a class="page-link" href="#">5</a>
+                <a class="page-link" href="#">6</a>
+                <a class="page-link" href="#">7</a>
+                <a class="page-link" href="#">8</a>
+                <span class="page-link link-dot"></span>
+                <a class="page-link" href="#">99</a>
+              </div>
+              <a class="page-navi next" href="#">다음</a>
+            </div>
+
+            <div class="krds-btns-wrap center">
+              <a href="#" class="krds-btn medium xlarge primary">질문하기</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

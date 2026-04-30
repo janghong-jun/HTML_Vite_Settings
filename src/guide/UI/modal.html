@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <link
+      rel="stylesheet"
+      href="../../resources/css/plugin/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../resources/css/output.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../resources/css/guide.css" type="text/css" />
+    <!-- 공통 script -->
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/crownix-chart.min.js"></script>
+    <script src="../../../resources/js/component/ui-script.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../components/_skip.html" -->
+
+      <!--#include "../../components/_masthead.html" -->
+      <!--#include "../../components/_header.html" -->
+
+      <!-- Container -->
+      <div id="container">
+        <div class="inner">
+          <div class="guide">
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_01"
+            >
+              class 및 data-target 호출
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_03"
+            >
+              alert, confirm 호출
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_small"
+            >
+              small
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_medium"
+            >
+              medium
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_large"
+            >
+              large
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_xlarge"
+            >
+              xlarge
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_xxlarge"
+            >
+              xxlarge
+            </button>
+            <button
+              type="button"
+              class="krds-btn large open-modal"
+              data-target="modal_sample_full"
+            >
+              full
+            </button>
+            <button type="button" id="btnExampleModal" class="krds-btn large">
+              ajax 호출
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <!--#include "../../components/_footer.html" -->
+    </div>
+  </body>
+
+  <section
+    id="modal_sample_01"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_01"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_01" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button
+            type="button"
+            class="krds-btn medium primary close-modal open-modal"
+            data-target="modal_sample_02"
+          >
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_02"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_02"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_02" class="modal-title">모달 제목2</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는 사용자에게
+            작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러
+            작업을 포함할 수 있습니다. 대화 상자는 사용자에게 작업에 대해 알리고
+            중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+            있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
+            포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화
+            상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는 사용자에게
+            작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러
+            작업을 포함할 수 있습니다. 대화 상자는 사용자에게 작업에 대해 알리고
+            중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+            있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
+            포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화
+            상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는 사용자에게
+            작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러
+            작업을 포함할 수 있습니다. 대화 상자는 사용자에게 작업에 대해 알리고
+            중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+            있습니다. 대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를
+            포함하거나 결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화
+            상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는 사용자에게
+            작업에 대해 알리고 중요한 정보를 포함하거나 결정이 필요하거나 여러
+            작업을 포함할 수 있습니다. 대화 상자는 사용자에게 작업에 대해 알리고
+            중요한 정보를 포함하거나 결정이 필요하거나 여러 작업을 포함할 수
+            있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_03"
+    class="krds-modal fade system-modal"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_03"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area" id="tit_modal_sample_03">
+            참여신청이 완료 되었습니다. 개설자 승인 후 협업공간에 참여하실 수
+            있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            취소
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            확인
+          </button>
+        </div>
+        <!-- //modal btn -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_small"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_small"
+  >
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_small" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_medium"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_medium"
+  >
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_medium" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_large"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_large"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_large" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_xlarge"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_xlarge"
+  >
+    <div class="modal-dialog modal-xlg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_xlarge" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_xxlarge"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_xxlarge"
+  >
+    <div class="modal-dialog modal-xxlg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_01" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_full"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_full"
+    data-type="full"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_modal_sample_full" class="modal-title">모달 제목</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            대화 상자는 사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나
+            결정이 필요하거나 여러 작업을 포함할 수 있습니다. 대화 상자는
+            사용자에게 작업에 대해 알리고 중요한 정보를 포함하거나 결정이
+            필요하거나 여러 작업을 포함할 수 있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            아니요
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            예
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <div id="exampleModalFm"></div>
+  <script>
+    // AjaxUtil Mock - 예제 확인용 (실제 개발 시 제거)
+    const AjaxUtil = {
+      ajaxHtml: function (url, data, target, callback) {
+        document.querySelector(target).innerHTML = `
+        <section id="exampleModal02" class="krds-modal fade" role="dialog" aria-labelledby="tit_exampleModal02">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 id="tit_exampleModal02" class="modal-title">Ajax 모달 제목</h2>
+              </div>
+              <div class="modal-conts">
+                <p>Ajax로 불러온 모달 내용입니다.</p>
+              </div>
+              <div class="modal-btn btn-wrap">
+                <button type="button" class="krds-btn medium primary close-modal">확인</button>
+              </div>
+              <button type="button" class="krds-btn medium icon btn-close close-modal" onClick="krds_modal.closeModal('exampleModal02')">
+                <span class="sr-only">닫기</span>
+                <i class="svg-icon ico-popup-close"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-back"></div>
+        </section>
+      `;
+        callback();
+      },
+    };
+
+    document
+      .getElementById("btnExampleModal")
+      .addEventListener("click", function () {
+        // Ajax 호출 전에 반드시 트리거 저장
+        krds_modal._triggerMap["exampleModal02"] = this;
+
+        AjaxUtil.ajaxHtml("", {}, "#exampleModalFm", function () {
+          krds_modal.openModal("exampleModal02");
+        });
+      });
+  </script>
+  <!--#include "../../components/_chatbot.html" -->
+</html>

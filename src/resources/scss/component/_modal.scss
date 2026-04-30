@@ -1,0 +1,574 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 모달 */
+//사이즈 정의
+@mixin modal-size-variable() {
+  --modal--size-xxlarge: 120rem;
+  --modal--size-xlarge: 100rem;
+  --modal--size-large: 80rem;
+  --modal--size-medium: 56rem;
+  --modal--size-small: 40rem;
+  --modal--size-min-height: 26.4rem;
+  --modal--wrap-radius: var(--radius-xlarge1);
+  --modal--padding: var(--padding-10);
+  --modal--header-padding-top: var(--number-17);
+  --modal--header-pc-font-size: var(--pc-font-size-heading-medium);
+  --modal--header-mobile-font-size: var(--mobile-font-size-heading-medium);
+  --modal--conts-padding-top: var(--padding-6);
+  --modal--conts-padding-bottom: var(--padding-3);
+  --modal--conts-gap: var(--gap-5);
+  --modal--btn-gap: var(--gap-3);
+  --modal--btn-padding-top: var(--padding-6);
+  --modal--btn-size-min-wdith: 12rem;
+  --modal--btn-close-position: var(--gap-7);
+
+  //mobile
+  --modal--mobile-gap: var(--gap-7);
+  --modal--mobile-width: calc(100% - var(--gap-7));
+  --modal--mobile-height: calc(100% - var(--modal--mobile-gap) * 2);
+  --modal--mobile-padding: var(--padding-8);
+  --modal--mobile-header-padding-top: 5.2rem;
+  --modal--mobile-btn-close-position: var(--gap-6);
+  --modal--mobile-btn-padding-top: var(--padding-6);
+  --modal--mobile-btn-padding-bottom: var(--padding-8);
+}
+
+//컬러 정의
+@mixin modal-color-variable($mode: light) {
+  --modal--border-width: var(--#{$mode}-border-width-variable-regular);
+  --modal--color-text: var(--#{$mode}-color-text-basic);
+  --modal--wrap-color-surface: var(--#{$mode}-color-surface-white-subtler);
+  --modal--wrap-color-border: var(--#{$mode}-color-border-gray);
+  --modal--wrap-shadow: 0 0 0.2rem 0 var(--#{$mode}-color-alpha-shadow2), 0 1.6rem 2.4rem 0 var(--#{$mode}-color-alpha-shadow3);
+  --modal--color-dim: var(--#{$mode}-color-background-dim);
+  --modal--full-popup-surface: var(--#{$mode}-color-surface-secondary-subtler);
+}
+
+//modal size
+$modal-size: (
+  sm: var(--modal--size-small),
+  md: var(--modal--size-medium),
+  lg: var(--modal--size-large),
+  xlg: var(--modal--size-xlarge),
+  xxlg: var(--modal--size-xxlarge),
+) !default;
+
+//modal default css
+@mixin modal-default {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition:
+    visibility 0.15s 0.3s,
+    z-index 0s 0.3s,
+    opacity 0.2s;
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-modal {
+  @include modal-size-variable();
+  @include modal-color-variable(#{$mode-setting});
+
+  @include modal-default();
+  @include reset-text();
+
+  > * {
+    width: 100%;
+  }
+  &.in {
+    z-index: 1010;
+    transition-delay: 0s;
+    opacity: 1;
+    visibility: visible;
+  }
+  &.shown {
+    display: block;
+  }
+
+  &.system-modal {
+    text-align: center;
+    .modal-dialog {
+      width: 56rem;
+      .modal-conts {
+        padding: var(--modal--padding) var(--modal--padding) var(--modal--btn-padding-top) var(--modal--padding);
+        font-size: var(--pc-font-size-body-large);
+        color: var(--color-light-gray-90);
+      }
+      .modal-btn {
+        justify-content: center;
+        .krds-btn {
+          min-width: 12rem;
+        }
+      }
+    }
+  }
+  //dim-backgorund
+  .modal-back {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: -1;
+    background-color: var(--modal--color-dim);
+    &.in {
+      display: block;
+      z-index: 1000;
+      visibility: visible;
+    }
+  }
+
+  //기본타입
+  .modal-dialog {
+    @include flex-layout($ai: center);
+    position: relative;
+    z-index: 1020;
+    width: 100%;
+    max-width: var(--modal--size-medium);
+    height: 100%;
+    min-height: var(--modal--size-min-height);
+    margin: 0 auto;
+
+    //modal size
+    @each $size, $value in $modal-size {
+      &.modal-#{$size} {
+        max-width: $value;
+        @if $size == xxlg {
+          .modal-content {
+            overflow: hidden;
+          }
+          .modal-header {
+            padding: calc(var(--pc-padding-card-small) + 2.4rem) var(--pc-padding-card-small) 0 var(--pc-padding-card-small);
+          }
+          .modal-conts {
+            margin-top: var(--gap-7);
+            margin-bottom: var(--padding-10) !important;
+            padding: 0 var(--pc-padding-card-small) 0 var(--pc-padding-card-small);
+            overflow: hidden;
+            @media (max-height: 600px) {
+              overflow: auto;
+              height: 100%;
+              margin-bottom: 0 !important;
+            }
+            @include size-medium {
+              overflow: auto;
+              height: 100%;
+              margin-bottom: 0 !important;
+            }
+          }
+          .btn-close {
+            top: var(--pc-padding-card-small);
+            right: var(--pc-padding-card-small);
+          }
+          @include size-medium {
+            .modal-header {
+              padding: calc(var(--mobile-padding-card-small) + 2.4rem) var(--mobile-padding-card-small) 0 var(--mobile-padding-card-small);
+            }
+            .modal-conts {
+              padding: 0 var(--mobile-padding-card-small) var(--padding-10) var(--mobile-padding-card-small);
+            }
+          }
+        }
+      }
+    }
+
+    .modal-content {
+      @include flex-layout($ai: center, $fd: column);
+      position: relative;
+      width: 100%;
+      max-height: 95%;
+      background-color: var(--modal--wrap-color-surface);
+      border-radius: var(--modal--wrap-radius);
+      border: var(--modal--border-width) solid var(--modal--wrap-color-border);
+      color: var(--modal--color-text);
+      outline-color: transparent;
+      transition: outline-color 0.1s;
+      box-shadow: var(--modal--wrap-shadow);
+
+      > *:not(.btn-close) {
+        width: 100%;
+      }
+      &:focus {
+        @include focus($offset: 0.4rem, $color: var(--modal--wrap-color-surface), $alpha: 0.9);
+      }
+    }
+    .modal-header {
+      width: 100%;
+      background-color: inherit;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+      padding-top: var(--modal--header-padding-top);
+      padding-inline: var(--modal--padding);
+      .modal-title {
+        // @include ellipsis(1);
+        font-size: var(--modal--header-pc-font-size);
+        font-weight: var(--font-weight-bold);
+      }
+      &.center {
+        text-align: center;
+      }
+      &.flex {
+        display: flex;
+        padding-right: var(--modal--padding);
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .modal-conts {
+      @include flex-layout($fd: column);
+      position: relative;
+      overflow-y: auto;
+      overflow-x: hidden;
+      width: 100%;
+      margin-top: var(--modal--conts-padding-top);
+      padding: 0 var(--modal--padding) var(--modal--conts-padding-bottom);
+      @include scrollbar();
+      > * {
+        width: 100%;
+      }
+      .conts-area {
+        @include flex-layout($fd: column);
+        gap: var(--modal--conts-gap);
+        > * {
+          width: 100%;
+        }
+        .tab.full {
+          position: sticky;
+          top: 0;
+          left: 0;
+          z-index: 5;
+          background-color: var(--modal--wrap-color-surface);
+          &::before {
+            content: '';
+            position: absolute;
+            top: -0.2rem;
+            left: 0;
+            right: 0;
+            height: 0.2rem;
+            background-color: var(--color-light-alpha-white100);
+          }
+          &.scroll {
+            overflow: auto;
+            ul {
+              flex-wrap: nowrap;
+            }
+          }
+        }
+      }
+      .player-area {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: var(--radius-xlarge1);
+          border: none;
+          background-color: var(--color-light-alpha-black100);
+        }
+      }
+      .skill-report .krds-table-wrap {
+        width: 100% !important;
+      }
+    }
+    .modal-btn {
+      @include flex-layout($ai: center, $jc: center);
+      flex-wrap: wrap;
+      gap: var(--modal--btn-gap);
+      padding: var(--modal--btn-padding-top) var(--modal--padding) var(--modal--padding);
+      .krds-btn {
+        min-width: var(--modal--btn-size-min-wdith);
+        @include size-small {
+          min-width: calc(50% - (var(--modal--btn-gap) / 2));
+        }
+      }
+      &.multi-conts {
+        justify-content: space-between;
+      }
+    }
+    .btn-close {
+      @include position($t: var(--modal--btn-close-position), $r: var(--modal--btn-close-position));
+      z-index: 901;
+    }
+    &:not(:has(.modal-btn)) {
+      .modal-conts {
+        margin-bottom: var(--modal--padding);
+      }
+    }
+    &.viewer {
+      .modal-conts {
+      }
+    }
+    &.print {
+      .modal-conts {
+        * {
+          pointer-events: none;
+        }
+
+        .skill-report {
+          flex-direction: column;
+          .compare-box .form-group {
+            padding: 0;
+          }
+          .krds-btn {
+            display: none;
+          }
+          .krds-table-wrap {
+            pointer-events: auto;
+            .tbl {
+              width: max(100%, 73.2rem);
+            }
+            &.row {
+              colgroup {
+                col {
+                  &:nth-child(1) {
+                    width: 15rem !important;
+                  }
+                  &:nth-child(2) {
+                    width: 22rem !important;
+                  }
+                  &:nth-child(3) {
+                    width: calc(100% - 38rem) !important;
+                  }
+                }
+              }
+              tr {
+                td {
+                  &:nth-child(2) {
+                    span {
+                      word-break: break-word;
+                    }
+                  }
+                  &:last-child {
+                    padding-right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .krds-calendar-area .calendar-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  //dim-backgorund
+  .calendar-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+    z-index: -1;
+    background-color: var(--modal--color-dim);
+    opacity: 0.5;
+  }
+  [data-keyboard-bound='true'] {
+    .calendar-backdrop {
+      display: block;
+      visibility: visible;
+    }
+  }
+  .krds-tab-area {
+    gap: var(--padding-8);
+  }
+  .g-search-area:not(.colum) {
+    margin-bottom: var(--padding-8);
+  }
+  .g-search-area {
+    padding-top: 6.4rem !important;
+  }
+  //full 팝업(통합검색, 관련기관링크)
+  &[data-type='full'] {
+    background-color: var(--modal--full-popup-surface);
+    .modal-dialog {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .modal-header,
+    .modal-conts {
+      padding: 0;
+    }
+    .modal-conts {
+      height: 100%;
+    }
+    .modal-content {
+      height: 100%;
+      max-height: 100%;
+      background: none;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0;
+    }
+    .modal-back.in {
+      display: none;
+    }
+  }
+
+  //바텀시트(모바일만 사용)
+  &[data-type='bottom-sheet'] {
+    --modal--bottom-sheet-radius: var(--radius-xxlarge1);
+    --modal--bottom-sheet-radius: var(--radius-xlarge1);
+    --modal--bottom-sheet-padding: var(--padding-6);
+    --modal--bottom-sheet-btn-close-position-top: var(--gap-6);
+    --modal--bottom-sheet-btn-close-position-right: var(--gap-5);
+    --modal--bottom-sheet-btn-padding-top: var(--padding-10);
+
+    .modal-content {
+      position: fixed;
+      left: 0;
+      bottom: -100%;
+      border-radius: 0;
+      border-top-left-radius: var(--modal--bottom-sheet-radius);
+      border-top-right-radius: var(--modal--bottom-sheet-radius);
+      max-height: 90%;
+      transition: var(--transition-base);
+    }
+    .modal-header {
+      @include flex-layout($ai: center, $jc: space-between);
+      padding: var(--modal--bottom-sheet-padding);
+      flex-shrink: 0;
+      .modal-title {
+        font-size: var(--pc-font-size-heading-small);
+      }
+    }
+    .modal-conts {
+      display: block;
+      padding: 0 var(--modal--bottom-sheet-padding);
+      @include scrollbar;
+    }
+    .btn-close {
+      top: var(--modal--bottom-sheet-btn-close-position-top);
+      right: var(--modal--bottom-sheet-btn-close-position-right);
+    }
+    .pop-filter-top {
+      width: auto;
+    }
+    .modal-btn {
+      &.btn-wrap {
+        padding: var(--modal--bottom-sheet-btn-padding-top) var(--modal--bottom-sheet-padding) var(--modal--bottom-sheet-padding);
+        .krds-btn {
+          flex: 1;
+        }
+      }
+    }
+    &.in {
+      .modal-content {
+        bottom: 0;
+      }
+    }
+  }
+}
+
+/* mobile */
+@include size-medium {
+  .krds-modal {
+    //기본 스타일(bottom-sheet제외)
+    .modal-dialog {
+      width: var(--modal--mobile-width);
+      height: var(--modal--mobile-height);
+      min-height: var(--modal--mobile-height);
+      margin: var(--modal--mobile-gap) auto;
+      .modal-header {
+        padding: var(--modal--mobile-header-padding-top) var(--modal--mobile-padding) 0;
+        .modal-title {
+          font-size: var(--modal--header-mobile-font-size);
+        }
+      }
+      .modal-content {
+        max-height: 100%;
+      }
+      .modal-conts {
+        padding-inline: var(--modal--mobile-padding);
+        padding-bottom: 0;
+        .conts-area {
+          > * {
+            width: 100%;
+          }
+          .krds-table-wrap {
+            min-width: calc(100% - (var(--contents-padding-x) * 2) - 4.8rem);
+            &.row.mob-col.mob-scroll {
+              tr {
+                display: table-row;
+              }
+            }
+            &.center {
+              .tbl {
+                width: max(100%, 73.2rem);
+              }
+            }
+            .tbl {
+              width: 100%;
+            }
+          }
+        }
+        .skill-report .krds-table-wrap {
+          width: calc(100vw - 13.2rem) !important;
+        }
+      }
+      .modal-btn {
+        padding: var(--modal--mobile-btn-padding-top) var(--modal--mobile-padding) var(--modal--mobile-btn-padding-bottom);
+      }
+      .btn-close {
+        top: var(--modal--mobile-btn-close-position);
+        right: var(--modal--mobile-btn-close-position);
+      }
+      &:not(:has(.modal-btn)) {
+        .modal-conts {
+          margin-bottom: var(--modal--mobile-btn-padding-bottom);
+        }
+      }
+    }
+  }
+
+  // //풀팝업
+  .krds-modal[data-type='full'] {
+    --modal--full-mobile-btn-close-size: var(--size-height-4);
+
+    .modal-dialog {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      .btn-close {
+        @include square(var(--modal--full-mobile-btn-close-size));
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-modal {
+    @include modal-color-variable(#{$mode-setting});
+    .modal-dialog {
+      .modal-conts {
+        @include scrollbar(#{$mode-setting});
+      }
+    }
+  }
+}

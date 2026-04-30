@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "6", sid: "4" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>Q&A</h2>
+          <div class="sub-title"><h3>문의 내용</h3></div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">문의 구분</th>
+                  <td>역량 진단</td>
+                </tr>
+                <tr>
+                  <th scope="row">문의자</th>
+                  <td>홍길동(교사)</td>
+                </tr>
+                <tr>
+                  <th scope="row">문의일</th>
+                  <td>2025-12-08</td>
+                </tr>
+                <tr>
+                  <th scope="row">제목</th>
+                  <td>역량 진단 재응답 관련 문의</td>
+                </tr>
+                <tr>
+                  <th scope="row">비공개</th>
+                  <td class="lock">비공개</td>
+                </tr>
+                <tr>
+                  <th scope="row">내용</th>
+                  <td>
+                    역량진단을 완료했는데 결과 화면에서 아무것도 안 나옵니다.
+                    <br />확인 부탁드립니다.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">첨부파일</th>
+                  <td>첨부파일명.png</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sub-title"><h3>답변 내용</h3></div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">답변자</th>
+                  <td>관리자(김관리)</td>
+                </tr>
+                <tr>
+                  <th scope="row">답변일</th>
+                  <td>2025-12-19</td>
+                </tr>
+                <tr>
+                  <th scope="row">답변내용</th>
+                  <td><div class="edit-area">에디터영역</div></td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inpUpload">첨부파일</label>
+                  </th>
+                  <td>
+                    <div class="file-wrap">
+                      <div class="input-item">
+                        <input
+                          type="text"
+                          name="inpUpload"
+                          class="inp-text"
+                          readonly
+                          aria-label="첨부 파일"
+                        />
+                        <span class="btn base square">
+                          <input
+                            type="file"
+                            title="첨부파일 선택"
+                            id="inpUpload"
+                          />
+                          <span>찾아보기</span>
+                        </span>
+                      </div>
+                      <div class="file-list mgt8">
+                        <div class="file">
+                          <p class="file-name">오류화면.png</p>
+                          <button type="button" class="btn-del">
+                            <span>삭제</span>
+                          </button>
+                        </div>
+                        <div class="file">
+                          <p class="file-name">오류화면.png</p>
+                          <button type="button" class="btn-del">
+                            <span>삭제</span>
+                          </button>
+                        </div>
+                        <span class="file-info"
+                          >jpg, png, pdf, hwp, docx만 등록 가능 (최대
+                          10MB)</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <button type="button" class="btn base tertiary">
+              <span>숨김</span>
+            </button>
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>취소</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>수정</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

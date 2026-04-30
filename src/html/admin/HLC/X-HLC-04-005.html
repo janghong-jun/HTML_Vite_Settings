@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "7", sid: "5" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>교육지원청/학교 관리</h2>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">학교명</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp01"
+                        class="inp-text"
+                        placeholder="학교명을 입력해주세요"
+                        value="가운중학교"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select01">학교급</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <select id="select01">
+                      <option>선택</option>
+                      <option>초등</option>
+                      <option selected>중등</option>
+                      <option>고등</option>
+                      <option>특수</option>
+                      <option>각종</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select02">소속교육지원청</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <select id="select02">
+                      <option>선택</option>
+                      <option selected>구리남양주교육지원청</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">개설자</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp02"
+                        class="inp-text"
+                        placeholder="주소를 입력해주세요"
+                        value="경기도 남양주시 가운로2길 74"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select03">학교설립별</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <select id="select03">
+                      <option>선택</option>
+                      <option selected>공립</option>
+                      <option>사립</option>
+                      <option>병설</option>
+                      <option>단설</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    학교 전화번호
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area mail-area flex">
+                      <input type="text" class="inp-text" value="031" />
+                      <span>-</span>
+                      <input type="text" class="inp-text" value="566" />
+                      <span>-</span>
+                      <input type="text" class="inp-text" value="3861" />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <button type="button" class="btn base tertiary">
+              <span>삭제</span>
+            </button>
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>수정</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+
+.krds-label {
+  gap: 0 0.2rem;
+}
+.required {
+  position: relative;
+  &::before {
+    content: '*';
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+    font-size: var(--pc-font-size-body-xsmall);
+    font-weight: var(--font-weight-regular);
+    color: var(--light-color-border-point);
+  }
+}
+.file-box-wrap {
+  display: flex;
+  gap: var(--gap-4);
+  flex-wrap: wrap;
+  .file-box {
+    flex: 1;
+  }
+}
+.file-box {
+  display: flex;
+  min-height: 10rem;
+  padding: var(--padding-9);
+  border-radius: var(--radius-xlarge2);
+  background: var(--light-color-surface-secondary-subtler);
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-7);
+  flex-wrap: wrap;
+  @include size-small {
+    padding: var(--padding-6) var(--padding-5);
+  }
+
+  .file-info {
+    p {
+      font-size: var(--pc-font-size-body-large);
+      color: var(--light-color-text-subtle);
+    }
+    strong {
+      font-size: var(--pc-font-size-body-small);
+      font-weight: var(--font-weight-regular);
+      color: var(--light-color-text-subtle);
+
+      &::before {
+        content: '※';
+      }
+    }
+  }
+}
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-4);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-3);
+    .file-name {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--gap-2);
+      font-size: var(--pc-font-size-body-medium);
+      color: var(--light-color-text-basic);
+      span {
+        @include ellipsis(1);
+      }
+      .svg-icon {
+        flex: none;
+      }
+    }
+  }
+}
+.file-box-btn-wrap {
+  margin-left: auto;
+  border-radius: var(--button--radius-medium);
+  background-color: var(--color-light-alpha-white100);
+}
+
+.krds-form-wrap {
+  display: flex;
+  flex: 1;
+  gap: var(--gap-3);
+  .krds-form-select {
+    flex: 1;
+  }
+}

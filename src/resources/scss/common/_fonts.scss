@@ -1,0 +1,23 @@
+@use 'path' as *;
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url(#{$url}/fonts/PretendardGOV-Regular.subset.woff), url(#{$url}/fonts/PretendardGOV-Regular.subset.woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url(#{$url}/fonts/PretendardGOV-Medium.subset.woff), url(#{$url}/fonts/PretendardGOV-Medium.subset.woff2);
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard GOV';
+  src: url(#{$url}/fonts/PretendardGOV-Bold.subset.woff), url(#{$url}/fonts/PretendardGOV-Bold.subset.woff2);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "4", sid: "1" };
+      document.addEventListener("DOMContentLoaded", function () {
+        const list = document.querySelector(".improvement-list");
+
+        list.addEventListener("click", (e) => {
+          const button = e.target.closest("button");
+          if (!button) return;
+
+          const li = button.closest("li");
+          const cont = li.querySelector(".cont");
+
+          const currentActive = list.querySelector(".cont.active");
+
+          if (cont.classList.contains("active")) {
+            cont.classList.remove("active");
+            return;
+          }
+
+          if (currentActive) {
+            currentActive.classList.remove("active");
+          }
+
+          cont.classList.add("active");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>모듈 관리</h2>
+          <div class="sub-title"><h3>모듈 기본정보</h3></div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">모듈명</th>
+                  <td>교육과정 설계 역량 강화 모듈</td>
+                  <th scope="row">교원구분</th>
+                  <td>교사</td>
+                </tr>
+                <tr>
+                  <th scope="row">역량구분</th>
+                  <td>교육과정, 문제해결</td>
+                  <th scope="row">키워드</th>
+                  <td>교육과정설계, 성취기준, 평가계획, 교육과정재구성</td>
+                </tr>
+                <tr>
+                  <th scope="row">모듈 소개</th>
+                  <td>
+                    2022 개정 교육과정에 맞춰 교육과정 설계 역량을 강화하기 위한
+                    학습 모듈입니다. 교육과정 재구성, 성취기준 분석, 평가 계획
+                    수립 등의 내용을 다룹니다.
+                  </td>
+                  <th scope="row">등록자</th>
+                  <td>김교육 (kim*****)</td>
+                </tr>
+                <tr>
+                  <th scope="row">등록일</th>
+                  <td colspan="3">2025.12.28</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-title"><h3>콘텐츠 구성</h3></div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 8rem" />
+                <col style="width: 12rem" />
+                <col style="width: 8rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">순서</th>
+                  <th scope="col">콘텐츠 명</th>
+                  <th scope="col">유형</th>
+                  <th scope="col">출처</th>
+                  <th scope="col">학습시간</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">2022 개정 교육과정의 이해</td>
+                  <td>이미지</td>
+                  <td>중앙교육연수원</td>
+                  <td>15분</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="txt-l">성취기준 분석 방법</td>
+                  <td>이미지</td>
+                  <td>경기도교육연수원</td>
+                  <td>20분</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="txt-l">교육과정 재구성 실습</td>
+                  <td>이미지</td>
+                  <td>중앙교육연수원</td>
+                  <td>25분</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="txt-l">평가 계획 수립하기</td>
+                  <td>이미지</td>
+                  <td>중앙교육연수원</td>
+                  <td>18분</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="txt-l">사례로 보는 교육과정 설계</td>
+                  <td>이미지</td>
+                  <td>경기도교육연수원</td>
+                  <td>22분</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5" class="txt-r">
+                    총 학습소요시간: 53분+ 문서 1건 + 이미지 1건
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="sub-title">
+            <h3 class="flex-box">
+              평가 내역
+              <p class="msg" style="margin-left: 0.8rem">(평점 : 4.8)</p>
+            </h3>
+          </div>
+          <div class="tbl-base type2 mgt10 scroll">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 6rem" />
+                <col style="width: 6rem" />
+                <col style="width: 8rem" />
+                <col style="width: 12rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">평가 내용</th>
+                  <th scope="col">평점</th>
+                  <th scope="col">난이도</th>
+                  <th scope="col">작성자</th>
+                  <th scope="col">작성일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12</td>
+                  <td class="txt-l">
+                    교육과정 설계에 대한 이해도가 높아졌습니다. 실습 콘텐츠가
+                    특히 유용했어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>박*진</td>
+                  <td>2025-12-30</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td class="txt-l">
+                    콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                    좋겠습니다.
+                  </td>
+                  <td>4.0</td>
+                  <td>상</td>
+                  <td>이*수</td>
+                  <td>2025-12-29</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td class="txt-l">
+                    신규 교사에게 추천합니다. 기본부터 차근차근 배울 수 있어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>김*동</td>
+                  <td>2025-12-28</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="txt-l">
+                    교육과정 설계에 대한 이해도가 높아졌습니다. 실습 콘텐츠가
+                    특히 유용했어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>박*진</td>
+                  <td>2025-12-30</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="txt-l">
+                    콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                    좋겠습니다.
+                  </td>
+                  <td>4.0</td>
+                  <td>상</td>
+                  <td>이*수</td>
+                  <td>2025-12-29</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="txt-l">
+                    신규 교사에게 추천합니다. 기본부터 차근차근 배울 수 있어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>김*동</td>
+                  <td>2025-12-28</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td class="txt-l">
+                    교육과정 설계에 대한 이해도가 높아졌습니다. 실습 콘텐츠가
+                    특히 유용했어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>박*진</td>
+                  <td>2025-12-30</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="txt-l">
+                    콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                    좋겠습니다.
+                  </td>
+                  <td>4.0</td>
+                  <td>상</td>
+                  <td>이*수</td>
+                  <td>2025-12-29</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="txt-l">
+                    신규 교사에게 추천합니다. 기본부터 차근차근 배울 수 있어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>김*동</td>
+                  <td>2025-12-28</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="txt-l">
+                    교육과정 설계에 대한 이해도가 높아졌습니다. 실습 콘텐츠가
+                    특히 유용했어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>박*진</td>
+                  <td>2025-12-30</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="txt-l">
+                    콘텐츠 구성이 체계적입니다. 다만 초등 사례가 더 많으면
+                    좋겠습니다.
+                  </td>
+                  <td>4.0</td>
+                  <td>상</td>
+                  <td>이*수</td>
+                  <td>2025-12-29</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">
+                    신규 교사에게 추천합니다. 기본부터 차근차근 배울 수 있어요.
+                  </td>
+                  <td>5.0</td>
+                  <td>상</td>
+                  <td>김*동</td>
+                  <td>2025-12-28</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- <div class="sub-title"><h3>신고 내역</h3></div>
+          <div class="tbl-base type2 mgt10 scroll">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col style="width: 8rem" />
+                <col />
+                <col style="width: 10rem" />
+                <col style="width: 12rem" />
+                <col style="width: 8rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">신고대상</th>
+                  <th scope="col">신고내용</th>
+                  <th scope="col">신고유형</th>
+                  <th scope="col">신고일</th>
+                  <th scope="col">처리상태</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12</td>
+                  <td>윤전문</td>
+                  <td class="txt-l">타인의 저작물을 무단으로 사용하여 모듈을 구성한 것으로 보입니다.</td>
+                  <td>저작권 침해</td>
+                  <td>2025-12-30</td>
+                  <td>처리완료</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>이전문</td>
+                  <td class="txt-l">검증되지 않은 허위 정보가 포함되어 있어 학습자에게 혼란을 줄 수 있습니다.</td>
+                  <td>허위정보</td>
+                  <td>2025-12-28</td>
+                  <td>검토중</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>윤전문</td>
+                  <td class="txt-l">타인의 저작물을 무단으로 사용하여 모듈을 구성한 것으로 보입니다.</td>
+                  <td>저작권 침해</td>
+                  <td>2025-12-30</td>
+                  <td>처리완료</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>이전문</td>
+                  <td class="txt-l">검증되지 않은 허위 정보가 포함되어 있어 학습자에게 혼란을 줄 수 있습니다.</td>
+                  <td>허위정보</td>
+                  <td>2025-12-28</td>
+                  <td>검토중</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>윤전문</td>
+                  <td class="txt-l">타인의 저작물을 무단으로 사용하여 모듈을 구성한 것으로 보입니다.</td>
+                  <td>저작권 침해</td>
+                  <td>2025-12-30</td>
+                  <td>처리완료</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>이전문</td>
+                  <td class="txt-l">검증되지 않은 허위 정보가 포함되어 있어 학습자에게 혼란을 줄 수 있습니다.</td>
+                  <td>허위정보</td>
+                  <td>2025-12-28</td>
+                  <td>검토중</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>윤전문</td>
+                  <td class="txt-l">타인의 저작물을 무단으로 사용하여 모듈을 구성한 것으로 보입니다.</td>
+                  <td>저작권 침해</td>
+                  <td>2025-12-30</td>
+                  <td>처리완료</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>이전문</td>
+                  <td class="txt-l">검증되지 않은 허위 정보가 포함되어 있어 학습자에게 혼란을 줄 수 있습니다.</td>
+                  <td>허위정보</td>
+                  <td>2025-12-28</td>
+                  <td>검토중</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>윤전문</td>
+                  <td class="txt-l">타인의 저작물을 무단으로 사용하여 모듈을 구성한 것으로 보입니다.</td>
+                  <td>저작권 침해</td>
+                  <td>2025-12-30</td>
+                  <td>처리완료</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>이전문</td>
+                  <td class="txt-l">검증되지 않은 허위 정보가 포함되어 있어 학습자에게 혼란을 줄 수 있습니다.</td>
+                  <td>허위정보</td>
+                  <td>2025-12-28</td>
+                  <td>검토중</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>윤전문</td>
+                  <td class="txt-l">타인의 저작물을 무단으로 사용하여 모듈을 구성한 것으로 보입니다.</td>
+                  <td>저작권 침해</td>
+                  <td>2025-12-30</td>
+                  <td>처리완료</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>이전문</td>
+                  <td class="txt-l">검증되지 않은 허위 정보가 포함되어 있어 학습자에게 혼란을 줄 수 있습니다.</td>
+                  <td>허위정보</td>
+                  <td>2025-12-28</td>
+                  <td>검토중</td>
+                </tr>
+              </tbody>
+            </table>
+          </div> -->
+
+          <div class="sub-title"><h3>개선요청 목록</h3></div>
+          <ul class="improvement-list scroll">
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+            <li>
+              <button type="button">
+                <strong class="title">콘텐츠 개선요청 드립니다.</strong>
+                <span class="info">
+                  <span>김*동(kim7*****)</span>
+                  <span>2025-12-15</span>
+                </span>
+              </button>
+              <p class="cont">
+                콘텐츠 설명과 영상콘텐츠 내용이 다소 부자연스럽습니다.
+                <br />설명내용을 영상 내용을 잘 이해하고 학습할 수 있도록 설명을
+                자세하고 정확하게 작성, 안내 부탁드립니다~
+              </p>
+            </li>
+          </ul>
+
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>목록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

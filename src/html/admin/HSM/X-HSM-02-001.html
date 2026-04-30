@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+  </head>
+  <body>
+    <div class="wrap login">
+      <section class="admin-login-inner">
+        <div class="login-top">
+          <h1>하이코칭 관리자 시스템</h1>
+          <div class="links">
+            <div class="logo">
+              <a href="#"><span class="hide">Hi-Coaching</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="login-box">
+          <div class="frm-area">
+            <input
+              type="text"
+              placeholder="아이디 입력"
+              aria-label="아이디 입력"
+            />
+          </div>
+          <p class="msg error-info">아이디 입력 을(를) 입력해 주세요.</p>
+          <div class="frm-area">
+            <input
+              type="password"
+              placeholder="비밀번호 입력"
+              aria-label="비밀번호 입력"
+            />
+          </div>
+          <p class="msg error-info">비밀번호 입력 을(를) 입력해 주세요.</p>
+          <div class="login-btn">
+            <button type="button" class="btn primary">
+              <span>로그인</span>
+            </button>
+          </div>
+          <ul class="list-dot mgt24">
+            <li>
+              본 시스템은 내부 관리자용으로 인가된 관리자만 사용할 수 있습니다.
+            </li>
+            <li>
+              비밀번호 5회이상 오류시 접근이 제한됩니다.(비밀번호 오류시
+              관리담당자에게 문의하시기 바랍니다.)
+            </li>
+          </ul>
+          <span class="ip">IP Adress : XXX.XXX.XXX.XXX</span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

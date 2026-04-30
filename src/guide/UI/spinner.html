@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <link
+      rel="stylesheet"
+      href="../../resources/css/plugin/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../resources/css/output.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../resources/css/guide.css" type="text/css" />
+    <!-- 공통 script -->
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/crownix-chart.min.js"></script>
+    <script src="../../../resources/js/component/ui-script.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../components/_skip.html" -->
+
+      <!--#include "../../components/_masthead.html" -->
+      <!--#include "../../components/_header.html" -->
+
+      <!-- Container -->
+      <div id="container">
+        <div class="inner">
+          <div class="guide">
+            <button
+              class="krds-btn"
+              onclick="
+                const spinner = document.querySelector('.krds-spinner');
+                spinner.classList.add('is-active');
+                setTimeout(() => {
+                  spinner.classList.remove('is-active');
+                  alert('스피너 종료');
+                }, 5000);
+              "
+            >
+              스피너 보기
+            </button>
+            <!-- 인풋 내 스피너 -->
+            <!-- <div class="form-group">
+              <div class="form-tit">
+                <label for="consult_name">Label</label>
+              </div>
+              <div class="form-conts">
+                <div class="form-spinner">
+                  <input type="text" id="consult_name" class="krds-input" placeholder="placeholder" />
+                  <div class="krds-spinner" role="status">
+                    <span class="sr-only">로딩 중</span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- //인풋 내 스피너 -->
+          </div>
+          <div class="guide">
+            <!-- 스피너 -->
+            <!-- <div class="krds-spinner" role="status">
+              <span class="sr-only">로딩 중</span>
+              Loading data..
+            </div> -->
+            <!-- //스피너 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <!--#include "../../components/_footer.html" -->
+      <!-- 스피너 -->
+      <!-- 노출시 is-active 추가 -->
+      <div class="krds-spinner" role="status">
+        <span class="sr-only">로딩 중</span>
+      </div>
+      <!-- //스피너 -->
+    </div>
+  </body>
+  <!--#include "../../components/_chatbot.html" -->
+</html>

@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "9", sid: "2" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>발급분석</h2>
+          <div class="ui-tab left mgt40" data-id="tab01">
+            <div class="ui-tab-btns">
+              <button type="button" class="ui-tab-btn" data-tab="0">
+                트렌드
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="1">
+                누적포인트
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="2">
+                보유포인트
+              </button>
+            </div>
+            <div class="ui-tab-pnls">
+              <div class="ui-tab-pnl" data-tab="0">
+                <div class="sub-title"><h3>월별 발급 현황</h3></div>
+                <div class="sub-title">
+                  <div>
+                    <p class="count">총 <span>100</span>개월</p>
+                    <p class="count">페이지 <span>2</span>/50</p>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8rem" />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">월별</th>
+                        <th scope="col">발급 건수</th>
+                        <th scope="col">발급 포인트</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>100</td>
+                        <td>2026년 1월</td>
+                        <td>1,020 건</td>
+                        <td>125,400 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>99</td>
+                        <td>2025년 12월</td>
+                        <td>2,350 건</td>
+                        <td>287,000 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>98</td>
+                        <td>2025년 11월</td>
+                        <td>2,180 건</td>
+                        <td>265,200 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>97</td>
+                        <td>2025년 10월</td>
+                        <td>1,890 건</td>
+                        <td>231,500 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>96</td>
+                        <td>2025년 9월</td>
+                        <td>2,050 건</td>
+                        <td>248,600 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>95</td>
+                        <td>2025년 8월</td>
+                        <td>1,420 건</td>
+                        <td>172,800 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>94</td>
+                        <td>2025년 7월</td>
+                        <td>1,200 건</td>
+                        <td>145,000 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>93</td>
+                        <td>2025년 6월</td>
+                        <td>1,850 건</td>
+                        <td>225,500 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>92</td>
+                        <td>2025년 5월</td>
+                        <td>1,680 건</td>
+                        <td>204,000 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-003',
+                            src: 'X-HCE-01-003.html'})"
+                      >
+                        <td>91</td>
+                        <td>2025년 4월</td>
+                        <td>1,520 건</td>
+                        <td>185,200 P</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="1">
+                <div class="tbl-base mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="flex-box align-center">
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="startDate"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="startDate"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="date-sep">~</span>
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="endDate"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="endDate"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="date-select">
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>3개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>6개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1년</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">검색</th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              class="inp-text"
+                              aria-label="검색어 입력"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns center flex">
+                  <button type="button" class="btn base fill">
+                    <span>검색</span>
+                  </button>
+                  <button type="button" class="btn base secondary">
+                    <span>초기화</span>
+                  </button>
+                </div>
+                <div class="sub-title"><h3>누적포인트 상위 회원</h3></div>
+                <div class="sub-title">
+                  <div>
+                    <p class="count">총 <span>100</span>명</p>
+                    <p class="count">페이지 <span>2</span>/50</p>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8rem" />
+                      <col style="width: 13rem" />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">이름</th>
+                        <th scope="col">소속</th>
+                        <th scope="col">누적 포인트</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="rank">
+                        <td>1</td>
+                        <td>김교사</td>
+                        <td>용인중학교</td>
+                        <td>3,200 P</td>
+                      </tr>
+                      <tr class="rank">
+                        <td>2</td>
+                        <td>이교사</td>
+                        <td>수원고등학교</td>
+                        <td>2,800 P</td>
+                      </tr>
+                      <tr class="rank">
+                        <td>3</td>
+                        <td>박교사</td>
+                        <td>성남초등학교</td>
+                        <td>2,650 P</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>최교사</td>
+                        <td>안양중학교</td>
+                        <td>2,400 P</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>정교사</td>
+                        <td>화성고등학교</td>
+                        <td>2,350 P</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>강교사</td>
+                        <td>평택초등학교</td>
+                        <td>2,200 P</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>조교사</td>
+                        <td>광명중학교</td>
+                        <td>2,150 P</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>윤교사</td>
+                        <td>시흥고등학교</td>
+                        <td>2,100 P</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>장교사</td>
+                        <td>부천초등학교</td>
+                        <td>2,050 P</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>임교사</td>
+                        <td>고양중학교</td>
+                        <td>2,000 P</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="2">
+                <div class="tbl-base mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="flex-box align-center">
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="startDate"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="startDate"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="date-sep">~</span>
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="endDate"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="endDate"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="date-select">
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>3개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>6개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1년</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">검색</th>
+                        <td>
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              class="inp-text"
+                              aria-label="검색어 입력"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns center flex">
+                  <button type="button" class="btn base fill">
+                    <span>검색</span>
+                  </button>
+                  <button type="button" class="btn base secondary">
+                    <span>초기화</span>
+                  </button>
+                </div>
+                <div class="sub-title"><h3>보유포인트 상위 회원</h3></div>
+                <div class="sub-title">
+                  <div>
+                    <p class="count">총 <span>100</span>명</p>
+                    <p class="count">페이지 <span>2</span>/50</p>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8rem" />
+                      <col style="width: 13rem" />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">이름</th>
+                        <th scope="col">소속</th>
+                        <th scope="col">보유 포인트</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr
+                        class="rank"
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>1</td>
+                        <td>김교사</td>
+                        <td>용인중학교</td>
+                        <td>3,200 P</td>
+                      </tr>
+                      <tr
+                        class="rank"
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>2</td>
+                        <td>이교사</td>
+                        <td>수원고등학교</td>
+                        <td>2,800 P</td>
+                      </tr>
+                      <tr
+                        class="rank"
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>3</td>
+                        <td>박교사</td>
+                        <td>성남초등학교</td>
+                        <td>2,650 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>4</td>
+                        <td>최교사</td>
+                        <td>안양중학교</td>
+                        <td>2,400 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>5</td>
+                        <td>정교사</td>
+                        <td>화성고등학교</td>
+                        <td>2,350 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>6</td>
+                        <td>강교사</td>
+                        <td>평택초등학교</td>
+                        <td>2,200 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>7</td>
+                        <td>조교사</td>
+                        <td>광명중학교</td>
+                        <td>2,150 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>8</td>
+                        <td>윤교사</td>
+                        <td>시흥고등학교</td>
+                        <td>2,100 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>9</td>
+                        <td>장교사</td>
+                        <td>부천초등학교</td>
+                        <td>2,050 P</td>
+                      </tr>
+                      <tr
+                        onClick="
+                          UI.modal.show({
+                            id: 'X-HCE-01-011',
+                            src: 'X-HCE-01-011.html'})"
+                      >
+                        <td>10</td>
+                        <td>임교사</td>
+                        <td>고양중학교</td>
+                        <td>2,000 P</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

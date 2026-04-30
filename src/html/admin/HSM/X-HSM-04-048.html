@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "6", sid: "15" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>추천/차단 기준설정</h2>
+          <div class="ui-tab left mgt24" data-id="tab01">
+            <div class="ui-tab-btns">
+              <button type="button" class="ui-tab-btn" data-tab="0">
+                모듈
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="1">
+                전문가
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="2">
+                콘텐츠
+              </button>
+            </div>
+            <div class="ui-tab-pnls">
+              <div class="ui-tab-pnl" data-tab="0">
+                <div class="sub-title mgt0">
+                  <h3>추천기준 설정</h3>
+                </div>
+                <div class="tbl-base align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">매핑 기준</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="chk01_01" />
+                              <label for="chk01_01" class="lb-checkbox"
+                                >역량군</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="chk01_02" />
+                              <label for="chk01_02" class="lb-checkbox"
+                                >대분류</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                        <th scope="row">학습 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">공유 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">찜 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">평점</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">적용 여부</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo01_01"
+                                name="rdo01_01"
+                              />
+                              <label for="rdo01_01" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo01_02"
+                                name="rdo01_01"
+                              />
+                              <label for="rdo01_02" class="lb-radio"
+                                >미적용</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sub-title"><h3>차단기준 설정</h3></div>
+                <div class="tbl-base align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">신고 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">평점</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이하</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">적용 여부</th>
+                        <td colspan="3">
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo01_03"
+                                name="rdo01_02"
+                              />
+                              <label for="rdo01_03" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo01_04"
+                                name="rdo01_02"
+                              />
+                              <label for="rdo01_04" class="lb-radio"
+                                >미적용</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mt16">
+                  <div>
+                    <button type="button" class="btn base primary">
+                      <span>저장</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="1">
+                <div class="sub-title mgt0">
+                  <h3>추천기준 설정</h3>
+                </div>
+                <div class="tbl-base align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">매핑 기준</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="chk02_01" />
+                              <label for="chk02_01" class="lb-checkbox"
+                                >역량군</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="chk02_02" />
+                              <label for="chk02_02" class="lb-checkbox"
+                                >대분류</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                        <th scope="row">역량평가 지표</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">모듈 등록 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">모듈 찜 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">등록 모듈 평점</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">적용 여부</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo02_01"
+                                name="rdo02_01"
+                              />
+                              <label for="rdo02_01" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo02_02"
+                                name="rdo02_01"
+                              />
+                              <label for="rdo02_02" class="lb-radio"
+                                >미적용</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sub-title"><h3>차단기준 설정</h3></div>
+                <div class="tbl-base align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">신고이력 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">평점</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이하</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">적용 여부</th>
+                        <td colspan="3">
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo02_03"
+                                name="rdo02_02"
+                              />
+                              <label for="rdo02_03" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo02_04"
+                                name="rdo02_02"
+                              />
+                              <label for="rdo02_04" class="lb-radio"
+                                >미적용</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mt16">
+                  <div>
+                    <button type="button" class="btn base primary">
+                      <span>저장</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="2">
+                <div class="sub-title mgt0">
+                  <h3>추천기준 설정</h3>
+                </div>
+                <div class="tbl-base align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">매핑 기준</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="chk03_01" />
+                              <label for="chk03_01" class="lb-checkbox"
+                                >역량군</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="chk03_02" />
+                              <label for="chk03_02" class="lb-checkbox"
+                                >대분류</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                        <th scope="row">학습 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">공유 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">찜 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">콘텐츠 평점</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">적용 여부</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo03_01"
+                                name="rdo03_01"
+                              />
+                              <label for="rdo03_01" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo03_02"
+                                name="rdo03_01"
+                              />
+                              <label for="rdo03_02" class="lb-radio"
+                                >미적용</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="sub-title"><h3>차단기준 설정</h3></div>
+                <div class="tbl-base align-left">
+                  <table>
+                    <colgroup>
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                      <col style="width: 20%" />
+                      <col style="width: 30%" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">신고이력 건수</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이상</span>
+                          </div>
+                        </td>
+                        <th scope="row">평점</th>
+                        <td>
+                          <div class="frm-area flex left">
+                            <input type="text" class="inp-text right" />
+                            <span class="unit">이하</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">적용 여부</th>
+                        <td colspan="3">
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo03_03"
+                                name="rdo03_02"
+                              />
+                              <label for="rdo03_03" class="lb-radio"
+                                >적용</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input
+                                type="radio"
+                                id="rdo03_04"
+                                name="rdo03_02"
+                              />
+                              <label for="rdo03_04" class="lb-radio"
+                                >미적용</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mt16">
+                  <div>
+                    <button type="button" class="btn base primary">
+                      <span>저장</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HLC-03-011"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HLC-03-011"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HLC-03-011"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HLC-03-011" class="modal-title">투표 결과</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="vote-result">
+              <h3 class="vote-result-title">
+                이번 모임에 대한 참여자분들의 의견은 어떻습니까?
+              </h3>
+              <ul>
+                <li>
+                  <div class="vote-result-item">
+                    <span class="vote-result-label">항목명</span>
+                    <span class="vote-result-value">20%(1명)</span>
+                  </div>
+                  <div class="vote-result-bar type01" aria-hidden="true">
+                    <span style="width: 20%"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="vote-result-item">
+                    <span class="vote-result-label">항목명</span>
+                    <span class="vote-result-value">20%(1명)</span>
+                  </div>
+                  <div class="vote-result-bar type02" aria-hidden="true">
+                    <span style="width: 20%"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="vote-result-item">
+                    <span class="vote-result-label">항목명</span>
+                    <span class="vote-result-value">20%(1명)</span>
+                  </div>
+                  <div class="vote-result-bar type03" aria-hidden="true">
+                    <span style="width: 20%"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="vote-result-item">
+                    <span class="vote-result-label">항목명</span>
+                    <span class="vote-result-value">20%(1명)</span>
+                  </div>
+                  <div class="vote-result-bar type04" aria-hidden="true">
+                    <span style="width: 20%"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="vote-result-item">
+                    <span class="vote-result-label">항목명</span>
+                    <span class="vote-result-value">20%(1명)</span>
+                  </div>
+                  <div class="vote-result-bar type05" aria-hidden="true">
+                    <span style="width: 20%"></span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary close-modal">
+            확인
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HLC-03-011");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

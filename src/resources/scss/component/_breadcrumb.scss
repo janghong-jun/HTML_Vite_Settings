@@ -1,0 +1,179 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 브레드크럼 */
+//모드 설정
+$mode-setting: light;
+
+//사이즈 정의
+@mixin breadcrumb-size-variable() {
+  --breadcrumb--padding-x: var(--padding-2);
+  --breadcrumb--margin-bottom: var(--pc-gap-layout-breadcrumb-h1);
+  --breadcrumb--radius: var(--radius-medium2);
+  --breadcrumb--pc-font-size: var(--pc-font-size-label-small);
+  --breadcrumb--mobile-font-size: var(--mobile-font-size-label-small);
+}
+
+//컬러 정의
+@mixin breadcrumb-color-variable($mode: light) {
+  --breadcrumb--color-action: var(--#{$mode}-color-action-secondary);
+  --breadcrumb--color-action-hover: var(--#{$mode}-color-action-secondary-hover);
+  --breadcrumb--color-action-pressed: var(--#{$mode}-color-action-secondary-pressed);
+  --breadcrumb--color-text: var(--#{$mode}-color-text-basic);
+  --breadcrumb--color-text-disabled: var(--#{$mode}-color-text-disabled);
+}
+.krds-breadcrumb-wrap {
+  @include breadcrumb-size-variable();
+  @include breadcrumb-color-variable(#{$mode-setting});
+
+  @include flex-layout($jc: center);
+  // padding-top: var(--pc-gap-layout-header-breadcrumb);
+  padding-bottom: var(--pc-gap-layout-breadcrumb-h2);
+  .breadcrumb {
+    @include flex-layout($ai: center);
+    gap: var(--gap-2);
+    width: 100%;
+    li {
+      @include flex-layout($d: inline-flex, $ai: center);
+      font-size: var(--breadcrumb--pc-font-size);
+      @include size-medium {
+        font-size: var(--breadcrumb--mobile-font-size);
+      }
+      .txt {
+        @include flex-layout($d: inline-flex, $ai: center);
+        gap: var(--gap-2);
+        padding: 0 var(--breadcrumb--padding-x);
+        background-color: var(--breadcrumb--color-action);
+        border-radius: var(--breadcrumb--radius);
+      }
+      a {
+        &.txt {
+          @include underline();
+          &:not(.disabled):hover {
+            background-color: var(--breadcrumb--color-action-hover);
+          }
+          &:not(.disabled):active {
+            background-color: var(--breadcrumb--color-action-pressed);
+          }
+          &:not(.disabled):focus,
+          &:not(:disabled):focus {
+            @include focus();
+          }
+          &.disabled,
+          &:disabled {
+            cursor: default;
+            color: var(--breadcrumb--color-text-disabled);
+          }
+        }
+      }
+      &:not(:last-child) {
+        //마지막 뎁스가 아니면 화살표 아이콘 표시
+        &::after {
+          @include flex-layout($d: inline-flex, $ai: center);
+          @include pseudo();
+          margin-left: var(--gap-2);
+          @include svg-icon($size: var(--icon--size-small), $mode: light);
+          @include icon-set(ico_angle);
+          transform: rotate(-90deg);
+        }
+      }
+    }
+    .home {
+      gap: 0;
+      .txt {
+        &::before {
+          @include flex-layout($d: inline-flex, $ai: center);
+          @include pseudo();
+          @include svg-icon($size: var(--icon--size-small), $mode: light);
+          @include icon-set(ico_bread_home);
+        }
+      }
+    }
+  }
+}
+
+//모바일 전용 속성
+@include size-medium {
+  .krds-breadcrumb-wrap {
+    // padding-top: var(--mobile-gap-layout-header-breadcrumb);
+    padding-bottom: var(--mobile-gap-layout-breadcrumb-h2);
+    .breadcrumb {
+      li {
+        //모바일에서는 홈, 마지막 뎁스만 화면에 표시
+        &:not(.home) {
+          &:not(:last-child) {
+            @include sr-only;
+          }
+        }
+        &:not(.home):not(:nth-child(2)) {
+          &:last-child {
+            gap: var(--gap-2);
+            &::before,
+            &::after {
+              @include flex-layout($d: inline-flex, $ai: center);
+              @include pseudo();
+              @include svg-icon($size: var(--icon--size-small), $mode: light);
+            }
+            &::before {
+              @include icon-set(ico_ellipsis);
+            }
+            &::after {
+              @include icon-set(ico_angle);
+              transform: rotate(-90deg);
+            }
+            .txt {
+              order: 3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-breadcrumb-wrap {
+    @include breadcrumb-color-variable(#{$mode-setting});
+
+    .breadcrumb {
+      li {
+        &:not(:last-child) {
+          //마지막 뎁스가 아니면 화살표 아이콘 표시
+          &::after {
+            @include svg-icon($size: var(--icon--size-small), $mode: high-contrast);
+          }
+        }
+      }
+      .home {
+        gap: 0;
+        .txt {
+          &::before {
+            @include svg-icon($size: var(--icon--size-small), $mode: high-contrast);
+          }
+        }
+      }
+    }
+  }
+
+  //모바일 전용 속성
+  @include size-medium {
+    .krds-breadcrumb-wrap {
+      .breadcrumb {
+        li {
+          &:not(:nth-child(2)) {
+            &:last-child {
+              &::before,
+              &::after {
+                @include svg-icon($size: var(--icon--size-small), $mode: high-contrast);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

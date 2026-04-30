@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Hi-Coaching</title>
+    <link
+      rel="stylesheet"
+      href="../../resources/css/plugin/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../resources/css/output.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../resources/css/guide.css" type="text/css" />
+    <!-- 공통 script -->
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/crownix-chart.min.js"></script>
+    <script src="../../../resources/js/component/ui-script.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../components/_skip.html" -->
+      <!--#include "../../components/_masthead.html" -->
+      <!--#include "../../components/_header.html" -->
+
+      <div id="container">
+        <!-- visual banner -->
+        <div class="main-vban-wrap">
+          <div class="inner">
+            <div class="vb-swiper" style="position: relative">
+              <div
+                class="swiper vb-container"
+                role="region"
+                aria-roledescription="carousel"
+                aria-label="메인 배너"
+                tabindex="0"
+              >
+                <ul class="swiper-wrapper">
+                  <li
+                    class="swiper-slide"
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label="1 of 4"
+                  >
+                    <div class="in">
+                      <div class="text">
+                        <p class="tit">타이틀 영역</p>
+                        <p class="txt">컨텐츠 영역</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="swiper-slide"
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label="2 of 4"
+                  >
+                    <div class="in">
+                      <div class="text">
+                        <p class="tit">타이틀 영역</p>
+                        <p class="txt">컨텐츠 영역</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="swiper-slide"
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label="3 of 4"
+                  >
+                    <div class="in">
+                      <div class="text">
+                        <p class="tit">타이틀 영역</p>
+                        <p class="txt">컨텐츠 영역</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="swiper-slide"
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label="4 of 4"
+                  >
+                    <div class="in">
+                      <div class="text">
+                        <p class="tit">타이틀 영역</p>
+                        <p class="txt">컨텐츠 영역</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                class="swiper-button-prev"
+                aria-label="이전 슬라이드"
+              >
+                <span class="sr-only">이전</span>
+              </button>
+              <button
+                type="button"
+                class="swiper-button-next"
+                aria-label="다음 슬라이드"
+              >
+                <span class="sr-only">다음</span>
+              </button>
+              <div class="swiper-indicator text-center">
+                <div
+                  class="swiper-pagination"
+                  role="group"
+                  aria-label="슬라이드 페이지"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const vbContainer = document.querySelector(
+            ".vb-swiper .vb-container",
+          );
+          const vbSwiper = new Swiper(vbContainer, {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 40,
+            speed: 500,
+            loop: true,
+            a11y: { enabled: true },
+            navigation: {
+              nextEl: ".vb-swiper .swiper-button-next",
+              prevEl: ".vb-swiper .swiper-button-prev",
+            },
+            pagination: {
+              el: ".vb-swiper .swiper-pagination",
+            },
+            on: {
+              init() {
+                updateAria(this);
+              },
+              slideChange() {
+                updateAria(this);
+              },
+            },
+          });
+
+          function updateAria(swiper) {
+            swiper.slides.forEach((slide, index) => {
+              if (index === swiper.activeIndex) {
+                slide.setAttribute("aria-hidden", "false");
+                slide.removeAttribute("tabindex");
+              } else {
+                slide.setAttribute("aria-hidden", "true");
+                slide.setAttribute("tabindex", "-1");
+              }
+            });
+          }
+
+          // 포커스 여부 + 키보드 제어
+          let vbFocus = false;
+          vbContainer.addEventListener("focusin", () => {
+            vbFocus = true;
+          });
+          vbContainer.addEventListener("focusout", (e) => {
+            if (!vbContainer.contains(e.relatedTarget)) vbFocus = false;
+          });
+          vbContainer.addEventListener("keydown", (e) => {
+            if (!vbFocus) return;
+            if (e.key === "ArrowLeft") vbSwiper.slidePrev();
+            if (e.key === "ArrowRight") vbSwiper.slideNext();
+          });
+        </script>
+
+        <!-- 상세 배너 -->
+        <div class="main-d-ban-swiper">
+          <div class="inner">
+            <div
+              class="swiper detail-container"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="추천 콘텐츠, 자동 재생 중"
+              tabindex="0"
+            >
+              <ul class="swiper-wrapper">
+                <li
+                  class="swiper-slide"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="1 of 2"
+                >
+                  <div class="text">
+                    <p class="cate">서브타이틀</p>
+                    <p class="tit">타이틀</p>
+                  </div>
+                </li>
+                <li
+                  class="swiper-slide"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label="2 of 2"
+                >
+                  <div class="text">
+                    <p class="cate">서브타이틀</p>
+                    <p class="tit">타이틀</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="swiper-indicator">
+              <div
+                class="swiper-pagination"
+                aria-live="polite"
+                aria-atomic="true"
+              ></div>
+              <div class="swiper-controller">
+                <button
+                  type="button"
+                  class="swiper-button-play"
+                  aria-label="슬라이드 자동 재생"
+                >
+                  <span class="sr-only">슬라이드 재생</span>
+                </button>
+                <button
+                  type="button"
+                  class="swiper-button-stop"
+                  aria-label="슬라이드 자동 재생 정지, 현재 재생 중"
+                >
+                  <span class="sr-only">슬라이드 멈춤</span>
+                </button>
+              </div>
+              <div class="swiper-navigation">
+                <button
+                  type="button"
+                  class="swiper-button-prev"
+                  aria-label="이전 슬라이드"
+                >
+                  <span class="sr-only">이전</span>
+                </button>
+                <button
+                  type="button"
+                  class="swiper-button-next"
+                  aria-label="다음 슬라이드"
+                >
+                  <span class="sr-only">다음</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const detailContainer = document.querySelector(
+            ".main-d-ban-swiper .detail-container",
+          );
+          const eleBanSwiper = new Swiper(detailContainer, {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            speed: 500,
+            loop: true,
+            autoplay: {
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            },
+            navigation: {
+              nextEl: ".main-d-ban-swiper .swiper-button-next",
+              prevEl: ".main-d-ban-swiper .swiper-button-prev",
+            },
+            pagination: {
+              el: ".main-d-ban-swiper .swiper-pagination",
+              type: "fraction",
+            },
+            on: {
+              init() {
+                updateAria(this);
+              },
+              slideChange() {
+                updateAria(this);
+              },
+            },
+          });
+
+          function updateAria(swiper) {
+            swiper.slides.forEach((slide, index) => {
+              if (index === swiper.activeIndex) {
+                slide.setAttribute("aria-hidden", "false");
+                slide.removeAttribute("tabindex");
+              } else {
+                slide.setAttribute("aria-hidden", "true");
+                slide.setAttribute("tabindex", "-1");
+              }
+            });
+          }
+
+          // 포커스 여부 + 키보드
+          let detailFocus = false;
+          detailContainer.addEventListener("focusin", () => {
+            detailFocus = true;
+            eleBanSwiper.autoplay.stop();
+          });
+          detailContainer.addEventListener("focusout", (e) => {
+            if (!detailContainer.contains(e.relatedTarget)) {
+              detailFocus = false;
+              eleBanSwiper.autoplay.start();
+            }
+          });
+          detailContainer.addEventListener("keydown", (e) => {
+            if (!detailFocus) return;
+            if (e.key === "ArrowLeft") eleBanSwiper.slidePrev();
+            if (e.key === "ArrowRight") eleBanSwiper.slideNext();
+            if (e.key === "Escape") $stop.click();
+          });
+
+          // 재생/정지 버튼
+          const $play = document.querySelector(
+            ".main-d-ban-swiper .swiper-button-play",
+          );
+          const $stop = document.querySelector(
+            ".main-d-ban-swiper .swiper-button-stop",
+          );
+          $play.style.display = "none";
+          $play.addEventListener("click", () => {
+            eleBanSwiper.autoplay.start();
+            $play.style.display = "none";
+            $stop.style.display = "";
+          });
+          $stop.addEventListener("click", () => {
+            eleBanSwiper.autoplay.stop();
+            $stop.style.display = "none";
+            $play.style.display = "";
+          });
+
+          // 페이지 가시성
+          document.addEventListener("visibilitychange", () => {
+            if (document.hidden) {
+              if (eleBanSwiper.autoplay.running) eleBanSwiper.autoplay.stop();
+            } else {
+              if ($stop.style.display !== "none") eleBanSwiper.autoplay.start();
+            }
+          });
+        </script>
+      </div>
+
+      <!--#include "../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../components/_chatbot.html" -->
+</html>

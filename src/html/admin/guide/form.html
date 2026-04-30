@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>Input</h2>
+          <div
+            style="
+              display: flex;
+              gap: 0.8rem;
+              flex-direction: column;
+              margin-bottom: 1.2rem;
+            "
+          >
+            <input type="text" class="inp-text" />
+            <input type="text" class="inp-text" readonly />
+            <input type="text" class="inp-text" disabled />
+          </div>
+          <h2>Textarea</h2>
+          <div
+            style="
+              display: flex;
+              gap: 0.8rem;
+              flex-direction: column;
+              margin-bottom: 1.2rem;
+            "
+          >
+            <textarea class="inp-textarea" style="height: 10rem"></textarea>
+            <textarea
+              class="inp-textarea"
+              style="height: 10rem"
+              readonly
+            ></textarea>
+            <textarea
+              class="inp-textarea"
+              style="height: 10rem"
+              disabled
+            ></textarea>
+          </div>
+          <h2>Select</h2>
+          <div
+            style="
+              display: flex;
+              gap: 0.8rem;
+              flex-direction: column;
+              margin-bottom: 1.2rem;
+            "
+          >
+            <select>
+              <option value="">선택</option>
+            </select>
+            <select disabled>
+              <option value="">선택</option>
+            </select>
+          </div>
+          <h2>Radio</h2>
+          <div class="frm-area">
+            <span class="lb-item">
+              <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+              <label for="rdo_01_01" class="lb-radio">라디오</label>
+            </span>
+            <span class="lb-item">
+              <input type="radio" id="rdo_01_02" name="rdoBtn01" disabled />
+              <label for="rdo_01_02" class="lb-radio">Disabled</label>
+            </span>
+          </div>
+          <h2>Checkbox</h2>
+          <div class="frm-area">
+            <span class="lb-item">
+              <input type="checkbox" id="checkbox_01_01" />
+              <label for="checkbox_01_01" class="lb-checkbox">체크</label>
+            </span>
+            <span class="lb-item">
+              <input type="checkbox" id="checkbox_01_02" disabled />
+              <label for="checkbox_01_02" class="lb-checkbox">Disabled</label>
+            </span>
+          </div>
+          <h2>Datepicker</h2>
+
+          <div class="flex-box align-center">
+            <div class="ui-date-wrap disabled">
+              <div class="ui-datepicker">
+                <input
+                  type="text"
+                  id="startDate"
+                  class="inp-base date"
+                  aria-label="날짜입력"
+                  readonly
+                  placeholder="YYYY-MM-DD"
+                />
+                <button
+                  type="button"
+                  class="ui-datepicker-btn"
+                  data-target="startDate"
+                >
+                  <span class="a11y-hidden">년월일 선택</span>
+                </button>
+              </div>
+            </div>
+            <span class="date-sep">~</span>
+            <div class="ui-date-wrap">
+              <div class="ui-datepicker">
+                <input
+                  type="text"
+                  id="endDate"
+                  class="inp-base date"
+                  aria-label="날짜입력"
+                  readonly
+                  placeholder="YYYY-MM-DD"
+                />
+                <button
+                  type="button"
+                  class="ui-datepicker-btn"
+                  data-target="endDate"
+                >
+                  <span class="a11y-hidden">년월일 선택</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

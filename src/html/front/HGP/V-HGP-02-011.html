@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HGP-02-011"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HGP-02-011"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HGP-02-011"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HGP-02-011" class="modal-title">보관함 선택</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="select-storage">
+              <div class="item">
+                <div class="krds-form-check medium">
+                  <input
+                    type="radio"
+                    name="select-storage"
+                    id="select-storage01"
+                  />
+                  <label for="select-storage01"><span>내 보관함</span></label>
+                </div>
+                <span class="krds-badge outline-primary">기본</span>
+              </div>
+
+              <div class="item">
+                <input
+                  type="text"
+                  class="krds-input small"
+                  placeholder="새 폴더명 입력"
+                  aria-label="폴더명 입력"
+                  value="수업자료"
+                />
+                <div class="krds-btns-wrap">
+                  <button type="button" class="krds-btn tertiary xsmall">
+                    저장
+                  </button>
+                  <button type="button" class="krds-btn primary xsmall">
+                    삭제
+                  </button>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="krds-form-check medium">
+                  <input
+                    type="radio"
+                    name="select-storage"
+                    id="select-storage02"
+                  />
+                  <label for="select-storage02"><span>참고자료</span></label>
+                </div>
+                <div class="krds-btns-wrap">
+                  <button type="button" class="krds-btn tertiary xsmall">
+                    수정
+                  </button>
+                  <button type="button" class="krds-btn primary xsmall">
+                    삭제
+                  </button>
+                </div>
+              </div>
+
+              <div class="item">
+                <input
+                  type="text"
+                  class="krds-input small"
+                  placeholder="새 폴더명 입력"
+                  aria-label="폴더명 입력"
+                />
+                <div class="krds-btns-wrap">
+                  <button type="button" class="krds-btn primary xsmall">
+                    추가
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium primary">확인</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HGP-02-011");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

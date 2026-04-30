@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "9", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>적립기준설정</h2>
+          <div class="sub-title">
+            <h3>학습</h3>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col style="width: 15rem" />
+                <col style="width: 19.5rem" />
+                <col style="width: 17rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">항목명</th>
+                  <th scope="col">적립포인트</th>
+                  <th scope="col">연간 최대 포인트</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">변경이력</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">콘텐츠 학습( 1시간당)</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_01_01"
+                          name="rdoBtn01_01"
+                          checked
+                        />
+                        <label for="rdoBtn01_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_01_02"
+                          name="rdoBtn01_01"
+                        />
+                        <label for="rdoBtn01_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="txt-l">모듈 공개</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_02_01"
+                          name="rdoBtn01_02"
+                          checked
+                        />
+                        <label for="rdoBtn01_02_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_02_02"
+                          name="rdoBtn01_02"
+                        />
+                        <label for="rdoBtn01_02_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="txt-l">콘텐츠 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_03_01"
+                          name="rdoBtn01_03"
+                          checked
+                        />
+                        <label for="rdoBtn01_03_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn01_03_02"
+                          name="rdoBtn01_03"
+                        />
+                        <label for="rdoBtn01_03_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-title">
+            <h3>전문가</h3>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col style="width: 15rem" />
+                <col style="width: 19.5rem" />
+                <col style="width: 17rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">항목명</th>
+                  <th scope="col">적립포인트</th>
+                  <th scope="col">연간 최대 포인트</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">변경이력</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">전문가 등재</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_01_01"
+                          name="rdoBtn02_01"
+                          checked
+                        />
+                        <label for="rdoBtn02_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_01_02"
+                          name="rdoBtn02_01"
+                        />
+                        <label for="rdoBtn02_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="txt-l">코칭 이수 완료</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_02_01"
+                          name="rdoBtn02_02"
+                          checked
+                        />
+                        <label for="rdoBtn02_02_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_02_02"
+                          name="rdoBtn02_02"
+                        />
+                        <label for="rdoBtn02_02_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="txt-l">코칭 제공 완료</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_03_01"
+                          name="rdoBtn02_03"
+                          checked
+                        />
+                        <label for="rdoBtn02_03_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn02_03_02"
+                          name="rdoBtn02_03"
+                        />
+                        <label for="rdoBtn02_03_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-title">
+            <h3>평기등록</h3>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col style="width: 15rem" />
+                <col style="width: 19.5rem" />
+                <col style="width: 17rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">항목명</th>
+                  <th scope="col">적립포인트</th>
+                  <th scope="col">연간 최대 포인트</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">변경이력</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">콘텐츠 평가 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn03_01_01"
+                          name="rdoBtn03_01"
+                          checked
+                        />
+                        <label for="rdoBtn03_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn03_01_02"
+                          name="rdoBtn03_01"
+                        />
+                        <label for="rdoBtn03_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="txt-l">모듈 평가 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn03_02_01"
+                          name="rdoBtn03_02"
+                          checked
+                        />
+                        <label for="rdoBtn03_02_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn03_02_02"
+                          name="rdoBtn03_02"
+                        />
+                        <label for="rdoBtn03_02_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="txt-l">전문가 평가 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn03_03_01"
+                          name="rdoBtn03_03"
+                          checked
+                        />
+                        <label for="rdoBtn03_03_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn03_03_02"
+                          name="rdoBtn03_03"
+                        />
+                        <label for="rdoBtn03_03_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-title">
+            <h3>역량 진단</h3>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col style="width: 15rem" />
+                <col style="width: 19.5rem" />
+                <col style="width: 17rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">항목명</th>
+                  <th scope="col">적립포인트</th>
+                  <th scope="col">연간 최대 포인트</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">변경이력</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">역량진단 제출(등록)</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn04_01_01"
+                          name="rdoBtn04_01"
+                          checked
+                        />
+                        <label for="rdoBtn04_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn04_01_02"
+                          name="rdoBtn04_01"
+                        />
+                        <label for="rdoBtn04_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-title">
+            <h3>학습공동체</h3>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col style="width: 15rem" />
+                <col style="width: 19.5rem" />
+                <col style="width: 17rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">항목명</th>
+                  <th scope="col">적립포인트</th>
+                  <th scope="col">연간 최대 포인트</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">변경이력</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="txt-l">공개수업 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn05_01_01"
+                          name="rdoBtn05_01"
+                          checked
+                        />
+                        <label for="rdoBtn05_01_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn05_01_02"
+                          name="rdoBtn05_01"
+                        />
+                        <label for="rdoBtn05_01_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="txt-l">의견나눔 게시글 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn05_02_01"
+                          name="rdoBtn05_02"
+                          checked
+                        />
+                        <label for="rdoBtn05_02_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn05_02_02"
+                          name="rdoBtn05_02"
+                        />
+                        <label for="rdoBtn05_02_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="txt-l">커뮤니티 게시글 등록</td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="적립포인트 입력"
+                        value="200"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area flex">
+                      <input
+                        type="text"
+                        class="inp-text txt-r"
+                        aria-label="연간 최대 포인트 입력"
+                        value="2,000"
+                      />
+                      <span class="note">P</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn05_03_01"
+                          name="rdoBtn05_03"
+                          checked
+                        />
+                        <label for="rdoBtn05_03_01" class="lb-radio"
+                          >사용</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input
+                          type="radio"
+                          id="rdoBtn05_03_02"
+                          name="rdoBtn05_03"
+                        />
+                        <label for="rdoBtn05_03_02" class="lb-radio"
+                          >미사용</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="tbl-btns mgt0">
+                      <button
+                        type="button"
+                        class="btn base square btn-modal"
+                        data-id="X-HCE-01-012"
+                        data-src="X-HCE-01-012.html"
+                      >
+                        <span>변경이력 보기</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>저장</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

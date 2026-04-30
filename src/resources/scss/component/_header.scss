@@ -1,0 +1,371 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+@use '../common/path' as *;
+
+/* 헤더 */
+//사이즈 정의
+@mixin header-size-variable() {
+  --header--utility-gap: var(--gap-4);
+  --header--container-gap: var(--gap-2);
+  --header--container-padding-top: var(--padding-5);
+  --header--container-padding-bottom: var(--padding-6);
+  --header--navi-min-height: var(--size-height-6);
+  --header--navi-gap: var(--gap-2) var(--gap-3);
+  --header--navi-padding: var(--padding-2) var(--padding-5) 0;
+  --header--navi-border-radius: var(--radius-medium1);
+  --header--navi-font-size-pc: var(--pc-font-size-navigation-depth-medium-bold);
+  --header--navi-font-size-mobile: var(--mobile-font-size-navigation-depth-small-bold);
+}
+
+//컬러 정의
+@mixin header-color-variable($mode: light) {
+  --header--color-surface: var(--#{$mode}-color-surface-white);
+  --header--utility-color-divider: var(--#{$mode}-color-divider-gray-light);
+  --header--navi-color-text: var(--#{$mode}-color-text-basic);
+  --header--navi-color-hover: var(--#{$mode}-color-action-secondary-hover);
+  --header--navi-color-pressed: var(--#{$mode}-color-action-secondary-pressed);
+}
+
+//모드 설정
+$mode-setting: light;
+
+#krds-header {
+  @include header-size-variable();
+  @include header-color-variable(#{$mode-setting});
+
+  @include position($p: sticky, $t: 0, $l: 0);
+  z-index: 70;
+  background-color: var(--header--color-surface);
+  .header-in {
+    position: relative;
+    transform: translateY(0);
+  }
+
+  .header-utility {
+    @include flex-layout($jc: flex-end);
+    .utility-list {
+      @include flex-layout($jc: flex-end);
+      align-items: center;
+      & > li {
+        display: flex;
+        font-size: var(--pc-font-size-body-small);
+        color: var(--light-color-text-subtle);
+        align-items: center;
+        .krds-btn.icon {
+          margin-right: 0.4rem;
+          i {
+            background-color: var(--light-color-icon-danger-static);
+          }
+        }
+        .krds-btn.text {
+          font-size: var(--pc-font-size-body-small);
+          color: var(--light-color-text-subtle);
+        }
+        span {
+          font-weight: var(--font-weight-bold);
+          color: var(--light-color-text-basic);
+        }
+        &:not(:first-child) {
+          gap: var(--header--utility-gap);
+          margin-left: var(--header--utility-gap);
+          &::before {
+            display: inline-block;
+            vertical-align: middle;
+            @include pseudo();
+            width: 0.1rem;
+            height: var(--size-height-2);
+            background-color: var(--header--utility-color-divider);
+          }
+        }
+      }
+    }
+  }
+
+  .header-container {
+    .inner {
+      @include flex-layout($fd: column, $ai: normal);
+      //web 전용 속성
+      @include size-large-more {
+        gap: var(--header--container-gap);
+        padding-top: var(--header--container-padding-top);
+        padding-bottom: var(--header--container-padding-bottom);
+      }
+    }
+    .header-branding {
+      @include flex-layout($ai: center);
+      gap: 0 4rem;
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: inline-flex;
+      @include square(18.2rem, 4.2rem);
+      @include size-medium {
+        @include square(15rem, 4.2rem);
+      }
+      @include size-small {
+        @include square(14rem, 4.2rem);
+      }
+      flex: none;
+      a {
+        display: block;
+        @include square(100%);
+        background-image: url(#{$url}/img/component/icon/ico_logo_hico.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+    .main-switcher {
+      display: none;
+      padding: 0.4rem;
+      border-radius: var(--radius-max);
+      background-color: #f1f2f5;
+      gap: 0.2rem;
+      a {
+        display: inline-flex;
+        border-radius: 5rem;
+        height: 4rem;
+        padding: 0 1.1rem;
+        font-size: var(--pc-font-size-body-medium);
+        color: #4a5560;
+        justify-content: center;
+        align-items: center;
+        background-color: #f1f2f5;
+        span {
+          min-width: 5.4rem;
+          text-align: center;
+        }
+        &.active {
+          font-weight: var(--font-weight-bold);
+          color: var(--color-light-alpha-white100);
+          background: linear-gradient(90deg, #5b7ff3 0%, #3f65e0 100%);
+          // box-shadow: 0.2rem 0.8rem 0.8rem 0 rgba(42, 81, 125, 0.04);
+        }
+      }
+    }
+    .header-actions {
+      display: inline-flex;
+      gap: var(--gap-3);
+      margin-left: auto;
+    }
+    .btn-navi {
+      @include flex-layout($d: inline-flex, $fd: row, $jc: space-between, $ai: center);
+      gap: var(--header--navi-gap);
+      // min-height: var(--header--navi-min-height);
+      // padding: var(--header--navi-padding);
+      border-radius: var(--header--navi-border-radius);
+      font-size: var(--pc-font-size-navigation-depth-medium);
+      font-weight: var(--font-weight-bold);
+      color: var(--header--navi-color-text);
+      transition: var(--transition-base);
+      &::before {
+        display: inline-flex;
+        @include pseudo();
+        @include svg-icon($size: var(--icon--size-medium), $mode: #{$mode-setting});
+      }
+      &:hover {
+        background-color: var(--header--navi-color-hover);
+      }
+      &:active,
+      &:focus {
+        background-color: var(--header--navi-color-pressed);
+      }
+      &.navi-row {
+        flex-direction: row;
+      }
+      &.sch {
+        padding: var(--padding-4) var(--padding-5);
+        &::before {
+          @include icon-set(ico_sch);
+        }
+      }
+      &.ai {
+        padding: var(--padding-4) var(--padding-5);
+        &::before {
+          @include icon-set(ico_faq);
+        }
+      }
+      &.login {
+        &::before {
+          @include icon-set(ico_login);
+        }
+      }
+      &.join {
+        &::before {
+          @include icon-set(ico_join);
+        }
+      }
+      &.my {
+        &::before {
+          @include icon-set(ico_my);
+        }
+      }
+      &.all {
+        &::before {
+          @include icon-set(ico_all);
+        }
+      }
+    }
+  }
+}
+
+/* 스크롤 동작 */
+#wrap {
+  &[class*='scroll'] {
+    #krds-heade {
+      position: relative;
+      border-bottom: 0.1rem solid var(--header--utility-color-divider);
+      .header-in {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        border-bottom: 0.1rem solid var(--header--utility-color-divider);
+        background-color: var(--header--color-surface);
+        transition: transform ease 0.4s 0.01s;
+      }
+    }
+  }
+  &.scroll-down {
+    #krds-heade {
+      .header-in {
+        transform: translateY(-100%);
+      }
+    }
+  }
+  &.scroll-up {
+    #krds-heade {
+      .header-in {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  #krds-header {
+    @include header-color-variable(#{$mode-setting});
+    .inner {
+      border-bottom-color: var(--#{$mode-setting}-color-divider-gray-light);
+    }
+    .header-container {
+      .btn-navi {
+        &::before {
+          @include svg-icon(var(--icon--size-medium), $mode: #{$mode-setting});
+        }
+      }
+      .logo {
+        a {
+          background-image: url(#{$url}/img/component/icon/ico_logo_krds_high_contrast.svg);
+        }
+      }
+    }
+  }
+}
+
+//web 전용 속성
+@include size-large-more {
+  #krds-header {
+    .header-container {
+      .btn-navi {
+        &.all {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .is-gnb-web {
+    overflow: hidden;
+    #wrap {
+      &.scroll-down {
+        #krds-header {
+          .header-in {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+    &.hasScrollY {
+      #krds-masthead,
+      #krds-header .header-container,
+      #krds-header .krds-main-menu,
+      #krds-header .gnb-toggle-wrap,
+      #container,
+      #krds-footer {
+      }
+      #krds-footer .foot-quick {
+      }
+    }
+  }
+}
+
+//태블릿 & 모바일 전용 속성
+@include size-large-less {
+  #krds-header {
+    .inner {
+      padding-top: var(--gap-5);
+      padding-bottom: var(--gap-5);
+      border-bottom: var(--#{$mode-setting}-border-width-static-regular) solid var(--#{$mode-setting}-color-divider-gray-light);
+    }
+
+    .header-container {
+      .header-utility {
+        display: none;
+      }
+      .header-branding {
+        gap: 0 2rem;
+      }
+      .main-switcher {
+        display: none !important;
+      }
+      .btn-navi {
+        &.navi-row {
+          flex-direction: column;
+        }
+        &.join,
+        &.my {
+          display: none;
+        }
+      }
+      .my-drop {
+        display: none;
+      }
+    }
+  }
+}
+
+//모바일 전용
+@include size-medium {
+  #krds-header {
+    .header-container {
+      .header-actions {
+      }
+      .btn-navi {
+        padding: var(--padding-4) var(--padding-2) !important;
+        font-size: 1.3rem;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  #krds-header {
+    .header-container {
+      .logo {
+        @include square(13rem, 4.2rem);
+      }
+      .btn-navi {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

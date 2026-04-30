@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>
+      수업나눔 등록 | 수업나눔 | 수업공동체 | 학습공동체 | Hi-Coaching
+    </title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 3 + 1, depth2: 5 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 학습공동체 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">학습공동체</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">협업공간</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">실행나눔</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">연구지원</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">학습공동체채널정보</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">커뮤니티게시판</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">수업공동체</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">경기도교육연구회</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수석교사</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">교사연구년제</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //학습공동체 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">학습공동체</a></li>
+                <li><a href="#" class="txt">수업공동체</a></li>
+                <li><a href="#" class="txt">수업나눔</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">수업나눔 게시판</h3>
+            </div>
+            <div class="board-wrap">
+              <div class="board-write">
+                <div class="krds-table-wrap write">
+                  <table class="tbl">
+                    <caption>
+                      수업나눔 게시판 등록에 대한 표로 등록자, 제목, 구분,
+                      공개수업 대상, 일정, 시간, 내용, 첨부파일로 구성되어있다.
+                    </caption>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th class="ac" scope="row">등록자</th>
+                        <td>김역량</td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_title" class="krds-label">
+                            제목
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <input
+                            type="text"
+                            class="krds-input"
+                            id="input_title"
+                            placeholder="제목을 입력하여 주세요.(최대 30자)"
+                          />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          구분
+                          <i class="required" aria-hidden="true"></i>
+                          <span class="sr-only">필수 항목</span>
+                        </th>
+                        <td>
+                          <div class="krds-check-area">
+                            <div class="krds-form-check">
+                              <input type="checkbox" id="chk_1" />
+                              <label for="chk_1">일반</label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="checkbox" id="chk_2" />
+                              <label for="chk_2">공개수업</label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          공개수업 대상
+                          <i class="required" aria-hidden="true"></i>
+                          <span class="sr-only">필수 항목</span>
+                        </th>
+                        <td>
+                          <div class="krds-check-area">
+                            <div class="krds-form-check">
+                              <input type="radio" name="rdo_1" id="rdo_1" />
+                              <label for="rdo_1">나의 학교</label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="radio" name="rdo_1" id="rdo_2" />
+                              <label for="rdo_2">나의 지역</label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="radio" name="rdo_1" id="rdo_3" />
+                              <label for="rdo_3">경기도 전체</label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          일정
+                          <i class="required" aria-hidden="true"></i>
+                          <span class="sr-only">필수 항목</span>
+                        </th>
+                        <td>
+                          <div class="date-setting">
+                            <div class="item">
+                              <div class="time">
+                                <select
+                                  class="krds-form-select small"
+                                  aria-label="년도 선택"
+                                >
+                                  <option>년도</option>
+                                </select>
+                                <select
+                                  class="krds-form-select small"
+                                  aria-label="월 선택"
+                                >
+                                  <option>월</option>
+                                </select>
+                                <select
+                                  class="krds-form-select small"
+                                  aria-label="일 선택"
+                                >
+                                  <option>일</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          시간
+                          <i class="required" aria-hidden="true"></i>
+                          <span class="sr-only">필수 항목</span>
+                        </th>
+                        <td>
+                          <div class="date-setting">
+                            <div class="item">
+                              <div class="time">
+                                <select
+                                  class="krds-form-select small completed"
+                                  aria-label="시작 시간 선택"
+                                >
+                                  <option>00</option>
+                                </select>
+                                <span>시</span>
+                                <select
+                                  class="krds-form-select small completed"
+                                  aria-label="시작 분 선택"
+                                >
+                                  <option>00</option>
+                                </select>
+                                <span>분</span>
+                                <span>~</span>
+                                <select
+                                  class="krds-form-select small completed"
+                                  aria-label="종료 시간 선택"
+                                >
+                                  <option>00</option>
+                                </select>
+                                <span>시</span>
+                                <select
+                                  class="krds-form-select small completed"
+                                  aria-label="종료 분 선택"
+                                >
+                                  <option>00</option>
+                                </select>
+                                <span>분</span>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_cont" class="krds-label">
+                            내용
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <textarea
+                            class="krds-input"
+                            id="input_cont"
+                            placeholder="내용을 입력해주세요"
+                          ></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="file-upload" class="krds-label"
+                            >첨부파일</label
+                          >
+                        </th>
+                        <td>
+                          <div class="file-box">
+                            <!-- <ul class="file-list">
+                          <li>
+                            <span class="file-name">
+                              <i class="svg-icon ico-pdf" aria-hidden="true"></i>
+                              <span>파일명.pdf</span>
+                            </span>
+                            <button type="button" class="krds-btn icon">
+                              <i class="svg-icon ico-delete-fill2" aria-hidden="true"></i>
+                              <span class="sr-only">삭제</span>
+                            </button>
+                          </li>
+                        </ul> -->
+                            <div class="file-box-btn-wrap">
+                              <input type="file" id="file-upload" hidden />
+                              <label
+                                for="file-upload"
+                                class="krds-btn tertiary medium"
+                                >찾아보기</label
+                              >
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="krds-btns-wrap between">
+                <div>
+                  <a href="#" class="krds-btn xlarge tertiary">취소</a>
+                </div>
+                <div class="right">
+                  <button type="button" class="krds-btn xlarge tertiary">
+                    삭제
+                  </button>
+                  <button type="button" class="krds-btn xlarge primary">
+                    수정
+                  </button>
+                  <!-- <button type="button" class="krds-btn xlarge primary">등록</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

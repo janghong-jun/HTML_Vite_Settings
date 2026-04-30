@@ -1,0 +1,79 @@
+@use '../common/group_variables' as *;
+@use '../common/mixins/breakpoints' as *;
+
+@mixin guide-size-variable() {
+  --guide--title-font-size: var(--pc-font-size-heading-small);
+  --guide--title-margin-bottom: var(--padding-5);
+  --guide--margin-bottom: var(--gap-10);
+}
+.guide {
+  @include guide-size-variable();
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-3);
+  margin-bottom: var(--guide--margin-bottom);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.col {
+    flex-direction: column;
+  }
+  > .krds-step-wrap,
+  .fieldset,
+  .krds-accordion,
+  .page-title-wrap,
+  .file-box,
+  .krds-form-file {
+    width: 100%;
+  }
+
+  .krds-badge-wrap {
+    width: 100%;
+    margin-bottom: var(--badge--wrap-gap);
+    flex-wrap: wrap;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .krds-contextual-help {
+    margin: auto;
+  }
+  .krds-coach-mark {
+    margin-top: 10rem;
+    flex: 1;
+  }
+
+  &.icon {
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      padding: 2.4rem;
+      border-radius: var(--radius-large1);
+      background-color: rgba($color: #000000, $alpha: 0.05);
+      flex: none;
+
+      &.icon-white {
+        background-color: #000;
+      }
+    }
+    .svg-icon {
+      width: 2.4rem !important;
+      height: 2.4rem !important;
+      vertical-align: top;
+    }
+  }
+}
+
+@include size-medium {
+  .guide {
+    --guide--title-font-size: var(--mobile-font-size-heading-small);
+    --guide--title-margin-bottom: var(--padding-3);
+    --guide--margin-bottom: var(--gap-8);
+  }
+}

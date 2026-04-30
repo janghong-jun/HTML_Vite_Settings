@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "2", sid: "2" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>전문가설정</h2>
+          <div class="sub-title">
+            <h3 class="fc-black">인정기준 설정</h3>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+                <col style="width: 15rem" />
+                <col style="width: calc(50% - 15rem)" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row"><label for="select01">교원구분</label></th>
+                  <td colspan="3">
+                    <select id="select01">
+                      <option>교사</option>
+                      <option>수석교사</option>
+                      <option>교감</option>
+                      <option>교장</option>
+                      <option>교육전문직원</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <th scope="row">역량진단 점수</th>
+                  <td colspan="3">
+                    <div class="frm-area grid left">
+                      <div class="lb-item">
+                        <select>
+                          <option>교수 역량</option>
+                        </select>
+                        <input type="text" class="inp-text txt-r" />
+                        <span class="unit">이상</span>
+                      </div>
+                      <div class="lb-item">
+                        <select>
+                          <option>생활교육 역량</option>
+                        </select>
+                        <input type="text" class="inp-text txt-r" />
+                        <span class="unit">이상</span>
+                      </div>
+                      <div class="lb-item">
+                        <select>
+                          <option>공동체 역량</option>
+                        </select>
+                        <input type="text" class="inp-text txt-r" />
+                        <span class="unit">이상</span>
+                      </div>
+                      <div class="lb-item">
+                        <select>
+                          <option>자기개발 역량</option>
+                        </select>
+                        <input type="text" class="inp-text txt-r" />
+                        <span class="unit">이상</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">등록 학습콘텐츠</th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text txt-r" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                  <th scope="row">등록 학습모듈</th>
+                  <td>
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text txt-r" />
+                      <span class="unit">이상</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">회원 레벨</th>
+                  <td colspan="3">
+                    <div class="frm-area grid left">
+                      <div class="frm-area">
+                        <span class="lb-item">
+                          <input type="radio" name="rdo01" id="rdo0101" />
+                          <label for="rdo0101" class="lb-radio">반영</label>
+                        </span>
+                        <span class="lb-item">
+                          <input type="radio" name="rdo01" id="rdo0102" />
+                          <label for="rdo0102" class="lb-radio">미반영</label>
+                        </span>
+                      </div>
+                      <div class="frm-area flex left">
+                        <select style="width: 21.4rem">
+                          <option>레벨명</option>
+                        </select>
+                        <span class="unit">이상</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">회원 레벨</th>
+                  <td colspan="3">
+                    <div class="frm-area grid left">
+                      <div class="frm-area">
+                        <span class="lb-item">
+                          <input type="radio" name="rdo02" id="rdo0201" />
+                          <label for="rdo0201" class="lb-radio">반영</label>
+                        </span>
+                        <span class="lb-item">
+                          <input type="radio" name="rdo02" id="rdo0202" />
+                          <label for="rdo0202" class="lb-radio">미반영</label>
+                        </span>
+                      </div>
+                      <div class="frm-area flex left">
+                        <input type="text" class="inp-text txt-r" />
+                        <span class="unit">이상</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tbl-btns mgt16">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>저장</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

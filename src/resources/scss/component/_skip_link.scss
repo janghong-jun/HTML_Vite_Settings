@@ -1,0 +1,60 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 건너뛰기 링크 */
+//사이즈 정의
+@mixin skip-link-size-variable() {
+  --skip-link--pc-font-size: var(--pc-font-size-body-small);
+  --skip-link--mobile-font-size: var(--mobile-font-size-body-small);
+}
+
+//컬러 정의
+@mixin skip-link-color-variable($mode: light) {
+  --skip-link--color-background: var(--#{$mode}-color-background-inverse);
+  --skip-link-color-text: var(--#{$mode}-color-text-basic-inverse);
+}
+
+//모드 설정
+$mode-setting: light;
+
+#krds-skip-link {
+  @include skip-link-size-variable();
+  @include skip-link-color-variable(#{$mode-setting});
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  text-align: center;
+  background-color: var(--skip-link--color-background);
+  a {
+    &:not(:focus) {
+      @include sr-only;
+    }
+    &:focus {
+      @include flex-layout($ai: center, $jc: center);
+      @include focus();
+      font-size: var(--pc-font-size-body-small);
+      color: var(--skip-link-color-text);
+      width: 100%;
+      height: var(--size-height-5);
+      margin: 0 auto;
+      text-align: center;
+      @include size-medium {
+        font-size: var(--skip-link--mobile-font-size);
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  #krds-skip-link {
+    @include skip-link-color-variable(#{$mode-setting});
+  }
+}

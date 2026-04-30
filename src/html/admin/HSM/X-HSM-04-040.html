@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "6", sid: "13" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>신고 관리</h2>
+          <div class="ui-tab left mgt24" data-id="tab01" data-current="0">
+            <div class="ui-tab-btns">
+              <button type="button" class="ui-tab-btn" data-tab="0">
+                모듈
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="1">
+                전문가
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="2">
+                콘텐츠
+              </button>
+            </div>
+            <div class="ui-tab-pnls">
+              <div class="ui-tab-pnl" data-tab="0">
+                <div class="tbl-base mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="flex-box align-center">
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="startDat01"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="startDat01"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="date-sep">~</span>
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="endDate01"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="endDate01"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="date-select">
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1주일</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>2주일</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>3개월</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">신고유형</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_02_01" />
+                              <label for="checkbox_01_02_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_02_02" />
+                              <label for="checkbox_01_02_02" class="lb-checkbox"
+                                >신고유형 1</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_02_03" />
+                              <label for="checkbox_01_02_03" class="lb-checkbox"
+                                >신고유형 2</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_02_04" />
+                              <label for="checkbox_01_02_04" class="lb-checkbox"
+                                >신고유형 3</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_02_05" />
+                              <label for="checkbox_01_02_05" class="lb-checkbox"
+                                >기타</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">처리상태</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_01_01" />
+                              <label for="checkbox_01_01_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_01_02" />
+                              <label for="checkbox_01_01_02" class="lb-checkbox"
+                                >대기중</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_01_01_03" />
+                              <label for="checkbox_01_01_03" class="lb-checkbox"
+                                >처리</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              class="inp-text"
+                              aria-label="검색어 입력"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns center flex">
+                  <button type="button" class="btn base fill">
+                    <span>검색</span>
+                  </button>
+                  <button type="button" class="btn base secondary">
+                    <span>초기화</span>
+                  </button>
+                </div>
+
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8.8rem" />
+                      <col />
+                      <col style="width: 12rem" />
+                      <col style="width: 15rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 7rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">모듈 명</th>
+                        <th scope="col">신고자</th>
+                        <th scope="col">신고 유형</th>
+                        <th scope="col">신고일</th>
+                        <th scope="col">처리상태</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>100</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>김역량</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>99</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>박역량</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>98</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>김발전</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>97</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>조스승</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>96</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>장교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>95</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>김경기</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>94</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>조스승</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>93</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>장교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>92</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>김경기</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>91</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>이교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td colspan="6" class="nodata">
+                          검색된 내용이 없습니다.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="1">
+                <div class="tbl-base mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="flex-box align-center">
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="startDat02"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="startDat02"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="date-sep">~</span>
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="endDate02"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="endDate02"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="date-select">
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1주일</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>2주일</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>3개월</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">신고유형</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_02_01" />
+                              <label for="checkbox_02_02_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_02_02" />
+                              <label for="checkbox_02_02_02" class="lb-checkbox"
+                                >신고유형 1</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_02_03" />
+                              <label for="checkbox_02_02_03" class="lb-checkbox"
+                                >신고유형 2</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_02_04" />
+                              <label for="checkbox_02_02_04" class="lb-checkbox"
+                                >신고유형 3</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_02_05" />
+                              <label for="checkbox_02_02_05" class="lb-checkbox"
+                                >기타</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">처리상태</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_01_01" />
+                              <label for="checkbox_02_01_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_01_02" />
+                              <label for="checkbox_02_01_02" class="lb-checkbox"
+                                >대기중</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_02_01_03" />
+                              <label for="checkbox_02_01_03" class="lb-checkbox"
+                                >처리</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              class="inp-text"
+                              aria-label="검색어 입력"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns center flex">
+                  <button type="button" class="btn base fill">
+                    <span>검색</span>
+                  </button>
+                  <button type="button" class="btn base secondary">
+                    <span>초기화</span>
+                  </button>
+                </div>
+
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8.8rem" />
+                      <col />
+                      <col />
+                      <col style="width: 15rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 7rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">전문가 이름</th>
+                        <th scope="col">신고자</th>
+                        <th scope="col">신고 유형</th>
+                        <th scope="col">신고일</th>
+                        <th scope="col">처리상태</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>100</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>김역량</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>99</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>박역량</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>98</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>김발전</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>97</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>조스승</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>96</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>장교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>95</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>김경기</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>94</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>조스승</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>93</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>장교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>92</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>김경기</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>91</td>
+                        <td><a href="#">김멘토</a></td>
+                        <td>이교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td colspan="6" class="nodata">
+                          검색된 내용이 없습니다.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="2">
+                <div class="tbl-base mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="flex-box align-center">
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="startDat03"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="startDat03"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <span class="date-sep">~</span>
+                            <div class="ui-date-wrap">
+                              <div class="ui-datepicker">
+                                <input
+                                  type="text"
+                                  id="endDate03"
+                                  class="inp-base date"
+                                  aria-label="날짜입력"
+                                  readonly
+                                  placeholder="YYYY-MM-DD"
+                                />
+                                <button
+                                  type="button"
+                                  class="ui-datepicker-btn"
+                                  data-target="endDate03"
+                                >
+                                  <span class="a11y-hidden">년월일 선택</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="date-select">
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1주일</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>2주일</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>1개월</span>
+                              </button>
+                              <button
+                                type="button"
+                                class="btn base square secondary"
+                              >
+                                <span>3개월</span>
+                              </button>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">유형</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_01_01" />
+                              <label for="checkbox_03_01_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_01_02" />
+                              <label for="checkbox_03_01_02" class="lb-checkbox"
+                                >동영상</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_01_03" />
+                              <label for="checkbox_03_01_03" class="lb-checkbox"
+                                >문서</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_01_04" />
+                              <label for="checkbox_03_01_04" class="lb-checkbox"
+                                >이미지</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">신고유형</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_03_01" />
+                              <label for="checkbox_03_03_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_03_02" />
+                              <label for="checkbox_03_03_02" class="lb-checkbox"
+                                >신고유형 1</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_03_03" />
+                              <label for="checkbox_03_03_03" class="lb-checkbox"
+                                >신고유형 2</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_03_04" />
+                              <label for="checkbox_03_03_04" class="lb-checkbox"
+                                >신고유형 3</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_03_05" />
+                              <label for="checkbox_03_03_05" class="lb-checkbox"
+                                >기타</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">처리상태</th>
+                        <td>
+                          <div class="frm-area">
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_02_01" />
+                              <label for="checkbox_03_02_01" class="lb-checkbox"
+                                >전체</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_02_02" />
+                              <label for="checkbox_03_02_02" class="lb-checkbox"
+                                >대기중</label
+                              >
+                            </span>
+                            <span class="lb-item">
+                              <input type="checkbox" id="checkbox_03_02_03" />
+                              <label for="checkbox_03_02_03" class="lb-checkbox"
+                                >처리</label
+                              >
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <div class="frm-area">
+                            <input
+                              type="text"
+                              class="inp-text"
+                              aria-label="검색어 입력"
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns center flex">
+                  <button type="button" class="btn base fill">
+                    <span>검색</span>
+                  </button>
+                  <button type="button" class="btn base secondary">
+                    <span>초기화</span>
+                  </button>
+                </div>
+
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8.8rem" />
+                      <col />
+                      <col style="width: 12rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 15rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 7rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">콘텐츠 명</th>
+                        <th scope="col">콘텐츠 유형</th>
+                        <th scope="col">신고자</th>
+                        <th scope="col">신고 유형</th>
+                        <th scope="col">신고일</th>
+                        <th scope="col">처리상태</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>100</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>김역량</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>99</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>박역량</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>98</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>김발전</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>97</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>조스승</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>대기</td>
+                      </tr>
+                      <tr>
+                        <td>96</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>장교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>95</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>김경기</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>94</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>조스승</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>93</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>장교육</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>92</td>
+                        <td class="txt-l">
+                          <a href="#">깊이있는 수업 on 보평초등학교</a>
+                        </td>
+                        <td>이미지</td>
+                        <td>김경기</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td>91</td>
+                        <td class="txt-l">
+                          <a href="#">체육활동 관련 안전사고 현황 및 대처</a>
+                        </td>
+                        <td>이교육</td>
+                        <td>문서</td>
+                        <td>신고시 선택한 유형</td>
+                        <td>YYYY-MM-DD</td>
+                        <td>처리</td>
+                      </tr>
+                      <tr>
+                        <td colspan="7" class="nodata">
+                          검색된 내용이 없습니다.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

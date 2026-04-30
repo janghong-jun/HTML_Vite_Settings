@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>공지사항 상세 | 하이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 5 + 1, depth2: 1 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 하이코칭 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">하이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">하이코칭안내</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">공지사항</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">FAQ</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">Q&amp;A</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //하이코칭 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">하이코칭</a></li>
+                <li><a href="#" class="txt">공지사항</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">공지사항</h3>
+            </div>
+            <div class="board-wrap">
+              <div class="board-detail">
+                <div class="board-detail-top">
+                  <div class="board-title">
+                    <h4 class="title">
+                      자유게시판에 등록된 게시글의 타이틀입니다.
+                    </h4>
+
+                    <div class="board-info">
+                      <span>2025-12-16</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="board-detail-body">
+                  <div class="board-detail-cont">
+                    <p>
+                      실행나눔 게시물의 내용이 들어갑니다. <br />
+                      실행나눔 게시물의 내용이 들어갑니다. <br />
+                      실행나눔 게시물의 내용이 들어갑니다. <br />
+                      실행나눔 게시물의 내용이 들어갑니다. <br />
+                      실행나눔 게시물의 내용이 들어갑니다.
+                    </p>
+                  </div>
+                  <ul class="board-file-list">
+                    <li>
+                      <button type="button">
+                        <span class="file-name">
+                          <i class="svg-icon ico-pdf" aria-hidden="true"></i>
+                          <span>시스템점검안내_20251218.pdf</span>
+                        </span>
+                        <span class="download-text">
+                          <span>다운로드</span>
+                          <i class="svg-icon ico-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <nav class="post-navigation" aria-label="게시글 이전글 다음글">
+                <ul class="post-navigation-list">
+                  <li class="post-navigation-item">
+                    <i class="svg-icon ico-angle up" aria-hidden="true">
+                      <span class="sr-only">이전글</span>
+                    </i>
+                    <a href="#" class="post-navigation-link"
+                      >제목타이틀 출력됩니다.
+                    </a>
+                  </li>
+                  <li class="post-navigation-item">
+                    <i class="svg-icon ico-angle down" aria-hidden="true">
+                      <span class="sr-only">다음글</span>
+                    </i>
+                    <a href="#" class="post-navigation-link"
+                      >제목타이틀 출력됩니다.
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <div class="krds-btns-wrap right">
+                <a href="#" class="krds-btn xlarge primary">목록</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Q&amp;A 등록 | 하이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        GNB.setSelected({ depth1: 2, depth2: 3 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header_out.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 하이코칭 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">하이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">하이코칭안내</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">공지사항</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">FAQ</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">Q&amp;A</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //하이코칭 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav class="krds-breadcrumb-wrap" aria-label="현재 경로" id="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">하이코칭</a></li>
+                <li><a href="#" class="txt">Q&amp;A</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">Q&amp;A</h3>
+            </div>
+            <div class="board-wrap">
+              <div class="board-write">
+                <div class="krds-table-wrap write">
+                  <table class="tbl">
+                    <caption>
+                      Q&amp;A 등록에 대한 표로 필수 입력 안내, 카테고리, 제목, 내용, 첨부파일, 공개여부로 구성되어있다.
+                    </caption>
+                    <colgroup>
+                      <col style="width: 15rem" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td class="al"><span class="krds-font-red">*</span> 표시는 필수 입력 항목입니다.</td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="select_category" class="krds-label">
+                            카테고리
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <select id="select_category" class="krds-form-select">
+                            <option value="">선택</option>
+                            <option value="">역량진단</option>
+                            <option value="">학습모듈</option>
+                            <option value="">콘텐츠</option>
+                            <option value="">시스템</option>
+                            <option value="">전문가</option>
+                            <option value="">기타</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_name" class="krds-label">
+                            제목
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <input type="text" class="krds-input" id="input_name" placeholder="제목을 입력해주세요(최대 30자)" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="input_cont" class="krds-label">
+                            내용
+                            <i class="required" aria-hidden="true"></i>
+                            <span class="sr-only">필수 항목</span>
+                          </label>
+                        </th>
+                        <td class="al">
+                          <textarea class="krds-input" id="input_cont" placeholder="내용을 입력해주세요"></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label for="file-upload" class="krds-label">첨부파일</label>
+                        </th>
+                        <td>
+                          <div class="file-box">
+                            <div class="file-info">
+                              <strong>jpg, png, pdf, hwp, docx만 등록 가능 (최대 10MB)</strong>
+                            </div>
+                            <div class="file-box-btn-wrap">
+                              <input type="file" id="file-upload" hidden />
+                              <label for="file-upload" class="krds-btn tertiary medium">찾아보기</label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th class="ac" scope="row">
+                          <label class="krds-label">공개여부</label>
+                        </th>
+                        <td>
+                          <div class="krds-check-area">
+                            <div class="krds-form-check">
+                              <input type="radio" name="rdo_1" id="rdo_1" />
+                              <label for="rdo_1">공개</label>
+                            </div>
+                            <div class="krds-form-check">
+                              <input type="radio" name="rdo_1" id="rdo_2" />
+                              <label for="rdo_2">비공개</label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="krds-btns-wrap right">
+                <a href="#" class="krds-btn xlarge tertiary">취소</a>
+                <button type="button" class="krds-btn xlarge primary">등록</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

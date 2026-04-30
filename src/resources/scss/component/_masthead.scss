@@ -1,0 +1,81 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 공식 배너 */
+//사이즈 정의
+@mixin masthead-size-variable() {
+  --masthead--inner-gap-y: var(--gap-2);
+  --masthead--inner-gap-x: var(--gap-5);
+  --masthead--inner-min-size-height: var(--size-height-5);
+  --masthead--inner-padding-y: var(--padding-2);
+  --masthead--pc-font-size: var(--pc-font-size-body-small);
+  --masthead--mobile-font-size: var(--mobile-font-size-body-small);
+
+  //태블릿 & 모바일 전용 속성
+  @include size-large-less {
+    --masthead--inner-padding-y: 0;
+  }
+}
+
+//컬러 정의
+@mixin masthead-color-variable($mode: light) {
+  --masthead--color-surface: var(--#{$mode}-color-surface-secondary-subtler);
+}
+
+//모드 설정
+$mode-setting: light;
+
+#krds-masthead {
+  @include masthead-color-variable(#{$mode-setting});
+  @include masthead-size-variable();
+
+  & {
+    position: relative;
+    z-index: 70;
+    background-color: var(--masthead--color-surface);
+  }
+  .toggle-head {
+    .inner {
+      position: relative;
+      gap: var(--masthead--inner-gap-y) var(--masthead--inner-gap-x);
+      min-height: var(--masthead--inner-min-size-height);
+      padding-top: var(--masthead--inner-padding-y);
+      padding-bottom: var(--masthead--inner-padding-y);
+    }
+    .nuri-txt {
+      @include flex-layout($ai: center);
+      gap: var(--gap-3);
+      font-size: var(--masthead--pc-font-size);
+      word-break: break-all;
+      @include size-medium {
+        font-size: var(--masthead--mobile-font-size);
+      }
+      &::before {
+        @include pseudo();
+        @include svg-icon($mode: light, $effect: pure);
+        @include icon-set(ico_flag, $effect: pure);
+      }
+    }
+  }
+  //마크업 삭제여부 결정해야함
+  .toggle-body {
+    height: 0;
+    transition: var(--transition-base);
+    overflow: hidden;
+  }
+  .inner {
+    @include flex-layout($ai: center);
+    flex-wrap: wrap;
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  #krds-masthead {
+    @include masthead-color-variable(#{$mode-setting});
+  }
+}

@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>학습모듈 추천 목록 | 학습 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 1 + 1, depth2: 1 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 추천 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">추천</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">하이코칭 전문가 추천</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">학습모듈 추천</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">전문가 추천</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //추천 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">추천</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">학습모듈 추천</h3>
+            </div>
+            <div class="g-search-area colum">
+              <div class="search-top-box">
+                <div class="form-group">
+                  <div class="sch-form-wrap">
+                    <div class="col date">
+                      <div class="col-title">기간</div>
+                      <div
+                        class="form-date calendar-conts"
+                        data-calendar-type="range"
+                      >
+                        <div class="calendar-input">
+                          <ul class="input-group range small">
+                            <li>
+                              <input
+                                class="krds-input datepicker small"
+                                placeholder="시작일"
+                                readonly
+                                aria-label="시작일"
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn icon form-btn-datepicker small"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </li>
+                            <li class="mark small">~</li>
+                            <li>
+                              <input
+                                class="krds-input datepicker small"
+                                placeholder="종료일"
+                                readonly
+                                aria-label="종료일"
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn icon form-btn-datepicker small"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div
+                          class="krds-calendar-area"
+                          data-keyboard-bound="false"
+                        ></div>
+                      </div>
+                      <div class="krds-btns-wrap">
+                        <button type="button" class="krds-btn small secondary">
+                          6개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          3개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          6개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          1년
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="col-title">분야</div>
+                      <div class="krds-check-area">
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_01" checked />
+                          <label for="search_chk01_01">전체</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_02" />
+                          <label for="search_chk01_02">교수 역량</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_03" />
+                          <label for="search_chk01_03">생활교육 역량</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_04" />
+                          <label for="search_chk01_04">공동체 역량</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk01_05" />
+                          <label for="search_chk01_05">자기개발 역량</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="col-title">유형</div>
+                      <div class="krds-check-area">
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk02_01" checked />
+                          <label for="search_chk02_01">전체</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk02_02" />
+                          <label for="search_chk02_02">동영상</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk02_03" />
+                          <label for="search_chk02_03">문서</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input type="checkbox" id="search_chk02_04" />
+                          <label for="search_chk02_04">이미지</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col input">
+                      <div class="sch-input">
+                        <input
+                          type="text"
+                          class="krds-input small"
+                          aria-label="검색어 입력"
+                        />
+                        <span
+                          class="krds-btn xsmall icon ico-search btn-exec"
+                          aria-hidden="true"
+                        >
+                          <i class="svg-icon ico-sch"></i>
+                        </span>
+                      </div>
+                      <button type="button" class="krds-btn small neutral">
+                        검색
+                      </button>
+                      <button type="button" class="krds-btn medium text">
+                        초기화
+                        <i class="svg-icon ico-reset" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="content-section">
+              <div class="section-title-wrap">
+                <div>
+                  <h4 class="s-tit">AI 추천 학습모듈</h4>
+                  <a href="#" class="krds-btn etc icon-front">
+                    <i class="svg-icon ico-plus2" aria-hidden="true"></i>
+                    학습모듈 구성
+                  </a>
+                </div>
+                <div class="krds-check-area">
+                  <div class="krds-form-check">
+                    <input type="radio" name="rdo_1" id="rdo_1" checked />
+                    <label for="rdo_1">맞춤</label>
+                  </div>
+                  <div class="krds-form-check">
+                    <input type="radio" name="rdo_1" id="rdo_2" />
+                    <label for="rdo_2">관심사</label>
+                  </div>
+                  <div class="krds-form-check">
+                    <input type="radio" name="rdo_1" id="rdo_3" />
+                    <label for="rdo_3">트렌드</label>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="card-list type-video">
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/noData/img_video.png"
+                        alt="AI 추천 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="AI 추천 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn icon radius02 active"
+                          >
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="AI 추천 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="AI 추천 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="krds-btns-wrap">
+                <button class="krds-btn medium tertiary more">
+                  더보기
+                  <i class="svg-icon ico-angle" aria-hidden="true"></i>
+                </button>
+              </div>
+            </section>
+
+            <section class="content-section">
+              <div class="section-title-wrap">
+                <div>
+                  <h4 class="s-tit">하이코칭 학습모듈</h4>
+                </div>
+                <div class="krds-check-area">
+                  <div class="krds-form-check">
+                    <input type="radio" name="rdo_2" id="rdo_4" checked />
+                    <label for="rdo_4">최신순</label>
+                  </div>
+                  <div class="krds-form-check">
+                    <input type="radio" name="rdo_2" id="rdo_5" />
+                    <label for="rdo_5">평점순</label>
+                  </div>
+                  <div class="krds-form-check">
+                    <input type="radio" name="rdo_2" id="rdo_6" />
+                    <label for="rdo_6">인기순</label>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="card-list type-video">
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/noData/img_video.png"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn icon radius02 active"
+                          >
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/noData/img_video.png"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn icon radius02 active"
+                          >
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/noData/img_video.png"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn icon radius02 active"
+                          >
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-box">
+                    <a href="#" class="card-thumbnail">
+                      <span class="learning-count"
+                        >총 <strong>6개</strong> 학습</span
+                      >
+                      <img
+                        src="../../../resources/img/sample/img_card_thumbnail02.jpg"
+                        alt="하이코칭 학습모듈 썸네일 이미지"
+                      />
+                    </a>
+                    <div class="card-conts">
+                      <h5 class="card-tit">
+                        AI 도구로 수업 영상 만들기, 브루&middot;캡컷&middot;캔바
+                        활용 콘텐츠 제작
+                      </h5>
+                      <p class="card-ability">교수역량</p>
+                      <p class="card-keyword">#AI활용수업 #디지털교육</p>
+                      <div class="card-level">
+                        <span class="rating">
+                          <strong>평점</strong>
+                          <span>
+                            <i
+                              class="svg-icon small ico-star-on"
+                              aria-hidden="true"
+                            ></i>
+                            4.7
+                          </span>
+                        </span>
+                      </div>
+                      <div class="card-bottom-cont">
+                        <div class="card-meta">
+                          <span class="card-org">김코칭 선생님</span>
+                          <div>
+                            <span class="card-views">999명</span>
+                          </div>
+                        </div>
+                        <div class="card-btns type02">
+                          <button class="krds-btn icon radius disabled">
+                            <i class="svg-icon ico-cart" aria-hidden="true"></i>
+                            <span class="sr-only">담기</span>
+                          </button>
+                          <button type="button" class="krds-btn icon radius02">
+                            <i
+                              class="svg-icon ico-heart"
+                              aria-hidden="true"
+                            ></i>
+                            <span class="sr-only">즐겨찾기</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- pagination -->
+              <div class="krds-pagination">
+                <span class="page-navi prev disabled" href="#">이전</span>
+                <div class="page-links">
+                  <a class="page-link active" href="#"
+                    ><span class="sr-only">현재페이지 </span>1</a
+                  >
+                  <a class="page-link" href="#">2</a>
+                  <a class="page-link" href="#">3</a>
+                  <a class="page-link" href="#">4</a>
+                  <a class="page-link" href="#">5</a>
+                  <a class="page-link" href="#">6</a>
+                  <a class="page-link" href="#">7</a>
+                  <a class="page-link" href="#">8</a>
+                  <span class="page-link link-dot"></span>
+                  <a class="page-link" href="#">99</a>
+                </div>
+                <a class="page-navi next" href="#">다음</a>
+              </div>
+              <!-- //pagination -->
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

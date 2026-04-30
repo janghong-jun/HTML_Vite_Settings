@@ -1,0 +1,1750 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개인 성장 분석 리포트 POC</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --line: #d9e2f2;
+        --text: #1f2a44;
+        --muted: #61708f;
+        --primary: #2957ff;
+        --primary-soft: #e9efff;
+        --green: #18a957;
+        --orange: #f59e0b;
+        --red: #e24a4a;
+        --purple: #7c3aed;
+        --shadow: 0 8px 24px rgba(26, 45, 91, 0.08);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+        background: linear-gradient(180deg, #eef3ff 0%, var(--bg) 220px);
+        color: var(--text);
+      }
+
+      .wrap {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #183fb8 0%, #2957ff 60%, #5b7cff 100%);
+        color: #fff;
+        padding: 28px;
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        margin: 0 0 8px;
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin: 0;
+        opacity: 0.92;
+        line-height: 1.6;
+      }
+
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .meta-card {
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(8px);
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .meta-card .label {
+        font-size: 12px;
+        opacity: 0.85;
+      }
+      .meta-card .value {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 8px;
+      }
+
+      .toolbar {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .toolbar-left,
+      .toolbar-right {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .select,
+      .search {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 14px;
+        color: var(--text);
+        box-shadow: var(--shadow);
+      }
+
+      .search {
+        min-width: 260px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+        margin-bottom: 18px;
+      }
+
+      .tab {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 10px 16px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        box-shadow: var(--shadow);
+      }
+
+      .tab.active {
+        background: linear-gradient(135deg, #2957ff 0%, #7c3aed 100%);
+        border-color: var(--primary);
+        color: #fff;
+      }
+
+      .section {
+        display: none;
+      }
+      .section.active {
+        display: block;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        position: relative;
+        grid-column: span 12;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 20px;
+      }
+
+      .col-3 {
+        grid-column: span 3;
+      }
+      .col-4 {
+        grid-column: span 4;
+      }
+      .col-5 {
+        grid-column: span 5;
+      }
+      .col-6 {
+        grid-column: span 6;
+      }
+      .col-7 {
+        grid-column: span 7;
+      }
+      .col-8 {
+        grid-column: span 8;
+      }
+      .col-12 {
+        grid-column: span 12;
+      }
+      .note-list2 {
+        margin: 12px 0 0 0;
+        padding: 0;
+      }
+      .note-list2 li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        padding-left: 10px;
+        line-height: 1.4;
+        font-size: 15px;
+      }
+      .note-list2 li::before {
+        content: '•';
+        color: var(--text);
+        display: inline-block;
+        width: 10px;
+        margin-left: -10px;
+      }
+      .card h2 + .kpis,
+      .card h3 + .kpis {
+        margin-top: 14px;
+      }
+
+      .card h2,
+      .card h3 {
+        margin: 0 0 12px;
+      }
+
+      .sub {
+        margin: 14px 0 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .sub + div,
+      .sub + table {
+        margin-top: 14px;
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+      }
+      .kpis.col04 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .kpis.col07 {
+        grid-template-columns: repeat(7, 1fr);
+      }
+
+      .kpi {
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, #fff 0%, #f9fbff 100%);
+        border-radius: 16px;
+        padding: 16px;
+      }
+
+      .kpi .label {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .kpi .value {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 4px 0 4px;
+      }
+      .delta {
+        font-size: 14px;
+      }
+      .delta.up {
+        color: var(--green);
+        font-weight: 700;
+      }
+      .delta.down {
+        color: var(--red);
+        font-weight: 700;
+      }
+      .delta.neutral {
+        color: var(--orange);
+        font-weight: 700;
+      }
+
+      .chart-box {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 12px;
+        background: #fff;
+        min-height: 320px;
+      }
+
+      canvas {
+        width: 100%;
+        height: 280px;
+        display: block;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        display: inline-block;
+      }
+      .dot.type01 {
+        border-radius: 0;
+        width: 20px;
+      }
+      .dot.type02 {
+        position: relative;
+        background-color: #fff !important;
+        border: 2px solid #f59e0b !important;
+      }
+      .dot.type02::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 2px;
+        transform: translate(-50%, -50%);
+        background-color: #f59e0b;
+      }
+      .dot.type02::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 999px;
+        background-color: #fff !important;
+      }
+      #growthLegend {
+        align-items: center;
+        justify-content: center;
+      }
+      .note-list,
+      .activity-list,
+      .badge-list {
+        display: grid;
+        margin-top: 12px;
+        gap: 12px;
+      }
+
+      .note,
+      .activity-item,
+      .badge-item {
+        border: 1px solid var(--line);
+        background: #fbfcff;
+        border-radius: 14px;
+        padding: 14px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        background: var(--primary-soft);
+        color: var(--primary);
+        margin-right: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        background: #f8faff;
+      }
+
+      .progress-row {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 130px 3fr auto;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+      .progress-row > div:first-child {
+        font-weight: 700;
+      }
+      .progress-row strong {
+        font-weight: 400;
+        font-style: italic;
+      }
+      .bar {
+        width: 100%;
+        height: 12px;
+        background: #edf2fb;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+
+      .bar > span {
+        display: block;
+        height: 100%;
+        border-radius: 999px;
+      }
+      .progress-row:nth-child(even) .bar > span {
+        background: linear-gradient(0deg, #2957ff 0%, #a8bcff 100%);
+      }
+      .progress-row:nth-child(odd) .bar > span {
+        background: linear-gradient(0deg, #ff33dd 0%, #ffb3f4 100%);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+      .muted.label {
+        font-size: 13px;
+      }
+      .footer {
+        margin: 18px 0 40px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: right;
+      }
+
+      @media (max-width: 1080px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-meta,
+        .kpis {
+        }
+        .col-3,
+        .col-4,
+        .col-5,
+        .col-6,
+        .col-7,
+        .col-8 {
+          grid-column: span 12;
+        }
+        #learningTypeBars {
+          position: static !important;
+          transform: translate(0) !important;
+          gap: 0 !important;
+        }
+        .kpi .value {
+          font-size: 22px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .wrap {
+          padding: 16px;
+        }
+        .hero h1 {
+          font-size: 24px;
+        }
+        .hero-meta,
+        .kpis {
+          grid-template-columns: 1fr;
+        }
+        .search {
+          min-width: 100%;
+        }
+        .progress-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+    <style>
+      #learningTypeBars {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-50%);
+        gap: 20px;
+      }
+      #learningTypeBars .bar {
+        height: 15px;
+      }
+
+      #learningTypeBars .progress-row:nth-child(1) .bar > span {
+        background: linear-gradient(0deg, #2957ff 0%, #a8bcff 100%);
+      }
+      #learningTypeBars .progress-row:nth-child(2) .bar > span {
+        background: linear-gradient(0deg, #ff33dd 0%, #ffb3f4 100%);
+      }
+      #learningTypeBars .progress-row:nth-child(3) .bar > span {
+        background: linear-gradient(0deg, #7c3aed 0%, #cdb4f8 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <h1>개인 성장 분석 리포트</h1>
+          <p>연간 역량 변화, 학습 활동, 하이코칭 활동 이력, 개인 성장 상관분석, 인증형 전문가 등재 보고서를 하나의 화면에서 확인할 수 있는 리포트입니다.</p>
+        </div>
+        <div class="hero-meta">
+          <div class="meta-card">
+            <div class="label">선택 연도</div>
+            <div class="value" id="heroYear">2026</div>
+          </div>
+          <!-- <div class="meta-card">
+            <div class="label">주요 상승 역량</div>
+            <div class="value" id="heroTopCompetency">수업설계</div>
+          </div> -->
+          <div class="meta-card">
+            <div class="label">연간 학습량</div>
+            <div class="value" id="heroLearning">98건</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <select id="yearSelect" class="select"></select>
+          <input id="userSearch" class="search" value="교사 홍길동" />
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="learning">1. 년간 학습 활동</button>
+        <button class="tab" data-tab="competency">2. 년간 역량 변화 추이</button>
+        <button class="tab" data-tab="activity">3. 년간 활동 정보</button>
+        <button class="tab" data-tab="growth">4. 개인성장 분석 리포트</button>
+        <button class="tab" data-tab="cert">5. 인증보고서</button>
+      </div>
+
+      <section id="learning" class="section active">
+        <div class="grid">
+          <div class="card col-12">
+            <h2>해당 년도 전체 학습 활동</h2>
+            <p class="sub">콘텐츠 및 모듈 학습 이력을 기준으로 주요 학습 역량, 학습 유형, 월별 학습 현황을 확인합니다.</p>
+            <div class="kpis" id="learningKpis"></div>
+          </div>
+
+          <div class="card col-6">
+            <h3>월별 학습 현황</h3>
+            <div class="chart-box">
+              <canvas id="learningMonthlyChart"></canvas>
+              <div class="legend" id="learningLegend"></div>
+            </div>
+          </div>
+
+          <div class="card col-6">
+            <h3>주요 학습 유형별 비중</h3>
+            <div id="learningTypeBars"></div>
+          </div>
+
+          <div class="card col-6">
+            <h3>역량별 학습 현황</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>순위</th>
+                  <th>역량</th>
+                  <th>학습건수</th>
+                  <th>학습시간</th>
+                </tr>
+              </thead>
+              <tbody id="learningCompetencyTable"></tbody>
+            </table>
+          </div>
+
+          <div class="card col-6">
+            <h3>유사그룹 학습 목록</h3>
+            <div class="note-list" id="learningNotes"></div>
+          </div>
+        </div>
+      </section>
+      <section id="competency" class="section">
+        <div class="grid">
+          <div class="card col-12">
+            <h2>기간별 역량 수준 변화 분석</h2>
+            <p class="sub">역량진단 결과 전체를 기준으로 역량군별, 역량별 점수 변화 추이를 시각화합니다.</p>
+            <div class="kpis col04" id="competencyKpis"></div>
+          </div>
+
+          <div class="card col-6">
+            <h3>역량군별 변화</h3>
+            <div class="chart-box">
+              <canvas id="competencyTrendChart"></canvas>
+              <div class="legend" id="competencyLegend"></div>
+            </div>
+          </div>
+
+          <div class="card col-6">
+            <h3>역량별 최종 변화 비교</h3>
+            <p class="sub">연초 대비 연말 기준 증감폭</p>
+            <div id="competencyBars"></div>
+          </div>
+
+          <div class="card col-12">
+            <h3>유사그룹(평균) 연도별 역량별 변화</h3>
+            <canvas id="competencyTrendChart2"></canvas>
+            <div class="legend" id="competencyLegend2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="activity" class="section">
+        <div class="grid">
+          <div class="card col-12">
+            <h2>2026년 활동 정보</h2>
+            <div class="kpis col07" id="activityKpis"></div>
+          </div>
+
+          <div class="card col-6">
+            <h3>하이코칭 내 활동 이력</h3>
+            <p class="sub">공동체, 수업나눔, 전문가 코칭 등 활동 누적 현황</p>
+            <div id="activityBars"></div>
+          </div>
+
+          <div class="card col-6">
+            <h3>주요 활동 타임라인</h3>
+            <p class="sub">대표 활동 이력 예시</p>
+            <div class="activity-list" id="activityTimeline"></div>
+          </div>
+
+          <div class="card col-12">
+            <h3>게시글 작성 이력</h3>
+            <p class="sub">카테고리별 작성 현황</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>작성 건수</th>
+                  <th>댓글 수</th>
+                  <th>좋아요 수</th>
+                </tr>
+              </thead>
+              <tbody id="postTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="growth" class="section">
+        <div class="grid">
+          <div class="card col-12">
+            <h2>개인성장 분석 리포트</h2>
+            <p class="sub">학습 활동과 역량진단 결과의 상관관계를 바탕으로 개인 성장 스토리를 제공합니다.</p>
+          </div>
+
+          <div class="card col-6">
+            <h3>학습 비중과 역량 점수 변화 비교</h3>
+            <p class="sub">주요 학습 역량과 해당 역량의 진단결과 변화 비교</p>
+            <div class="chart-box">
+              <canvas id="growthCompareChart"></canvas>
+              <div class="legend" id="growthLegend"></div>
+            </div>
+          </div>
+
+          <div class="card col-6">
+            <h3>상관분석 요약</h3>
+            <p class="sub">연관성 해석 결과</p>
+            <div class="note-list" id="growthCorrelationNotes"></div>
+          </div>
+
+          <div class="card col-12">
+            <h3>개인성장 리포트 안내</h3>
+            <div class="note-list" id="growthNarrative"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cert" class="section">
+        <div class="grid">
+          <div class="card col-12">
+            <h2>인증형 전문가 등재 보고서</h2>
+            <p class="sub">전문가 등재일과 등재 요건 충족 항목을 보고서 형태로 정리합니다.</p>
+          </div>
+
+          <div class="card col-6">
+            <h3>등재 요약</h3>
+            <p class="sub">인증형 전문가 등재 핵심 정보</p>
+            <div class="badge-list" id="certSummary"></div>
+          </div>
+
+          <div class="card col-6">
+            <h3>등재 요건 충족 항목</h3>
+            <p class="sub">누적 포인트와 주요 포인트 발생 활동</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>요건 항목</th>
+                  <th>기준</th>
+                  <th>실적</th>
+                  <th>판정</th>
+                </tr>
+              </thead>
+              <tbody id="certTable"></tbody>
+            </table>
+          </div>
+
+          <div class="card col-12">
+            <h3>보고서 요약 문안</h3>
+            <p class="sub">실제 제출용 문구 형태 예시</p>
+            <div class="note-list" id="certNotes"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const data = {
+        2024: {
+          competencyGroups: {
+            labels: ['1차', '2차', '3차', '4차'],
+            series: [
+              { name: '수업설계', color: '#2957ff', values: [63, 66, 69, 74] },
+              { name: '학습지원', color: '#18a957', values: [61, 63, 65, 68] },
+              { name: '상담코칭', color: '#7c3aed', values: [58, 60, 64, 67] },
+              {
+                name: '디지털활용',
+                color: '#f59e0b',
+                values: [55, 59, 65, 72],
+              },
+            ],
+          },
+          competencyItems: [
+            { name: '수업설계', delta: 11 },
+            { name: '디지털도구 활용', delta: 17 },
+            { name: '피드백 제공', delta: 8 },
+            { name: '학습자 이해', delta: 7 },
+            { name: '코칭 운영', delta: 9 },
+          ],
+          learning: {
+            total: 81,
+            content: 52,
+            modules: 29,
+            hours: 94,
+            monthly: {
+              labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+              series: [
+                {
+                  name: '콘텐츠',
+                  color: '#2957ff',
+                  values: [3, 4, 5, 6, 4, 5, 3, 4, 5, 4, 5, 4],
+                },
+                {
+                  name: '모듈',
+                  color: '#7c3aed',
+                  values: [2, 2, 3, 2, 3, 2, 1, 2, 3, 3, 4, 2],
+                },
+              ],
+            },
+            types: [
+              { name: '중앙교육연수원', value: 38 },
+              { name: '동영상', value: 24 },
+              { name: '문서', value: 21 },
+              { name: 'Youtube', value: 17 },
+            ],
+            competencyTop: [
+              ['디지털 수업 운영', 26, '32%'],
+              ['수업설계', 19, '23%'],
+              ['학생 피드백', 14, '17%'],
+              ['코칭 대화법', 12, '15%'],
+              ['공동체 참여', 10, '12%'],
+            ],
+          },
+          activity: {
+            metrics: [
+              ['공동체 활동', 18],
+              ['수업나눔', 9],
+              ['전문가 코칭활동', 6],
+              ['코칭요청', 4],
+              ['게시글', 22],
+            ],
+            timeline: [
+              ['2024-03-14', '수업나눔 우수사례 등록', '좋아요 24 / 댓글 8'],
+              ['2024-06-02', '전문가 코칭 1회 진행', '초임교사 대상'],
+              ['2024-09-18', '공동체 주제 토론 참여', '디지털 수업 운영'],
+              ['2024-11-21', '전문가 코칭 요청 접수', '수업 피드백 관련'],
+            ],
+            posts: [
+              ['수업나눔', 8, 34, 71, '우수사례 중심'],
+              ['공동체', 6, 22, 40, '정기 참여'],
+              ['질문/답변', 5, 14, 19, '운영 질문'],
+              ['자료공유', 3, 9, 17, '문서/템플릿 공유'],
+            ],
+          },
+          growth: {
+            compare: [
+              { name: '역량1', learn: 42, score: 7 },
+              { name: '역량1', learn: 23, score: -5 },
+              { name: '역량1', learn: 15, score: -13 },
+              { name: '역량1', learn: 20, score: 5 },
+            ],
+            notes: [
+              ['높은 상관', '디지털활용', '연간 학습 비중이 가장 높았고 역량 상승폭도 가장 크게 나타났습니다.'],
+              ['중간 상관', '수업설계', '지속적인 학습과 함께 안정적인 점수 상승이 확인됩니다.'],
+              ['보완 필요', '학생피드백', '학습량 대비 상승폭이 제한적이어서 실습형 활동 확대가 필요합니다.'],
+            ],
+            narrative: ['2024년에는 디지털 수업 운영 관련 학습이 전체의 32%로 가장 높은 비중을 차지하였으며, 이에 연계된 디지털활용 역량 점수는 연초 대비 17점 상승하였습니다.', '수업설계 역량은 연중 고르게 학습이 이루어졌고 진단 점수 역시 꾸준히 상승하여, 반복 학습이 실제 역량 변화로 이어지는 패턴을 확인할 수 있습니다.', '학생 피드백 영역은 학습량은 충분하나 점수 상승폭이 상대적으로 낮아, 사례 중심 학습보다 실전 피드백 코칭형 프로그램이 추가로 필요합니다.'],
+          },
+          cert: {
+            date: '2024-12-10',
+            level: '인증형 전문가',
+            point: 1280,
+            items: [
+              ['콘텐츠학습', '1,000점 이상', '1,280점', '충족', '공동체/수업나눔/코칭활동 합산'],
+              ['모듈학습', '5건 이상', '6건', '충족', '초임교사 코칭 포함'],
+              ['학습공동체 활동', '5건 이상', '9건', '충족', '우수사례 다수 등록'],
+              ['전문가 코칭', '12회 이상', '18회', '충족', '월간 정기 참여'],
+              ['역량진단', '최근 6개월 활동', '유지', '충족', '11월 게시글 및 토론 참여'],
+            ],
+            notes: ['대상자는 2024년 12월 10일 기준 인증형 전문가 등재 요건을 모두 충족하였습니다.', '누적 포인트는 1,280점으로 기준을 상회하였으며, 전문가 코칭활동과 수업나눔 실적이 핵심 근거로 확인되었습니다.', '최근 6개월 내 활동 지속성이 유지되어 인증 상태의 안정성이 높다고 판단됩니다.'],
+          },
+        },
+        2025: {
+          competencyGroups: {
+            labels: ['1차', '2차', '3차', '4차'],
+            series: [
+              { name: '수업설계', color: '#2957ff', values: [68, 71, 74, 78] },
+              { name: '학습지원', color: '#18a957', values: [66, 68, 69, 73] },
+              { name: '상담코칭', color: '#7c3aed', values: [64, 66, 68, 72] },
+              {
+                name: '디지털활용',
+                color: '#f59e0b',
+                values: [67, 70, 73, 79],
+              },
+            ],
+          },
+          competencyItems: [
+            { name: '수업설계', delta: 10 },
+            { name: '디지털도구 활용', delta: 12 },
+            { name: '피드백 제공', delta: 7 },
+            { name: '학습자 이해', delta: 7 },
+            { name: '코칭 운영', delta: 8 },
+          ],
+          learning: {
+            total: 92,
+            content: 58,
+            modules: 34,
+            hours: 108,
+            monthly: {
+              labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+              series: [
+                {
+                  name: '콘텐츠',
+                  color: '#2957ff',
+                  values: [4, 5, 6, 5, 5, 6, 4, 4, 5, 5, 5, 4],
+                },
+                {
+                  name: '모듈',
+                  color: '#7c3aed',
+                  values: [2, 3, 3, 3, 2, 3, 2, 2, 4, 3, 4, 3],
+                },
+              ],
+            },
+            types: [
+              { name: '중앙교육연수원', value: 34 },
+              { name: '동영상', value: 26 },
+              { name: '문서', value: 25 },
+              { name: 'Youtube', value: 15 },
+            ],
+            competencyTop: [
+              ['디지털 수업 운영', 24, '26%'],
+              ['수업설계', 22, '24%'],
+              ['학생 피드백', 16, '17%'],
+              ['코칭 대화법', 15, '16%'],
+              ['학습분석', 13, '14%'],
+            ],
+          },
+          activity: {
+            metrics: [
+              ['공동체 활동', 21],
+              ['수업나눔', 10],
+              ['전문가 코칭활동', 8],
+              ['코칭요청', 5],
+              ['게시글', 27],
+            ],
+            timeline: [
+              ['2025-02-11', '공동체 운영진 회의 참여', '월간 우수활동 선정'],
+              ['2025-05-22', '전문가 코칭 2회차 진행', '학습분석 피드백'],
+              ['2025-08-29', '수업나눔 자료집 게시', '조회수 420'],
+              ['2025-10-15', '전문가 코칭 요청 대응', '중학교 교사 1:1'],
+            ],
+            posts: [
+              ['수업나눔', 10, 44, 92, '조회수 우수'],
+              ['공동체', 8, 31, 56, '운영 참여 확대'],
+              ['질문/답변', 5, 17, 22, '정책 안내 포함'],
+              ['자료공유', 4, 12, 19, '분석 템플릿 공유'],
+            ],
+          },
+          growth: {
+            compare: [
+              { name: '수업설계', learn: 24, score: 10 },
+              { name: '디지털활용', learn: 26, score: 12 },
+              { name: '학생피드백', learn: 17, score: 7 },
+              { name: '학습지원', learn: 14, score: 7 },
+            ],
+            notes: [
+              ['높은 상관', '디지털활용', '학습량과 역량 상승이 함께 나타나는 대표 영역입니다.'],
+              ['높은 상관', '수업설계', '지속적 학습이 점진적 성장으로 연결되었습니다.'],
+              ['보완 필요', '학생피드백', '실제 적용형 코칭 데이터가 추가되면 성장 폭 확대가 예상됩니다.'],
+            ],
+            narrative: ['2025년에는 수업설계와 디지털활용 영역에 학습이 집중되었으며, 두 영역 모두 진단 점수가 10점 이상 상승하였습니다.', '공동체 활동과 수업나눔 참여도 함께 증가하여 단순 콘텐츠 학습 외에 실천 기반 성장 패턴이 강화되었습니다.', '학생 피드백 역량은 학습량 대비 성장 폭이 다소 제한적이므로, 모의 피드백·사례 코칭형 학습 보강이 필요합니다.'],
+          },
+          cert: {
+            date: '2025-11-27',
+            level: '인증형 전문가(유지)',
+            point: 1560,
+            items: [
+              ['누적 포인트', '1,000점 이상', '1,560점', '충족', '전년도 누적 포함'],
+              ['전문가 코칭활동', '5건 이상', '8건', '충족', '학습분석 영역 확대'],
+              ['수업나눔 등록', '5건 이상', '10건', '충족', '자료집 게시 포함'],
+              ['공동체 참여', '12회 이상', '21회', '충족', '운영진 활동 포함'],
+              ['최근 활동성', '최근 6개월 활동', '유지', '충족', '10월 코칭 대응'],
+            ],
+            notes: ['대상자는 2025년 11월 27일 기준 인증형 전문가 유지 요건을 안정적으로 충족하고 있습니다.', '포인트, 코칭활동, 수업나눔, 공동체 참여 모두 기준 대비 높은 수준으로 확인됩니다.', '등재 후 활동 지속성이 우수하여 상위 단계 전문가 운영 후보군으로 활용할 수 있습니다.'],
+          },
+        },
+        2026: {
+          competencyGroups: {
+            labels: ['', '2026년', '2027년', '2028년'],
+            series: [
+              { name: '교수 역량', color: '#2957ff', values: [72, 75, 78, 82] },
+              { name: '생활교육', color: '#18a957', values: [69, 71, 74, 77] },
+              { name: '공동체', color: '#7c3aed', values: [67, 70, 72, 76] },
+              {
+                name: '자기개발',
+                color: '#f59e0b',
+                values: [70, 74, 79, 85],
+              },
+            ],
+          },
+          competencyItems: [
+            { name: '교육과정 설계', delta: 0 },
+            { name: '수업 및 평가', delta: 13 },
+            { name: '생활교육', delta: 10 },
+            { name: '진로교육', delta: 10 },
+            { name: '학급/학교경영', delta: 3 },
+            { name: '소통 및 협력', delta: 1 },
+            { name: '교육생태계 활용', delta: 5 },
+            { name: '변화대응', delta: 10 },
+            { name: '교직전문성개발', delta: 2 },
+            { name: '자기관리', delta: 10 },
+          ],
+          learning: {
+            total: 98,
+            content: 61,
+            modules: 37,
+            hours: 116,
+            monthly: {
+              labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+              series: [
+                {
+                  name: '연수이수',
+                  color: '#2957ff',
+                  values: [4, 5, 5, 6, 6, 6, 4, 5, 5, 6, 5, 4],
+                },
+                {
+                  name: '영상 콘텐츠',
+                  color: '#ff33dd',
+                  values: [3, 3, 3, 3, 4, 3, 2, 3, 4, 3, 4, 2],
+                },
+                {
+                  name: '문서',
+                  color: '#7c3aed',
+                  values: [3, 3, 3, 3, 4, 3, 2, 3, 4, 3, 4, 2],
+                },
+              ],
+            },
+            types: [
+              { name: '연수이수', value: 36 },
+              { name: '영상콘텐츠', value: 22 },
+              { name: '문서', value: 27 },
+            ],
+            competencyTop: [
+              ['교육과정 설계 ', 15, '2시간'],
+              ['수업 및 평가', 25, '2시간'],
+              ['생활교육', 25, '2시간'],
+              ['진로교육', 15, '2시간'],
+              ['학급/학교경영', 25, '2시간'],
+              ['소통 및 협력', 25, '1시간'],
+              ['교육생태계 활용', 25, '2시간'],
+              ['변화대응 ', 25, '2시간'],
+              ['교직전문성개발', 25, '2시간'],
+              ['자기관리', 25, '2시간'],
+            ],
+          },
+          activity: {
+            metrics: [
+              ['전문가 코칭', 12],
+              ['학습모듈 등록', 6],
+              ['콘텐츠 등록', 21],
+              ['수업공개', 11],
+              ['수업나눔', 6],
+              ['학습공동체 활동', 23],
+            ],
+            timeline: [
+              ['2026-01-17', '신규 공동체 운영 참여', '운영 주제: 수업설계'],
+              ['2026-04-26', '전문가 코칭 3회차 진행', '디지털 수업 피드백'],
+              ['2026-07-13', '수업나눔 대표사례 등록', '추천 자료 선정'],
+              ['2026-10-05', '전문가 코칭 요청 대응', '학습지원 전략 컨설팅'],
+            ],
+            posts: [
+              ['수업나눔', 11, 48, 103],
+              ['공동체', 9, 36, 63],
+              ['질문/답변', 6, 19, 24],
+              ['자료공유', 5, 14, 22],
+            ],
+          },
+          growth: {
+            compare: [
+              { name: '역량1', learn: 42, score: 4 },
+              { name: '역량1', learn: 23, score: -5 },
+              { name: '역량1', learn: 15, score: -13 },
+              { name: '역량1', learn: 20, score: 5 },
+            ],
+            notes: [
+              ['매우 높은 상관', '디지털활용', '집중 학습 이후 진단결과 상승폭이 가장 크게 확인됩니다.'],
+              ['높은 상관', '수업설계', '학습량이 가장 많고 점수도 안정적으로 상향되었습니다.'],
+              ['정성 분석 필요', '코칭운영', '학습량은 상대적으로 적지만 점수 상승이 높아 현장활동 영향 가능성이 있습니다.'],
+            ],
+            narrative: ['2026에는 교수역량과 생활교육 역량 학습 비중이 전체의 절반 이상을 차지하였으며, 이에 연계된 역량군의 진단 점수가 상승하였습니다.', '교수 역량은 연초 대비 15점 상승하여, 콘텐츠 학습과 현장 적용의 결합이 성과로 이어진 사례로 해석할 수 있습니다.', '자기개발역량은 학습량 대비 점수 상승이 높게 나타나 높은 발전성이 나타났습니다.'],
+          },
+          cert: {
+            date: '2026-12-03',
+            level: '인증형 전문가(우수)',
+            point: 1810,
+            items: [
+              ['누적 포인트', '1,000점 이상', '1,810점', '충족'],
+              ['전문가 코칭활동', '5건 이상', '10건', '충족'],
+              ['수업나눔 등록', '5건 이상', '12건', '충족'],
+              ['공동체 참여', '12회 이상', '24회', '충족'],
+              ['최근 활동성', '최근 6개월 활동', '유지', '충족'],
+            ],
+            notes: ['대상자는 2026년 12월 3일 기준 인증형 전문가 우수 등재 수준의 활동 실적을 보유하고 있습니다.', '누적 포인트 1,810점, 전문가 코칭 10건, 수업나눔 12건으로 핵심 요건을 모두 상회하였습니다.', '하이코칭 내 지속 활동성과 영향력을 고려할 때 우수 전문가 사례 보고서로 활용할 수 있습니다.'],
+          },
+        },
+      };
+
+      const yearSelect = document.getElementById('yearSelect');
+      const years = Object.keys(data).sort();
+      years.forEach((y) => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = `${y}년`;
+        if (y === '2026') opt.selected = true;
+        yearSelect.appendChild(opt);
+      });
+
+      document.querySelectorAll('.tab').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
+          document.querySelectorAll('.section').forEach((s) => s.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+          renderAll();
+        });
+      });
+
+      yearSelect.addEventListener('change', renderAll);
+
+      function renderAll() {
+        const year = yearSelect.value;
+        const d = data[year];
+
+        document.getElementById('heroYear').textContent = year;
+        // document.getElementById("heroTopCompetency").textContent =
+        //   d.competencyItems.slice().sort((a, b) => b.delta - a.delta)[0].name;
+        document.getElementById('heroLearning').textContent = `${d.learning.total}건`;
+
+        renderCompetency(d);
+        renderLearning(d);
+        renderActivity(d);
+        renderGrowth(d, year);
+        renderCert(d);
+      }
+
+      function renderKpis(targetId, items) {
+        const root = document.getElementById(targetId);
+        root.innerHTML = items
+          .map(
+            (item) => `
+              <div class="kpi">
+                <div class="label">${item.label}</div>
+                <div class="value">${item.value}</div>
+                <div class="delta ${item.deltaClass || 'neutral'}">${item.delta || ''}</div>
+              </div>
+            `,
+          )
+          .join('');
+      }
+
+      function renderCompetency(d) {
+        const groups = d.competencyGroups.series;
+        const top = d.competencyItems.slice().sort((a, b) => b.delta - a.delta)[0];
+        const avgStart = Math.round(groups.reduce((sum, s) => sum + s.values[0], 0) / groups.length);
+        const avgEnd = Math.round(groups.reduce((sum, s) => sum + s.values[s.values.length - 1], 0) / groups.length);
+        renderKpis('competencyKpis', [
+          {
+            label: '연초 평균 점수',
+            value: `${avgStart}점`,
+            delta: '기준 진단값',
+            deltaClass: 'neutral',
+          },
+          {
+            label: '연말 평균 점수',
+            value: `${avgEnd}점`,
+            delta: `+${avgEnd - avgStart}점`,
+            deltaClass: 'up',
+          },
+          {
+            label: '최대 상승 역량',
+            value: top.name,
+            delta: `+${top.delta}점`,
+            deltaClass: 'up',
+          },
+          {
+            label: '진단 횟수',
+            value: `${d.competencyGroups.labels.length}회`,
+            delta: '분기 기준',
+            deltaClass: 'neutral',
+          },
+        ]);
+
+        drawLineChart('competencyTrendChart', d.competencyGroups.labels, d.competencyGroups.series, { min: 45, max: 90, unit: '점' });
+        drawLineChart2('competencyTrendChart2', d.competencyGroups.labels, d.competencyGroups.series, { min: 45, max: 90, unit: '점' });
+        document.getElementById('competencyLegend').innerHTML = d.competencyGroups.series.map((s) => `<span><i class="dot" style="background:${s.color}"></i>${s.name}</span>`).join('');
+
+        document.getElementById('competencyLegend2').innerHTML = d.competencyGroups.series.map((s) => `<span><i class="dot" style="background:${s.color}"></i>${s.name}</span>`).join('');
+
+        document.getElementById('competencyBars').innerHTML = d.competencyItems
+          .map(
+            (item) => `
+              <div class="progress-row">
+                <div>${item.name}</div>
+                <div class="bar"><span style="width:${Math.min(item.delta * 6, 100)}%"></span></div>
+                <div><strong>+${item.delta}점</strong></div>
+              </div>
+            `,
+          )
+          .join('');
+
+        const notes = [
+          ['상승폭 10점 이상', '의미 있는 성장으로 해석 가능하며 우수 사례 보고 대상 후보로 활용할 수 있습니다.'],
+          ['상승폭 5~9점', '안정적인 성장 구간으로 반복 학습 또는 실천 활동의 효과가 나타난 상태입니다.'],
+          ['상승폭 0~4점', '유지 또는 미세 상승 구간으로 학습 유형 보완이 필요한 상태입니다.'],
+          ['하락 또는 정체', '학습량, 활동량, 진단시점 편차를 함께 확인하는 추가 분석이 필요합니다.'],
+        ];
+      }
+
+      function renderLearning(d) {
+        renderKpis('learningKpis', [
+          {
+            label: '총 학습 건수',
+            value: `${d.learning.total}건`,
+            delta: '연수이수+영상+문서',
+            deltaClass: 'neutral',
+          },
+          {
+            label: '연수이수',
+            value: `${d.learning.content}건`,
+            delta: `${Math.round((d.learning.content / d.learning.total) * 100)}%`,
+            deltaClass: 'up',
+          },
+          {
+            label: '영상 콘텐츠',
+            value: `${d.learning.modules}건`,
+            delta: `${Math.round((d.learning.modules / d.learning.total) * 100)}%`,
+            deltaClass: 'up',
+          },
+          {
+            label: '문서',
+            value: `${d.learning.modules}건`,
+            delta: `${Math.round((d.learning.modules / d.learning.total) * 100)}%`,
+            deltaClass: 'up',
+          },
+          {
+            label: '총 학습시간',
+            value: `${d.learning.hours}시간`,
+            delta: '연간 누적',
+            deltaClass: 'neutral',
+          },
+        ]);
+
+        drawBarChart('learningMonthlyChart', d.learning.monthly.labels, d.learning.monthly.series, {
+          min: 0,
+          max: Math.max(...d.learning.monthly.series.map((s) => s.value)),
+          unit: '건',
+        });
+        document.getElementById('learningLegend').innerHTML = d.learning.monthly.series.map((s) => `<span><i class="dot" style="background:${s.color}"></i>${s.name}</span>`).join('');
+
+        const totalType = d.learning.types.reduce((sum, t) => sum + t.value, 0);
+        document.getElementById('learningTypeBars').innerHTML = d.learning.types
+          .map(
+            (item) => `
+              <div class="progress-row">
+                <div>${item.name}</div>
+                <div class="bar"><span style="width:${item.value}%"></span></div>
+                <div><strong>${item.value}%</strong></div>
+              </div>
+            `,
+          )
+          .join('');
+
+        document.getElementById('learningCompetencyTable').innerHTML = d.learning.competencyTop
+          .map(
+            (row, idx) => `
+              <tr><td class="text-center">${idx + 1}</td><td>${row[0]}</td><td class="text-center">${row[1]}건</td><td class="text-center">${row[2]}</td></tr>
+            `,
+          )
+          .join('');
+
+        const notes = [
+          `
+      <strong>1. 연수아수</strong>
+      <ul class="note-list2">
+      <li>깊이있는 수업 on 보평초등학교 </li>
+      <li>깊이있는 수업 on 보평초등학교2 </li>
+      <li>깊이있는 수업 on 보평초등학교3</li>
+      </ul>`,
+          `
+      <strong>2. 영상콘텐츠 </strong>
+      <ul class="note-list2">
+      <li>체육활동 관련 안전사고 현황 및 대처</li>
+      <li>체육활동 관련 안전사고 현황 및 대처2</li>
+      <li>체육활동 관련 안전사고 현황 및 대처3</li>
+      </ul>`,
+          `
+      <strong>3. 문서 </strong>
+      <ul class="note-list2">
+      <li>깊이있는 수업 on 하이초등학교 </li>
+      <li>깊이있는 수업 on 하이초등학교2 </li>
+      <li>깊이있는 수업 on 하이초등학교3</li>
+      </ul>`,
+        ];
+        document.getElementById('learningNotes').innerHTML = notes.map((t) => `<div class="note">${t}</div>`).join('');
+      }
+
+      function renderActivity(d) {
+        const totalActivities = d.activity.metrics.reduce((sum, row) => sum + row[1], 0);
+        const totalLikes = d.activity.posts.reduce((sum, row) => sum + row[3], 0);
+        renderKpis('activityKpis', [
+          {
+            label: '총 활동 건수',
+            value: `${totalActivities}건`,
+          },
+          {
+            label: '전문가 코칭',
+            value: `${d.activity.metrics[0][1] + d.activity.metrics[1][1]}건`,
+          },
+          {
+            label: '학습모듈 등록',
+            value: `${d.activity.metrics[2][1]}건`,
+          },
+          {
+            label: '콘텐츠 등록',
+            value: `${totalLikes}건`,
+          },
+          {
+            label: '수업공개',
+            value: `${totalLikes}건`,
+          },
+          {
+            label: '수업나눔',
+            value: `${totalLikes}건`,
+          },
+          {
+            label: '학습공동체 활동',
+            value: `${totalLikes}건`,
+          },
+        ]);
+
+        document.getElementById('activityBars').innerHTML = d.activity.metrics
+          .map(
+            (item) => `
+              <div class="progress-row">
+                <div>${item[0]}</div>
+                <div class="bar"><span style="width:${Math.min(item[1] * 4, 100)}%"></span></div>
+                <div><strong>${item[1]}건</strong></div>
+              </div>
+            `,
+          )
+          .join('');
+
+        document.getElementById('activityTimeline').innerHTML = d.activity.timeline
+          .map(
+            (item) => `
+              <div class="activity-item">
+                <div><span class="pill">${item[0]}</span><strong>${item[1]}</strong></div>
+                <div class="muted" style="margin-top:6px;">${item[2]}</div>
+              </div>
+            `,
+          )
+          .join('');
+
+        document.getElementById('postTable').innerHTML = d.activity.posts
+          .map(
+            (row) => `
+              <tr><td>${row[0]}</td><td class="text-center">${row[1]}건</td><td class="text-center">${row[2]}건</td><td class="text-center">${row[3]}건</td></tr>
+            `,
+          )
+          .join('');
+      }
+      function drawBarLineChart(canvasId, labels, barSeries, lineSeries) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        canvas.width = canvas.offsetWidth * devicePixelRatio;
+        canvas.height = 280 * devicePixelRatio;
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+        const w = canvas.offsetWidth,
+          h = 280;
+        ctx.clearRect(0, 0, w, h);
+
+        const pad = { top: 30, right: 50, bottom: 46, left: 50 };
+        const barMax = 80,
+          barMin = 0;
+        const lineMax = 25,
+          lineMin = -15;
+
+        // 좌축 (비중%)
+        ctx.strokeStyle = '#d9e2f2';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, pad.top);
+        ctx.lineTo(pad.left, h - pad.bottom);
+        ctx.lineTo(w - pad.right, h - pad.bottom);
+        ctx.stroke();
+
+        // 우축
+        ctx.beginPath();
+        ctx.moveTo(w - pad.right, pad.top);
+        ctx.lineTo(w - pad.right, h - pad.bottom);
+        ctx.stroke();
+
+        // 좌 Y축 눈금
+        ctx.fillStyle = '#61708f';
+        ctx.font = '11px Segoe UI';
+        ctx.textAlign = 'right';
+        [0, 20, 40, 60, 80].forEach((v) => {
+          const y = pad.top + ((barMax - v) / (barMax - barMin)) * (h - pad.top - pad.bottom);
+          ctx.fillText(v, pad.left - 6, y + 4);
+          ctx.strokeStyle = '#eef3fb';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(pad.left, y);
+          ctx.lineTo(w - pad.right, y);
+          ctx.stroke();
+        });
+
+        // 우 Y축 눈금
+        ctx.textAlign = 'left';
+        [-15, -10, -5, 0, 5, 10, 15, 20, 25].forEach((v) => {
+          const y = pad.top + ((lineMax - v) / (lineMax - lineMin)) * (h - pad.top - pad.bottom);
+          ctx.fillStyle = '#61708f';
+          ctx.fillText(v, w - pad.right + 6, y + 4);
+        });
+
+        // 기준선(0) 강조
+        const zeroY = pad.top + (lineMax / (lineMax - lineMin)) * (h - pad.top - pad.bottom);
+        ctx.strokeStyle = '#eef3fb';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, zeroY);
+        ctx.lineTo(w - pad.right, zeroY);
+        ctx.stroke();
+
+        const groupW = (w - pad.left - pad.right) / labels.length;
+        const barW = Math.min(40, groupW * 0.45);
+
+        ctx.fillStyle = '#61708f';
+        ctx.font = '400 12px Segoe UI';
+        ctx.textAlign = 'left';
+        ctx.fillText('비중(%)', pad.left - 15, pad.top - 15);
+
+        // 우측 상단 레이블 (점수변화)
+        ctx.textAlign = 'right';
+        ctx.fillText('점수변동', w - pad.right + 15, pad.top - 15);
+
+        // 막대 (학습비중)
+        labels.forEach((label, i) => {
+          const cx = pad.left + groupW * i + groupW / 2;
+          const v = barSeries.values[i];
+          const barH = ((v - barMin) / (barMax - barMin)) * (h - pad.top - pad.bottom);
+          const x = cx - barW / 2;
+          const y = h - pad.bottom - barH - 10;
+          ctx.fillStyle = barSeries.color;
+          roundRect(ctx, x, y, barW, barH, 4, true, false);
+
+          // 값 레이블
+          ctx.fillStyle = '#61708f';
+          ctx.font = '12px Segoe UI';
+          ctx.textAlign = 'center';
+          ctx.fillText(v + '%', cx, y - 6);
+
+          // X축 레이블
+          ctx.fillStyle = '#61708f';
+          ctx.font = '12px Segoe UI';
+          ctx.fillText(label, cx, h - 14);
+        });
+
+        // 꺾은선 (점수변화)
+        const linePoints = labels.map((_, i) => {
+          const v = lineSeries.values[i];
+          const x = pad.left + groupW * i + groupW / 2;
+          const y = pad.top + ((lineMax - v) / (lineMax - lineMin)) * (h - pad.top - pad.bottom);
+          return { x, y, v };
+        });
+
+        ctx.strokeStyle = lineSeries.color;
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        linePoints.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
+        ctx.stroke();
+
+        linePoints.forEach((p) => {
+          ctx.fillStyle = '#fff';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = lineSeries.color;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          ctx.fillStyle = '#1f2a44';
+          ctx.font = 'bold 11px Segoe UI';
+          ctx.textAlign = 'center';
+          ctx.fillText((p.v > 0 ? '+' : '') + p.v, p.x, p.y - 10);
+        });
+      }
+      function renderGrowth(d, year) {
+        const labels = d.growth.compare.map((x) => x.name);
+
+        drawBarLineChart(
+          'growthCompareChart',
+          labels,
+          {
+            name: '학습비중',
+            color: '#2957ff',
+            values: d.growth.compare.map((x) => x.learn),
+          },
+          {
+            name: '점수변화',
+            color: '#f59e0b',
+            values: d.growth.compare.map((x) => x.score),
+          },
+        );
+        document.getElementById('growthLegend').innerHTML = `
+              <span><i class="dot type01" style="background:#2957ff"></i>학습비중</span>
+              <span><i class="dot type02" style="background:#f59e0b"></i>점수변화</span>
+            `;
+
+        document.getElementById('growthCorrelationNotes').innerHTML = d.growth.notes
+          .map(
+            (n) => `
+              <div class="note"><span class="pill">${n[0]}</span><strong>${n[1]}</strong><div class="muted" style="margin-top:6px;">${n[2]}</div></div>
+            `,
+          )
+          .join('');
+
+        document.getElementById('growthNarrative').innerHTML = d.growth.narrative.map((t) => `<div class="note">${t.replaceAll(year, year + '년')}</div>`).join('');
+      }
+
+      function renderCert(d) {
+        document.getElementById('certSummary').innerHTML = [
+          ['등재 등급', d.cert.level],
+          ['등재일', d.cert.date],
+          ['누적 포인트', `${d.cert.point}점`],
+          ['상태', '요건 충족'],
+        ]
+          .map(
+            (row) => `
+              <div class="badge-item">
+                <div class="label muted">${row[0]}</div>
+                <div style="font-size:20px;font-weight:700;margin-top:8px;">${row[1]}</div>
+              </div>
+            `,
+          )
+          .join('');
+
+        document.getElementById('certTable').innerHTML = d.cert.items
+          .map(
+            (row) => `
+              <tr><td>${row[0]}</td><td class="text-center">${row[1]}</td><td class="text-center">${row[2]}</td><td class="text-center">${row[3]}</td></tr>
+            `,
+          )
+          .join('');
+
+        document.getElementById('certNotes').innerHTML = d.cert.notes.map((t) => `<div class="note">${t}</div>`).join('');
+      }
+
+      function drawAxes(ctx, width, height, padding, max, min, unit, ySteps = 5) {
+        ctx.strokeStyle = '#d9e2f2';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padding.left, padding.top);
+        ctx.lineTo(padding.left, height - padding.bottom);
+        ctx.lineTo(width - padding.right, height - padding.bottom);
+        ctx.stroke();
+
+        ctx.fillStyle = '#61708f';
+        ctx.font = '12px Segoe UI';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+
+        for (let i = 0; i <= ySteps; i++) {
+          const y = padding.top + ((height - padding.top - padding.bottom) / ySteps) * i;
+          const value = Math.round(max - ((max - min) / ySteps) * i);
+          ctx.strokeStyle = '#eef3fb';
+          ctx.beginPath();
+          ctx.moveTo(padding.left, y);
+          ctx.lineTo(width - padding.right, y);
+          ctx.stroke();
+          ctx.fillText(`${value}${unit}`, padding.left - 8, y);
+        }
+      }
+
+      function drawLineChart(canvasId, labels, series, options = {}) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        const width = (canvas.width = canvas.offsetWidth * devicePixelRatio);
+        const height = (canvas.height = 280 * devicePixelRatio);
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+        const w = canvas.offsetWidth;
+        const h = 280;
+        ctx.clearRect(0, 0, w, h);
+
+        const padding = { top: 20, right: 24, bottom: 36, left: 46 };
+        const max = options.max || 100;
+        const min = options.min || 0;
+        const unit = options.unit || '';
+        drawAxes(ctx, w, h, padding, max, min, unit);
+
+        const xStep = (w - padding.left - padding.right) / (labels.length - 1);
+        labels.forEach((label, i) => {
+          const x = padding.left + xStep * i;
+          ctx.fillStyle = '#61708f';
+          ctx.font = '12px Segoe UI';
+          ctx.textAlign = 'center';
+          ctx.fillText(label, x, h - 14);
+        });
+
+        series.forEach((s) => {
+          ctx.strokeStyle = s.color;
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          s.values.forEach((v, i) => {
+            const x = padding.left + xStep * i;
+            const y = padding.top + ((max - v) / (max - min)) * (h - padding.top - padding.bottom);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          });
+          ctx.stroke();
+
+          s.values.forEach((v, i) => {
+            const x = padding.left + xStep * i;
+            const y = padding.top + ((max - v) / (max - min)) * (h - padding.top - padding.bottom);
+            ctx.fillStyle = '#fff';
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = s.color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+          });
+        });
+      }
+
+      function drawLineChart2(canvasId, labels, series, options = {}) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        const width = (canvas.width = canvas.offsetWidth * devicePixelRatio);
+        const height = (canvas.height = 280 * devicePixelRatio);
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+        const w = canvas.offsetWidth;
+        const h = 280;
+        ctx.clearRect(0, 0, w, h);
+
+        const padding = { top: 20, right: 24, bottom: 36, left: 46 };
+        const max = options.max || 100;
+        const min = options.min || 0;
+        const unit = options.unit || '';
+        drawAxes(ctx, w, h, padding, max, min, unit);
+
+        const xStep = (w - padding.left - padding.right) / (labels.length - 1);
+        labels.forEach((label, i) => {
+          const x = padding.left + xStep * i;
+          ctx.fillStyle = '#61708f';
+          ctx.font = '12px Segoe UI';
+          ctx.textAlign = 'center';
+          ctx.fillText(label, x, h - 14);
+        });
+
+        series.forEach((s) => {
+          ctx.strokeStyle = s.color;
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          s.values.forEach((v, i) => {
+            const x = padding.left + xStep * i;
+            const y = padding.top + ((max - v) / (max - min)) * (h - padding.top - padding.bottom);
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          });
+          ctx.stroke();
+
+          s.values.forEach((v, i) => {
+            const x = padding.left + xStep * i;
+            const y = padding.top + ((max - v) / (max - min)) * (h - padding.top - padding.bottom);
+            ctx.fillStyle = '#fff';
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = s.color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+          });
+        });
+      }
+
+      function drawBarChart(canvasId, labels, series, options = {}) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        const width = (canvas.width = canvas.offsetWidth * devicePixelRatio);
+        const height = (canvas.height = 280 * devicePixelRatio);
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+        const w = canvas.offsetWidth;
+        const h = 280;
+        ctx.clearRect(0, 0, w, h);
+
+        const padding = { top: 20, right: 24, bottom: 46, left: 40 };
+        const max = options.max || 10;
+        const min = options.min || 0;
+        const unit = options.unit || '';
+        drawAxes(ctx, w, h, padding, max, min, unit, 4);
+
+        const groupWidth = (w - padding.left - padding.right) / labels.length;
+        const barWidth = Math.min(7, (groupWidth - 0) / series.length);
+
+        labels.forEach((label, i) => {
+          const baseX = padding.left + groupWidth * i + groupWidth / 2;
+          ctx.fillStyle = '#61708f';
+          ctx.font = '11px Segoe UI';
+          ctx.textAlign = 'center';
+          ctx.fillText(label, baseX, h - 16);
+
+          series.forEach((s, j) => {
+            const value = s.values[i];
+            const barHeight = ((value - min) / (max - min)) * (h - padding.top - padding.bottom);
+            const x = padding.left + groupWidth * i + (groupWidth - series.length * barWidth - (series.length - 1) * 4) / 2 + j * (barWidth + 4);
+            const y = h - padding.bottom - barHeight;
+            ctx.fillStyle = s.color;
+            ctx.fillRect(x, y, barWidth, barHeight);
+
+            // 값 표시 (선택적)
+            if (value > 0) {
+              ctx.fillStyle = '#61708f';
+              ctx.font = '10px Segoe UI';
+              ctx.textAlign = 'center';
+              ctx.fillText(value, x + barWidth / 2, y - 4);
+            }
+          });
+        });
+      }
+
+      function drawDualBarChart(canvasId, labels, s1, s2, options = {}) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        const width = (canvas.width = canvas.offsetWidth * devicePixelRatio);
+        const height = (canvas.height = 280 * devicePixelRatio);
+        ctx.scale(devicePixelRatio, devicePixelRatio);
+        const w = canvas.offsetWidth;
+        const h = 280;
+        ctx.clearRect(0, 0, w, h);
+
+        const padding = { top: 20, right: 24, bottom: 56, left: 40 };
+        const max = options.max || 35;
+        drawAxes(ctx, w, h, padding, max, 0, '', 5);
+
+        const groupWidth = (w - padding.left - padding.right) / labels.length;
+        const barWidth = Math.min(32, (groupWidth - 16) / 2);
+
+        labels.forEach((label, i) => {
+          const labelX = padding.left + groupWidth * i + groupWidth / 2;
+          const yText = h - 16;
+          ctx.save();
+          ctx.translate(labelX, yText);
+          ctx.rotate(0);
+          ctx.fillStyle = '#61708f';
+          ctx.font = '12px Segoe UI';
+          ctx.textAlign = 'center';
+          ctx.fillText(label, 0, 0);
+          ctx.restore();
+
+          [s1, s2].forEach((s, idx) => {
+            const value = s.values[i];
+            const barHeight = (value / max) * (h - padding.top - padding.bottom);
+            const x = padding.left + groupWidth * i + (groupWidth - 2 * barWidth - 8) / 2 + idx * (barWidth + 8);
+            const y = h - padding.bottom - barHeight;
+            ctx.fillStyle = s.color;
+            ctx.fillRect(x, y, barWidth, barHeight);
+
+            // 값 표시
+            if (value > 0) {
+              ctx.fillStyle = '#fff';
+              ctx.font = 'bold 11px Segoe UI';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(value, x + barWidth / 2, y + barHeight / 2);
+            }
+          });
+        });
+      }
+
+      function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+        if (height < 0) return;
+        if (typeof radius === 'number') {
+          radius = { tl: radius, tr: radius, br: radius, bl: radius };
+        }
+        ctx.beginPath();
+        ctx.moveTo(x + radius.tl, y);
+        ctx.lineTo(x + width - radius.tr, y);
+        ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
+        ctx.lineTo(x + width, y + height - radius.br);
+        ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+        ctx.lineTo(x + radius.bl, y + height);
+        ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
+        ctx.lineTo(x, y + radius.tl);
+        ctx.quadraticCurveTo(x, y, x + radius.tl, y);
+        ctx.closePath();
+        if (fill) ctx.fill();
+        if (stroke) ctx.stroke();
+      }
+
+      renderAll();
+    </script>
+  </body>
+</html>

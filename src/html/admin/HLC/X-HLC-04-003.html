@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "7", sid: "4" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>학습공동체 채널관리</h2>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">채널명</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp01"
+                        class="inp-text"
+                        placeholder="채널명을 입력해주세요(최대 00자)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">개설일</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <select id="select01">
+                          <option>선택</option>
+                        </select>
+                        <label for="select01">년</label>
+                      </span>
+                      <span class="lb-item">
+                        <select id="select02">
+                          <option>선택</option>
+                        </select>
+                        <label for="select02">월</label>
+                      </span>
+                      <span class="lb-item">
+                        <select id="select03">
+                          <option>선택</option>
+                        </select>
+                        <label for="select03">일</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select01">교원/역량 구분</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <select id="select01">
+                      <option>선택</option>
+                      <option>교사</option>
+                      <option>수석교사</option>
+                      <option>교감</option>
+                      <option>교장</option>
+                      <option>교육전문직원</option>
+                    </select>
+                    <select id="select02">
+                      <option>선택</option>
+                      <option>생활교육</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">개설자</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp02"
+                        class="inp-text"
+                        placeholder="채널 개설자 명을 입력해주세요"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inpUpload">썸네일</label>
+                  </th>
+                  <td>
+                    <div class="file-wrap">
+                      <div class="input-item">
+                        <input
+                          type="text"
+                          name="inpUpload"
+                          class="inp-text"
+                          readonly
+                          aria-label="첨부 파일"
+                        />
+                        <span class="btn base square">
+                          <input
+                            type="file"
+                            title="첨부파일 선택"
+                            id="inpUpload"
+                          />
+                          <span>찾아보기</span>
+                        </span>
+                      </div>
+                      <div class="file-list mgt8">
+                        <span class="file-info"
+                          >이미지 파일만 등록가능 합니다.(권장 : 000*000)</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp03">Link</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp03"
+                        class="inp-text"
+                        placeholder="채널의 Link값을 입력해주세요(Ex. http://www.abc.com)"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">게시여부</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio">게시</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio">비게시</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

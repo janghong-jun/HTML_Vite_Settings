@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "6" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>알림 발송 관리</h2>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+
+              <tbody>
+                <tr>
+                  <th scope="row">내역</th>
+                  <td>협업공간 개설 승인</td>
+                </tr>
+                <tr>
+                  <th scope="row">상세내용</th>
+                  <td>
+                    김경기 님께서 신청하신 <br />협업공간에 대하여 개설이
+                    승인되었습니다. <br />감사합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">수신자</th>
+                  <td>김경기</td>
+                </tr>
+                <tr>
+                  <th scope="row">발송일시</th>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                </tr>
+                <tr>
+                  <th scope="row">재발송여부</th>
+                  <td>YYYY-MM-DD HH:MM:SS 재발신</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>재발송</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

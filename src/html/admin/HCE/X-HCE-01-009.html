@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "9", sid: "2" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>발급분석</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        placeholder="최소 2글자 이상 입력해주세요"
+                        aria-label="회원명 입력"
+                        readonly
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="sub-title">
+            <h3>회원 정보</h3>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">회원명</th>
+                  <td>-</td>
+                  <th scope="row">소속</th>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <th scope="row">현재 보유 포인트</th>
+                  <td colspan="3">- P</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sub-title">
+            <h3>포인트</h3>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">유형</th>
+                  <td>
+                    <select>
+                      <option>콘텐츠 학습</option>
+                      <option>모듈 학습</option>
+                      <option>학습공동체활동</option>
+                      <option>전문가 코칭</option>
+                      <option>역량진단</option>
+                      <option>기타</option>
+                    </select>
+                  </td>
+                  <th scope="row">항목명</th>
+                  <td>
+                    <input
+                      type="text"
+                      class="inp-text"
+                      placeholder="항목명을 입력해주세요."
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">발급 포인트</th>
+                  <td colspan="3">
+                    <div class="frm-area flex left">
+                      <input type="text" class="inp-text txt-r" value="0" />
+                      <span class="unit">P</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>등록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

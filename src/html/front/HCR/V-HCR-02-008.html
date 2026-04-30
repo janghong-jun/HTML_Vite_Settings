@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HCR-02-008"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HCR-02-008"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HCR-02-008"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HCR-02-008" class="modal-title">콘텐츠 평가 수정</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="evaluation-form">
+              <label for="evaluation-input" class="title">콘텐츠 평가</label>
+              <textarea
+                class="krds-input"
+                id="evaluation-input"
+                placeholder="최소 10자 이상 입력해주세요"
+              ></textarea>
+
+              <dl>
+                <div>
+                  <dt>평점주기</dt>
+                  <dd>
+                    <div class="krds-check-area">
+                      <div class="krds-form-check">
+                        <input type="radio" name="rating" id="rating1" />
+                        <label for="rating1">
+                          <span>
+                            1점
+                            <i
+                              class="svg-icon ico-star-off"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="rating" id="rating2" />
+                        <label for="rating2">
+                          <span>
+                            2점
+                            <i
+                              class="svg-icon ico-star-off"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="rating" id="rating3" />
+                        <label for="rating3">
+                          <span>
+                            3점
+                            <i
+                              class="svg-icon ico-star-off"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="rating" id="rating4" />
+                        <label for="rating4">
+                          <span>
+                            4점
+                            <i
+                              class="svg-icon ico-star-off"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="rating" id="rating5" />
+                        <label for="rating5">
+                          <span>
+                            5점
+                            <i
+                              class="svg-icon ico-star-off"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </dd>
+                </div>
+                <div>
+                  <dt>난이도</dt>
+                  <dd>
+                    <div class="krds-check-area">
+                      <div class="krds-form-check">
+                        <input type="radio" name="level" id="level1" />
+                        <label for="level1">
+                          <span>
+                            상
+                            <i
+                              class="svg-icon ico-level03"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="level" id="level2" />
+                        <label for="level2">
+                          <span>
+                            중
+                            <i
+                              class="svg-icon ico-level02"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                      <div class="krds-form-check">
+                        <input type="radio" name="level" id="level3" />
+                        <label for="level3">
+                          <span>
+                            하
+                            <i
+                              class="svg-icon ico-level01"
+                              aria-hidden="true"
+                            ></i>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            취소
+          </button>
+          <button type="button" class="krds-btn medium primary">
+            평가 수정
+          </button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HCR-02-008");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

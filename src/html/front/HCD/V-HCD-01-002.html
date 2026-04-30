@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>나의 진단결과 목록 | 역량진단 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 0 + 1, depth2: 1 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 역량진단 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">역량진단</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">내 역량진단</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">나의 진단결과</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //역량진단 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">역량진단</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">나의 진단결과</h3>
+            </div>
+            <div class="g-search-area colum">
+              <div class="search-top-box">
+                <div class="form-group">
+                  <div class="sch-form-wrap">
+                    <div class="col date">
+                      <div class="col-title">기간</div>
+                      <div
+                        class="form-date calendar-conts"
+                        data-calendar-type="range"
+                      >
+                        <div class="calendar-input">
+                          <ul class="input-group range small">
+                            <li>
+                              <input
+                                class="krds-input datepicker small"
+                                placeholder="시작일"
+                                readonly
+                                aria-label="시작일"
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn icon form-btn-datepicker small"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </li>
+                            <li class="mark small">~</li>
+                            <li>
+                              <input
+                                class="krds-input datepicker small"
+                                placeholder="종료일"
+                                readonly
+                                aria-label="종료일"
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn icon form-btn-datepicker small"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                        <div
+                          class="krds-calendar-area"
+                          data-keyboard-bound="false"
+                        ></div>
+                      </div>
+                      <div class="krds-btns-wrap">
+                        <button type="button" class="krds-btn small secondary">
+                          1개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          3개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          6개월
+                        </button>
+                        <button type="button" class="krds-btn small secondary">
+                          1년
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="col-title">진단상태</div>
+                      <div class="krds-check-area">
+                        <div class="krds-form-check large">
+                          <input
+                            type="radio"
+                            name="search_rdo01"
+                            id="search_rdo01_01"
+                            checked
+                          />
+                          <label for="search_rdo01_01">전체</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input
+                            type="radio"
+                            name="search_rdo01"
+                            id="search_rdo01_02"
+                          />
+                          <label for="search_rdo01_02">제출</label>
+                        </div>
+                        <div class="krds-form-check large">
+                          <input
+                            type="radio"
+                            name="search_rdo01"
+                            id="search_rdo01_03"
+                          />
+                          <label for="search_rdo01_03">임시저장</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col input">
+                      <div class="sch-input">
+                        <input
+                          type="text"
+                          class="krds-input small"
+                          aria-label="검색어 입력"
+                        />
+                        <span
+                          class="krds-btn xsmall icon ico-search btn-exec"
+                          aria-hidden="true"
+                        >
+                          <i class="svg-icon ico-sch"></i>
+                        </span>
+                      </div>
+                      <button type="button" class="krds-btn small neutral">
+                        검색
+                      </button>
+                      <button type="button" class="krds-btn medium text">
+                        초기화
+                        <i class="svg-icon ico-reset" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="krds-table-wrap center">
+              <div class="krds-table-info">
+                <p class="count">총<span>183</span>건</p>
+                <p class="count">페이지<span>1/19</span></p>
+              </div>
+              <table class="tbl">
+                <caption>
+                  나의 진단결과에 대한 표로 글번호, 제목, 진단상태, 진단일,
+                  항목으로 구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 12rem" />
+                  <col />
+                  <col style="width: 15rem" />
+                  <col style="width: 18rem" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">진단상태</th>
+                    <th scope="col">진단일</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-gray">임시저장</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td class="al">
+                      <a href="#">
+                        2026년도 경기교원(교사) 핵심역량 진단 설문 1차(20260220)
+                      </a>
+                    </td>
+                    <td>
+                      <span class="krds-badge bg-light-primary">제출</span>
+                    </td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="krds-pagination">
+              <a
+                class="page-navi prev disabled"
+                aria-disabled="true"
+                tabindex="-1"
+                >이전</a
+              >
+              <div class="page-links">
+                <a class="page-link active" href="#"
+                  ><span class="sr-only">현재페이지 </span>1</a
+                >
+                <a class="page-link" href="#">2</a>
+                <a class="page-link" href="#">3</a>
+                <a class="page-link" href="#">4</a>
+                <a class="page-link" href="#">5</a>
+                <a class="page-link" href="#">6</a>
+                <a class="page-link" href="#">7</a>
+                <a class="page-link" href="#">8</a>
+                <span class="page-link link-dot"></span>
+                <a class="page-link" href="#">99</a>
+              </div>
+              <a class="page-navi next" href="#">다음</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

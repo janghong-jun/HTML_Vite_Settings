@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HGP-02-002"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HGP-02-002"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HGP-02-002"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HGP-02-002" class="modal-title">프로필 이미지 변경</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="change-img">
+              <div class="profile-img">
+                <img
+                  src="../../../resources/img/noData/img_big_profile.png"
+                  alt="육학습 프로필 사진"
+                />
+              </div>
+              <div class="krds-form-file">
+                <span class="file-name placeholder">파일을 선택해주세요.</span>
+                <input type="file" id="profileImageFile" hidden />
+                <label for="profileImageFile" class="krds-btn tertiary medium"
+                  >찾아보기</label
+                >
+                <ul>
+                  <li>png, jpg, jpeg 확장자만 등록 가능합니다.</li>
+                  <li>1MB 이하의 이미지만 등록 가능합니다.</li>
+                  <li>권장 크기: 200 x 200px</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button
+            type="button"
+            class="krds-btn medium tertiary"
+            onclick="krds_modal.closeModal('V-HGP-02-002')"
+          >
+            취소
+          </button>
+          <button type="button" class="krds-btn medium primary">적용</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HGP-02-002");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

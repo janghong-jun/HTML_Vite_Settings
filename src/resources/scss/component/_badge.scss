@@ -1,0 +1,201 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 배지 */
+//사이즈 정의
+@mixin badge-size-variable() {
+  --badge--size-height: var(--size-height-4);
+  --badge--line-height: 2.4rem;
+  --badge--padding: var(--padding-3);
+  --badge--radius: var(--radius-small2);
+  --badge--radius-max: var(--radius-max);
+  --badge--dot-size: 0.6rem;
+  --badge--dot-padding: 0;
+  --badge--number-size-height: var(--size-height-3);
+  --badge--pc-font-size: var(--pc-font-size-label-small);
+  --badge--mobile-font-size: var(--mobile-font-size-label-small);
+  --badge--pc-font-size-large: var(--pc-font-size-label-medium);
+  --badge--mobile-font-size-large: var(--mobile-font-size-label-medium);
+  --badge--size-height-large: var(--size-height-5);
+}
+//컬러 정의
+@mixin badge-color-variable($mode) {
+  //컬러 변수 배열 생성
+  $badge-color-variable: (
+    primary: (
+      element: var(--#{$mode}-color-element-primary),
+      element-lighter: var(--#{$mode}-color-element-primary-lighter),
+      text: var(--#{$mode}-color-text-primary),
+    ),
+    secondary: (
+      element: var(--#{$mode}-color-element-secondary),
+      element-lighter: var(--#{$mode}-color-element-secondary-lighter),
+      text: var(--#{$mode}-color-text-secondary),
+    ),
+    gray: (
+      element: var(--#{$mode}-color-element-gray),
+      element-lighter: var(--#{$mode}-color-element-gray-light),
+      text: var(--#{$mode}-color-text-subtle),
+    ),
+    point: (
+      element: var(--#{$mode}-color-element-point),
+      element-lighter: var(--#{$mode}-color-element-point-lighter),
+      text: var(--#{$mode}-color-text-point),
+    ),
+    danger: (
+      element: var(--#{$mode}-color-element-danger),
+      element-lighter: var(--#{$mode}-color-element-danger-lighter),
+      text: var(--#{$mode}-color-text-danger),
+    ),
+    warning: (
+      element: var(--#{$mode}-color-element-warning),
+      element-lighter: var(--#{$mode}-color-element-warning-lighter),
+      text: var(--#{$mode}-color-text-warning),
+    ),
+    success: (
+      element: var(--#{$mode}-color-element-success),
+      element-lighter: var(--#{$mode}-color-element-success-lighter),
+      text: var(--#{$mode}-color-text-success),
+    ),
+    information: (
+      element: var(--#{$mode}-color-element-information),
+      element-lighter: var(--#{$mode}-color-element-information-lighter),
+      text: var(--#{$mode}-color-text-information),
+    ),
+    visited: (
+      element: var(--light-color-link-visited),
+      element-lighter: var(--#{$mode}-color-link-visited),
+      text: var(--light-color-link-visited),
+    ),
+    disabled: (
+      element: var(--#{$mode}-color-element-disabled-dark),
+      element-lighter: var(--#{$mode}-color-element-disabled-light),
+      text: var(--#{$mode}-color-text-disabled-on),
+    ),
+  ) !default;
+
+  //css variable 생성
+  @each $color, $types in $badge-color-variable {
+    @each $type, $value in $types {
+      --badge--color-#{"#{$color}"}-#{$type}: #{$value};
+    }
+  }
+  --badge--color-background-basic: var(--#{$mode}-color-background-white);
+  --badge--color-text-basic: var(--#{$mode}-color-text-inverse-static);
+  --badge--color-text-warning: var(--#{$mode}-color-text-static);
+
+  //class 정의
+  & {
+    @each $color, $types in $badge-color-variable {
+      &.outline-#{'#{$color}'} {
+        @include color-border(#{$color});
+        @include color-text(#{$color});
+      }
+
+      &.bg-#{'#{$color}'} {
+        @include color-background(#{$color});
+        color: var(--badge--color-text-basic);
+      }
+
+      &.bg-light-#{'#{$color}'} {
+        @include color-background-light(#{$color});
+        @include color-text(#{$color});
+      }
+    }
+  }
+  //warning text color
+  &.bg-warning {
+    color: var(--badge--color-text-warning);
+  }
+}
+
+//badge color border
+@mixin color-border($color, $mode: light) {
+  @include border-size-mode(#{$mode});
+  border-style: solid;
+
+  @if ($color == 'primary') {
+    border-color: var(--badge--color-primary-element);
+  } @else {
+    // border-color: var(--badge--#{$mode}-color-#{$color}-element);
+  }
+}
+
+//badge color text
+@mixin color-text($color) {
+  color: var(--badge--color-#{$color}-text);
+}
+
+//badge color background
+@mixin color-background($color) {
+  background-color: var(--badge--color-#{$color}-element);
+}
+
+//badge color background light
+@mixin color-background-light($color) {
+  background-color: var(--badge--color-#{$color}-element-lighter);
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-badge {
+  @include flex-layout($d: inline-flex, $ai: center, $jc: center);
+
+  @include badge-size-variable();
+  @include badge-color-variable(#{$mode-setting});
+
+  & {
+    height: var(--badge--size-height);
+    line-height: var(--badge--line-height);
+    font-size: var(--badge--pc-font-size);
+    font-weight: var(--font-weight-regular);
+    padding: 0 var(--badge--padding);
+    border-radius: var(--badge--radius);
+
+    @include size-medium {
+      font-size: var(--badge--mobile-font-size);
+    }
+  }
+
+  &.large {
+    height: var(--badge--size-height-large);
+    font-size: var(--badge--pc-font-size-large);
+    @include size-medium {
+      font-size: var(--badge--mobile-font-size);
+    }
+    &.bold {
+      min-width: 3.2rem;
+      padding: 0 var(--padding-2);
+      font-size: var(--pc-font-size-body-large);
+      font-weight: var(--font-weight-bold);
+      @include size-medium {
+        font-size: var(--mobile-font-size-body-large);
+      }
+    }
+  }
+  &.number {
+    height: var(--badge--number-size-height);
+    border-radius: var(--badge--radius-max);
+  }
+  &.dot {
+    @include square(var(--badge--dot-size));
+    padding: var(--badge--dot-padding);
+    border-radius: var(--badge--radius-max);
+  }
+}
+.krds-badge-wrap {
+  --badge--wrap-gap: var(--gap-3);
+
+  display: flex;
+  gap: var(--badge--wrap-gap);
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-badge {
+    @include badge-color-variable(#{$mode-setting});
+  }
+}

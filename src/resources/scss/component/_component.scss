@@ -1,0 +1,40 @@
+//only component
+
+@use '../common/path' as *;
+//공통
+@use '../common/include' as *;
+
+//component
+@use 'button';
+@use 'tab';
+@use 'table';
+@use 'modal';
+@use 'accordion';
+@use 'spinner';
+@use 'tooltip';
+@use 'skip_link';
+@use 'masthead';
+@use 'header';
+@use 'main_menu';
+@use 'footer';
+@use 'identifier';
+@use 'side_navigation';
+@use 'carousel';
+@use 'pagination';
+@use 'breadcrumb';
+@use 'badge';
+@use 'tag';
+@use 'form_layout';
+@use 'input';
+@use 'select';
+@use 'form_check';
+@use 'form_chip';
+@use 'switch';
+@use 'calendar';
+@use 'resize';
+@use 'language_switcher';
+@use 'board';
+@use 'form';
+@use 'chart';
+@use 'print';
+@use 'chatbot';

@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "5", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>콘텐츠 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td>
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">교원구분</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio">교사</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio">수석교사</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_03" name="rdoBtn01" />
+                        <label for="rdo_01_03" class="lb-radio">교감</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_04" name="rdoBtn01" />
+                        <label for="rdo_01_04" class="lb-radio">교장</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_05" name="rdoBtn01" />
+                        <label for="rdo_01_05" class="lb-radio"
+                          >교육전문직원</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">역량군</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_01" />
+                        <label for="checkbox_01_01" class="lb-checkbox"
+                          >전체</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_02" />
+                        <label for="checkbox_01_02" class="lb-checkbox"
+                          >교수 역량</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_03" />
+                        <label for="checkbox_01_03" class="lb-checkbox"
+                          >생활교육 역량</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_04" />
+                        <label for="checkbox_01_04" class="lb-checkbox"
+                          >공동체 역량</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_01_05" />
+                        <label for="checkbox_01_05" class="lb-checkbox"
+                          >자기개발 역량</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">유형</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_02_01" />
+                        <label for="checkbox_02_01" class="lb-checkbox"
+                          >전체</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_02_02" />
+                        <label for="checkbox_02_02" class="lb-checkbox"
+                          >동영상</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_02_03" />
+                        <label for="checkbox_02_03" class="lb-checkbox"
+                          >문서</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_02_04" />
+                        <label for="checkbox_02_04" class="lb-checkbox"
+                          >이미지</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">출처</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_03_01" />
+                        <label for="checkbox_03_01" class="lb-checkbox"
+                          >전체</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_03_02" />
+                        <label for="checkbox_03_02" class="lb-checkbox"
+                          >Youtube</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_03_03" />
+                        <label for="checkbox_03_03" class="lb-checkbox"
+                          >중앙교육연수원</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_03_04" />
+                        <label for="checkbox_03_04" class="lb-checkbox"
+                          >남부연수원</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="checkbox_03_05" />
+                        <label for="checkbox_03_05" class="lb-checkbox"
+                          >직접등록</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="ui-tab left mgt24" data-id="tab01">
+            <div class="ui-tab-btns">
+              <button type="button" class="ui-tab-btn" data-tab="0">
+                전체
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="1">
+                승인대기
+              </button>
+              <button type="button" class="ui-tab-btn" data-tab="2">
+                개선요청
+              </button>
+            </div>
+            <div class="ui-tab-pnls">
+              <div class="ui-tab-pnl" data-tab="0">
+                <div class="sub-title">
+                  <div>
+                    <p class="count">총 <span>100</span>건</p>
+                    <p class="count">페이지 <span>2</span>/50</p>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8rem" />
+                      <col />
+                      <col style="width: 10rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 6rem" />
+                      <col style="width: 11rem" />
+                      <col style="width: 7rem" />
+                      <col style="width: 10rem" />
+                      <col style="width: 7rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">콘텐츠 명</th>
+                        <th scope="col">교원구분</th>
+                        <th scope="col">역량군</th>
+                        <th scope="col">유형</th>
+                        <th scope="col">출처</th>
+                        <th scope="col">상태</th>
+                        <th scope="col">등록일</th>
+                        <th scope="col">게시여부</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>100</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교사</td>
+                        <td>교수</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>99</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>수석교사</td>
+                        <td>생활교육</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>98</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교감</td>
+                        <td>공동체</td>
+                        <td>이미지</td>
+                        <td>남부연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>97</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교장 <br />교감</td>
+                        <td>교수 <br />자기개발</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>96</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교육전문직원</td>
+                        <td>자기관리 및 성장</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>95</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교사</td>
+                        <td>교수</td>
+                        <td>이미지</td>
+                        <td>남부연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>94</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>수석교사</td>
+                        <td>생활교육</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>93</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교감</td>
+                        <td>공동체</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>92</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교장</td>
+                        <td>교수 <br />자기개발</td>
+                        <td>이미지</td>
+                        <td>직접등록</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>91</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교육전문직원</td>
+                        <td>자기관리 및 성장</td>
+                        <td>동영상</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td colspan="9" class="nodata">
+                          검색된 내용이 없습니다.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+                <div class="tbl-btns flex-box">
+                  <div>
+                    <button
+                      type="button"
+                      class="btn base primary btn-modal"
+                      data-id="X-HAR-01-001_01"
+                      data-src="X-HAR-01-001_01.html"
+                    >
+                      <span>사용자 등록 사용</span>
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="btn base secondary btn-modal"
+                      data-id="X-HAR-01-006"
+                      data-src="X-HAR-01-006.html"
+                    >
+                      <span>일괄등록</span>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn base primary fill btn-modal"
+                      data-id="X-HAR-01-001_02"
+                      data-src="X-HAR-01-001_02.html"
+                    >
+                      <span>등록</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="1">
+                <div class="sub-title">
+                  <div>
+                    <p class="count">총 <span>100</span>건</p>
+                    <p class="count">페이지 <span>2</span>/50</p>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8rem" />
+                      <col />
+                      <col style="width: 10rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 6rem" />
+                      <col style="width: 11rem" />
+                      <col style="width: 7rem" />
+                      <col style="width: 10rem" />
+                      <col style="width: 7rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </th>
+                        <th scope="col">콘텐츠 명</th>
+                        <th scope="col">교원구분</th>
+                        <th scope="col">역량군</th>
+                        <th scope="col">유형</th>
+                        <th scope="col">출처</th>
+                        <th scope="col">상태</th>
+                        <th scope="col">등록일</th>
+                        <th scope="col">게시여부</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교사</td>
+                        <td>교수</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>수석교사</td>
+                        <td>생활교육</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교감</td>
+                        <td>공동체</td>
+                        <td>이미지</td>
+                        <td>남부연수원</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교장 <br />교감</td>
+                        <td>교수 <br />자기개발</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교육전문직원</td>
+                        <td>자기관리 및 성장</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교사</td>
+                        <td>교수</td>
+                        <td>이미지</td>
+                        <td>남부연수원</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>수석교사</td>
+                        <td>생활교육</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교감</td>
+                        <td>공동체</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교장</td>
+                        <td>교수 <br />자기개발</td>
+                        <td>이미지</td>
+                        <td>직접등록</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>게시</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="none-label">
+                            <input type="checkbox" />
+                            <label class="lb-checkbox"></label>
+                          </span>
+                        </td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교육전문직원</td>
+                        <td>자기관리 및 성장</td>
+                        <td>동영상</td>
+                        <td>중앙교육연수원</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>비게시</td>
+                      </tr>
+                      <tr>
+                        <td colspan="9" class="nodata">
+                          검색된 내용이 없습니다.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns mgt16">
+                  <div>
+                    <button type="button" class="btn base primary">
+                      <span>승인처리</span>
+                    </button>
+                  </div>
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="ui-tab-pnl" data-tab="2">
+                <div class="sub-title">
+                  <div>
+                    <p class="count">총 <span>100</span>건</p>
+                    <p class="count">페이지 <span>2</span>/50</p>
+                  </div>
+                </div>
+                <div class="tbl-base type2 mgt10">
+                  <table>
+                    <colgroup>
+                      <col style="width: 8rem" />
+                      <col />
+                      <col style="width: 10rem" />
+                      <col style="width: 12rem" />
+                      <col style="width: 6rem" />
+                      <col style="width: 11rem" />
+                      <col style="width: 7rem" />
+                      <col style="width: 10rem" />
+                      <col style="width: 7rem" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">콘텐츠 명</th>
+                        <th scope="col">교원구분</th>
+                        <th scope="col">역량군</th>
+                        <th scope="col">유형</th>
+                        <th scope="col">출처</th>
+                        <th scope="col">상태</th>
+                        <th scope="col">등록일</th>
+                        <th scope="col">개선요청</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>100</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교사</td>
+                        <td>교수</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>1건</td>
+                      </tr>
+                      <tr>
+                        <td>99</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>수석교사</td>
+                        <td>생활교육</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>3건</td>
+                      </tr>
+                      <tr>
+                        <td>98</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교감</td>
+                        <td>공동체</td>
+                        <td>이미지</td>
+                        <td>남부연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>5건</td>
+                      </tr>
+                      <tr>
+                        <td>97</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교장<br />교감</td>
+                        <td>교수<br />자기개발</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>8건</td>
+                      </tr>
+                      <tr>
+                        <td>96</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교육전문직원</td>
+                        <td>자기관리 및 성장</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>5건</td>
+                      </tr>
+                      <tr>
+                        <td>95</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교사</td>
+                        <td>교수</td>
+                        <td>이미지</td>
+                        <td>남부연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>1건</td>
+                      </tr>
+                      <tr>
+                        <td>94</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>수석교사</td>
+                        <td>생활교육</td>
+                        <td>동영상</td>
+                        <td>Youtube</td>
+                        <td>승인대기</td>
+                        <td>2025-12-15</td>
+                        <td>3건</td>
+                      </tr>
+                      <tr>
+                        <td>93</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교감</td>
+                        <td>공동체</td>
+                        <td>문서</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>5건</td>
+                      </tr>
+                      <tr>
+                        <td>92</td>
+                        <td class="txt-l">깊이있는 수업 on 보평초등학교</td>
+                        <td>교장</td>
+                        <td>교수<br />자기개발</td>
+                        <td>이미지</td>
+                        <td>직접등록</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>8건</td>
+                      </tr>
+                      <tr>
+                        <td>91</td>
+                        <td class="txt-l">
+                          체육활동 관련 안전사고 현황 및 대처
+                        </td>
+                        <td>교육전문직원</td>
+                        <td>자기관리 및 성장</td>
+                        <td>동영상</td>
+                        <td>중앙교육연수원</td>
+                        <td>등록완료</td>
+                        <td>2025-12-15</td>
+                        <td>5건</td>
+                      </tr>
+                      <tr>
+                        <td colspan="9" class="nodata">
+                          검색된 내용이 없습니다.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tbl-btns flex-box mgt16">
+                  <button type="button" class="btn base secondary">
+                    <span>일괄등록</span>
+                  </button>
+                  <div class="pager">
+                    <a href="#" class="btn first disabled"
+                      ><span class="hide">처음으로</span></a
+                    >
+                    <a href="#" class="btn prev disabled"
+                      ><span class="hide">이전으로</span></a
+                    >
+                    <span class="num">
+                      <a href="#">1</a>
+                      <a href="#" class="on"
+                        ><span class="hide">현재 페이지:</span>2</a
+                      >
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                      <a href="#">5</a>
+                      <a href="#">6</a>
+                      <a href="#">7</a>
+                      <a href="#">8</a>
+                      <a href="#">9</a>
+                      <a href="#">10</a>
+                    </span>
+                    <a href="#" class="btn next"
+                      ><span class="hide">다음으로</span></a
+                    >
+                    <a href="#" class="btn end"
+                      ><span class="hide">마지막으로</span></a
+                    >
+                  </div>
+                  <button type="button" class="btn base primary">
+                    <span>등록</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 페이지네이션 */
+//사이즈 정의
+@mixin pagination-size-variable() {
+  --pagination-gap: var(--gap-3);
+  --pagination-margin-top: var(--pc-gap-layout-h5-h5);
+  --pagination--size-height: var(--size-height-6);
+  --pagination--radius: var(--radius-medium1);
+  --pagination--prev-btn-padding-left: var(--padding-2);
+  --pagination--prev-btn-padding-right: var(--padding-3);
+  @include size-medium {
+    --pagination-gap: var(--gap-7) var(--gap-3);
+    --pagination-margin-top: var(--mobile-gap-layout-h5-h5);
+  }
+}
+
+//컬러 정의
+@mixin pagination-color-variable($mode: light) {
+  --pagination--color-text: var(--#{$mode}-color-text-subtle);
+  --pagination--color-text-active: var(--#{$mode}-color-text-inverse-static);
+  --pagination--color-text-disabled: var(--#{$mode}-color-text-disabled);
+  --pagination--color-action: var(--#{$mode}-color-action-secondary);
+  --pagination--color-action-hover: var(--#{$mode}-color-action-secondary-hover);
+  --pagination--color-action-pressed: var(--#{$mode}-color-action-secondary-pressed);
+  --pagination--color-action-active: var(--#{$mode}-color-action-secondary-active);
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-pagination {
+  @include pagination-color-variable(#{$mode-setting});
+  @include pagination-size-variable();
+  & {
+    @include flex-layout($ai: center, $jc: center);
+    gap: var(--pagination-gap);
+    width: 100%;
+    margin-top: var(--pagination-margin-top);
+    color: var(--pagination--color-text);
+  }
+  .page-navi,
+  .page-link {
+    @include flex-layout($d: inline-flex, $jc: center, $ai: center);
+    height: var(--pagination--size-height);
+    background-color: var(--pagination--color-action);
+    border-radius: var(--pagination--radius);
+    transition: var(--transition-base);
+    &:hover {
+      background-color: var(--pagination--color-action-hover);
+    }
+    &:active {
+      background-color: var(--pagination--color-action-pressed);
+    }
+  }
+  .page-navi {
+    &.prev {
+      order: 1;
+      padding: 0 var(--pagination--prev-btn-padding-right) 0 var(--pagination--prev-btn-padding-left);
+      &::before {
+        @include flex-layout($d: inline-flex, $jc: center, $ai: center);
+        @include pseudo();
+        @include svg-icon($size: var(--icon--size-medium), $mode: light);
+        @include icon-set(ico_angle);
+        background-color: var(--pagination--color-text);
+        transform: rotate(90deg);
+      }
+    }
+    &.next {
+      order: 3;
+      padding: 0 var(--pagination--prev-btn-padding-left) 0 var(--pagination--prev-btn-padding-right);
+      &::after {
+        @include flex-layout($d: inline-flex, $jc: center, $ai: center);
+        @include pseudo();
+        @include svg-icon($size: var(--icon--size-medium), $mode: light);
+        @include icon-set(ico_angle);
+        background-color: var(--pagination--color-text);
+        transform: rotate(-90deg);
+      }
+    }
+    &.disabled {
+      $color: var(--pagination--color-text-disabled);
+      color: $color;
+      &:hover,
+      &:active {
+        background-color: var(--pagination--color-action-disabled);
+      }
+      &::before,
+      &::after {
+        background-color: $color;
+      }
+    }
+  }
+  .page-links {
+    @include flex-layout($jc: center, $ai: center);
+    order: 2;
+    gap: var(--gap-3);
+    .page-link {
+      @include square(var(--pagination--size-height));
+      border-radius: var(--radius-max);
+      &.link-dot {
+        @include svg-icon($mode: light);
+        @include icon-set(ico_ellipsis);
+      }
+      &.active {
+        background-color: var(--pagination--color-action-active);
+        // background-color: var(--color-light-primary-50);
+        font-weight: var(--font-weight-bold);
+        color: var(--pagination--color-text-active);
+      }
+    }
+  }
+  + .helper-box {
+    margin-top: var(--padding-10);
+  }
+  + .krds-btns-wrap.center {
+    margin-top: var(--gap-10);
+  }
+  + .krds-btns-wrap.right,
+  + .krds-btns-wrap.between02 {
+    margin-top: var(--padding-9);
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-pagination {
+    @include pagination-color-variable(#{$mode-setting});
+
+    .page-navi {
+      &.prev {
+        &::before {
+          @include svg-icon($size: var(--icon--size-medium), $mode: #{$mode-setting});
+        }
+      }
+      &.next {
+        &::after {
+          @include svg-icon($size: var(--icon--size-medium), $mode: #{$mode-setting});
+        }
+      }
+    }
+    .page-links {
+      .page-link {
+        &.link-dot {
+          @include svg-icon($mode: #{$mode-setting});
+        }
+      }
+    }
+  }
+}
+
+//태블릿 & 모바일 전용 속성
+@include size-medium {
+  .krds-pagination {
+    flex-wrap: wrap;
+
+    .page-links {
+      width: 100%;
+      .page-link {
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8) {
+          display: none;
+        }
+      }
+    }
+    .page-navi {
+      &.next {
+        transition: none;
+        order: 1;
+      }
+    }
+    + .helper-box {
+      margin-top: var(--padding-9);
+    }
+  }
+}
+@include size-small {
+  .krds-pagination {
+    .page-links {
+      .page-link {
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8) {
+          display: none;
+        }
+      }
+    }
+  }
+}

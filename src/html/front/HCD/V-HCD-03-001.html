@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>나의 진단결과 상세 | 역량진단 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 0 + 1, depth2: 1 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 역량진단 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">역량진단</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">내 역량진단</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">나의 진단결과</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //역량진단 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">역량진단</a></li>
+                <li><a href="#" class="txt">나의 진단결과</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">나의 진단결과</h3>
+            </div>
+            <div class="page-contents-wrap">
+              <div class="section-title-wrap">
+                <h4 class="s-tit">
+                  2026년도 경기교원(교사) 핵심역량진단 설문 2분기(20260420)
+                </h4>
+              </div>
+              <div class="skill-report">
+                <div class="report-chart">
+                  <div class="section-title-wrap">
+                    <h5 class="s-tit">4대 핵심역량</h5>
+                  </div>
+                  <div class="krds-chart">
+                    <div
+                      class="chart type01"
+                      role="img"
+                      aria-label="4대 핵심역량에 대한 차트 영역"
+                      id="test"
+                    ></div>
+                  </div>
+                </div>
+                <div class="report-result">
+                  <div class="section-title-wrap">
+                    <h5 class="s-tit">역량 진단 결과</h5>
+                  </div>
+                  <dl>
+                    <dt>강점역량</dt>
+                    <dd>
+                      <div class="krds-tag-wrap medium">
+                        <span class="krds-btn-tag">교육과정 설계</span>
+                        <span class="krds-btn-tag">생활교육</span>
+                        <span class="krds-btn-tag">변화관리(디지털)</span>
+                      </div>
+                    </dd>
+                    <dt>약점역량</dt>
+                    <dd>
+                      <div class="krds-tag-wrap medium">
+                        <span class="krds-btn-tag">수업 및 평가</span>
+                        <span class="krds-btn-tag">소통 및 협력</span>
+                      </div>
+                    </dd>
+                  </dl>
+
+                  <div class="krds-table-wrap center full">
+                    <table class="tbl">
+                      <caption>
+                        역량 진단 결과에 대한 표로 역량명, 내 점수, 참여자 평균,
+                        연구평가 기준으로 구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 36.22%" />
+                        <col style="width: 17.86%" />
+                        <col style="width: 22.96%" />
+                        <col style="width: 22.96%" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">역량명</th>
+                          <th scope="col" class="my">내 점수</th>
+                          <th scope="col">참여자 평균</th>
+                          <th scope="col" class="average">연구평가 기준</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">교수 역량</th>
+                          <td class="my">68.1</td>
+                          <td>65.4</td>
+                          <td class="average">72.1</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">생활교육 역량</th>
+                          <td class="my">73.8</td>
+                          <td>68.6</td>
+                          <td class="average">70.4</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">공동체 역량</th>
+                          <td class="my">66.5</td>
+                          <td>69.7</td>
+                          <td class="average">71.6</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">자기개발 역량</th>
+                          <td class="my">71.9</td>
+                          <td>72.3</td>
+                          <td class="average">70.8</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="gray-box">
+                    <strong class="tit">진단 결과</strong>
+                    <p class="cont">
+                      선생님께서는 [생활교육 역량], [자기개발 역량]에서 강점을
+                      보이고 계십니다. [교수 역량], [공동체 역량]에 대한 학습을
+                      통해 전반적인 교원 역량을 한 단계 높이실 수 있습니다.
+                    </p>
+                  </div>
+                </div>
+                <div class="report-graph">
+                  <div class="section-title-wrap">
+                    <h5 class="s-tit">나의 핵심역량 추이 비교</h5>
+                    <div class="form-group">
+                      <div class="form-conts">
+                        <div class="krds-check-area">
+                          <div class="krds-form-check">
+                            <input
+                              type="radio"
+                              name="rdo_1"
+                              id="rdo_1"
+                              checked
+                            />
+                            <label for="rdo_1">다른 차수 비교</label>
+                          </div>
+                          <div class="krds-form-check">
+                            <input type="radio" name="rdo_1" id="rdo_2" />
+                            <label for="rdo_2">유사그룹 비교</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="compare-box">
+                    <div class="form-group compare">
+                      <div class="form-tit">대상 1</div>
+                      <div class="form-conts">
+                        <p>
+                          2026년도 경기교원(교사) 핵심역량진단 설문
+                          2분기(20260420)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="form-tit">
+                        <label for="select_compare02">대상 2</label>
+                      </div>
+                      <div class="form-conts">
+                        <select
+                          id="select_compare02"
+                          class="krds-form-select medium completed"
+                        >
+                          <option value="">비교 대상을 선택 하세요.</option>
+                          <option value="" selected>
+                            2026년도 경기교원(교사) 핵심역량진단 설문
+                            2분기(20260420)
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <button type="button" class="krds-btn medium primary">
+                      비교
+                    </button>
+                  </div>
+
+                  <div class="krds-table-info between">
+                    <span class="unit">(단위: %)</span>
+                    <ul class="legend-list">
+                      <li>비교 대상 1 <span class="sr-only">범례</span></li>
+                      <li>비교 대상 2 <span class="sr-only">범례</span></li>
+                    </ul>
+                  </div>
+                  <div class="krds-table-wrap row">
+                    <table class="tbl">
+                      <caption>
+                        나의 핵심역량 추이 비교에 대한 표로 교수 역량, 생활교육
+                        역량, 공동체 역량, 자기개발 역량으로 구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 15rem" />
+                        <col style="width: 22rem" />
+                        <col style="width: calc(100% - 38rem)" />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th class="ac" scope="row" rowspan="2">교수 역량</th>
+                          <td>
+                            <span>1.</span>
+                            <span>교육과정 설계</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span>2.</span>
+                            <span>수업 및 평가</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="ac" scope="row" rowspan="2">
+                            생활교육 역량
+                          </th>
+                          <td>
+                            <span>3.</span>
+                            <span>생활교육</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span>4.</span>
+                            <span>진로교육</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="ac" scope="row" rowspan="3">
+                            공동체 역량
+                          </th>
+                          <td>
+                            <span>5.</span>
+                            <span>학급/학교 경영</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="100"
+                                  style="width: 100%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {100}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span>6.</span>
+                            <span>소통 및 협력</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span>7.</span>
+                            <span>교육생태계 활용</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th class="ac" scope="row" rowspan="3">
+                            자기개발 역량
+                          </th>
+                          <td>
+                            <span>8.</span>
+                            <span>변화대응(디지털)</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span>9.</span>
+                            <span>전문성개발</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <span>10.</span>
+                            <span>자기관리</span>
+                          </td>
+                          <td>
+                            <ul class="gragh-list">
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="10"
+                                  style="width: 10%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 1의 점수는 {10}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                              <li>
+                                <span
+                                  class="bar"
+                                  data-point="90"
+                                  style="width: 90%"
+                                >
+                                  <!-- 접근성 관련하여 점수를 넣어주세요 -->
+                                  <span class="sr-only">
+                                    비교대상 2의 점수는 {90}점 입니다.
+                                  </span>
+                                </span>
+                              </li>
+                            </ul>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="krds-btns-wrap right">
+                <button type="button" class="krds-btn primary xlarge">
+                  보고서
+                </button>
+                <a href="#" class="krds-btn tertiary xlarge">목록</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+    <script>
+      function remToPx(rem) {
+        return (
+          rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+        );
+      }
+
+      let chart;
+      function addLineBreak(data) {
+        return data.map((v) => v.trim().split(/\s+/).join("\n"));
+      }
+      const labels = [
+        "교수 역량",
+        "자기개발 역량",
+        "공동체 역량",
+        "생활교육 역량",
+      ];
+      const processed = addLineBreak(labels);
+      function getOptions() {
+        return {
+          chart: {
+            borderWidth: 0,
+            backgroundColor: "transparent",
+            marginTop: remToPx(3),
+            marginRight: remToPx(3),
+            marginBottom: remToPx(3),
+            marginLeft: remToPx(3),
+          },
+
+          legend: {
+            font: {
+              family: "inherit",
+              size: remToPx(1.5),
+              color: "#1E2124",
+              weight: "normal",
+            },
+            y: remToPx(4),
+          },
+
+          polarGrid: {
+            type: "radial",
+            labels: processed,
+            lineColor: "#2563eb",
+            lineWidth: 0.8,
+            sectorLineColor: "#2563eb",
+            sectorLineWidth: 0.8,
+            outlineColor: "#2563eb",
+            backgroundColor: "transparent",
+            font: {
+              family: "inherit",
+              size: remToPx(1.5),
+              color: "#1E2124",
+              weight: "normal",
+            },
+            altType: "none",
+            showTickLabel: false,
+            scale: "linear",
+            max: 100,
+            min: 0,
+            tickInterval: 100 / 3,
+            clockwise: false,
+            //radius: remToPx(9.4),
+          },
+
+          common: {
+            tooltip: {
+              overflow: { visible: true },
+              format: "{value}",
+              font: {
+                family: "inherit",
+                size: remToPx(1),
+                color: "#1E2124",
+                weight: "normal",
+              },
+            },
+          },
+        };
+      }
+
+      const series = [
+        {
+          name: "나의 진단 결과",
+          type: "polar",
+          polarType: "line",
+          color: "#2563eb",
+          lineWidth: 0.8,
+          area: true,
+          symbol: { size: 5, type: "circle", color: "#2563eb" },
+          data: [68.1, 71.9, 66.5, 73.8],
+        },
+        {
+          name: "연구평가 기준",
+          type: "polar",
+          polarType: "line",
+          color: "#ffb114",
+          lineWidth: 0.8,
+          area: true,
+          symbol: { size: 5, type: "circle", color: "#ffb114" },
+          data: [72.1, 40.8, 71.6, 70.4],
+        },
+      ];
+
+      function render() {
+        const container = document.getElementById("test");
+
+        container.innerHTML = "";
+
+        chart = new crownix.Chart("test");
+        chart.build(series, getOptions());
+      }
+
+      window.addEventListener("load", render);
+
+      const ro = new ResizeObserver(render);
+      ro.observe(document.getElementById("test"));
+
+      window.addEventListener("resize", render);
+    </script>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "1", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>교원정보</h2>
+          <div class="sub-title">
+            <h3>교원 기본 정보</h3>
+            <p class="msg">* 표시는 필수 입력 항목입니다.</p>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">이름</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp01"
+                        class="inp-text"
+                        placeholder="회원 이름을 입력하세요"
+                      />
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="select01">교원구분</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01">
+                        <option>선택</option>
+                        <option>교사</option>
+                        <option>수석교사</option>
+                        <option>교감</option>
+                        <option>교장</option>
+                        <option>교육전문</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">아이디</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp02"
+                        class="inp-text"
+                        placeholder="아이디를 입력하세요"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select02">학교급</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select02">
+                        <option>선택</option>
+                        <option>초등학교</option>
+                        <option>중학교</option>
+                        <option>고등학교</option>
+                        <option>특수학교</option>
+                      </select>
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="inp03">소속</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp03"
+                        class="inp-text"
+                        placeholder="소속 학교(기관)을 입력하세요"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp04">담당교과</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp04"
+                        class="inp-text"
+                        placeholder="담당교과를 입력하세요"
+                      />
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="inp05">담당업무</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="text" id="inp05" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp06">연락처</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td colspan="3">
+                    <div class="frm-area phone">
+                      <div class="lb-item">
+                        <input type="text" id="inp06" class="inp-text" />
+                      </div>
+                      <div class="lb-item">
+                        <input
+                          type="text"
+                          class="inp-text"
+                          aria-label="연락처 중간자리"
+                        />
+                      </div>
+                      <div class="lb-item">
+                        <input
+                          type="text"
+                          class="inp-text"
+                          aria-label="연락처 끝자리"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp07">E-mail</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td colspan="3">
+                    <div class="frm-area mail-area">
+                      <input type="text" id="inp07" class="inp-text" />
+                      <span>@</span>
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="도메인 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sub-title">
+            <h3>회원 부가 정보</h3>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">관심역량</th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="flag0101" checked />
+                        <label for="flag0101" class="lb-checkbox">
+                          역량항목 1
+                        </label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="flag0102" />
+                        <label for="flag0102" class="lb-checkbox"
+                          >역량항목 2</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="flag0103" />
+                        <label for="flag0103" class="lb-checkbox"
+                          >역량항목 3</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="flag0104" />
+                        <label for="flag0104" class="lb-checkbox"
+                          >역량항목 4</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="flag0105" />
+                        <label for="flag0105" class="lb-checkbox"
+                          >역량항목 5</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="inp08">닉네임</label></th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <input type="text" id="inp08" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inpUpload">프로필 사진</label>
+                  </th>
+                  <td colspan="3">
+                    <div class="file-wrap">
+                      <div class="input-item">
+                        <input
+                          type="text"
+                          name="inpUpload"
+                          class="inp-text"
+                          value="fileName.jpg"
+                          placeholder=""
+                          readonly
+                          aria-label="첨부 파일"
+                        />
+                        <span class="btn base square">
+                          <input
+                            type="file"
+                            title="첨부파일 선택"
+                            id="inpUpload"
+                          />
+                          <span>찾아보기</span>
+                        </span>
+                      </div>
+                      <div class="file-list mgt8">
+                        <div class="file">
+                          <p class="file-name">
+                            popup_system_check_0108_mo.png
+                          </p>
+                          <button type="button" class="btn-del">
+                            <span>삭제</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp09">SNS 정보 1</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="text" id="inp09" class="inp-text" />
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="inp10">SNS 정보 2</label>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input type="text" id="inp10" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">프로필 공개 여부</th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <div class="frm-area">
+                        <span class="lb-item">
+                          <input type="radio" id="rp01" name="rpBtn" />
+                          <label for="rp01" class="lb-radio">공개</label>
+                        </span>
+                        <span class="lb-item">
+                          <input type="radio" id="rp02" name="rpBtn" checked />
+                          <label for="rp02" class="lb-radio">비공개</label>
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp11">ETC1</label>
+                  </th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <input type="text" id="inp11" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp12">ETC2</label>
+                  </th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <input type="text" id="inp12" class="inp-text" />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>목록</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

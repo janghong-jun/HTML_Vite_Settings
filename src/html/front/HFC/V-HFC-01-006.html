@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Q&amp;A 상세 | 하이코칭 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 5 + 1, depth2: 3 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 하이코칭 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">하이코칭</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">하이코칭안내</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">공지사항</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">FAQ</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">Q&amp;A</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //하이코칭 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">하이코칭</a></li>
+                <li><a href="#" class="txt">Q&amp;A</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap">
+              <h3 class="h-tit">Q&amp;A</h3>
+            </div>
+            <div class="board-wrap">
+              <div class="board-detail">
+                <div class="board-detail-top">
+                  <div class="board-title">
+                    <div class="board-title-wrap">
+                      <span class="krds-badge large outline-primary bold">
+                        Q
+                      </span>
+                      <span class="krds-badge bg-light-primary">역량진단</span>
+                      <h4 class="title">역량 진단 재응답 관련 문의</h4>
+                    </div>
+
+                    <div class="board-info">
+                      <span>김코칭</span>
+                      <span class="no-bar">2025-12-16</span>
+                      <span class="krds-badge bg-light-success">답변완료</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="board-detail-body">
+                  <div class="board-detail-cont">
+                    <p>
+                      역량진단을 완료했는데 결과 화면에서 아무것도 안
+                      나옵니다.<br />
+                      확인 부탁드립니다.
+                    </p>
+                  </div>
+                  <ul class="board-file-list">
+                    <li>
+                      <button type="button">
+                        <span class="file-name">
+                          <i class="svg-icon ico-img" aria-hidden="true"></i>
+                          <span>오류화면.png</span>
+                        </span>
+                        <span class="download-text">
+                          <span>다운로드</span>
+                          <i class="svg-icon ico-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 답변 -->
+              <div class="board-answer">
+                <div class="board-answer-top">
+                  <div class="board-title-wrap">
+                    <span class="krds-badge large bg-primary bold">A</span>
+                    <h4 class="title">답변</h4>
+                  </div>
+                  <div class="board-info">
+                    <span>관리자</span>
+                    <span>2025-12-17</span>
+                  </div>
+                </div>
+                <div class="board-answer-body">
+                  <div class="board-answer-cont">
+                    <p>
+                      안녕하세요. 하이코칭입니다. <br />
+                      역량진단 결과는 진단 완료 후 약 1~2분 정도 소요될 수
+                      있습니다. <br />
+                      새로고침 후에도 동일한 증상이 발생한다면 다시 문의
+                      부탁드립니다. <br /><br />
+                      감사합니다.
+                    </p>
+                  </div>
+                  <ul class="board-file-list">
+                    <li>
+                      <button type="button">
+                        <span class="file-name">
+                          <i class="svg-icon ico-img" aria-hidden="true"></i>
+                          <span>오류화면.png</span>
+                        </span>
+                        <span class="download-text">
+                          <span>다운로드</span>
+                          <i class="svg-icon ico-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="krds-btns-wrap between">
+                <div>
+                  <button type="button" class="krds-btn xlarge tertiary">
+                    삭제
+                  </button>
+                </div>
+                <div>
+                  <a href="#" class="krds-btn xlarge tertiary">목록</a>
+                  <a href="#" class="krds-btn xlarge primary">수정</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

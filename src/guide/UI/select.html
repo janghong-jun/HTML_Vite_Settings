@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <link
+      rel="stylesheet"
+      href="../../resources/css/plugin/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../resources/css/output.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../resources/css/guide.css" type="text/css" />
+    <!-- 공통 script -->
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/crownix-chart.min.js"></script>
+    <script src="../../../resources/js/component/ui-script.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../components/_skip.html" -->
+
+      <!--#include "../../components/_masthead.html" -->
+      <!--#include "../../components/_header.html" -->
+
+      <!-- Container -->
+      <div id="container">
+        <div class="inner">
+          <div class="guide">
+            <!-- select -->
+            <div class="fieldset">
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_name">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_name"
+                    class="krds-form-select"
+                    title="선택"
+                  >
+                    <option value="">항목1</option>
+                    <option value="">항목2</option>
+                    <option value="">항목3</option>
+                    <option value="">항목4</option>
+                  </select>
+                </div>
+                <p class="form-hint">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_name4">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_name4"
+                    class="krds-form-select completed"
+                    title="선택"
+                  >
+                    <option value="" selected>선택완료 상태</option>
+                    <option value="">항목2</option>
+                    <option value="">항목3</option>
+                    <option value="">항목4</option>
+                  </select>
+                </div>
+                <p class="form-hint">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_error">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_error"
+                    class="krds-form-select is-error"
+                    title="선택"
+                  >
+                    <option value="">항목1</option>
+                    <option value="">항목2</option>
+                    <option value="">항목3</option>
+                    <option value="">항목4</option>
+                  </select>
+                </div>
+                <p class="form-hint-invalid">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_name3">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_name3"
+                    class="krds-form-select"
+                    title="선택"
+                    disabled
+                  >
+                    <option value="">disabled</option>
+                    <option value="">항목2</option>
+                    <option value="">항목3</option>
+                    <option value="">항목4</option>
+                  </select>
+                </div>
+                <p class="form-hint">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+            </div>
+            <!-- //select -->
+          </div>
+          <div class="guide">
+            <!-- select -->
+            <div class="fieldset">
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_size_small">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_size_small"
+                    class="krds-form-select large"
+                    title="선택"
+                  >
+                    <option value="" selected>large</option>
+                    <option value="">medium</option>
+                    <option value="">small</option>
+                  </select>
+                </div>
+                <p class="form-hint">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_size_medium">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_size_medium"
+                    class="krds-form-select medium"
+                    title="선택"
+                  >
+                    <option value="">large</option>
+                    <option value="" selected>medium</option>
+                    <option value="">small</option>
+                  </select>
+                </div>
+                <p class="form-hint">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+              <!-- 폼그룹 -->
+              <div class="form-group">
+                <div class="form-tit">
+                  <label for="select_size_large">레이블</label>
+                </div>
+                <div class="form-conts">
+                  <select
+                    id="select_size_large"
+                    class="krds-form-select small completed"
+                    title="선택"
+                  >
+                    <option value="">large</option>
+                    <option value="">medium</option>
+                    <option value="" selected>small</option>
+                  </select>
+                </div>
+                <p class="form-hint">도움말</p>
+              </div>
+              <!-- //폼그룹 -->
+            </div>
+            <!-- //select -->
+          </div>
+          <div class="guide">
+            <!-- select -->
+            <select
+              id="select_sorting"
+              class="krds-form-select-sort"
+              title="선택"
+            >
+              <option value="">항목1</option>
+              <option value="">항목2</option>
+              <option value="">항목3</option>
+              <option value="">항목4</option>
+            </select>
+            <select
+              id="select_sorting_large"
+              class="krds-form-select-sort large"
+              title="선택"
+            >
+              <option value="" selected>항목1</option>
+              <option value="">항목2</option>
+              <option value="">항목3</option>
+            </select>
+            <select
+              id="select_sorting_medium"
+              class="krds-form-select-sort medium"
+              title="선택"
+            >
+              <option value="">항목1</option>
+              <option value="" selected>항목2</option>
+              <option value="">항목3</option>
+            </select>
+            <select
+              id="select_sorting_small"
+              class="krds-form-select-sort small"
+              title="선택"
+            >
+              <option value="">항목1</option>
+              <option value="">항목2</option>
+              <option value="" selected>항목3</option>
+            </select>
+            <!-- //select -->
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <!--#include "../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../components/_chatbot.html" -->
+</html>

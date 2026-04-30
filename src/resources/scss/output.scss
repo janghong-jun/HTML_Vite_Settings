@@ -1,0 +1,10 @@
+//component with common setting file
+
+//common
+@use './common/common';
+
+//component
+@use './component/component';
+
+//custom
+@use './custom/custom';

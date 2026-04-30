@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>투표 목록 | 연구지원 | 학습공동체 | Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        GNB.setSelected({ depth1: 3 + 1, depth2: 2 + 1 });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner in-between">
+          <!-- 학습공동체 사이드 메뉴 -->
+          <nav class="krds-side-navigation" id="lnb">
+            <h2 class="lnb-tit">학습공동체</h2>
+            <!-- lnb-list -->
+            <ul class="lnb-list">
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">협업공간</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">실행나눔</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn selected">연구지원</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">학습공동체채널정보</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">커뮤니티게시판</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수업공동체</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">경기도교육연구회</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">수석교사</a>
+              </li>
+              <li class="lnb-item">
+                <a href="#" class="lnb-btn">교사연구년제</a>
+              </li>
+            </ul>
+            <!-- //lnb-list -->
+          </nav>
+          <!-- //학습공동체 사이드 메뉴 -->
+
+          <div class="contents" id="contents">
+            <!-- breadcrumb -->
+            <nav
+              class="krds-breadcrumb-wrap"
+              aria-label="현재 경로"
+              id="breadcrumb"
+            >
+              <ol class="breadcrumb">
+                <li class="home"><a href="#" class="txt">홈</a></li>
+                <li><a href="#" class="txt">학습공동체</a></li>
+                <li><a href="#" class="txt">연구지원</a></li>
+              </ol>
+            </nav>
+            <!-- /breadcrumb -->
+            <!-- Page Title -->
+            <div class="page-title-wrap justify-between">
+              <h3 class="h-tit">
+                AI 교과서 활용 방안 협업
+                <div class="sub-txt">
+                  [교사] 공동체 역량 <br />AI 교과서의 새로운 기능 &amp; 공유를
+                  위한 공간입니다.
+                </div>
+              </h3>
+              <div class="page-utill">
+                <div class="krds-drop-wrap">
+                  <button
+                    type="button"
+                    class="krds-btn tertiary medium drop-btn member"
+                  >
+                    <i class="svg-icon ico-my" aria-hidden="true"></i>
+                    멤버 33
+                    <i class="svg-icon ico-angle" aria-hidden="true"></i>
+                  </button>
+                  <div class="drop-menu">
+                    <div class="drop-in">
+                      <ul class="member-list">
+                        <li><span class="name">김교육</span>개설자</li>
+                        <li><span class="name">장경기</span>운영자</li>
+                        <li><span class="name">박역량</span>운영자</li>
+                        <li><span class="name">최협업</span>협업참여자</li>
+                        <li><span class="name">주코치</span>일반사용자</li>
+                        <li><span class="name">이코칭</span>협업참영자</li>
+                        <li><span class="name">정발전</span>일반사용자</li>
+                        <li><span class="name">김나리</span>운영자</li>
+                        <li><span class="name">국영수</span>협업참여자</li>
+                        <li><span class="name">한스승</span>일반사용자</li>
+                        <li><span class="name">개나리</span>운영자</li>
+                        <li><span class="name">임과학</span>일반사용자</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="krds-btn medium secondary">
+                  멤버관리
+                </button>
+                <button
+                  type="button"
+                  class="krds-btn medium secondary open-modal"
+                  data-target="modal_sample_01"
+                >
+                  참여신청
+                </button>
+              </div>
+            </div>
+
+            <div class="krds-tab-area">
+              <!-- tab list -->
+              <div class="tab line full" data-col>
+                <ul>
+                  <li>
+                    <a href="#" class="btn-tab">문서작성 공동편집</a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn-tab">의견공유</a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn-tab">자료공유</a>
+                  </li>
+                  <li class="active">
+                    <a href="#" class="btn-tab">투표</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <section class="tab-conts active">
+                  <h4 class="sr-only">투표</h4>
+                  <div class="vote-card-title">
+                    <div class="krds-badge-wrap">
+                      <span class="krds-badge bg-light-success">
+                        <span>전체</span>
+                        <strong>2</strong>
+                      </span>
+                      <span class="krds-badge bg-light-primary">
+                        <span>진행중</span>
+                        <strong>2</strong>
+                      </span>
+                      <span class="krds-badge bg-light-gray">
+                        <span>종료</span>
+                        <strong>2</strong>
+                      </span>
+                    </div>
+                    <div class="krds-btns-wrap">
+                      <button type="button" class="krds-btn etc icon-front">
+                        <i class="svg-icon ico-plus2" aria-hidden="true"></i>
+                        투표등록
+                      </button>
+                    </div>
+                  </div>
+                  <ul class="vote-card-list">
+                    <li>
+                      <div class="left">
+                        <span class="krds-badge bg-light-primary">
+                          진행중
+                        </span>
+                        <div class="vote-card-info">
+                          <h5 class="title">투표의 제목입니다</h5>
+                          <div class="info-detail">
+                            <span>김교육</span>
+                            <span>
+                              20252.12.15 HH:MM
+                              <strong>종료 예정</strong>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="right">
+                        <span class="count">
+                          <i
+                            class="svg-icon ico-login-type06"
+                            aria-hidden="true"
+                          ></i>
+                          <span>
+                            <strong class="num">10</strong>
+                            <span>명 참여중</span>
+                          </span>
+                        </span>
+                        <div class="krds-btns-wrap">
+                          <button
+                            type="button"
+                            class="krds-btn xsmall tertiary"
+                          >
+                            참여하기
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn xsmall secondary"
+                          >
+                            결과보기
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="left">
+                        <span class="krds-badge bg-light-primary">
+                          진행중
+                        </span>
+                        <div class="vote-card-info">
+                          <h5 class="title">투표의 제목입니다</h5>
+                          <div class="info-detail">
+                            <span>김교육</span>
+                            <span>
+                              20252.12.15 HH:MM
+                              <strong>종료 예정</strong>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="right">
+                        <span class="count">
+                          <i
+                            class="svg-icon ico-login-type06"
+                            aria-hidden="true"
+                          ></i>
+                          <span>
+                            <strong class="num">10</strong>
+                            <span>명 참여중</span>
+                          </span>
+                        </span>
+                        <div class="krds-btns-wrap">
+                          <button
+                            type="button"
+                            class="krds-btn xsmall tertiary"
+                            disabled
+                          >
+                            참여완료
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn xsmall secondary"
+                          >
+                            결과보기
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="end">
+                      <div class="left">
+                        <span class="krds-badge bg-light-gray">종료</span>
+                        <div class="vote-card-info">
+                          <h5 class="title">투표의 제목입니다</h5>
+                          <div class="info-detail">
+                            <span>김교육</span>
+                            <span>
+                              20252.12.15 HH:MM
+                              <strong>종료</strong>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="right">
+                        <span class="count">
+                          <i
+                            class="svg-icon ico-login-type06"
+                            aria-hidden="true"
+                          ></i>
+                          <span>
+                            <strong class="num">10</strong>
+                            <span>명 참여중</span>
+                          </span>
+                        </span>
+                        <div class="krds-btns-wrap">
+                          <button
+                            type="button"
+                            class="krds-btn xsmall tertiary"
+                            disabled
+                          >
+                            참여하기
+                          </button>
+                          <button
+                            type="button"
+                            class="krds-btn xsmall secondary"
+                          >
+                            결과보기
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="krds-pagination">
+                    <a
+                      class="page-navi prev disabled"
+                      aria-disabled="true"
+                      tabindex="-1"
+                      >이전</a
+                    >
+                    <div class="page-links">
+                      <a class="page-link active" href="#"
+                        ><span class="sr-only">현재페이지 </span>1</a
+                      >
+                      <a class="page-link" href="#">2</a>
+                      <a class="page-link" href="#">3</a>
+                      <a class="page-link" href="#">4</a>
+                      <a class="page-link" href="#">5</a>
+                      <a class="page-link" href="#">6</a>
+                      <a class="page-link" href="#">7</a>
+                      <a class="page-link" href="#">8</a>
+                      <span class="page-link link-dot"></span>
+                      <a class="page-link" href="#">99</a>
+                    </div>
+                    <a class="page-navi next" href="#">다음</a>
+                  </div>
+                </section>
+              </div>
+              <!-- //tab contents -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="modal_sample_01"
+    class="krds-modal fade system-modal"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_01"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area" id="tit_modal_sample_01">
+            $연구지원명$에 참여신청 하시겠습니까?"
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            취소
+          </button>
+          <button
+            type="button"
+            class="krds-btn medium primary close-modal open-modal"
+            data-target="modal_sample_02"
+          >
+            확인
+          </button>
+        </div>
+        <!-- //modal btn -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <section
+    id="modal_sample_02"
+    class="krds-modal fade system-modal"
+    role="dialog"
+    aria-labelledby="tit_modal_sample_02"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area" id="tit_modal_sample_02">
+            참여신청이 완료 되었습니다. 운영자 승인 후 연구지원에 참여하실 수
+            있습니다.
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            취소
+          </button>
+          <button type="button" class="krds-btn medium primary close-modal">
+            확인
+          </button>
+        </div>
+        <!-- //modal btn -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

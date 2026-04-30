@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HLC-01-013"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HLC-01-013"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HLC-01-013"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HLC-01-013" class="modal-title">일정 등록</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <div class="krds-table-wrap row mob-scroll mob-col">
+              <table class="tbl">
+                <caption>
+                  일정 등록에 대한 표로 일정 제목, 일정 내용, 시간설정으로
+                  구성되어있다.
+                </caption>
+                <colgroup>
+                  <col style="width: 11.2rem" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="input_name" class="krds-label">
+                        일정 제목
+                      </label>
+                    </th>
+                    <td>
+                      <input
+                        type="text"
+                        class="krds-input"
+                        id="input_name"
+                        placeholder="일정 제목을 입력해주세요(최대 50자)"
+                        maxlength="50"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <label for="input_cont" class="krds-label">
+                        일정 내용
+                      </label>
+                    </th>
+                    <td>
+                      <textarea
+                        class="krds-input"
+                        id="input_cont"
+                        placeholder="일정 내용을 입력해주세요(최대 200자)"
+                        maxlength="200"
+                      ></textarea>
+                      <p class="textarea-count">
+                        <span class="count-now">0</span
+                        ><span class="count-total">/200</span>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">시간설정</th>
+                    <td>
+                      <div class="date-setting">
+                        <div class="item">
+                          <div
+                            class="form-conts calendar-conts"
+                            data-calendar-type="single"
+                          >
+                            <div class="calendar-input">
+                              <input
+                                type="text"
+                                class="krds-input datepicker small"
+                                placeholder="시작일 선택"
+                                readonly
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn small icon form-btn-datepicker"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </div>
+                            <div
+                              class="krds-calendar-area"
+                              data-keyboard-bound="false"
+                            ></div>
+                          </div>
+                          <div class="time">
+                            <select
+                              class="krds-form-select small completed"
+                              aria-label="시간 선택"
+                            >
+                              <option>00</option>
+                            </select>
+                            <span>시</span>
+                            <select
+                              class="krds-form-select small completed"
+                              aria-label="분 선택"
+                            >
+                              <option>00</option>
+                            </select>
+                            <span>분</span>
+                            <span>~</span>
+                          </div>
+                        </div>
+                        <div class="item">
+                          <div
+                            class="form-conts calendar-conts"
+                            data-calendar-type="single"
+                          >
+                            <div class="calendar-input">
+                              <input
+                                type="text"
+                                class="krds-input datepicker small"
+                                placeholder="종료일 선택"
+                                readonly
+                              />
+                              <button
+                                type="button"
+                                class="krds-btn small icon form-btn-datepicker"
+                              >
+                                <span class="sr-only">달력 열기</span
+                                ><i
+                                  class="svg-icon ico-calendar"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </div>
+                            <div
+                              class="krds-calendar-area"
+                              data-keyboard-bound="false"
+                            ></div>
+                          </div>
+                          <div class="time">
+                            <select
+                              class="krds-form-select small completed"
+                              aria-label="시간 선택"
+                            >
+                              <option>00</option>
+                            </select>
+                            <span>시</span>
+                            <select
+                              class="krds-form-select small completed"
+                              aria-label="분 선택"
+                            >
+                              <option>00</option>
+                            </select>
+                            <span>분</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- modal btn -->
+        <div class="modal-btn btn-wrap">
+          <button type="button" class="krds-btn medium tertiary close-modal">
+            취소
+          </button>
+          <button type="button" class="krds-btn medium primary">등록</button>
+        </div>
+        <!-- //modal btn -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HLC-01-013");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

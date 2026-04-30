@@ -1,0 +1,66 @@
+<section class="ui-modal type-small" id="X-HSM-04-010">
+  <div class="ui-modal-wrap">
+    <div class="ui-modal-header">
+      <h1 class="ui-modal-tit">게시판 추가</h1>
+      <button type="button" class="icon-close ui-modal-close" aria-label="close">
+        <span class="hide">모달 닫기</span>
+      </button>
+    </div>
+    <div class="ui-modal-body">
+      <div class="modal-conts">
+        <div class="tbl-base align-left">
+          <table>
+            <colgroup>
+              <col style="width: 20%" />
+              <col style="width: 80%" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row"><label for="inp03">게시판 제목</label></th>
+                <td>
+                  <div class="flex-wrap">
+                    <input type="text" class="inp-text" id="inp03" placeholder="게시판 명칭을 입력하세요(최대 10자)" style="flex: 1" />
+                    <div class="tbl-btns type-small">
+                      <button type="button" class="btn base square apply-btn">
+                        <span>중복확인</span>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">상태</th>
+                <td>
+                  <div class="frm-area">
+                    <span class="lb-item">
+                      <input type="radio" name="board_add" id="board_add_01" checked />
+                      <label for="board_add_01" class="lb-radio">사용</label>
+                    </span>
+                    <span class="lb-item">
+                      <input type="radio" name="board_add" id="board_add_02" />
+                      <label for="board_add_02" class="lb-radio">숨김</label>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">노출순서</th>
+                <td><input type="text" class="inp-text" placeholder="1~99 입력" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="ui-modal-footer">
+      <div class="btn-group">
+        <button type="button" class="btn base secondary ui-modal-close">
+          <span>취소</span>
+        </button>
+        <button type="button" class="btn base primary">
+          <span>등록</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

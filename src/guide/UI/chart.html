@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <link
+      rel="stylesheet"
+      href="../../resources/css/plugin/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../resources/css/output.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../resources/css/guide.css" type="text/css" />
+    <!-- 공통 script -->
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/swiper-bundle.min.js"></script>
+    <script src="../../../resources/js/plugin/crownix-chart.min.js"></script>
+    <script src="../../../resources/js/component/ui-script.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../components/_skip.html" -->
+
+      <!--#include "../../components/_masthead.html" -->
+      <!--#include "../../components/_header.html" -->
+
+      <!-- Container -->
+      <div id="container">
+        <div class="inner">
+          <!-- chart -->
+          <div class="krds-chart">
+            <div
+              class="chart type01"
+              role="img"
+              aria-label="차트 설명"
+              id="test"
+            ></div>
+          </div>
+          <script>
+            function remToPx(rem) {
+              return (
+                rem *
+                parseFloat(getComputedStyle(document.documentElement).fontSize)
+              );
+            }
+
+            let chart;
+            function addLineBreak(data) {
+              return data.map((v) => v.trim().split(/\s+/).join("\n"));
+            }
+            const labels = [
+              "교수 역량",
+              "자기개발 역량",
+              "공동체 역량",
+              "생활교육 역량",
+            ];
+            const processed = addLineBreak(labels);
+            function getOptions() {
+              return {
+                chart: {
+                  borderWidth: 0,
+                  backgroundColor: "transparent",
+                  marginTop: remToPx(3),
+                  marginRight: remToPx(3),
+                  marginBottom: remToPx(3),
+                  marginLeft: remToPx(3),
+                },
+
+                legend: {
+                  font: {
+                    family: "inherit",
+                    size: remToPx(1.5),
+                    color: "#1E2124",
+                    weight: "normal",
+                  },
+                  y: remToPx(4),
+                },
+
+                polarGrid: {
+                  type: "radial",
+                  labels: processed,
+                  lineColor: "#2563eb",
+                  lineWidth: 0.8,
+                  sectorLineColor: "#2563eb",
+                  sectorLineWidth: 0.8,
+                  outlineColor: "#2563eb",
+                  backgroundColor: "transparent",
+                  font: {
+                    family: "inherit",
+                    size: remToPx(1.5),
+                    color: "#1E2124",
+                    weight: "normal",
+                  },
+                  altType: "none",
+                  showTickLabel: false,
+                  scale: "linear",
+                  max: 100,
+                  min: 0,
+                  tickInterval: 100 / 3,
+                  clockwise: false,
+                  //radius: remToPx(9.4),
+                },
+
+                common: {
+                  tooltip: {
+                    overflow: { visible: true },
+                    format: "{value}",
+                    font: {
+                      family: "inherit",
+                      size: remToPx(1),
+                      color: "#1E2124",
+                      weight: "normal",
+                    },
+                  },
+                },
+              };
+            }
+
+            const series = [
+              {
+                name: "나의 진단 결과",
+                type: "polar",
+                polarType: "line",
+                color: "#2563eb",
+                lineWidth: 0.8,
+                area: true,
+                symbol: { size: 5, type: "circle", color: "#2563eb" },
+                data: [68.1, 71.9, 66.5, 73.8],
+              },
+              {
+                name: "연구평가 기준",
+                type: "polar",
+                polarType: "line",
+                color: "#ffb114",
+                lineWidth: 0.8,
+                area: true,
+                symbol: { size: 5, type: "circle", color: "#ffb114" },
+                data: [72.1, 40.8, 71.6, 70.4],
+              },
+            ];
+
+            function render() {
+              const container = document.getElementById("test");
+
+              container.innerHTML = "";
+
+              chart = new crownix.Chart("test");
+              chart.build(series, getOptions());
+            }
+
+            window.addEventListener("load", render);
+
+            const ro = new ResizeObserver(render);
+            ro.observe(document.getElementById("test"));
+
+            window.addEventListener("resize", render);
+          </script>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <!--#include "../../components/_footer.html" -->
+    </div>
+  </body>
+  <!--#include "../../components/_chatbot.html" -->
+</html>

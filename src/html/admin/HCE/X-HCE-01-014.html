@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "9", sid: "5" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>회원레벨 관리</h2>
+          <div class="sub-title">
+            <h3>회원 레벨 구성</h3>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">레벨구성</th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdoBtn01_01" name="rdoBtn01" />
+                        <label for="rdoBtn01_01" class="lb-radio">3</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdoBtn01_02" name="rdoBtn01" />
+                        <label for="rdoBtn01_02" class="lb-radio">4</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdoBtn01_03" name="rdoBtn01" />
+                        <label for="rdoBtn01_03" class="lb-radio">5</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">레별 구간 설정</th>
+                  <td>
+                    <div class="frm-wrap level">
+                      <div class="frm-area flex left">
+                        <input type="text" class="inp-text right" />
+                        <input type="text" class="inp-text right" />
+                        <span class="unit">이하</span>
+                      </div>
+                      <div class="frm-area flex left">
+                        <input type="text" class="inp-text right" />
+                        <input type="text" class="inp-text right" />
+                        <span class="unit">~</span>
+                        <input type="text" class="inp-text right" />
+                      </div>
+                      <div class="frm-area flex left">
+                        <input type="text" class="inp-text right" />
+                        <input type="text" class="inp-text right" />
+                        <span class="unit">이상</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div>
+              <button type="button" class="btn base primary">
+                <span>저장</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

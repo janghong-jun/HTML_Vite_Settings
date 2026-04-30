@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <!--#include "../../../components/_css.html" -->
+    <!-- 공통 script -->
+    <!--#include "../../../components/_script.html" -->
+  </head>
+  <body>
+    <div id="wrap">
+      <!--#include "../../../components/_skip.html" -->
+
+      <!--#include "../../../components/_masthead.html" -->
+      <!--#include "../../../components/_header.html" -->
+
+      <!-- Container -->
+      <main id="container">
+        <div class="inner">
+          <button
+            type="button"
+            class="krds-btn open-modal"
+            data-target="V-HLC-01-016"
+          >
+            모달 열기
+          </button>
+        </div>
+      </main>
+
+      <!--#include "../../../components/_footer.html" -->
+    </div>
+  </body>
+  <section
+    id="V-HLC-01-016"
+    class="krds-modal fade"
+    role="dialog"
+    aria-labelledby="tit_V-HLC-01-016"
+  >
+    <div class="modal-dialog modal-xlg">
+      <div class="modal-content">
+        <!-- modal title -->
+        <div class="modal-header">
+          <h2 id="tit_V-HLC-01-016" class="modal-title">멤버 관리</h2>
+        </div>
+        <!-- //modal title -->
+        <!-- modal contents -->
+        <div class="modal-conts">
+          <div class="conts-area">
+            <!-- tab -->
+            <div class="krds-tab-area layer">
+              <!-- tab list -->
+              <div class="tab line full" data-col>
+                <ul role="tablist">
+                  <li
+                    id="tab01"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="panel01"
+                    class="active"
+                  >
+                    <button type="button" class="btn-tab">
+                      멤버등록 <i class="sr-only created"> 선택됨</i>
+                    </button>
+                  </li>
+                  <li
+                    id="tab02"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tab-panel_02"
+                  >
+                    <button type="button" class="btn-tab">멤버초대</button>
+                  </li>
+                  <li
+                    id="tab03"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tab-panel_03"
+                  >
+                    <button type="button" class="btn-tab">
+                      멤버 역할 관리
+                    </button>
+                  </li>
+                  <li
+                    id="tab04"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="tab-panel_04"
+                  >
+                    <button type="button" class="btn-tab">
+                      멤버 권한 관리
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <!-- //tab list -->
+
+              <!-- tab contents -->
+              <div class="tab-conts-wrap">
+                <section
+                  id="panel01"
+                  aria-labelledby="tab01"
+                  class="tab-conts active"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">멤버등록</h3>
+
+                  <div class="g-search-area colum">
+                    <div class="search-top-box">
+                      <div class="form-group">
+                        <div class="sch-form-wrap">
+                          <div class="col date">
+                            <div class="col-title">기간</div>
+                            <div
+                              class="form-date calendar-conts"
+                              data-calendar-type="range"
+                            >
+                              <div class="calendar-input">
+                                <ul class="input-group range small">
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="시작일"
+                                      readonly
+                                      aria-label="시작일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                  <li class="mark small">~</li>
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="종료일"
+                                      readonly
+                                      aria-label="종료일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div
+                                class="krds-calendar-area"
+                                data-keyboard-bound="false"
+                              ></div>
+                            </div>
+                            <div class="krds-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                3개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                6개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1년
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="col-title">상태</div>
+                            <div class="krds-check-area">
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_01_01"
+                                  id="V-HLC-01-016_01_01_01"
+                                  checked
+                                />
+                                <label for="V-HLC-01-016_01_01_01">전체</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_01_01"
+                                  id="V-HLC-01-016_01_01_02"
+                                />
+                                <label for="V-HLC-01-016_01_01_02">이름</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_01_01"
+                                  id="V-HLC-01-016_01_01_03"
+                                />
+                                <label for="V-HLC-01-016_01_01_03"
+                                  >교직정보</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col input">
+                            <div class="sch-input">
+                              <input
+                                type="text"
+                                class="krds-input small"
+                                aria-label="검색어 입력"
+                              />
+                              <span
+                                class="krds-btn xsmall icon ico-search btn-exec"
+                                aria-hidden="true"
+                              >
+                                <i class="svg-icon ico-sch"></i>
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              class="krds-btn small neutral"
+                            >
+                              검색
+                            </button>
+                            <button type="button" class="krds-btn medium text">
+                              초기화
+                              <i
+                                class="svg-icon ico-reset"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="krds-table-wrap center">
+                    <table class="tbl">
+                      <caption>
+                        멤버등록 대한 표로 이름, 교원정보, 교직정보, 등록신청일,
+                        참여 승인 항목으로 구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 14rem" />
+                        <col style="width: 12rem" />
+                        <col />
+                        <col style="min-width: 23rem" />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">이름</th>
+                          <th scope="col">교원정보</th>
+                          <th scope="col">교직정보</th>
+                          <th scope="col">등록신청일</th>
+                          <th scope="col">참여승인</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>승인</td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>거절</td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">남수원초등학교</td>
+                          <td>YYYY-MM-DD HH:MM:SS</td>
+                          <td>
+                            <div class="krds-table-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                승인
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small tertiary"
+                              >
+                                거절
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="krds-pagination">
+                    <a
+                      class="page-navi prev disabled"
+                      aria-disabled="true"
+                      tabindex="-1"
+                    >
+                      이전
+                    </a>
+                    <div class="page-links">
+                      <a class="page-link active" href="#"
+                        ><span class="sr-only">현재페이지 </span>1</a
+                      >
+                      <a class="page-link" href="#">2</a>
+                      <a class="page-link" href="#">3</a>
+                      <a class="page-link" href="#">4</a>
+                      <a class="page-link" href="#">5</a>
+                      <a class="page-link" href="#">6</a>
+                      <a class="page-link" href="#">7</a>
+                      <a class="page-link" href="#">8</a>
+                      <span class="page-link link-dot"></span>
+                      <a class="page-link" href="#">99</a>
+                    </div>
+                    <a class="page-navi next" href="#">다음</a>
+                  </div>
+                </section>
+                <section
+                  id="tab-panel_02"
+                  aria-labelledby="tab02"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">멤버초대</h3>
+
+                  <div>
+                    <div class="top-btns">
+                      <button
+                        type="button"
+                        class="krds-btn medium text secondary"
+                      >
+                        <i class="svg-icon ico-addlist" aria-hidden="true"></i>
+                        초대내역 보기
+                        <i
+                          class="svg-icon ico-angle right"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
+                    </div>
+                    <div class="g-search-area colum">
+                      <div class="search-top-box">
+                        <div class="form-group">
+                          <div class="sch-form-wrap">
+                            <div class="col">
+                              <div class="col-title">상태</div>
+                              <div class="krds-check-area">
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_01"
+                                    id="V-HLC-01-016_02_01_01"
+                                    checked
+                                  />
+                                  <label for="V-HLC-01-016_02_01_01"
+                                    >전체</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_01"
+                                    id="V-HLC-01-016_02_01_02"
+                                  />
+                                  <label for="V-HLC-01-016_02_01_02"
+                                    >이름</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_01"
+                                    id="V-HLC-01-016_02_01_03"
+                                  />
+                                  <label for="V-HLC-01-016_02_01_03"
+                                    >교직정보</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col input">
+                              <div class="sch-input">
+                                <input
+                                  type="text"
+                                  class="krds-input small"
+                                  aria-label="검색어 입력"
+                                />
+                                <span
+                                  class="krds-btn xsmall icon ico-search btn-exec"
+                                  aria-hidden="true"
+                                >
+                                  <i class="svg-icon ico-sch"></i>
+                                </span>
+                              </div>
+                              <button
+                                type="button"
+                                class="krds-btn small neutral"
+                              >
+                                검색
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn medium text"
+                              >
+                                초기화
+                                <i
+                                  class="svg-icon ico-reset"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="krds-table-wrap center">
+                      <table class="tbl">
+                        <caption>
+                          멤버초대를 위한 표로 이름, 교직구분, 교직정보, 초대
+                          항목으로 구성되어있다.
+                        </caption>
+                        <colgroup>
+                          <col style="width: 16rem" />
+                          <col />
+                          <col style="width: 21rem" />
+                          <col style="width: 17rem" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">교직구분</th>
+                            <th scope="col">교직정보</th>
+                            <th scope="col">초대</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>김경기</td>
+                            <td>교장</td>
+                            <td class="al">동수원초등학교</td>
+                            <td>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                초대발송
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>김경기</td>
+                            <td>교장</td>
+                            <td class="al">동수원초등학교</td>
+                            <td>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                                disabled
+                              >
+                                발송완료
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="top-btns">
+                      <button
+                        type="button"
+                        class="krds-btn medium text secondary"
+                      >
+                        <i class="svg-icon ico-addlist" aria-hidden="true"></i>
+                        초대하기
+                        <i
+                          class="svg-icon ico-angle right"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
+                    </div>
+                    <div class="g-search-area colum">
+                      <div class="search-top-box">
+                        <div class="form-group">
+                          <div class="sch-form-wrap">
+                            <div class="col date">
+                              <div class="col-title">기간</div>
+                              <div
+                                class="form-date calendar-conts"
+                                data-calendar-type="range"
+                              >
+                                <div class="calendar-input">
+                                  <ul class="input-group range small">
+                                    <li>
+                                      <input
+                                        class="krds-input datepicker small"
+                                        placeholder="시작일"
+                                        readonly
+                                        aria-label="시작일"
+                                      />
+                                      <button
+                                        type="button"
+                                        class="krds-btn icon form-btn-datepicker small"
+                                      >
+                                        <span class="sr-only">달력 열기</span
+                                        ><i
+                                          class="svg-icon ico-calendar"
+                                          aria-hidden="true"
+                                        ></i>
+                                      </button>
+                                    </li>
+                                    <li class="mark small">~</li>
+                                    <li>
+                                      <input
+                                        class="krds-input datepicker small"
+                                        placeholder="종료일"
+                                        readonly
+                                        aria-label="종료일"
+                                      />
+                                      <button
+                                        type="button"
+                                        class="krds-btn icon form-btn-datepicker small"
+                                      >
+                                        <span class="sr-only">달력 열기</span
+                                        ><i
+                                          class="svg-icon ico-calendar"
+                                          aria-hidden="true"
+                                        ></i>
+                                      </button>
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div
+                                  class="krds-calendar-area"
+                                  data-keyboard-bound="false"
+                                ></div>
+                              </div>
+                              <div class="krds-btns-wrap">
+                                <button
+                                  type="button"
+                                  class="krds-btn small secondary"
+                                >
+                                  1개월
+                                </button>
+                                <button
+                                  type="button"
+                                  class="krds-btn small secondary"
+                                >
+                                  3개월
+                                </button>
+                                <button
+                                  type="button"
+                                  class="krds-btn small secondary"
+                                >
+                                  6개월
+                                </button>
+                                <button
+                                  type="button"
+                                  class="krds-btn small secondary"
+                                >
+                                  1년
+                                </button>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="col-title">상태</div>
+                              <div class="krds-check-area">
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_02"
+                                    id="V-HLC-01-016_02_02_01"
+                                    checked
+                                  />
+                                  <label for="V-HLC-01-016_02_02_01"
+                                    >전체</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_02"
+                                    id="V-HLC-01-016_02_02_02"
+                                  />
+                                  <label for="V-HLC-01-016_02_02_02"
+                                    >이름</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_02"
+                                    id="V-HLC-01-016_02_02_03"
+                                  />
+                                  <label for="V-HLC-01-016_02_02_03"
+                                    >교직정보</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="col-title">수락여부</div>
+                              <div class="krds-check-area">
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_03"
+                                    id="V-HLC-01-016_02_03_01"
+                                    checked
+                                  />
+                                  <label for="V-HLC-01-016_02_03_01"
+                                    >전체</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_03"
+                                    id="V-HLC-01-016_02_03_02"
+                                  />
+                                  <label for="V-HLC-01-016_02_03_02"
+                                    >수락</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_03"
+                                    id="V-HLC-01-016_02_03_03"
+                                  />
+                                  <label for="V-HLC-01-016_02_03_03"
+                                    >거절</label
+                                  >
+                                </div>
+                                <div class="krds-form-check large">
+                                  <input
+                                    type="radio"
+                                    name="V-HLC-01-016_02_03"
+                                    id="V-HLC-01-016_02_03_04"
+                                  />
+                                  <label for="V-HLC-01-016_02_03_04"
+                                    >대기중</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col input">
+                              <div class="sch-input">
+                                <input
+                                  type="text"
+                                  class="krds-input small"
+                                  aria-label="검색어 입력"
+                                />
+                                <span
+                                  class="krds-btn xsmall icon ico-search btn-exec"
+                                  aria-hidden="true"
+                                >
+                                  <i class="svg-icon ico-sch"></i>
+                                </span>
+                              </div>
+                              <button
+                                type="button"
+                                class="krds-btn small neutral"
+                              >
+                                검색
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn medium text"
+                              >
+                                초기화
+                                <i
+                                  class="svg-icon ico-reset"
+                                  aria-hidden="true"
+                                ></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="section-title-wrap right">
+                      <div class="krds-check-area">
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_4" id="rdo_4" checked />
+                          <label for="rdo_4">이름 순</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_4" id="rdo_5" />
+                          <label for="rdo_5">발송일순</label>
+                        </div>
+                        <div class="krds-form-check">
+                          <input type="radio" name="rdo_4" id="rdo_6" />
+                          <label for="rdo_6">확인일순</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="krds-table-wrap center">
+                      <table class="tbl">
+                        <caption>
+                          멤버초대 내역 대한 표로 이름, 교직정보, 초대 발송일,
+                          수학/거절일, 수락여부 항목으로 구성되어있다.
+                        </caption>
+                        <colgroup>
+                          <col style="width: 16rem" />
+                          <col />
+                          <col style="width: 21rem" />
+                          <col style="width: 17rem" />
+                          <col style="width: 17rem" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">이름</th>
+                            <th scope="col">교직정보</th>
+                            <th scope="col">초대 발송일</th>
+                            <th scope="col">수락/거절일</th>
+                            <th scope="col">수락여부</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>김경기</td>
+                            <td>동수원초등학교</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>
+                              <span class="member-text accept">수락</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>김경기</td>
+                            <td>동수원초등학교</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>
+                              <span class="member-text reject">거절</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>김경기</td>
+                            <td>동수원초등학교</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>YYYY-MM-DD</td>
+                            <td>
+                              <span class="member-text wait">대기중</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </section>
+                <section
+                  id="tab-panel_03"
+                  aria-labelledby="tab03"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">멤버 역할 관리</h3>
+
+                  <div class="g-search-area colum">
+                    <div class="search-top-box">
+                      <div class="form-group">
+                        <div class="sch-form-wrap">
+                          <div class="col date">
+                            <div class="col-title">기간</div>
+                            <div
+                              class="form-date calendar-conts"
+                              data-calendar-type="range"
+                            >
+                              <div class="calendar-input">
+                                <ul class="input-group range small">
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="시작일"
+                                      readonly
+                                      aria-label="시작일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                  <li class="mark small">~</li>
+                                  <li>
+                                    <input
+                                      class="krds-input datepicker small"
+                                      placeholder="종료일"
+                                      readonly
+                                      aria-label="종료일"
+                                    />
+                                    <button
+                                      type="button"
+                                      class="krds-btn icon form-btn-datepicker small"
+                                    >
+                                      <span class="sr-only">달력 열기</span
+                                      ><i
+                                        class="svg-icon ico-calendar"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                              <div
+                                class="krds-calendar-area"
+                                data-keyboard-bound="false"
+                              ></div>
+                            </div>
+                            <div class="krds-btns-wrap">
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                3개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                6개월
+                              </button>
+                              <button
+                                type="button"
+                                class="krds-btn small secondary"
+                              >
+                                1년
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="col-title">상태</div>
+                            <div class="krds-check-area">
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_02"
+                                  id="V-HLC-01-016_03_02_01"
+                                  checked
+                                />
+                                <label for="V-HLC-01-016_03_02_01">전체</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_02"
+                                  id="V-HLC-01-016_03_02_02"
+                                />
+                                <label for="V-HLC-01-016_03_02_02">이름</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_02"
+                                  id="V-HLC-01-016_03_02_03"
+                                />
+                                <label for="V-HLC-01-016_03_02_03"
+                                  >교직정보</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="col-title">교원정보</div>
+                            <div class="krds-check-area">
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_03"
+                                  id="V-HLC-01-016_03_03_01"
+                                  checked
+                                />
+                                <label for="V-HLC-01-016_03_03_01">교사</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_03"
+                                  id="V-HLC-01-016_03_03_02"
+                                />
+                                <label for="V-HLC-01-016_03_03_02"
+                                  >수석교사</label
+                                >
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_03"
+                                  id="V-HLC-01-016_03_03_03"
+                                />
+                                <label for="V-HLC-01-016_03_03_03">교감</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_03"
+                                  id="V-HLC-01-016_03_03_04"
+                                />
+                                <label for="V-HLC-01-016_03_03_04">교장</label>
+                              </div>
+                              <div class="krds-form-check large">
+                                <input
+                                  type="radio"
+                                  name="V-HLC-01-016_03_03"
+                                  id="V-HLC-01-016_03_03_05"
+                                />
+                                <label for="V-HLC-01-016_03_03_05"
+                                  >교육전문직원</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col input">
+                            <div class="sch-input">
+                              <input
+                                type="text"
+                                class="krds-input small"
+                                aria-label="검색어 입력"
+                              />
+                              <span
+                                class="krds-btn xsmall icon ico-search btn-exec"
+                                aria-hidden="true"
+                              >
+                                <i class="svg-icon ico-sch"></i>
+                              </span>
+                            </div>
+                            <button
+                              type="button"
+                              class="krds-btn small neutral"
+                            >
+                              검색
+                            </button>
+                            <button type="button" class="krds-btn medium text">
+                              초기화
+                              <i
+                                class="svg-icon ico-reset"
+                                aria-hidden="true"
+                              ></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="krds-table-wrap center">
+                    <table class="tbl">
+                      <caption>
+                        멤버 역할 관리에 대한 표로 번호, 성명, 교원정보,
+                        교직정보, 등록일/초대수락일, 역할선택 항목으로
+                        구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 6.4rem" />
+                        <col style="width: 10.8rem" />
+                        <col style="width: 12.8rem" />
+                        <col />
+                        <col style="width: 15.6rem" />
+                        <col style="width: 18rem" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">번호</th>
+                          <th scope="col">성명</th>
+                          <th scope="col">교원정보</th>
+                          <th scope="col">교직정보</th>
+                          <th scope="col">등록일/초대수락일</th>
+                          <th scope="col">역할선택</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-select="false">
+                          <td>6</td>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">동수원초등학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>
+                            <select
+                              class="krds-form-select small completed"
+                              title="역할선택"
+                            >
+                              <option value="">역할선택</option>
+                              <option value="">개설자</option>
+                              <option value="">운영자</option>
+                              <option value="">협업참여자</option>
+                              <option value="">일반사용자</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr data-select="false">
+                          <td>5</td>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">동수원초등학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>
+                            <select
+                              class="krds-form-select small completed"
+                              title="역할선택"
+                            >
+                              <option value="">역할선택</option>
+                              <option value="">개설자</option>
+                              <option value="">운영자</option>
+                              <option value="">협업참여자</option>
+                              <option value="">일반사용자</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr data-select="true">
+                          <td>4</td>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">동수원초등학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>
+                            <select
+                              class="krds-form-select small completed"
+                              title="역할선택"
+                            >
+                              <option value="">역할선택</option>
+                              <option value="">개설자</option>
+                              <option value="">운영자</option>
+                              <option value="">협업참여자</option>
+                              <option value="">일반사용자</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr data-select="true">
+                          <td>3</td>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">동수원초등학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>
+                            <select
+                              class="krds-form-select small completed"
+                              title="역할선택"
+                            >
+                              <option value="">역할선택</option>
+                              <option value="">개설자</option>
+                              <option value="">운영자</option>
+                              <option value="">협업참여자</option>
+                              <option value="">일반사용자</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr data-select="true">
+                          <td>2</td>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">동수원초등학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>
+                            <select
+                              class="krds-form-select small completed"
+                              title="역할선택"
+                            >
+                              <option value="">역할선택</option>
+                              <option value="">개설자</option>
+                              <option value="">운영자</option>
+                              <option value="">협업참여자</option>
+                              <option value="">일반사용자</option>
+                            </select>
+                          </td>
+                        </tr>
+                        <tr data-select="true">
+                          <td>1</td>
+                          <td>김경기</td>
+                          <td>교사</td>
+                          <td class="al">동수원초등학교</td>
+                          <td>YYYY-MM-DD</td>
+                          <td>
+                            <select
+                              class="krds-form-select small completed"
+                              title="역할선택"
+                            >
+                              <option value="">역할선택</option>
+                              <option value="">개설자</option>
+                              <option value="">운영자</option>
+                              <option value="">협업참여자</option>
+                              <option value="">일반사용자</option>
+                            </select>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="krds-btns-wrap center">
+                    <button type="button" class="krds-btn xlarge primary">
+                      저장
+                    </button>
+                  </div>
+                </section>
+                <section
+                  id="tab-panel_04"
+                  aria-labelledby="tab04"
+                  class="tab-conts"
+                  data-quick-nav="false"
+                >
+                  <h3 class="sr-only">멤버 권한 관리</h3>
+                  <div class="top-btns">
+                    <select
+                      class="krds-form-select small completed"
+                      title="역할선택"
+                    >
+                      <option value="">운영자</option>
+                      <option value="">협업참여자</option>
+                      <option value="">일반참여자</option>
+                    </select>
+                  </div>
+                  <div class="krds-table-wrap center mob-scroll">
+                    <table class="tbl">
+                      <caption>
+                        멤버 권한 관리에 대한 표로 권한명, 권한 항목으로
+                        구성되어있다.
+                      </caption>
+                      <colgroup>
+                        <col style="width: 28rem" />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">권한명</th>
+                          <th scope="col">권한</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>멤버 등록</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input
+                                  type="checkbox"
+                                  id="chk-member-create-write"
+                                />
+                                <label for="chk-member-create-write"
+                                  >쓰기</label
+                                >
+                              </div>
+                              <div class="krds-form-check">
+                                <input
+                                  type="checkbox"
+                                  id="chk-member-create-read"
+                                />
+                                <label for="chk-member-create-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>멤버 초대</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input
+                                  type="checkbox"
+                                  id="chk-member-invite-write"
+                                />
+                                <label for="chk-member-invite-write"
+                                  >쓰기</label
+                                >
+                              </div>
+                              <div class="krds-form-check">
+                                <input
+                                  type="checkbox"
+                                  id="chk-member-invite-read"
+                                />
+                                <label for="chk-member-invite-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>역할 관리</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-role-write" />
+                                <label for="chk-role-write">쓰기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-role-read" />
+                                <label for="chk-role-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>권한 관리</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-auth-write" />
+                                <label for="chk-auth-write">쓰기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-auth-read" />
+                                <label for="chk-auth-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>의견 공유</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-opinion-write" />
+                                <label for="chk-opinion-write">쓰기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-opinion-read" />
+                                <label for="chk-opinion-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>자료 공유</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input
+                                  type="checkbox"
+                                  id="chk-resource-write"
+                                />
+                                <label for="chk-resource-write">쓰기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-resource-read" />
+                                <label for="chk-resource-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>투표 생성</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-vote-write" />
+                                <label for="chk-vote-write">쓰기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-vote-read" />
+                                <label for="chk-vote-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>일정 등록</td>
+                          <td>
+                            <div class="krds-check-area center">
+                              <div class="krds-form-check">
+                                <input
+                                  type="checkbox"
+                                  id="chk-schedule-write"
+                                />
+                                <label for="chk-schedule-write">쓰기</label>
+                              </div>
+                              <div class="krds-form-check">
+                                <input type="checkbox" id="chk-schedule-read" />
+                                <label for="chk-schedule-read">읽기</label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="krds-btns-wrap center">
+                    <button type="button" class="krds-btn medium tertiary">
+                      취소
+                    </button>
+                    <button type="button" class="krds-btn medium primary">
+                      확인
+                    </button>
+                  </div>
+                </section>
+              </div>
+              <!-- //tab contents -->
+            </div>
+            <!-- //tab -->
+          </div>
+        </div>
+        <!-- //modal contents -->
+        <!-- close button -->
+        <button
+          type="button"
+          class="krds-btn medium icon btn-close close-modal"
+        >
+          <span class="sr-only">닫기</span>
+          <i class="svg-icon ico-popup-close" aria-hidden="true"></i>
+        </button>
+        <!-- //close button -->
+      </div>
+    </div>
+    <div class="modal-back"></div>
+  </section>
+  <script>
+    krds_modal.openModal("V-HLC-01-016");
+  </script>
+  <!--#include "../../../components/_chatbot.html" -->
+</html>

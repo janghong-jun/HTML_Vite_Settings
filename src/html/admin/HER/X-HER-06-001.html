@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "2", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <div class="flex-box">
+            <h2>전문가관리</h2>
+            <p class="count">
+              <button
+                type="button"
+                class="btn-modal"
+                onClick="
+                  UI.modal.show({
+                  id: 'X-HER-06-008',
+                  src: 'X-HER-06-008.html',
+                  callback: () => { 
+                    const $modal = $('#X-HER-06-008');
+                    const $tr = $modal.find(`tr:not([class]), tr[class='']`);
+
+                    $tr.next().hide();
+
+                    $tr.off('click');
+
+                    $modal.off('click', '.toggle-btn')
+                      .on('click', '.toggle-btn', function (e) {
+                        e.stopPropagation();
+                        const $currentTr = $(this).closest('tr');
+                        $currentTr.next().toggle();
+                      });
+                    }
+                  });"
+              >
+                신규 전문가 매칭/코칭 개선요청: <span>9</span> 건
+              </button>
+            </p>
+          </div>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: 26rem" />
+                <col style="width: 26rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td colspan="3">
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">교원구분</th>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="checkbox" id="chk_01_01" />
+                        <label for="chk_01_01" class="lb-checkbox">교사</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="chk_01_02" />
+                        <label for="chk_01_02" class="lb-checkbox"
+                          >수석교사</label
+                        >
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="chk_01_03" />
+                        <label for="chk_01_03" class="lb-checkbox">교감</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="chk_01_04" />
+                        <label for="chk_01_04" class="lb-checkbox">교장</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="checkbox" id="chk_01_05" />
+                        <label for="chk_01_05" class="lb-checkbox"
+                          >교육전문직원</label
+                        >
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">지역</th>
+                  <td class="pr0">
+                    <select>
+                      <option>전체</option>
+                    </select>
+                  </td>
+                  <td class="pr0">
+                    <select>
+                      <option>전체</option>
+                    </select>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="pr0">
+                    <select>
+                      <option>선택</option>
+                      <option>이름</option>
+                      <option>ID</option>
+                    </select>
+                  </td>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="sub-title">
+            <div>
+              <p class="count">총 <span>100</span>건</p>
+              <p class="count">페이지 <span>2</span>/50</p>
+            </div>
+            <div class="msg flex-box center">
+              <label for="select01">등재구분</label>
+              <select id="select01">
+                <option>전체</option>
+                <option>자동등재</option>
+                <option>등재신청</option>
+              </select>
+              <label for="select02">정렬방법</label>
+              <select id="select02">
+                <option>가입일</option>
+                <option>최종접속일</option>
+                <option>평점</option>
+                <option>매칭회원수</option>
+              </select>
+            </div>
+          </div>
+          <div class="tbl-base type2 mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 5.4rem" />
+                <col style="width: 6rem" />
+                <col style="width: 9rem" />
+                <col style="width: 15rem" />
+                <col style="width: 10rem" />
+                <col style="width: 10rem" />
+                <col />
+                <col style="width: 8.8rem" />
+                <col style="width: 7.2rem" />
+                <col style="width: 4.5rem" />
+                <col style="width: 11.2rem" />
+                <col style="width: 11.2rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">
+                    <span class="lb-item">
+                      <input type="checkbox" id="allCheck" />
+                      <label for="allCheck" class="lb-checkbox"
+                        ><span class="sr-only">전체 선택</span></label
+                      >
+                    </span>
+                  </th>
+                  <th scope="col">No.</th>
+                  <th scope="col">분야</th>
+                  <th scope="col">회원명(ID)</th>
+                  <th scope="col">등재구분</th>
+                  <th scope="col">회원구분</th>
+                  <th scope="col">지역</th>
+                  <th scope="col">매칭 회원 수</th>
+                  <th scope="col">신고 건수</th>
+                  <th scope="col">평점</th>
+                  <th scope="col">가입일</th>
+                  <th scope="col">최종접속일</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check100" />
+                      <label for="check100" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>100</td>
+                  <td>교육과정</td>
+                  <td>김전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>20</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check99" />
+                      <label for="check99" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>99</td>
+                  <td>생활교육</td>
+                  <td>이전문(idkim1234)</td>
+                  <td>등재신청</td>
+                  <td>수석교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>35</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check98" />
+                      <label for="check98" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>98</td>
+                  <td>학교공동체</td>
+                  <td>박전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교감</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>15</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check97" />
+                      <label for="check97" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>97</td>
+                  <td>자기개발</td>
+                  <td>최전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교장</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>10</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check96" />
+                      <label for="check96" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>96</td>
+                  <td>문제해결</td>
+                  <td>정전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교육전문직원</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>53</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check95" />
+                      <label for="check95" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>95</td>
+                  <td>교육과정</td>
+                  <td>남궁전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>48</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check94" />
+                      <label for="check94" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>94</td>
+                  <td>생활교육</td>
+                  <td>오전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>65</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check93" />
+                      <label for="check93" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>93</td>
+                  <td>학교공동체</td>
+                  <td>강전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>34</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check92" />
+                      <label for="check92" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>92</td>
+                  <td>자기개발</td>
+                  <td>남전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>29</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="lb-item">
+                      <input type="checkbox" id="check91" />
+                      <label for="check91" class="lb-checkbox"
+                        ><span class="sr-only">선택</span></label
+                      >
+                    </span>
+                  </td>
+                  <td>91</td>
+                  <td>문제해결</td>
+                  <td>유전문(idkim1234)</td>
+                  <td>자동등재</td>
+                  <td>교사</td>
+                  <td>수원시 영통구, 화성시 동탄구</td>
+                  <td>16</td>
+                  <td>0</td>
+                  <td>4.5</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>YYYY-MM-DD</td>
+                </tr>
+                <tr>
+                  <td colspan="12" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div>
+              <button
+                type="button"
+                class="btn base primary btn-modal"
+                data-id="X-HER-06-003"
+                data-src="X-HER-06-003.html"
+              >
+                <span>전문가 해제</span>
+              </button>
+            </div>
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-Coaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

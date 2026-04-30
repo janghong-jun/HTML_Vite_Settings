@@ -1,0 +1,237 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 아코디언 */
+//사이즈 정의
+@mixin accordion-size-variable() {
+  --accordion--list-margin-y: var(--padding-2);
+  --accordion--padding: var(--padding-8);
+  --accordion--button-padding-right: calc(
+    var(--accordion--padding) + var(--gap-5) +
+      var(--accordion--button-icon-size)
+  );
+  --accordion--line-padding: var(--padding-7);
+  --accordion--line-button-padding-right: calc(
+    var(--gap-5) + var(--accordion--button-icon-size)
+  );
+  --accordion--button-icon-size: var(--icon--size-large);
+  --accordion--radius: var(--radius-large2);
+  --accordion--button-pc-font-size: var(--pc-font-size-heading-xsmall);
+  --accordion--button-mobile-font-size: var(--mobile-font-size-heading-xsmall);
+}
+
+//컬러 정의
+@mixin accordion-color-variable($mode: light) {
+  --accordion--color-action: var(--#{$mode}-color-action-secondary);
+  --accordion--button-color-action: var(--#{$mode}-color-action-secondary);
+  --accordion--button-color-action-hover: var(
+    --#{$mode}-color-action-secondary-hover
+  );
+  --accordion--button-color-action-pressed: var(
+    --#{$mode}-color-action-secondary-pressed
+  );
+  --accordion--color-action-open: var(--#{$mode}-color-action-secondary-hover);
+  --accordion--color-divider: var(--#{$mode}-color-divider-gray-light);
+  --accordion--color-divider-open: var(--#{$mode}-color-divider-gray-dark);
+  --accordion--button-color-text: var(--#{$mode}-color-text-basic);
+  --accordion--button-color-text-open: var(--#{$mode}-color-text-secondary);
+  --accordion--color-icon: var(--#{$mode}-color-icon-gray);
+}
+
+//모드 설정
+$mode-setting: light;
+.krds-accordion {
+  @include accordion-size-variable();
+  @include accordion-color-variable($mode: #{$mode-setting});
+  padding: var(--accordion--list-margin-y) 0;
+  border-top: 0.1rem solid var(--accordion--color-divider);
+  border-bottom: 0.1rem solid var(--accordion--color-divider);
+  .accordion-item {
+    padding: var(--accordion--list-margin-y) 0;
+
+    transition: var(--transition-base);
+    .btn-accordion {
+      position: relative;
+      width: 100%;
+      padding: var(--accordion--padding) var(--accordion--button-padding-right)
+        var(--accordion--padding) var(--accordion--padding);
+      background-color: var(--accordion--button-color-action);
+      border-radius: var(--accordion--radius);
+      font-size: var(--accordion--button-pc-font-size);
+      color: var(--accordion--button-color-text);
+      font-weight: var(--font-weight-bold);
+      text-align: left;
+      @include size-medium {
+        font-size: var(--accordion--button-mobile-font-size);
+      }
+      &:hover {
+        background-color: var(--accordion--button-color-action-hover);
+      }
+      &:active {
+        background-color: var(--accordion--button-color-action-pressed);
+      }
+      &::after {
+        @include position(
+          $t: var(--accordion--padding),
+          $r: var(--accordion--padding)
+        );
+        @include pseudo();
+        @include svg-icon(
+          var(--accordion--button-icon-size),
+          $mode: #{$mode-setting}
+        );
+        @include icon-set(ico_angle);
+        background-color: var(--accordion--color-icon);
+        transition: var(--transition-base);
+        transform: rotate(0deg);
+      }
+      &.active {
+        background-color: var(--accordion--color-action-open);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        color: var(--accordion--button-color-text-open);
+        &:focus {
+          border-radius: var(--accordion--radius);
+        }
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .accordion-collapse {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+      visibility: hidden;
+    }
+    .accordion-body {
+      padding: 0 var(--accordion--padding) var(--accordion--padding);
+      background-color: var(--accordion--color-action);
+      border-bottom-left-radius: var(--accordion--radius);
+      border-bottom-right-radius: var(--accordion--radius);
+    }
+    &.active {
+      .accordion-collapse {
+        height: auto;
+        max-height: 100vh;
+        transition: all 1.5s ease-in-out;
+        visibility: visible;
+      }
+      .accordion-body {
+        background-color: var(--accordion--color-action-open);
+      }
+    }
+  }
+
+  //라인형
+  &.type-line {
+    padding: 0;
+    border-top: none;
+    .accordion-item {
+      border-top: 0.1rem solid var(--accordion--color-divider);
+      border-radius: 0;
+      .btn-accordion {
+        padding: var(--accordion--line-padding)
+          var(--accordion--line-button-padding-right)
+          var(--accordion--line-padding) 0;
+        &::after {
+          top: var(--accordion--line-padding);
+          right: 0;
+        }
+        &.active {
+          background: none;
+        }
+      }
+      .accordion-body {
+        padding: 0 0 var(--accordion--padding);
+      }
+      &.active {
+        background: none;
+        border-top-color: var(--accordion--color-divider-open);
+        .accordion-body {
+          background: none;
+        }
+      }
+    }
+  }
+
+  &.type-faq {
+    padding: 0;
+    border-top: 0.1rem solid var(--light-color-border-gray-dark);
+    border-bottom: none;
+    .accordion-item {
+      padding: 0;
+
+      .krds-badge {
+        flex: none;
+      }
+
+      & + .accordion-item {
+        border-top: 0.1rem solid var(--light-color-divider-gray-light);
+      }
+      .btn-accordion {
+        display: flex;
+        padding: var(--padding-7);
+        gap: var(--gap-5);
+        border-radius: 0 !important;
+
+        &::after {
+          position: static;
+          flex: none;
+        }
+
+        .accordion-title {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          gap: var(--gap-4);
+          strong {
+            font-size: var(--pc-font-size-body-large);
+            font-weight: var(--font-weight-regular);
+            color: var(--light-color-text-bolder);
+            @include ellipsis(1);
+            @include size-medium {
+              font-size: var(--mobile-font-size-body-large);
+            }
+          }
+        }
+
+        &.active {
+          background: none;
+        }
+      }
+      .accordion-body {
+        display: flex;
+        padding: var(--padding-9) var(--padding-7);
+        gap: var(--gap-5);
+        background: var(--light-color-background-gray-subtler);
+        .accordion-contents {
+          font-size: var(--pc-font-size-body-medium);
+          font-weight: var(--font-weight-regular);
+          color: var(--light-color-text-bolder);
+          @include size-medium {
+            font-size: var(--mobile-font-size-body-medium);
+          }
+        }
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+  .krds-accordion {
+    @include accordion-color-variable($mode: #{$mode-setting});
+  }
+}
+
+@include size-medium {
+  .krds-accordion {
+    --accordion--padding: var(--padding-6);
+    --accordion--line-padding: var(--padding-5);
+    --accordion--button-icon-size: var(--icon--size-medium);
+  }
+}

@@ -1,0 +1,497 @@
+@use '../common/mixins/utils' as *;
+@use '../common/mixins/breakpoints' as *;
+@use '../common/mixins/icons' as *;
+
+/* 달력 */
+//사이즈 정의
+@mixin calendar-size-variable() {
+  --calendar--radius: var(--radius-xlarge2);
+  --calendar--head-pc-font-size: var(--pc-font-size-heading-small);
+  --calendar--head-mobile-font-size: var(--mobile-font-size-heading-small);
+  --calendar--head-btn-cal-switch-pc-font-size: var(--pc-font-size-label-medium);
+  --calendar--head-btn-cal-switch-mobile-font-size: var(--mobile-font-size-label-medium);
+  --calendar--head-btn-cal-switch-radius: var(--radius-max);
+  --calendar--head-btn-cal-move-size: var(--size-height-5);
+  --calendar--table-wrap-padding: var(--gap-5);
+  --calendar--table-head-pc-font-size: var(--pc-font-size-label-small);
+  --calendar--table-head-mobile-font-size: var(--mobile-font-size-label-small);
+  --calendar--table-caption-pc-font-size: var(--pc-font-size-heading-xxsmall);
+  --calendar--table-caption-mobile-font-size: var(--pc-font-size-heading-xxsmall);
+  --calendar--set-date-radius: var(--radius-max);
+}
+
+//컬러 정의
+@mixin calendar-color-variable($mode: light) {
+  --calendar--color-border: var(--#{$mode}-color-border-secondary-light);
+  --calendar--color-surface: var(--color-light-alpha-white100);
+  --calendar--color-text-sub: var(--#{$mode}-color-text-subtle);
+  --calendar--head-btn-cal-move-color-text-active: var(--#{$mode}-color-text-secondary);
+  --calendar--head-btn-cal-move-color-border: var(--#{$mode}-color-border-gray-light);
+  --calendar--head-btn-cal-move-color-border-active: var(--#{$mode}-color-border-secondary);
+  --calendar--head-btn-cal-move-color-action: var(--#{$mode}-color-action-white);
+  --calendar--head-btn-cal-switch-color-action-hover: var(--#{$mode}-color-action-secondary-hover);
+  --calendar--head-btn-cal-switch-color-action-active: var(--#{$mode}-color-action-secondary-pressed);
+  --calendar--head-btn-cal-switch-color-text-disabled: var(--#{$mode}-color-text-disabled-on);
+  --calendar--head-drop-down-shadow: 0 0 0.2rem 0 var(--#{$mode}-color-alpha-shadow1), 0 0.4rem 0.8rem 0 var(--#{$mode}-color-alpha-shadow2);
+  --calendar--date-set-color-action: var(--#{$mode}-color-action-secondary-active);
+  --calendar--date-set-color-text: var(--#{$mode}-color-text-inverse-static);
+  --calendar--date-set-color-text-day-off: var(--#{$mode}-color-text-danger);
+  --calendar--date-set-color-text-day-event: var(--#{$mode}-color-text-information);
+  --calendar--date-set-color-text-disabled: var(--#{$mode}-color-text-disabled);
+  --calendar--date-set-color-action-pressed: var(--#{$mode}-color-action-secondary-on-pressed);
+  --calendar--date-set-color-action-period: var(--#{$mode}-color-action-secondary-on-selected);
+  --calendar--date-set-color-element-today: var(--#{$mode}-color-element-point);
+  --calendar--action-btn-wrap-color-border: var(--#{$mode}-color-divider-gray-light);
+  --calendar--action-btn-wrap-color-surface: var(--#{$mode}-color-surface-white);
+}
+
+//모드 설정
+$mode-setting: light;
+// krds-calendar-area
+.krds-calendar-area {
+  @include calendar-size-variable();
+  @include calendar-color-variable(#{$mode-setting});
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  .calendar-wrap {
+    @include position($t: 0.8rem, $l: 0);
+    width: 38.4rem;
+    background-color: var(--calendar--color-surface);
+    border: 0.1rem solid var(--calendar--color-border);
+    border-radius: var(--calendar--radius);
+    overflow: hidden;
+    &.bottom {
+      top: auto;
+      bottom: 6.4rem;
+    }
+    .calendar-head {
+      @include flex-layout($ai: center, $jc: space-between);
+      padding: var(--padding-8);
+      font-size: var(--calendar--head-pc-font-size);
+      font-weight: var(--font-weight-bold);
+      gap: var(--gap-5);
+      .btn-cal-move {
+        @include flex-layout($ai: center, $jc: center);
+        @include square(var(--calendar--head-btn-cal-move-size));
+        background-color: var(--calendar--head-btn-cal-move-color-action);
+        border: 0.1rem solid var(--calendar--head-btn-cal-move-color-border);
+        border-radius: var(--radius-max);
+        flex-shrink: 0;
+        &::before {
+          @include pseudo();
+          @include svg-icon(var(--size-height-3), $mode: #{$mode-setting});
+          @include icon-set(ico_angle);
+          transform: rotate(90deg);
+        }
+        &.next {
+          &::before {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+      .calendar-switch-wrap {
+        @include flex-layout($ai: center, $jc: center);
+        gap: var(--gap-2);
+
+        /* 수정: 드롭다운 버튼 스타일 개선 */
+        .btn-cal-switch {
+          @include flex-layout($ai: center, $jc: center);
+          gap: var(--gap-2);
+          height: var(--size-height-6);
+          border-radius: var(--calendar--head-btn-cal-switch-radius);
+          padding: 0 var(--padding-3);
+          transition: var(--transition-base);
+          position: relative; /* 추가: 화살표 아이콘 위치 기준 */
+          padding-right: 2.8rem; /* 추가: 화살표 공간 확보 */
+
+          &::after {
+            @include pseudo();
+            @include svg-icon(var(--icon--size-small), $mode: #{$mode-setting});
+            @include icon-set(ico_arrow_dropdown);
+            position: absolute; /* 추가: 절대 위치 */
+            right: 0.8rem; /* 추가: 오른쪽 정렬 */
+            top: 50%; /* 추가: 수직 중앙 */
+            transform: translateY(-50%); /* 추가: 정확한 중앙 정렬 */
+            transition: transform 0.2s ease; /* 추가: 회전 애니메이션 */
+          }
+          &:hover {
+            background-color: var(--calendar--head-btn-cal-switch-color-action-hover);
+          }
+          &:focus,
+          &:active {
+            background-color: var(--calendar--head-btn-cal-switch-color-action-active);
+          }
+
+          /* 추가: active 상태일 때 화살표 회전 */
+          &.active {
+            background-color: var(--calendar--head-btn-cal-switch-color-action-active);
+            &::after {
+              transform: translateY(-50%) rotate(180deg);
+            }
+          }
+
+          &:disabled {
+            cursor: default;
+            color: var(--calendar--head-btn-cal-switch-color-text-disabled);
+            background-color: var(--calendar--action-btn-wrap-color-surface);
+            &::after {
+              background-color: var(--calendar--head-btn-cal-switch-color-text-disabled);
+            }
+          }
+        }
+
+        .calendar-drop-down {
+          --calendar-drop-down-btn-height: 4.2rem;
+
+          position: relative;
+
+          /* 수정: calendar-select 구조 (KRDS 공식) */
+          .calendar-select {
+            @include visibility(hidden);
+            @include position($t: calc(100% + 0.4rem), $l: 0);
+            @include position-center(x);
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-width: 14rem;
+            max-height: calc((var(--calendar-drop-down-btn-height) * 6) + (var(--padding-3) * 2));
+            border: 0.1rem solid var(--calendar--action-btn-wrap-color-border);
+            background-color: var(--calendar--action-btn-wrap-color-surface);
+            border-radius: var(--radius-medium4);
+            padding: var(--padding-3);
+            transition: var(--transition-base);
+            box-shadow: var(--calendar--head-drop-down-shadow);
+            z-index: 1001; /* 추가: 다른 요소 위에 표시 */
+
+            /* 추가: active 클래스로 표시 제어 */
+            &.active {
+              @include visibility(visible);
+              z-index: 10;
+            }
+
+            /* 수정: ul.sel 스타일 (KRDS 공식) */
+            .sel {
+              @include flex-layout($fd: column);
+              list-style: none; /* 추가 */
+              padding: 0; /* 추가 */
+              margin: 0; /* 추가 */
+
+              & li {
+                width: 100%;
+              }
+
+              button {
+                @include flex-layout($jc: center, $ai: center);
+                @include square(100%, var(--calendar-drop-down-btn-height));
+                border-radius: var(--radius-medium1);
+                font-size: var(--calendar--head-btn-cal-switch-pc-font-size);
+                font-weight: var(--font-weight-regular);
+                border: none; /* 추가 */
+                background: transparent; /* 추가 */
+                cursor: pointer; /* 추가 */
+                transition: var(--transition-base); /* 추가 */
+
+                &:hover {
+                  background-color: var(--calendar--head-btn-cal-switch-color-action-hover);
+                }
+                &:focus,
+                &:active {
+                  background-color: var(--calendar--head-btn-cal-switch-color-action-active);
+                }
+                &.active {
+                  color: var(--calendar--head-btn-cal-move-color-text-active);
+                  border: 0.1rem solid var(--calendar--head-btn-cal-move-color-border-active);
+                  background-color: var(--calendar--action-btn-wrap-color-surface);
+                }
+                &:disabled {
+                  cursor: default;
+                  color: var(--calendar--head-btn-cal-switch-color-text-disabled);
+                  background-color: var(--calendar--action-btn-wrap-color-surface);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .calendar-body {
+      position: relative;
+      .calendar-table-wrap {
+        padding: 0 var(--calendar--table-wrap-padding);
+        .calendar-tbl {
+          caption {
+            @include sr-only;
+          }
+          th,
+          td {
+            width: calc(100% / 7);
+          }
+          th {
+            padding-bottom: var(--calendar--table-wrap-padding);
+            font-weight: var(--font-weight-regular);
+            font-size: var(--calendar--table-head-pc-font-size);
+            text-align: center;
+          }
+          td {
+            padding: var(--padding-1) 0;
+            > button {
+              @include flex-layout($ai: center, $jc: center);
+              position: relative;
+              width: 4.4rem;
+              height: 4.4rem;
+              margin-inline: auto;
+              border-radius: var(--calendar--set-date-radius);
+              & span {
+                z-index: 1;
+              }
+              &::after {
+                @include position($t: 0, $l: 0);
+                @include pseudo();
+                @include square(100%);
+                border-radius: var(--calendar--set-date-radius);
+                transition: var(--transition-base);
+              }
+            }
+            .btn-set-date:focus {
+              z-index: 1;
+            }
+            &:not(.period, .old, .new, .disabled) .btn-set-date:hover {
+              &::after {
+                background-color: var(--calendar--date-set-color-action-period);
+              }
+            }
+            &:not(.period, .old, .new, .disabled) .btn-set-date:focus,
+            &:not(.period, .old, .new, .disabled) .btn-set-date:active {
+              &::after {
+                background-color: var(--calendar--date-set-color-action-pressed);
+              }
+            }
+            &.today {
+              .btn-set-date {
+                span {
+                  position: relative;
+                  &::before {
+                    @include pseudo();
+                    @include square(0.4rem);
+                    @include position($b: -10%);
+                    @include position-center(x);
+                    border-radius: var(--radius-max);
+                    background-color: var(--calendar--date-set-color-element-today);
+                  }
+                }
+              }
+            }
+            &.day-event {
+              .btn-set-date {
+                color: var(--calendar--date-set-color-text-day-event);
+                span {
+                  position: relative;
+                  @include underline(0.2rem);
+                  &::before {
+                    @include position($b: -38%);
+                    @include position-center(x);
+                    content: '이벤트';
+                    font-size: 1rem;
+                    font-weight: var(--font-weight-bold);
+                  }
+                }
+              }
+            }
+            &.day-off {
+              color: var(--calendar--date-set-color-text-day-off);
+            }
+            &.old,
+            &.new,
+            &.disabled {
+              color: var(--calendar--date-set-color-text-disabled);
+              & button {
+                cursor: default;
+              }
+            }
+
+            /* 수정: period 클래스 스타일 개선 */
+            &.period {
+              /* 추가: between 상태 (기간 사이) */
+              // &.between {
+              // }
+
+              .btn-set-date {
+                background-color: var(--color-light-secondary-5);
+                border-radius: 0;
+              }
+              &.start,
+              &.end {
+                > .btn-set-date {
+                  background-color: var(--color-light-secondary-70);
+                  color: var(--calendar--date-set-color-text);
+                }
+              }
+              &.start {
+                > .btn-set-date {
+                  border-top-left-radius: var(--calendar--set-date-radius);
+                  border-bottom-left-radius: var(--calendar--set-date-radius);
+                }
+              }
+              &.end {
+                > .btn-set-date {
+                  border-top-right-radius: var(--calendar--set-date-radius);
+                  border-bottom-right-radius: var(--calendar--set-date-radius);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .calendar-footer {
+      margin-top: var(--calendar--table-wrap-padding);
+      .calendar-btn-wrap {
+        @include flex-layout($jc: flex-end, $ai: center);
+        gap: var(--gap-3);
+        padding: var(--padding-6) var(--padding-8);
+        border-top: 0.1rem solid var(--calendar--action-btn-wrap-color-border);
+        background-color: var(--calendar--action-btn-wrap-color-surface);
+        & .krds-btn:first-child {
+          margin-right: auto;
+        }
+      }
+    }
+    &:not(.single) {
+      .calendar-body {
+        .calendar-table-wrap {
+          .calendar-tbl {
+            --calendar--after-size: calc(100% - var(--padding-1) * 2);
+            td {
+              position: relative;
+              &::after {
+                @include position($t: 50%, $l: 0);
+                @include pseudo();
+                @include square(100%, var(--calendar--after-size));
+                transform: translateY(-50%);
+              }
+            }
+            td.period {
+              &::after {
+                background-color: #f2f2ff;
+              }
+            }
+            td.start {
+              .btn-set-date {
+                border-radius: var(--calendar--set-date-radius) 0 0 var(--calendar--set-date-radius);
+              }
+              &::after {
+                background-color: var(--color-light-secondary-70);
+                border-top-left-radius: var(--calendar--set-date-radius);
+                border-bottom-left-radius: var(--calendar--set-date-radius);
+                @include square(var(--calendar--after-size), var(--calendar--after-size));
+                right: 0;
+                left: unset;
+              }
+            }
+            td.end {
+              .btn-set-date {
+                border-radius: 0 var(--calendar--set-date-radius) var(--calendar--set-date-radius) 0;
+              }
+              &::after {
+                background-color: var(--color-light-secondary-70);
+                border-top-right-radius: var(--calendar--set-date-radius);
+                border-bottom-right-radius: var(--calendar--set-date-radius);
+                @include square(var(--calendar--after-size), var(--calendar--after-size));
+              }
+            }
+            td.period.start.end {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//고대비모드
+@include color-mode($mode: high-contrast) {
+  //모드 설정
+  $mode-setting: high-contrast;
+
+  // krds-calendar-area
+  .krds-calendar-area {
+    @include calendar-color-variable(#{$mode-setting});
+
+    .calendar-wrap {
+      .calendar-head {
+        .btn-cal-move {
+          &::before {
+            @include svg-icon(var(--size-height-3), $mode: #{$mode-setting});
+          }
+        }
+        .calendar-switch-wrap {
+          .btn-cal-switch {
+            &::after {
+              @include svg-icon(var(--icon--size-small), $mode: #{$mode-setting});
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include size-large-more {
+  /* 수정: .drop-menu → .calendar-select */
+  .calendar-select {
+    @include scrollbar;
+  }
+}
+
+@media (max-width: 420px) {
+  .krds-calendar-area {
+    .calendar-wrap {
+      $w: calc(100vw - (var(--contents-padding-x) * 2));
+      left: calc(50% - ($w / 2));
+      width: $w;
+
+      .calendar-head {
+        padding: var(--padding-6) var(--padding-3);
+        gap: var(--gap-3);
+        .calendar-switch-wrap {
+          .btn-cal-switch {
+            font-size: var(--mobile-font-size-body-small);
+          }
+          .calendar-drop-down {
+            .calendar-select {
+              min-width: 8rem;
+              .sel {
+                button {
+                  font-size: var(--mobile-font-size-body-small);
+                }
+              }
+            }
+          }
+        }
+      }
+      .calendar-body {
+        .calendar-table-wrap {
+          .calendar-tbl {
+            td {
+              > button {
+                width: 11vw;
+                max-width: 4.4rem;
+                height: 11vw;
+                max-height: 4.4rem;
+                font-size: var(--mobile-font-size-body-small);
+                span {
+                  &::before {
+                    bottom: -0.1rem !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

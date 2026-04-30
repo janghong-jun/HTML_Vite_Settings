@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "8", sid: "1" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>유튜브채널 관리</h2>
+          <div class="sub-title">
+            <p class="msg">*표시는 필수 입력 항목입니다.</p>
+          </div>
+          <div class="tbl-base mgt10 align-left">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp01">채널명</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp01"
+                        class="inp-text"
+                        placeholder="채널명을 입력해주세요"
+                        value="교육과정평가원"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select01">학교급</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select01">
+                        <option>선택</option>
+                        <option selected>초등</option>
+                        <option>중등</option>
+                        <option>고등</option>
+                        <option>통합</option>
+                        <option>특수</option>
+                        <option>기타</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="select02">유형</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <select id="select02">
+                        <option>개인</option>
+                        <option selected>공공기관</option>
+                        <option>중등</option>
+                        <option>사기업</option>
+                        <option>기업</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp02">핵심검색어</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        id="inp02"
+                        class="inp-text"
+                        placeholder="검색어, 검색어, 검색어"
+                        value="진로, 수능, 학습, 교육정책, 미래교육"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp03">URL</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="flex-wrap">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        id="inp03"
+                        style="width: 100%; flex: 1"
+                        value="https://www.youtube.com/@kice8471/videos"
+                      />
+                      <div class="tbl-btns type-small">
+                        <button type="button" class="btn base square apply-btn">
+                          <span>중복확인</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="textarea01">채널설명</label>
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <textarea
+                      id="textarea01"
+                      class="inp-textarea"
+                      placeholder="채널 설명을 입력해주세요"
+                      style="height: 10rem"
+                    >
+"학교교육의 혁신을 견인하는 교육과정·교수학습·교육평가 연구 기관" 한국교육과정평가원은 「교육과정 연구·개발, 교과용도서 연구·검정, 교수학습 연구·개발, 교육평가 연구·시행, 대학수학능력시험 연구·시행, 국가고사 연구·시행, 국제교육협력」을 수행하는 국무총리(국무조정실) 산하 정부출연연구기관입니다.
+</textarea
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    사용여부
+                    <span class="ico-req"><span class="hide">필수</span></span>
+                  </th>
+                  <td>
+                    <div class="frm-area">
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_01" name="rdoBtn01" />
+                        <label for="rdo_01_01" class="lb-radio">사용</label>
+                      </span>
+                      <span class="lb-item">
+                        <input type="radio" id="rdo_01_02" name="rdoBtn01" />
+                        <label for="rdo_01_02" class="lb-radio">미사용</label>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns">
+            <button type="button" class="btn base tertiary">
+              <span>삭제</span>
+            </button>
+            <div>
+              <button type="button" class="btn base secondary">
+                <span>목록</span>
+              </button>
+              <button type="button" class="btn base primary">
+                <span>수정</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <!--#include "../../../components/_admin-head.html" -->
+    <script type="text/javascript">
+      pageInfo = { mid: "8", sid: "3" };
+    </script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header class="gnb-wrap" id="header">
+        <div>
+          <h1>
+            <a href="#"><span class="hide">Hi-Coaching</span></a>
+          </h1>
+          <div class="links">
+            <span>최종로그인일시 : 2026-02-06 10:56:30</span
+            ><button type="button" class="logout">로그아웃</button>
+          </div>
+        </div>
+      </header>
+      <main class="main-wrap" id="content">
+        <div class="sub-nav">
+          <button type="button" class="menu">
+            <span class="hide">메뉴</span>
+          </button>
+          <!--#include "../../../components/_admin-lnb.html" -->
+        </div>
+        <section class="main-conts">
+          <h2>연계로그 관리</h2>
+          <div class="tbl-base mgt10">
+            <table>
+              <colgroup>
+                <col style="width: 15rem" />
+                <col style="width: 26rem" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">기간</th>
+                  <td colspan="2">
+                    <div class="flex-box align-center">
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="startDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="startDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <span class="date-sep">~</span>
+                      <div class="ui-date-wrap">
+                        <div class="ui-datepicker">
+                          <input
+                            type="text"
+                            id="endDate"
+                            class="inp-base date"
+                            aria-label="날짜입력"
+                            readonly
+                            placeholder="YYYY-MM-DD"
+                          />
+                          <button
+                            type="button"
+                            class="ui-datepicker-btn"
+                            data-target="endDate"
+                          >
+                            <span class="a11y-hidden">년월일 선택</span>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="date-select">
+                        <button type="button" class="btn base square secondary">
+                          <span>1개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>3개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>6개월</span>
+                        </button>
+                        <button type="button" class="btn base square secondary">
+                          <span>1년</span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">상태</th>
+                  <td class="pr0">
+                    <select>
+                      <option>전체</option>
+                    </select>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <div class="frm-area">
+                      <input
+                        type="text"
+                        class="inp-text"
+                        aria-label="검색어 입력"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns center flex">
+            <button type="button" class="btn base fill">
+              <span>검색</span>
+            </button>
+            <button type="button" class="btn base secondary">
+              <span>초기화</span>
+            </button>
+          </div>
+          <div class="tbl-base type2 mgt40">
+            <table>
+              <colgroup>
+                <col style="width: 8.8rem" />
+                <col style="width: 12rem" />
+                <col />
+                <col />
+                <col style="width: 18.5rem" />
+                <col style="width: 5rem" />
+                <col style="width: 12rem" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">연계 ID</th>
+                  <th scope="col">대상시스템</th>
+                  <th scope="col">연계명</th>
+                  <th scope="col">실행일시</th>
+                  <th scope="col">결과</th>
+                  <th scope="col">성공/실패</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>100</td>
+                  <td>E-HDC-01-001</td>
+                  <td>교육행정데이터통합관리시스템</td>
+                  <td>수집데이터 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>99</td>
+                  <td>E-HDC-02-001</td>
+                  <td>중앙교육연수원</td>
+                  <td>콘텐츠 메타데이터수집 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>실패</td>
+                  <td>1200/20</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>98</td>
+                  <td>E-HDC-02-003</td>
+                  <td>YouTube</td>
+                  <td>YouTube</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>97</td>
+                  <td>E-HDC-01-001</td>
+                  <td>교육행정데이터통합관리시스템</td>
+                  <td>수집데이터 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>96</td>
+                  <td>E-HDC-02-001</td>
+                  <td>중앙교육연수원</td>
+                  <td>콘텐츠 메타데이터수집 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>실패</td>
+                  <td>1200/20</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>95</td>
+                  <td>E-HDC-02-003</td>
+                  <td>YouTube</td>
+                  <td>YouTube</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>94</td>
+                  <td>E-HDC-01-001</td>
+                  <td>교육행정데이터통합관리시스템</td>
+                  <td>수집데이터 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>93</td>
+                  <td>E-HDC-02-001</td>
+                  <td>중앙교육연수원</td>
+                  <td>콘텐츠 메타데이터수집 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>실패</td>
+                  <td>1200/20</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>92</td>
+                  <td>E-HDC-02-003</td>
+                  <td>YouTube</td>
+                  <td>YouTube</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+                <tr
+                  class="cursor"
+                  onClick="UI.modal.show({id: 'X-HDC-01-007',src: 'X-HDC-01-007.html'})"
+                >
+                  <td>91</td>
+                  <td>E-HDC-02-001</td>
+                  <td>중앙교육연수원</td>
+                  <td>콘텐츠 메타데이터수집 인터페이스</td>
+                  <td>YYYY-MM-DD HH:MM:SS</td>
+                  <td>성공</td>
+                  <td>150/0</td>
+                </tr>
+
+                <tr>
+                  <td colspan="7" class="nodata">검색된 내용이 없습니다.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tbl-btns mgt16">
+            <div class="pager">
+              <a href="#" class="btn first disabled"
+                ><span class="hide">처음으로</span></a
+              >
+              <a href="#" class="btn prev disabled"
+                ><span class="hide">이전으로</span></a
+              >
+              <span class="num">
+                <a href="#">1</a>
+                <a href="#" class="on"
+                  ><span class="hide">현재 페이지:</span>2</a
+                >
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <a href="#">10</a>
+              </span>
+              <a href="#" class="btn next"
+                ><span class="hide">다음으로</span></a
+              >
+              <a href="#" class="btn end"
+                ><span class="hide">마지막으로</span></a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>Copyright©2025 Hi-aaCoaching. All rights reserved</p>
+      </footer>
+    </div>
+  </body>
+</html>
