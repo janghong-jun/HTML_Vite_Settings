@@ -20415,6 +20415,13 @@ label {
     padding-bottom: var(--mobile-gap-layout-contents-footer);
   }
 }
+#container > .inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  background: url("../../../resources/images/bg/bg_layout.png") no-repeat center top;
+}
 #container > .krds-breadcrumb-wrap {
   padding-bottom: 0;
 }
@@ -20427,9 +20434,18 @@ label {
   --contents-wrap-size: -webkit-calc(79.2rem + var(--contents-padding-x));
   --contents-wrap-size: -moz-calc(79.2rem + var(--contents-padding-x));
   --contents-wrap-size: calc(79.2rem + var(--contents-padding-x));
-  --help-panel--flexible-padding: -webkit-calc(var(--help-panel--width) - ((100% - var(--contents-wrap-size)) / 2) + 4.5rem);
-  --help-panel--flexible-padding: -moz-calc(var(--help-panel--width) - ((100% - var(--contents-wrap-size)) / 2) + 4.5rem);
-  --help-panel--flexible-padding: calc(var(--help-panel--width) - ((100% - var(--contents-wrap-size)) / 2) + 4.5rem);
+  --help-panel--flexible-padding: -webkit-calc(
+    var(--help-panel--width) - ((100% - var(--contents-wrap-size)) / 2) +
+      4.5rem
+  );
+  --help-panel--flexible-padding: -moz-calc(
+    var(--help-panel--width) - ((100% - var(--contents-wrap-size)) / 2) +
+      4.5rem
+  );
+  --help-panel--flexible-padding: calc(
+    var(--help-panel--width) - ((100% - var(--contents-wrap-size)) / 2) +
+      4.5rem
+  );
 }
 #container .in-between {
   display: -webkit-box;

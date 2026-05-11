@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko" class="w-full h-full">
+  <head>
+    <!-- 공통 meta -->
+    <!--#include "../../../components/_meta.html" -->
+    <title>Hi-Coaching</title>
+    <!-- 공통 css -->
+    <style>
+      @font-face {
+        font-family: 'Pretendard GOV';
+        src: url(#{$url}/fonts/PretendardGOV-Regular.subset.woff), url(#{$url}/fonts/PretendardGOV-Regular.subset.woff2);
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Pretendard GOV';
+        src: url(#{$url}/fonts/PretendardGOV-Medium.subset.woff), url(#{$url}/fonts/PretendardGOV-Medium.subset.woff2);
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Pretendard GOV';
+        src: url(#{$url}/fonts/PretendardGOV-Bold.subset.woff), url(#{$url}/fonts/PretendardGOV-Bold.subset.woff2);
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      :root {
+        --default-font-family: 'Pretendard GOV';
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-white w-full h-full">
+    <div class="flex flex-col w-full h-full items-center justify-center">
+      <!-- Container -->
+      <main>
+        <div class="flex flex-col w-full h-full items-center justify-center gap-8">
+          <div class="before:content-[url('../../../resources/img/component/icon/error.svg')] before:block before:w-[100px] before:h-[100px] before:mx-auto before:mb-8">
+            <h1 class="font-bold text-[32px] text-center">죄송합니다. 페이지를 찾을 수 없습니다</h1>
+            <p class="text-center mt-4">
+              존재하지 않는 주소를 입력하셨거나 요청하신 페이지의 주소가 변경, 삭제되어 찾을 수 없습니다. <br />
+              자세한 내용은 사이트 관리자에게 문의하시기 바랍니다.
+            </p>
+          </div>
+          <button type="button" class="rounded-md bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-300 h-[64px] cursor-pointer">메인으로 돌아가기</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
