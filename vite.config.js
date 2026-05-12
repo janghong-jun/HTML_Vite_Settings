@@ -211,7 +211,7 @@ export default defineConfig({
     port: 3000,
     open: true,
     watch: {
-      include: ['src/**/*.html', 'src/**/*.scss', 'src/**/*.css', 'src/**/*.js'],
+      include: ['src/**/*.html', 'src/**/*.scss', 'src/**/*.css', 'src/**/*.js', 'src/**/*.json', 'src/**/*.svg', 'src/**/*.png', 'src/**/*.jpg', 'src/**/*.gif', 'src/**/*.ico', 'src/**/*.woff', 'src/**/*.woff2', 'src/**/*.ttf', 'src/**/*.otf', 'src/**/*.eot'],
     },
   },
 
